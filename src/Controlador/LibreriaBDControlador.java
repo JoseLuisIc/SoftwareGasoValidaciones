@@ -48,7 +48,7 @@ Crecenciales de DB
             //Como obtener la información desde un archivo properties
             String db_nam = "gasvalid";
             String use = "root";
-            String pas ="SAKAI";
+            String pas ="ARENAS28";
             //For MySql 5.5
             //Class.forName("com.mysql.jdbc.Driver");
             //For MySql 8.0
