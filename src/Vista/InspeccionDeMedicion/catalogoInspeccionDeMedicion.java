@@ -9,6 +9,7 @@ import Controlador.LibreriaBDControlador;
 import Controlador.colorTabla;
 import Controlador.reportesWord;
 import Modelo.modeloTablaUsuario;
+import java.awt.Component;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -60,9 +61,142 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
          //lleno la hora
          Date fecha = new Date();
          jDateChooserFechaIM.setDate(fecha);
-         
+entraonoentra();
     }
-
+    
+    private void entraonoentra(){
+         if(jRadioButton21.isSelected()&&jRadioButton24.isSelected()&&jRadioButton26.isSelected()&&jRadioButton28.isSelected()&&jRadioButton30.isSelected()&&jRadioButton32.isSelected()&&jRadioButton34.isSelected()&&jRadioButton36.isSelected()&&jRadioButton38.isSelected()){
+         entraraMangueras();
+         }  else{
+             bloquearaMangueras();}
+    }
+    
+    private   void entraraMangueras() {
+              //mangueraA
+               for(Component aM:jPanel2.getComponents()) {
+aM.setEnabled(true);
+}               for(Component bM:jPanel12.getComponents()) {
+bM.setEnabled(true);
+}               for(Component cM:jPanel13.getComponents()) {
+cM.setEnabled(true);
+}               for(Component dM:jPanel14.getComponents()) {
+dM.setEnabled(true);
+}
+      //mangueraB
+               for(Component eM:jPanel16.getComponents()) {
+eM.setEnabled(true);
+}               for(Component fM:jPanel17.getComponents()) {
+fM.setEnabled(true);
+}               for(Component gM:jPanel18.getComponents()) {
+gM.setEnabled(true);
+}               for(Component hM:jPanel20.getComponents()) {
+hM.setEnabled(true);
+}
+      //mangueraC
+               for(Component iM:jPanel21.getComponents()) {
+iM.setEnabled(true);
+}               for(Component jM:jPanel22.getComponents()) {
+jM.setEnabled(true);
+}               for(Component kM:jPanel23.getComponents()) {
+kM.setEnabled(true);
+}               for(Component lM:jPanel25.getComponents()) {
+lM.setEnabled(true);
+}
+      //mangueraD
+               for(Component mM:jPanel26.getComponents()) {
+mM.setEnabled(true);
+}               for(Component nM:jPanel27.getComponents()) {
+nM.setEnabled(true);
+}               for(Component oM:jPanel28.getComponents()) {
+oM.setEnabled(true);
+}               for(Component pM:jPanel30.getComponents()) {
+pM.setEnabled(true);
+}
+      //mangueraE
+               for(Component qM:jPanel31.getComponents()) {
+qM.setEnabled(true);
+}               for(Component rM:jPanel32.getComponents()) {
+rM.setEnabled(true);
+}               for(Component sM:jPanel33.getComponents()) {
+sM.setEnabled(true);
+}               for(Component tM:jPanel35.getComponents()) {
+tM.setEnabled(true);
+}
+      //mangueraF
+               for(Component uM:jPanel36.getComponents()) {
+uM.setEnabled(true);
+}               for(Component vM:jPanel37.getComponents()) {
+vM.setEnabled(true);
+}               for(Component wM:jPanel38.getComponents()) {
+wM.setEnabled(true);
+}               for(Component xM:jPanel40.getComponents()) {
+xM.setEnabled(true);
+}
+    }
+    
+    private void bloquearaMangueras(){
+          //mangueraA
+               for(Component aB:jPanel2.getComponents()) {
+aB.setEnabled(false);
+}               for(Component bB:jPanel12.getComponents()) {
+bB.setEnabled(false);
+}               for(Component cB:jPanel13.getComponents()) {
+cB.setEnabled(false);
+}               for(Component dB:jPanel14.getComponents()) {
+dB.setEnabled(false);
+}
+      //mangueraB
+               for(Component eB:jPanel16.getComponents()) {
+eB.setEnabled(false);
+}               for(Component fB:jPanel17.getComponents()) {
+fB.setEnabled(false);
+}               for(Component gB:jPanel18.getComponents()) {
+gB.setEnabled(false);
+}               for(Component hB:jPanel20.getComponents()) {
+hB.setEnabled(false);
+}
+      //mangueraC
+               for(Component iB:jPanel21.getComponents()) {
+iB.setEnabled(false);
+}               for(Component jB:jPanel22.getComponents()) {
+jB.setEnabled(false);
+}               for(Component kB:jPanel23.getComponents()) {
+kB.setEnabled(false);
+}               for(Component lB:jPanel25.getComponents()) {
+lB.setEnabled(false);
+}
+      //mangueraD
+               for(Component mB:jPanel26.getComponents()) {
+mB.setEnabled(false);
+}               for(Component nB:jPanel27.getComponents()) {
+nB.setEnabled(false);
+}               for(Component oB:jPanel28.getComponents()) {
+oB.setEnabled(false);
+}               for(Component pB:jPanel30.getComponents()) {
+pB.setEnabled(false);
+}
+      //mangueraE
+               for(Component qB:jPanel31.getComponents()) {
+qB.setEnabled(false);
+}               for(Component rB:jPanel32.getComponents()) {
+rB.setEnabled(false);
+}               for(Component sB:jPanel33.getComponents()) {
+sB.setEnabled(false);
+}               for(Component tB:jPanel35.getComponents()) {
+tB.setEnabled(false);
+}
+      //mangueraF
+               for(Component uB:jPanel36.getComponents()) {
+uB.setEnabled(false);
+}               for(Component vB:jPanel37.getComponents()) {
+vB.setEnabled(false);
+}               for(Component wB:jPanel38.getComponents()) {
+wB.setEnabled(false);
+}               for(Component xB:jPanel40.getComponents()) {
+xB.setEnabled(false);
+}
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,6 +206,15 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        A = new javax.swing.ButtonGroup();
+        B = new javax.swing.ButtonGroup();
+        C = new javax.swing.ButtonGroup();
+        D = new javax.swing.ButtonGroup();
+        E = new javax.swing.ButtonGroup();
+        F = new javax.swing.ButtonGroup();
+        G = new javax.swing.ButtonGroup();
+        H = new javax.swing.ButtonGroup();
+        I = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         folioSolicitud = new javax.swing.JTextField();
@@ -950,6 +1093,11 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
         jDateChooserFechaIM.setEnabled(false);
 
         jButton2.setText("Guardar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setText("ValidaInformación");
 
@@ -1050,8 +1198,16 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 
         jLabel65.setText("Caratula indicadora");
 
+        C.add(jRadioButton25);
+        jRadioButton25.setSelected(true);
         jRadioButton25.setText("No cumple");
+        jRadioButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton25ActionPerformed(evt);
+            }
+        });
 
+        C.add(jRadioButton26);
         jRadioButton26.setText("Cumple");
         jRadioButton26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1092,6 +1248,7 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 
         jLabel63.setText("Leyendas o avisos al consumidor");
 
+        A.add(jRadioButton21);
         jRadioButton21.setText("Cumple");
         jRadioButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1099,7 +1256,14 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
             }
         });
 
+        A.add(jRadioButton22);
+        jRadioButton22.setSelected(true);
         jRadioButton22.setText("No cumple");
+        jRadioButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton22ActionPerformed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("A");
@@ -1134,8 +1298,16 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 
         jLabel64.setText("Placa o etiqueta de identificación");
 
+        B.add(jRadioButton23);
+        jRadioButton23.setSelected(true);
         jRadioButton23.setText("No cumple");
+        jRadioButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton23ActionPerformed(evt);
+            }
+        });
 
+        B.add(jRadioButton24);
         jRadioButton24.setText("Cumple");
         jRadioButton24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1176,8 +1348,16 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 
         jLabel66.setText("Signo de pesos en caratula");
 
+        D.add(jRadioButton27);
+        jRadioButton27.setSelected(true);
         jRadioButton27.setText("No cumple");
+        jRadioButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton27ActionPerformed(evt);
+            }
+        });
 
+        D.add(jRadioButton28);
         jRadioButton28.setText("Cumple");
         jRadioButton28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1218,8 +1398,16 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 
         jLabel67.setText("Dispositivos contador y/o computador");
 
+        E.add(jRadioButton29);
+        jRadioButton29.setSelected(true);
         jRadioButton29.setText("No cumple");
+        jRadioButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton29ActionPerformed(evt);
+            }
+        });
 
+        E.add(jRadioButton30);
         jRadioButton30.setText("Cumple");
         jRadioButton30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1268,8 +1456,16 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
             }
         });
 
+        F.add(jRadioButton31);
+        jRadioButton31.setSelected(true);
         jRadioButton31.setText("No cumple");
+        jRadioButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton31ActionPerformed(evt);
+            }
+        });
 
+        F.add(jRadioButton32);
         jRadioButton32.setText("Cumple");
         jRadioButton32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1314,8 +1510,16 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 
         jLabel70.setText("Dispositivos de despacho");
 
+        G.add(jRadioButton33);
+        jRadioButton33.setSelected(true);
         jRadioButton33.setText("No cumple");
+        jRadioButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton33ActionPerformed(evt);
+            }
+        });
 
+        G.add(jRadioButton34);
         jRadioButton34.setText("Cumple");
         jRadioButton34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1356,8 +1560,16 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 
         jLabel71.setText("Golpes de presión");
 
+        H.add(jRadioButton35);
+        jRadioButton35.setSelected(true);
         jRadioButton35.setText("No cumple");
+        jRadioButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton35ActionPerformed(evt);
+            }
+        });
 
+        H.add(jRadioButton36);
         jRadioButton36.setText("Cumple");
         jRadioButton36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1398,8 +1610,16 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 
         jLabel72.setText("Tiempo de corte (80 s) max.");
 
+        I.add(jRadioButton37);
+        jRadioButton37.setSelected(true);
         jRadioButton37.setText("No cumple");
+        jRadioButton37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton37ActionPerformed(evt);
+            }
+        });
 
+        I.add(jRadioButton38);
         jRadioButton38.setText("Cumple");
         jRadioButton38.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -6035,19 +6255,19 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
     }//GEN-LAST:event_campoEstacionActionPerformed
 
     private void jRadioButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton38ActionPerformed
-        // TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton38ActionPerformed
 
     private void jRadioButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton36ActionPerformed
-        // TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton36ActionPerformed
 
     private void jRadioButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton34ActionPerformed
-        // TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton34ActionPerformed
 
     private void jRadioButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton32ActionPerformed
-        // TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton32ActionPerformed
 
     private void jLabel69MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel69MouseClicked
@@ -6057,23 +6277,23 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel69MouseClicked
 
     private void jRadioButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton30ActionPerformed
-        // TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton30ActionPerformed
 
     private void jRadioButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton28ActionPerformed
-        // TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton28ActionPerformed
 
     private void jRadioButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton24ActionPerformed
-        // TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton24ActionPerformed
 
     private void jRadioButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton21ActionPerformed
-        // TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton21ActionPerformed
 
     private void jRadioButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton26ActionPerformed
-        // TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton26ActionPerformed
 
     private void jTextField59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField59ActionPerformed
@@ -6188,6 +6408,46 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
          lbd.closeConnection();
     }//GEN-LAST:event_jComboBoxCronometroItemStateChanged
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jRadioButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton37ActionPerformed
+entraonoentra();
+    }//GEN-LAST:event_jRadioButton37ActionPerformed
+
+    private void jRadioButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton22ActionPerformed
+entraonoentra();
+    }//GEN-LAST:event_jRadioButton22ActionPerformed
+
+    private void jRadioButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton23ActionPerformed
+entraonoentra();
+    }//GEN-LAST:event_jRadioButton23ActionPerformed
+
+    private void jRadioButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton25ActionPerformed
+entraonoentra();  // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton25ActionPerformed
+
+    private void jRadioButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton27ActionPerformed
+entraonoentra();// TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton27ActionPerformed
+
+    private void jRadioButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton29ActionPerformed
+entraonoentra();    // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton29ActionPerformed
+
+    private void jRadioButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton31ActionPerformed
+entraonoentra();       // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton31ActionPerformed
+
+    private void jRadioButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton33ActionPerformed
+entraonoentra();        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton33ActionPerformed
+
+    private void jRadioButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton35ActionPerformed
+entraonoentra();        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton35ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -6224,6 +6484,15 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup A;
+    private javax.swing.ButtonGroup B;
+    private javax.swing.ButtonGroup C;
+    private javax.swing.ButtonGroup D;
+    private javax.swing.ButtonGroup E;
+    private javax.swing.ButtonGroup F;
+    private javax.swing.ButtonGroup G;
+    private javax.swing.ButtonGroup H;
+    private javax.swing.ButtonGroup I;
     private javax.swing.JTextField campoEstacion;
     private javax.swing.JTextField datosCronometro;
     private javax.swing.JTextField datosTermometro;
