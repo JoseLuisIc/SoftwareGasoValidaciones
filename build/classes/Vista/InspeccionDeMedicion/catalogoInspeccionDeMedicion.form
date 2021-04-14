@@ -1150,10 +1150,10 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField8" min="-2" pref="53" max="-2" attributes="0"/>
+                                              <Component id="AP1MIN" min="-2" pref="53" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jTextField6" pref="53" max="32767" attributes="0"/>
-                                                  <Component id="jTextField7" max="32767" attributes="0"/>
+                                                  <Component id="AP1MAX" pref="53" max="32767" attributes="0"/>
+                                                  <Component id="AP1MED" max="32767" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -1161,26 +1161,26 @@
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField9" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="AP2MIN" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField10" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField11" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="AP2MAX" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="AP2MED" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField12" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="AP3MIN" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField14" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField13" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="AP3MAX" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="AP3MED" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField17" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="ALCMIN" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField15" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField16" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="ALCMAX" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="ALCMED" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -1398,39 +1398,39 @@
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="AP1MAX" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="AP1MED" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="AP1MIN" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="jTextField10" min="-2" max="-2" attributes="0"/>
+                                              <Component id="AP2MAX" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField11" min="-2" max="-2" attributes="0"/>
+                                              <Component id="AP2MED" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField9" min="-2" max="-2" attributes="0"/>
+                                              <Component id="AP2MIN" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="jTextField14" min="-2" max="-2" attributes="0"/>
+                                              <Component id="AP3MAX" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField13" min="-2" max="-2" attributes="0"/>
+                                              <Component id="AP3MED" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField12" min="-2" max="-2" attributes="0"/>
+                                              <Component id="AP3MIN" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="jTextField15" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ALCMAX" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField16" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ALCMED" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField17" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ALCMIN" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1584,64 +1584,92 @@
                     <Property name="text" type="java.lang.String" value="Minimo(ml)"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JTextField" name="AP1MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AP1MAXFocusLost"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AP1MAXActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField7">
+                <Component class="javax.swing.JTextField" name="AP1MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AP1MEDFocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField8">
+                <Component class="javax.swing.JTextField" name="AP1MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AP1MINFocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField9">
+                <Component class="javax.swing.JTextField" name="AP2MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AP2MINFocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField10">
+                <Component class="javax.swing.JTextField" name="AP2MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AP2MAXFocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField11">
+                <Component class="javax.swing.JTextField" name="AP2MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AP2MEDFocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField12">
+                <Component class="javax.swing.JTextField" name="AP3MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AP3MINFocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField13">
+                <Component class="javax.swing.JTextField" name="AP3MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AP3MEDFocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField14">
+                <Component class="javax.swing.JTextField" name="AP3MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AP3MAXFocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField15">
+                <Component class="javax.swing.JTextField" name="ALCMAX">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="-10"/>
+                    <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField16">
+                <Component class="javax.swing.JTextField" name="ALCMED">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="-10"/>
+                    <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField17">
+                <Component class="javax.swing.JTextField" name="ALCMIN">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="-10"/>
+                    <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField18">
