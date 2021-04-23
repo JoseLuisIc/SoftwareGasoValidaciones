@@ -4639,46 +4639,73 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CP1MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CP1MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CP1MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CP1MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CP1MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CP2MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CP2MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CP2MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CP2MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CP2MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CP2MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CP3MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CP3MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CP3MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CP3MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CP3MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CP3MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CLCMAX">
                   <Properties>
@@ -4738,46 +4765,73 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTMEDP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CTMEDP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTMEDP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CTMEDP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTMEDP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CTMAXP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTMAXP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CTMINP1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTMINP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CTMINP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTMINP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CTMAXP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTMAXP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CTMINP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTMINP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CTMAXP1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTMAXP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel138">
                   <Properties>
@@ -5118,11 +5172,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CV20FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CKC">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CKCFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel158">
                   <Properties>
@@ -6098,46 +6158,73 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DP1MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DP1MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DP1MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DP1MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DP1MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DP2MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DP2MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DP2MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DP2MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DP2MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DP2MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DP3MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DP3MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DP3MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DP3MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DP3MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DP3MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DLCMAX">
                   <Properties>
@@ -6197,46 +6284,73 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTMEDP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DTMEDP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTMEDP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DTMEDP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTMEDP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DTMAXP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTMAXP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DTMINP1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTMINP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DTMINP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTMINP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DTMAXP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTMAXP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DTMINP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTMINP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DTMAXP1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTMAXP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel188">
                   <Properties>
@@ -6574,11 +6688,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DV20FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DKC">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DKCFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel208">
                   <Properties>
@@ -7554,46 +7674,73 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EP1MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EP1MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EP1MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EP1MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EP1MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EP2MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EP2MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EP2MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EP2MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EP2MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EP2MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EP3MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EP3MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EP3MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EP3MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EP3MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EP3MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ELCMAX">
                   <Properties>
@@ -7653,46 +7800,73 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETMEDP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ETMEDP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETMEDP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ETMEDP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETMEDP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ETMAXP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETMAXP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ETMINP1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETMINP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ETMINP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETMINP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ETMAXP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETMAXP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ETMINP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETMINP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ETMAXP1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETMAXP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel238">
                   <Properties>
@@ -8030,11 +8204,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EV20FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EKC">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EKCFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel258">
                   <Properties>
@@ -8151,7 +8331,7 @@
                               <Component id="jLabel267" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField314" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="127" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -9010,46 +9190,73 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FP1MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FP1MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FP1MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FP1MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FP1MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FP2MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FP2MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FP2MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FP2MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FP2MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FP2MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FP3MIN">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FP3MINFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FP3MED">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FP3MEDFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FP3MAX">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="-10"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FP3MAXFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FLCMAX">
                   <Properties>
@@ -9109,46 +9316,73 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTMEDP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FTMEDP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTMEDP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FTMEDP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTMEDP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FTMAXP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTMAXP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FTMINP1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTMINP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FTMINP3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTMINP3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FTMAXP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTMAXP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FTMINP2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTMINP2FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FTMAXP1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTMAXP1FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel288">
                   <Properties>
@@ -9486,11 +9720,17 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FV20FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FKC">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FKCFocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel308">
                   <Properties>

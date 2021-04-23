@@ -357,6 +357,322 @@ xB.setEnabled(false);
              BVCMVMED.setText(String.valueOf(bvcmvmed));
              BVCMVMIN.setText(String.valueOf(bvcmvmin));
     //------------------------------------------------------------------------------
+           //MANGUERA C  
+     double  cp1maxI,cp2maxI,cp3maxI,cp1medI,cp2medI,cp3medI,cp1minI,cp2minI,cp3minI, clcprommax,clcprommed,clcprommin;
+//Prueba maximo
+ cp1maxI= Double.parseDouble(this.CP1MAX.getText());
+      cp2maxI= Double.parseDouble(this.CP2MAX.getText());
+       cp3maxI=Double.parseDouble(this.CP3MAX.getText());
+    clcprommax=Math.round((  (cp1maxI+cp2maxI+cp3maxI)/3)*100.0)/100.0;
+    //LC max
+    CLCMAX.setText(String.valueOf(clcprommax));
+    //Prueba medio
+     cp1medI= Double.parseDouble(this.CP1MED.getText());
+      cp2medI= Double.parseDouble(this.CP2MED.getText());
+       cp3medI= Double.parseDouble(this.CP3MED.getText());
+    clcprommed= Math.round(((cp1medI+cp2medI+cp3medI)/3)*100.0)/100.0;
+        //LC med
+    CLCMED.setText(String.valueOf(clcprommed));
+    
+        //Prueba minimo
+     cp1minI= Double.parseDouble(this.CP1MIN.getText());
+      cp2minI= Double.parseDouble(this.CP2MIN.getText());
+       cp3minI= Double.parseDouble(this.CP3MIN.getText());
+    clcprommin= Math.round(((cp1minI+cp2minI+cp3minI)/3)*100.0)/100.0;
+        //LC min
+    CLCMIN.setText(String.valueOf(clcprommin));
+    
+    
+    //CTS
+    double  cctsmaxp1,cctsmaxp2,cctsmaxp3,cctsmedp1,cctsmedp2,cctsmedp3,cctsminp1,cctsminp2,cctsminp3;
+    double ctmaxp1,ctmaxp2,ctmaxp3,ctmedp1,ctmedp2,ctmedp3,ctminp1,ctminp2,ctminp3;
+    double cctsmaxprom,cctsmedprom,cctsminprom;
+
+  ctmaxp1=Double.parseDouble(this.CTMAXP1.getText());
+    cctsmaxp1=1+(0.0000477)*(ctmaxp1-20);
+        ctmaxp2=Double.parseDouble(this.CTMAXP2.getText());
+    cctsmaxp2=1+(0.0000477)*(ctmaxp2-20);
+        ctmaxp3=Double.parseDouble(this.CTMAXP3.getText());
+    cctsmaxp3=1+(0.0000477)*(ctmaxp3-20);
+    
+    cctsmaxprom=(cctsmaxp1+cctsmaxp2+cctsmaxp3)/3;
+        System.out.println("CTS maximo promedio MC "+cctsmaxprom);
+    
+        ctmedp1=Double.parseDouble(this.CTMEDP1.getText());
+    cctsmedp1=1+(0.0000477)*(ctmedp1-20);
+        ctmedp2=Double.parseDouble(this.CTMEDP2.getText());
+    cctsmedp2=1+(0.0000477)*(ctmedp2-20);
+        ctmedp3=Double.parseDouble(this.CTMEDP3.getText());
+    cctsmedp3=1+(0.0000477)*(ctmedp3-20);
+    
+        cctsmedprom=(cctsmedp1+cctsmedp2+cctsmedp3)/3;
+            System.out.println("CTS medio promedio MC "+cctsmedprom);
+            
+        ctminp1=Double.parseDouble(this.CTMINP1.getText());
+    cctsminp1=1+(0.0000477)*(ctminp1-20);
+        ctminp2=Double.parseDouble(this.CTMINP2.getText());
+    cctsminp2=1+(0.0000477)*(ctminp2-20);
+        ctminp3=Double.parseDouble(this.CTMINP3.getText());
+    cctsminp3=1+(0.0000477)*(ctminp3-20);
+    
+        cctsminprom=(cctsminp1+cctsminp2+cctsminp3)/3;
+        System.out.println("CTS minimo promedio MC "+cctsminprom);
+        
+        //VCMV
+        double  cv20,ckc ,cvcmvmax,cvcmvmed,cvcmvmin;
+        cv20=Double.parseDouble(this.CV20.getText());
+        ckc=Double.parseDouble(this.CKC.getText());
+
+        cvcmvmax=Math.round((cv20+clcprommax*ckc*cctsmaxprom)*100.0)/100.0;
+        System.out.println("VCMV maximo promedio MC "+cvcmvmax);
+        cvcmvmed=Math.round((cv20+clcprommed*ckc*cctsmedprom)*100.0)/100.0;
+                System.out.println("VCMV medio promedio MC "+cvcmvmed);
+        cvcmvmin=Math.round((cv20+clcprommin*ckc*cctsminprom)*100.0)/100.0;
+                System.out.println("VCMV minimo promedio MC "+cvcmvmin);
+        
+        
+            CVCMVMAX.setText(String.valueOf(cvcmvmax));
+             CVCMVMED.setText(String.valueOf(cvcmvmed));
+             CVCMVMIN.setText(String.valueOf(cvcmvmin));
+    //------------------------------------------------------------------------------
+               //MANGUERA D  
+     double  dp1maxI,dp2maxI,dp3maxI,dp1medI,dp2medI,dp3medI,dp1minI,dp2minI,dp3minI, dlcprommax,dlcprommed,dlcprommin;
+//Prueba maximo
+dp1maxI= Double.parseDouble(this.DP1MAX.getText());
+      dp2maxI= Double.parseDouble(this.DP2MAX.getText());
+       dp3maxI=Double.parseDouble(this.DP3MAX.getText());
+    dlcprommax=Math.round((  (dp1maxI+dp2maxI+dp3maxI)/3)*100.0)/100.0;
+    //LC max
+    DLCMAX.setText(String.valueOf(dlcprommax));
+    //Prueba medio
+     dp1medI= Double.parseDouble(this.DP1MED.getText());
+      dp2medI= Double.parseDouble(this.DP2MED.getText());
+       dp3medI= Double.parseDouble(this.DP3MED.getText());
+    dlcprommed= Math.round(((dp1medI+dp2medI+dp3medI)/3)*100.0)/100.0;
+        //LC med
+    DLCMED.setText(String.valueOf(dlcprommed));
+    
+        //Prueba minimo
+     dp1minI= Double.parseDouble(this.DP1MIN.getText());
+      dp2minI= Double.parseDouble(this.DP2MIN.getText());
+       dp3minI= Double.parseDouble(this.DP3MIN.getText());
+    dlcprommin= Math.round(((dp1minI+dp2minI+dp3minI)/3)*100.0)/100.0;
+        //LC min
+    DLCMIN.setText(String.valueOf(dlcprommin));
+    
+    
+    //CTS
+    double  dctsmaxp1,dctsmaxp2,dctsmaxp3,dctsmedp1,dctsmedp2,dctsmedp3,dctsminp1,dctsminp2,dctsminp3;
+    double dtmaxp1,dtmaxp2,dtmaxp3,dtmedp1,dtmedp2,dtmedp3,dtminp1,dtminp2,dtminp3;
+    double dctsmaxprom,dctsmedprom,dctsminprom;
+
+  dtmaxp1=Double.parseDouble(this.DTMAXP1.getText());
+    dctsmaxp1=1+(0.0000477)*(dtmaxp1-20);
+        dtmaxp2=Double.parseDouble(this.DTMAXP2.getText());
+    dctsmaxp2=1+(0.0000477)*(dtmaxp2-20);
+        dtmaxp3=Double.parseDouble(this.DTMAXP3.getText());
+    dctsmaxp3=1+(0.0000477)*(dtmaxp3-20);
+    
+    dctsmaxprom=(dctsmaxp1+dctsmaxp2+dctsmaxp3)/3;
+        System.out.println("CTS maximo promedio MD "+dctsmaxprom);
+    
+        dtmedp1=Double.parseDouble(this.DTMEDP1.getText());
+    dctsmedp1=1+(0.0000477)*(dtmedp1-20);
+        dtmedp2=Double.parseDouble(this.DTMEDP2.getText());
+    dctsmedp2=1+(0.0000477)*(dtmedp2-20);
+        dtmedp3=Double.parseDouble(this.DTMEDP3.getText());
+    dctsmedp3=1+(0.0000477)*(dtmedp3-20);
+    
+        dctsmedprom=(dctsmedp1+dctsmedp2+dctsmedp3)/3;
+            System.out.println("CTS medio promedio MD "+dctsmedprom);
+            
+        dtminp1=Double.parseDouble(this.DTMINP1.getText());
+    dctsminp1=1+(0.0000477)*(dtminp1-20);
+        dtminp2=Double.parseDouble(this.DTMINP2.getText());
+    dctsminp2=1+(0.0000477)*(dtminp2-20);
+        dtminp3=Double.parseDouble(this.DTMINP3.getText());
+    dctsminp3=1+(0.0000477)*(dtminp3-20);
+    
+        dctsminprom=(dctsminp1+dctsminp2+dctsminp3)/3;
+        System.out.println("CTS minimo promedio MD "+dctsminprom);
+        
+        //VCMV
+        double  dv20,dkc ,dvcmvmax,dvcmvmed,dvcmvmin;
+        dv20=Double.parseDouble(this.DV20.getText());
+        dkc=Double.parseDouble(this.DKC.getText());
+
+        dvcmvmax=Math.round((dv20+dlcprommax*dkc*dctsmaxprom)*100.0)/100.0;
+        System.out.println("VCMV maximo promedio MD "+dvcmvmax);
+        dvcmvmed=Math.round((dv20+dlcprommed*dkc*dctsmedprom)*100.0)/100.0;
+                System.out.println("VCMV medio promedio MD "+dvcmvmed);
+        dvcmvmin=Math.round((dv20+dlcprommin*dkc*dctsminprom)*100.0)/100.0;
+                System.out.println("VCMV minimo promedio MD "+dvcmvmin);
+        
+        
+            DVCMVMAX.setText(String.valueOf(dvcmvmax));
+             DVCMVMED.setText(String.valueOf(dvcmvmed));
+             DVCMVMIN.setText(String.valueOf(dvcmvmin));
+        //------------------------------------------------------------------------------
+               //MANGUERA E  
+     double  ep1maxI,ep2maxI,ep3maxI,ep1medI,ep2medI,ep3medI,ep1minI,ep2minI,ep3minI, elcprommax,elcprommed,elcprommin;
+//Prueba maximo
+ep1maxI= Double.parseDouble(this.EP1MAX.getText());
+      ep2maxI= Double.parseDouble(this.EP2MAX.getText());
+       ep3maxI=Double.parseDouble(this.EP3MAX.getText());
+    elcprommax=Math.round((  (ep1maxI+ep2maxI+ep3maxI)/3)*100.0)/100.0;
+    //LC max
+    ELCMAX.setText(String.valueOf(elcprommax));
+    //Prueba medio
+     ep1medI= Double.parseDouble(this.EP1MED.getText());
+      ep2medI= Double.parseDouble(this.EP2MED.getText());
+       ep3medI= Double.parseDouble(this.EP3MED.getText());
+    elcprommed= Math.round(((ep1medI+ep2medI+ep3medI)/3)*100.0)/100.0;
+        //LC med
+    ELCMED.setText(String.valueOf(elcprommed));
+    
+        //Prueba minimo
+     ep1minI= Double.parseDouble(this.EP1MIN.getText());
+      ep2minI= Double.parseDouble(this.EP2MIN.getText());
+       ep3minI= Double.parseDouble(this.EP3MIN.getText());
+    elcprommin= Math.round(((ep1minI+ep2minI+ep3minI)/3)*100.0)/100.0;
+        //LC min
+    ELCMIN.setText(String.valueOf(elcprommin));
+    
+    
+    //CTS
+    double  ectsmaxp1,ectsmaxp2,ectsmaxp3,ectsmedp1,ectsmedp2,ectsmedp3,ectsminp1,ectsminp2,ectsminp3;
+    double etmaxp1,etmaxp2,etmaxp3,etmedp1,etmedp2,etmedp3,etminp1,etminp2,etminp3;
+    double ectsmaxprom,ectsmedprom,ectsminprom;
+
+  etmaxp1=Double.parseDouble(this.ETMAXP1.getText());
+    ectsmaxp1=1+(0.0000477)*(etmaxp1-20);
+        etmaxp2=Double.parseDouble(this.ETMAXP2.getText());
+    ectsmaxp2=1+(0.0000477)*(etmaxp2-20);
+        etmaxp3=Double.parseDouble(this.ETMAXP3.getText());
+    ectsmaxp3=1+(0.0000477)*(etmaxp3-20);
+    
+    ectsmaxprom=(ectsmaxp1+ectsmaxp2+ectsmaxp3)/3;
+        System.out.println("CTS maximo promedio ME "+ectsmaxprom);
+    
+        etmedp1=Double.parseDouble(this.ETMEDP1.getText());
+    ectsmedp1=1+(0.0000477)*(etmedp1-20);
+        etmedp2=Double.parseDouble(this.ETMEDP2.getText());
+    ectsmedp2=1+(0.0000477)*(etmedp2-20);
+        etmedp3=Double.parseDouble(this.ETMEDP3.getText());
+    ectsmedp3=1+(0.0000477)*(etmedp3-20);
+    
+        ectsmedprom=(ectsmedp1+ectsmedp2+ectsmedp3)/3;
+            System.out.println("CTS medio promedio ME "+ectsmedprom);
+            
+        etminp1=Double.parseDouble(this.ETMINP1.getText());
+    ectsminp1=1+(0.0000477)*(etminp1-20);
+        etminp2=Double.parseDouble(this.ETMINP2.getText());
+    ectsminp2=1+(0.0000477)*(etminp2-20);
+        etminp3=Double.parseDouble(this.ETMINP3.getText());
+    ectsminp3=1+(0.0000477)*(etminp3-20);
+    
+        ectsminprom=(ectsminp1+ectsminp2+ectsminp3)/3;
+        System.out.println("CTS minimo promedio ME "+ectsminprom);
+        
+        //VCMV
+        double  ev20,ekc ,evcmvmax,evcmvmed,evcmvmin;
+        ev20=Double.parseDouble(this.EV20.getText());
+        ekc=Double.parseDouble(this.EKC.getText());
+
+        evcmvmax=Math.round((ev20+elcprommax*ekc*ectsmaxprom)*100.0)/100.0;
+        System.out.println("VCMV maximo promedio ME "+evcmvmax);
+        evcmvmed=Math.round((ev20+elcprommed*ekc*ectsmedprom)*100.0)/100.0;
+                System.out.println("VCMV medio promedio ME "+evcmvmed);
+        evcmvmin=Math.round((ev20+elcprommin*ekc*ectsminprom)*100.0)/100.0;
+                System.out.println("VCMV minimo promedio ME "+evcmvmin);
+        
+        
+            EVCMVMAX.setText(String.valueOf(evcmvmax));
+             EVCMVMED.setText(String.valueOf(evcmvmed));
+             EVCMVMIN.setText(String.valueOf(evcmvmin));
+    //------------------------------------------------------------------------------
+                   //MANGUERA F  
+     double  fp1maxI,fp2maxI,fp3maxI,fp1medI,fp2medI,fp3medI,fp1minI,fp2minI,fp3minI, flcprommax,flcprommed,flcprommin;
+//Prueba maximo
+fp1maxI= Double.parseDouble(this.FP1MAX.getText());
+      fp2maxI= Double.parseDouble(this.FP2MAX.getText());
+       fp3maxI=Double.parseDouble(this.FP3MAX.getText());
+    flcprommax=Math.round((  (fp1maxI+fp2maxI+fp3maxI)/3)*100.0)/100.0;
+    //LC max
+    FLCMAX.setText(String.valueOf(flcprommax));
+    //Prueba medio
+     fp1medI= Double.parseDouble(this.FP1MED.getText());
+      fp2medI= Double.parseDouble(this.FP2MED.getText());
+       fp3medI= Double.parseDouble(this.FP3MED.getText());
+    flcprommed= Math.round(((fp1medI+fp2medI+fp3medI)/3)*100.0)/100.0;
+        //LC med
+    FLCMED.setText(String.valueOf(flcprommed));
+    
+        //Prueba minimo
+     fp1minI= Double.parseDouble(this.FP1MIN.getText());
+      fp2minI= Double.parseDouble(this.FP2MIN.getText());
+       fp3minI= Double.parseDouble(this.FP3MIN.getText());
+    flcprommin= Math.round(((fp1minI+fp2minI+fp3minI)/3)*100.0)/100.0;
+        //LC min
+    FLCMIN.setText(String.valueOf(flcprommin));
+    
+    
+    //CTS
+    double  fctsmaxp1,fctsmaxp2,fctsmaxp3,fctsmedp1,fctsmedp2,fctsmedp3,fctsminp1,fctsminp2,fctsminp3;
+    double ftmaxp1,ftmaxp2,ftmaxp3,ftmedp1,ftmedp2,ftmedp3,ftminp1,ftminp2,ftminp3;
+    double fctsmaxprom,fctsmedprom,fctsminprom;
+
+  ftmaxp1=Double.parseDouble(this.FTMAXP1.getText());
+    fctsmaxp1=1+(0.0000477)*(ftmaxp1-20);
+        ftmaxp2=Double.parseDouble(this.FTMAXP2.getText());
+    fctsmaxp2=1+(0.0000477)*(ftmaxp2-20);
+        ftmaxp3=Double.parseDouble(this.FTMAXP3.getText());
+    fctsmaxp3=1+(0.0000477)*(ftmaxp3-20);
+    
+    fctsmaxprom=(fctsmaxp1+fctsmaxp2+fctsmaxp3)/3;
+        System.out.println("CTS maximo promedio MF "+fctsmaxprom);
+    
+        ftmedp1=Double.parseDouble(this.FTMEDP1.getText());
+    fctsmedp1=1+(0.0000477)*(ftmedp1-20);
+        ftmedp2=Double.parseDouble(this.FTMEDP2.getText());
+    fctsmedp2=1+(0.0000477)*(ftmedp2-20);
+        ftmedp3=Double.parseDouble(this.FTMEDP3.getText());
+    fctsmedp3=1+(0.0000477)*(ftmedp3-20);
+    
+        fctsmedprom=(fctsmedp1+fctsmedp2+fctsmedp3)/3;
+            System.out.println("CTS medio promedio MF "+fctsmedprom);
+            
+        ftminp1=Double.parseDouble(this.FTMINP1.getText());
+    fctsminp1=1+(0.0000477)*(ftminp1-20);
+        ftminp2=Double.parseDouble(this.FTMINP2.getText());
+    fctsminp2=1+(0.0000477)*(ftminp2-20);
+        ftminp3=Double.parseDouble(this.FTMINP3.getText());
+    fctsminp3=1+(0.0000477)*(ftminp3-20);
+    
+        fctsminprom=(fctsminp1+fctsminp2+fctsminp3)/3;
+        System.out.println("CTS minimo promedio MF "+fctsminprom);
+        
+        //VCMV
+        double  fv20,fkc ,fvcmvmax,fvcmvmed,fvcmvmin;
+        fv20=Double.parseDouble(this.FV20.getText());
+        fkc=Double.parseDouble(this.FKC.getText());
+
+        fvcmvmax=Math.round((fv20+flcprommax*fkc*fctsmaxprom)*100.0)/100.0;
+        System.out.println("VCMV maximo promedio MF "+fvcmvmax);
+        fvcmvmed=Math.round((fv20+flcprommed*fkc*fctsmedprom)*100.0)/100.0;
+                System.out.println("VCMV medio promedio MF "+fvcmvmed);
+        fvcmvmin=Math.round((fv20+flcprommin*fkc*fctsminprom)*100.0)/100.0;
+                System.out.println("VCMV minimo promedio MF "+fvcmvmin);
+        
+        
+            FVCMVMAX.setText(String.valueOf(fvcmvmax));
+             FVCMVMED.setText(String.valueOf(fvcmvmed));
+             FVCMVMIN.setText(String.valueOf(fvcmvmin));
+              
+             
+             System.out.println("+==++==++==++==++==++==+");
+
+    //------------------------------------------------------------------------------
     }
         //SAR 13/04/21 FIN
     /**
@@ -3808,22 +4124,67 @@ xB.setEnabled(false);
         jLabel134.setText("Minimo(ml)");
 
         CP1MAX.setText("-10");
+        CP1MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CP1MAXFocusLost(evt);
+            }
+        });
 
         CP1MED.setText("-10");
+        CP1MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CP1MEDFocusLost(evt);
+            }
+        });
 
         CP1MIN.setText("-10");
+        CP1MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CP1MINFocusLost(evt);
+            }
+        });
 
         CP2MIN.setText("-10");
+        CP2MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CP2MINFocusLost(evt);
+            }
+        });
 
         CP2MAX.setText("-10");
+        CP2MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CP2MAXFocusLost(evt);
+            }
+        });
 
         CP2MED.setText("-10");
+        CP2MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CP2MEDFocusLost(evt);
+            }
+        });
 
         CP3MIN.setText("-10");
+        CP3MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CP3MINFocusLost(evt);
+            }
+        });
 
         CP3MED.setText("-10");
+        CP3MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CP3MEDFocusLost(evt);
+            }
+        });
 
         CP3MAX.setText("-10");
+        CP3MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CP3MAXFocusLost(evt);
+            }
+        });
 
         CLCMAX.setEditable(false);
 
@@ -3847,22 +4208,67 @@ xB.setEnabled(false);
         jLabel137.setText("Minimo");
 
         CTMEDP1.setText("0");
+        CTMEDP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTMEDP1FocusLost(evt);
+            }
+        });
 
         CTMEDP2.setText("0");
+        CTMEDP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTMEDP2FocusLost(evt);
+            }
+        });
 
         CTMEDP3.setText("0");
+        CTMEDP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTMEDP3FocusLost(evt);
+            }
+        });
 
         CTMAXP3.setText("0");
+        CTMAXP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTMAXP3FocusLost(evt);
+            }
+        });
 
         CTMINP1.setText("0");
+        CTMINP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTMINP1FocusLost(evt);
+            }
+        });
 
         CTMINP3.setText("0");
+        CTMINP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTMINP3FocusLost(evt);
+            }
+        });
 
         CTMAXP2.setText("0");
+        CTMAXP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTMAXP2FocusLost(evt);
+            }
+        });
 
         CTMINP2.setText("0");
+        CTMINP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTMINP2FocusLost(evt);
+            }
+        });
 
         CTMAXP1.setText("0");
+        CTMAXP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTMAXP1FocusLost(evt);
+            }
+        });
 
         jLabel138.setText("Prueba1");
 
@@ -4276,8 +4682,18 @@ xB.setEnabled(false);
         jLabel157.setText("Jarra");
 
         CV20.setText("0");
+        CV20.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CV20FocusLost(evt);
+            }
+        });
 
         CKC.setText("0");
+        CKC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CKCFocusLost(evt);
+            }
+        });
 
         jLabel158.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel158.setText("KC");
@@ -4643,22 +5059,67 @@ xB.setEnabled(false);
         jLabel184.setText("Minimo(ml)");
 
         DP1MAX.setText("-10");
+        DP1MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DP1MAXFocusLost(evt);
+            }
+        });
 
         DP1MED.setText("-10");
+        DP1MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DP1MEDFocusLost(evt);
+            }
+        });
 
         DP1MIN.setText("-10");
+        DP1MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DP1MINFocusLost(evt);
+            }
+        });
 
         DP2MIN.setText("-10");
+        DP2MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DP2MINFocusLost(evt);
+            }
+        });
 
         DP2MAX.setText("-10");
+        DP2MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DP2MAXFocusLost(evt);
+            }
+        });
 
         DP2MED.setText("-10");
+        DP2MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DP2MEDFocusLost(evt);
+            }
+        });
 
         DP3MIN.setText("-10");
+        DP3MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DP3MINFocusLost(evt);
+            }
+        });
 
         DP3MED.setText("-10");
+        DP3MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DP3MEDFocusLost(evt);
+            }
+        });
 
         DP3MAX.setText("-10");
+        DP3MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DP3MAXFocusLost(evt);
+            }
+        });
 
         DLCMAX.setEditable(false);
 
@@ -4682,22 +5143,67 @@ xB.setEnabled(false);
         jLabel187.setText("Minimo");
 
         DTMEDP1.setText("0");
+        DTMEDP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTMEDP1FocusLost(evt);
+            }
+        });
 
         DTMEDP2.setText("0");
+        DTMEDP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTMEDP2FocusLost(evt);
+            }
+        });
 
         DTMEDP3.setText("0");
+        DTMEDP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTMEDP3FocusLost(evt);
+            }
+        });
 
         DTMAXP3.setText("0");
+        DTMAXP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTMAXP3FocusLost(evt);
+            }
+        });
 
         DTMINP1.setText("0");
+        DTMINP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTMINP1FocusLost(evt);
+            }
+        });
 
         DTMINP3.setText("0");
+        DTMINP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTMINP3FocusLost(evt);
+            }
+        });
 
         DTMAXP2.setText("0");
+        DTMAXP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTMAXP2FocusLost(evt);
+            }
+        });
 
         DTMINP2.setText("0");
+        DTMINP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTMINP2FocusLost(evt);
+            }
+        });
 
         DTMAXP1.setText("0");
+        DTMAXP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTMAXP1FocusLost(evt);
+            }
+        });
 
         jLabel188.setText("Prueba1");
 
@@ -5106,8 +5612,18 @@ xB.setEnabled(false);
         jLabel207.setText("Jarra");
 
         DV20.setText("0");
+        DV20.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DV20FocusLost(evt);
+            }
+        });
 
         DKC.setText("0");
+        DKC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DKCFocusLost(evt);
+            }
+        });
 
         jLabel208.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel208.setText("KC");
@@ -5473,22 +5989,67 @@ xB.setEnabled(false);
         jLabel234.setText("Minimo(ml)");
 
         EP1MAX.setText("-10");
+        EP1MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EP1MAXFocusLost(evt);
+            }
+        });
 
         EP1MED.setText("-10");
+        EP1MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EP1MEDFocusLost(evt);
+            }
+        });
 
         EP1MIN.setText("-10");
+        EP1MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EP1MINFocusLost(evt);
+            }
+        });
 
         EP2MIN.setText("-10");
+        EP2MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EP2MINFocusLost(evt);
+            }
+        });
 
         EP2MAX.setText("-10");
+        EP2MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EP2MAXFocusLost(evt);
+            }
+        });
 
         EP2MED.setText("-10");
+        EP2MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EP2MEDFocusLost(evt);
+            }
+        });
 
         EP3MIN.setText("-10");
+        EP3MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EP3MINFocusLost(evt);
+            }
+        });
 
         EP3MED.setText("-10");
+        EP3MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EP3MEDFocusLost(evt);
+            }
+        });
 
         EP3MAX.setText("-10");
+        EP3MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EP3MAXFocusLost(evt);
+            }
+        });
 
         ELCMAX.setEditable(false);
 
@@ -5512,22 +6073,67 @@ xB.setEnabled(false);
         jLabel237.setText("Minimo");
 
         ETMEDP1.setText("0");
+        ETMEDP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETMEDP1FocusLost(evt);
+            }
+        });
 
         ETMEDP2.setText("0");
+        ETMEDP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETMEDP2FocusLost(evt);
+            }
+        });
 
         ETMEDP3.setText("0");
+        ETMEDP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETMEDP3FocusLost(evt);
+            }
+        });
 
         ETMAXP3.setText("0");
+        ETMAXP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETMAXP3FocusLost(evt);
+            }
+        });
 
         ETMINP1.setText("0");
+        ETMINP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETMINP1FocusLost(evt);
+            }
+        });
 
         ETMINP3.setText("0");
+        ETMINP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETMINP3FocusLost(evt);
+            }
+        });
 
         ETMAXP2.setText("0");
+        ETMAXP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETMAXP2FocusLost(evt);
+            }
+        });
 
         ETMINP2.setText("0");
+        ETMINP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETMINP2FocusLost(evt);
+            }
+        });
 
         ETMAXP1.setText("0");
+        ETMAXP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETMAXP1FocusLost(evt);
+            }
+        });
 
         jLabel238.setText("Prueba1");
 
@@ -5936,8 +6542,18 @@ xB.setEnabled(false);
         jLabel257.setText("Jarra");
 
         EV20.setText("0");
+        EV20.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EV20FocusLost(evt);
+            }
+        });
 
         EKC.setText("0");
+        EKC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EKCFocusLost(evt);
+            }
+        });
 
         jLabel258.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel258.setText("KC");
@@ -6099,7 +6715,7 @@ xB.setEnabled(false);
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel267)
                     .addComponent(jTextField314, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         jPanel35.setBackground(new java.awt.Color(153, 204, 255));
@@ -6303,22 +6919,67 @@ xB.setEnabled(false);
         jLabel284.setText("Minimo(ml)");
 
         FP1MAX.setText("-10");
+        FP1MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FP1MAXFocusLost(evt);
+            }
+        });
 
         FP1MED.setText("-10");
+        FP1MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FP1MEDFocusLost(evt);
+            }
+        });
 
         FP1MIN.setText("-10");
+        FP1MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FP1MINFocusLost(evt);
+            }
+        });
 
         FP2MIN.setText("-10");
+        FP2MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FP2MINFocusLost(evt);
+            }
+        });
 
         FP2MAX.setText("-10");
+        FP2MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FP2MAXFocusLost(evt);
+            }
+        });
 
         FP2MED.setText("-10");
+        FP2MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FP2MEDFocusLost(evt);
+            }
+        });
 
         FP3MIN.setText("-10");
+        FP3MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FP3MINFocusLost(evt);
+            }
+        });
 
         FP3MED.setText("-10");
+        FP3MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FP3MEDFocusLost(evt);
+            }
+        });
 
         FP3MAX.setText("-10");
+        FP3MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FP3MAXFocusLost(evt);
+            }
+        });
 
         FLCMAX.setEditable(false);
 
@@ -6342,22 +7003,67 @@ xB.setEnabled(false);
         jLabel287.setText("Minimo");
 
         FTMEDP1.setText("0");
+        FTMEDP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTMEDP1FocusLost(evt);
+            }
+        });
 
         FTMEDP2.setText("0");
+        FTMEDP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTMEDP2FocusLost(evt);
+            }
+        });
 
         FTMEDP3.setText("0");
+        FTMEDP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTMEDP3FocusLost(evt);
+            }
+        });
 
         FTMAXP3.setText("0");
+        FTMAXP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTMAXP3FocusLost(evt);
+            }
+        });
 
         FTMINP1.setText("0");
+        FTMINP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTMINP1FocusLost(evt);
+            }
+        });
 
         FTMINP3.setText("0");
+        FTMINP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTMINP3FocusLost(evt);
+            }
+        });
 
         FTMAXP2.setText("0");
+        FTMAXP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTMAXP2FocusLost(evt);
+            }
+        });
 
         FTMINP2.setText("0");
+        FTMINP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTMINP2FocusLost(evt);
+            }
+        });
 
         FTMAXP1.setText("0");
+        FTMAXP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTMAXP1FocusLost(evt);
+            }
+        });
 
         jLabel288.setText("Prueba1");
 
@@ -6766,8 +7472,18 @@ xB.setEnabled(false);
         jLabel307.setText("Jarra");
 
         FV20.setText("0");
+        FV20.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FV20FocusLost(evt);
+            }
+        });
 
         FKC.setText("0");
+        FKC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FKCFocusLost(evt);
+            }
+        });
 
         jLabel308.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel308.setText("KC");
@@ -7641,6 +8357,326 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private void BTMINP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTMINP3FocusLost
 operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     }//GEN-LAST:event_BTMINP3FocusLost
+
+    private void CP1MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CP1MAXFocusLost
+      operacionesdeInspeccionMedicion();  // TODO add your handling code here:
+    }//GEN-LAST:event_CP1MAXFocusLost
+
+    private void CP2MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CP2MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CP2MAXFocusLost
+
+    private void CP3MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CP3MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CP3MAXFocusLost
+
+    private void CP1MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CP1MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CP1MEDFocusLost
+
+    private void CP2MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CP2MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CP2MEDFocusLost
+
+    private void CP3MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CP3MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CP3MEDFocusLost
+
+    private void CP1MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CP1MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CP1MINFocusLost
+
+    private void CP2MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CP2MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CP2MINFocusLost
+
+    private void CP3MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CP3MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CP3MINFocusLost
+
+    private void CTMAXP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTMAXP1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTMAXP1FocusLost
+
+    private void CTMAXP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTMAXP2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTMAXP2FocusLost
+
+    private void CTMAXP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTMAXP3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTMAXP3FocusLost
+
+    private void CTMEDP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTMEDP1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTMEDP1FocusLost
+
+    private void CTMEDP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTMEDP2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTMEDP2FocusLost
+
+    private void CTMEDP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTMEDP3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTMEDP3FocusLost
+
+    private void CTMINP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTMINP1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTMINP1FocusLost
+
+    private void CTMINP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTMINP2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTMINP2FocusLost
+
+    private void CTMINP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTMINP3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTMINP3FocusLost
+
+    private void CV20FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CV20FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CV20FocusLost
+
+    private void CKCFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CKCFocusLost
+        operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CKCFocusLost
+
+    private void DP1MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DP1MAXFocusLost
+    operacionesdeInspeccionMedicion();     // TODO add your handling code here:
+    }//GEN-LAST:event_DP1MAXFocusLost
+
+    private void DP2MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DP2MAXFocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DP2MAXFocusLost
+
+    private void DP3MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DP3MAXFocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DP3MAXFocusLost
+
+    private void DP1MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DP1MEDFocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DP1MEDFocusLost
+
+    private void DP2MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DP2MEDFocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DP2MEDFocusLost
+
+    private void DP3MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DP3MEDFocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DP3MEDFocusLost
+
+    private void DP1MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DP1MINFocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DP1MINFocusLost
+
+    private void DP2MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DP2MINFocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DP2MINFocusLost
+
+    private void DP3MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DP3MINFocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DP3MINFocusLost
+
+    private void DTMAXP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTMAXP1FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DTMAXP1FocusLost
+
+    private void DTMAXP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTMAXP2FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DTMAXP2FocusLost
+
+    private void DTMAXP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTMAXP3FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DTMAXP3FocusLost
+
+    private void DTMEDP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTMEDP1FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DTMEDP1FocusLost
+
+    private void DTMEDP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTMEDP2FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DTMEDP2FocusLost
+
+    private void DTMEDP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTMEDP3FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DTMEDP3FocusLost
+
+    private void DTMINP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTMINP1FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DTMINP1FocusLost
+
+    private void DTMINP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTMINP2FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DTMINP2FocusLost
+
+    private void DTMINP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTMINP3FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DTMINP3FocusLost
+
+    private void DV20FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DV20FocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DV20FocusLost
+
+    private void DKCFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DKCFocusLost
+operacionesdeInspeccionMedicion();         // TODO add your handling code here:
+    }//GEN-LAST:event_DKCFocusLost
+
+    private void EP1MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EP1MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EP1MAXFocusLost
+
+    private void EP2MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EP2MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EP2MAXFocusLost
+
+    private void EP3MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EP3MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EP3MAXFocusLost
+
+    private void EP1MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EP1MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EP1MEDFocusLost
+
+    private void EP2MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EP2MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EP2MEDFocusLost
+
+    private void EP3MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EP3MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EP3MEDFocusLost
+
+    private void EP1MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EP1MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EP1MINFocusLost
+
+    private void EP2MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EP2MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EP2MINFocusLost
+
+    private void EP3MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EP3MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EP3MINFocusLost
+
+    private void ETMAXP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETMAXP1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETMAXP1FocusLost
+
+    private void ETMAXP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETMAXP2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETMAXP2FocusLost
+
+    private void ETMAXP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETMAXP3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETMAXP3FocusLost
+
+    private void ETMEDP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETMEDP1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETMEDP1FocusLost
+
+    private void ETMEDP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETMEDP2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETMEDP2FocusLost
+
+    private void ETMEDP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETMEDP3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETMEDP3FocusLost
+
+    private void ETMINP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETMINP1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETMINP1FocusLost
+
+    private void ETMINP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETMINP2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETMINP2FocusLost
+
+    private void ETMINP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETMINP3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETMINP3FocusLost
+
+    private void EV20FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EV20FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EV20FocusLost
+
+    private void EKCFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EKCFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EKCFocusLost
+
+    private void FP1MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FP1MAXFocusLost
+    operacionesdeInspeccionMedicion();    // TODO add your handling code here:
+    }//GEN-LAST:event_FP1MAXFocusLost
+
+    private void FP2MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FP2MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FP2MAXFocusLost
+
+    private void FP3MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FP3MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FP3MAXFocusLost
+
+    private void FP1MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FP1MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FP1MEDFocusLost
+
+    private void FP2MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FP2MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FP2MEDFocusLost
+
+    private void FP3MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FP3MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FP3MEDFocusLost
+
+    private void FP1MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FP1MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FP1MINFocusLost
+
+    private void FP2MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FP2MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FP2MINFocusLost
+
+    private void FP3MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FP3MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FP3MINFocusLost
+
+    private void FTMAXP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTMAXP1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTMAXP1FocusLost
+
+    private void FTMAXP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTMAXP2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTMAXP2FocusLost
+
+    private void FTMAXP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTMAXP3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTMAXP3FocusLost
+
+    private void FTMEDP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTMEDP1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTMEDP1FocusLost
+
+    private void FTMEDP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTMEDP2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTMEDP2FocusLost
+
+    private void FTMEDP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTMEDP3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTMEDP3FocusLost
+
+    private void FTMINP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTMINP1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTMINP1FocusLost
+
+    private void FTMINP2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTMINP2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTMINP2FocusLost
+
+    private void FTMINP3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTMINP3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTMINP3FocusLost
+
+    private void FV20FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FV20FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FV20FocusLost
+
+    private void FKCFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FKCFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FKCFocusLost
 
     /**
      * @param args the command line arguments
