@@ -347,6 +347,28 @@ System.out.println("ErrorIndicacion prom 3 MA "+aeprom3);
   AEMAX.setText(String.valueOf(aeprom1));
     AEMED.setText(String.valueOf(aeprom2));
       AEMIN.setText(String.valueOf(aeprom3));
+      
+      //Error repetivilidad
+      double aemax,aemin,aer;
+      
+      double [] aErroresIndicacion= new double[]{ae1,ae2,ae3 ,ae4,ae5,ae6,ae7,ae8,ae9};
+       aemax=aErroresIndicacion[0];
+         //se analizan los 9 erroresIndicacion para saber cual es el mayor
+      for(int aciclo=1;  aciclo<aErroresIndicacion.length; aciclo++){
+      if (aErroresIndicacion[aciclo]>aemax){
+      aemax=aErroresIndicacion[aciclo];}
+      }System.out.println("MA El error maximo es "+aemax);
+
+          aemin=aErroresIndicacion[0];
+                //se analizan los 9 erroresIndicacion para saber cual es el menor
+      for(int aciclo=1;  aciclo<aErroresIndicacion.length; aciclo++){
+      if (aErroresIndicacion[aciclo]<aemin){
+      aemin=aErroresIndicacion[aciclo];}
+      }System.out.println("MA El error minimo es "+aemin);
+            //diferenncia de el maximo y el minimo para error repetivilidad
+      aer=aemax-aemin;
+      System.out.println("MA El error repetibilidad "+aer);
+      
 
     //------------------------------------------------------------------------------
           //MANGUERA B  
@@ -493,6 +515,28 @@ System.out.println("ErrorIndicacion prom 3 MB "+beprom3);
     BEMED.setText(String.valueOf(beprom2));
       BEMIN.setText(String.valueOf(beprom3));
 
+      
+      //Error repetivilidad
+      double bemax,bemin,ber;
+      
+      double [] bErroresIndicacion= new double[]{be1,be2,be3 ,be4,be5,be6,be7,be8,be9};
+       bemax=bErroresIndicacion[0];
+         //se analizan los 9 erroresIndicacion para saber cual es el mayor
+      for(int aciclo=1;  aciclo<bErroresIndicacion.length; aciclo++){
+      if (bErroresIndicacion[aciclo]>bemax){
+      bemax=bErroresIndicacion[aciclo ];}
+      }System.out.println("MB El error maximo es "+bemax);
+
+          bemin=bErroresIndicacion[0];
+                //se analizan los 9 erroresIndicacion para saber cual es el menor
+      for(int aciclo=1;  aciclo<bErroresIndicacion.length; aciclo++){
+      if (bErroresIndicacion[aciclo]<bemin){
+      bemin=bErroresIndicacion[aciclo];}
+      }System.out.println("MB El error minimo es "+bemin);
+            //diferenncia de el maximo y el minimo para error repetivilidad
+      ber=bemax-bemin;
+      System.out.println("MB El error repetibilidad "+ber);
+      
     //------------------------------------------------------------------------------
            //MANGUERA C  
      double  cp1maxI,cp2maxI,cp3maxI,cp1medI,cp2medI,cp3medI,cp1minI,cp2minI,cp3minI, clcprommax,clcprommed,clcprommin;
@@ -637,6 +681,28 @@ System.out.println("ErrorIndicacion prom 3 MC "+ceprom3);
   CEMAX.setText(String.valueOf(ceprom1));
     CEMED.setText(String.valueOf(ceprom2));
       CEMIN.setText(String.valueOf(ceprom3));
+      
+            //Error repetivilidad
+      double cemax,cemin,cer;
+      
+      double [] cErroresIndicacion= new double[]{ce1,ce2,ce3 ,ce4,ce5,ce6,ce7,ce8,ce9};
+       cemax=cErroresIndicacion[0];
+         //se analizan los 9 erroresIndicacion para saber cual es el mayor
+      for(int aciclo=1;  aciclo<cErroresIndicacion.length; aciclo++){
+      if (cErroresIndicacion[aciclo]>cemax){
+      cemax=cErroresIndicacion[aciclo ];}
+      }System.out.println("MC El error maximo es "+cemax);
+
+          cemin=cErroresIndicacion[0];
+                //se analizan los 9 erroresIndicacion para saber cual es el menor
+      for(int aciclo=1;  aciclo<cErroresIndicacion.length; aciclo++){
+      if (cErroresIndicacion[aciclo]<cemin){
+      cemin=cErroresIndicacion[aciclo];}
+      }System.out.println("MC El error minimo es "+cemin);
+            //diferenncia de el maximo y el minimo para error repetivilidad
+      cer=cemax-cemin;
+      System.out.println("MC El error repetibilidad "+cer);
+      
     //------------------------------------------------------------------------------
                //MANGUERA D  
      double  dp1maxI,dp2maxI,dp3maxI,dp1medI,dp2medI,dp3medI,dp1minI,dp2minI,dp3minI, dlcprommax,dlcprommed,dlcprommin;
