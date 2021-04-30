@@ -850,6 +850,29 @@ System.out.println("ErrorIndicacion prom 3 MD "+deprom3);
   DEMAX.setText(String.valueOf(deprom1));
     DEMED.setText(String.valueOf(deprom2));
       DEMIN.setText(String.valueOf(deprom3));
+      
+      
+            //Error repetivilidad
+      double demax,demin,der;
+      
+      double [] dErroresIndicacion= new double[]{de1,de2,de3 ,de4,de5,de6,de7,de8,de9};
+       demax=dErroresIndicacion[0];
+         //se analizan los 9 erroresIndicacion para saber cual es el mayor
+      for(int aciclo=1;  aciclo<dErroresIndicacion.length; aciclo++){
+      if (dErroresIndicacion[aciclo]>demax){
+     demax=dErroresIndicacion[aciclo ];}
+      }System.out.println("MD El error maximo es "+demax);
+
+          demin=dErroresIndicacion[0];
+                //se analizan los 9 erroresIndicacion para saber cual es el menor
+      for(int aciclo=1;  aciclo<dErroresIndicacion.length; aciclo++){
+      if (dErroresIndicacion[aciclo]<demin){
+      demin=dErroresIndicacion[aciclo];}
+      }System.out.println("MD El error minimo es "+demin);
+            //diferenncia de el maximo y el minimo para error repetivilidad
+      der=demax-demin;
+      System.out.println("MD El error repetibilidad "+der);
+      
         //------------------------------------------------------------------------------
                //MANGUERA E  
      double  ep1maxI,ep2maxI,ep3maxI,ep1medI,ep2medI,ep3medI,ep1minI,ep2minI,ep3minI, elcprommax,elcprommed,elcprommin;
@@ -995,6 +1018,29 @@ System.out.println("ErrorIndicacion prom 3 ME "+eeprom3);
   EEMAX.setText(String.valueOf(eeprom1));
     EEMED.setText(String.valueOf(eeprom2));
       EEMIN.setText(String.valueOf(eeprom3));
+      
+      
+            //Error repetivilidad
+      double eemax,eemin,eer;
+      
+      double [] eErroresIndicacion= new double[]{ee1,ee2,ee3 ,ee4,ee5,ee6,ee7,ee8,ee9};
+       eemax=eErroresIndicacion[0];
+         //se analizan los 9 erroresIndicacion para saber cual es el mayor
+      for(int aciclo=1;  aciclo<eErroresIndicacion.length; aciclo++){
+      if (eErroresIndicacion[aciclo]>eemax){
+      eemax=eErroresIndicacion[aciclo ];}
+      }System.out.println("ME El error maximo es "+eemax);
+
+          eemin=eErroresIndicacion[0];
+                //se analizan los 9 erroresIndicacion para saber cual es el menor
+      for(int aciclo=1;  aciclo<eErroresIndicacion.length; aciclo++){
+      if (eErroresIndicacion[aciclo]<eemin){
+      eemin=eErroresIndicacion[aciclo];}
+      }System.out.println("ME El error minimo es "+eemin);
+            //diferenncia de el maximo y el minimo para error repetivilidad
+      eer=eemax-eemin;
+      System.out.println("ME El error repetibilidad "+eer);
+      
     //------------------------------------------------------------------------------
                    //MANGUERA F  
      double  fp1maxI,fp2maxI,fp3maxI,fp1medI,fp2medI,fp3medI,fp1minI,fp2minI,fp3minI, flcprommax,flcprommed,flcprommin;
@@ -1142,6 +1188,27 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
     FEMED.setText(String.valueOf(feprom2));
       FEMIN.setText(String.valueOf(feprom3));
              
+            //Error repetivilidad
+      double femax,femin,fer;
+      
+      double [] fErroresIndicacion= new double[]{fe1,fe2,fe3 ,fe4,fe5,fe6,fe7,fe8,fe9};
+       femax=fErroresIndicacion[0];
+         //se analizan los 9 erroresIndicacion para saber cual es el mayor
+      for(int aciclo=1;  aciclo<fErroresIndicacion.length; aciclo++){
+      if (fErroresIndicacion[aciclo]>femax){
+      femax=fErroresIndicacion[aciclo ];}
+      }System.out.println("MF El error maximo es "+femax);
+
+          femin=fErroresIndicacion[0];
+                //se analizan los 9 erroresIndicacion para saber cual es el menor
+      for(int aciclo=1;  aciclo<fErroresIndicacion.length; aciclo++){
+      if (fErroresIndicacion[aciclo]<femin){
+      femin=fErroresIndicacion[aciclo];}
+      }System.out.println("MF El error minimo es "+femin);
+            //diferenncia de el maximo y el minimo para error repetivilidad
+      fer=femax-femin;
+      System.out.println("MF El error repetibilidad "+fer);
+      
              System.out.println("+==++==++==++==++==++==++==++==++==++==++==++==+++==++==+");
 
     //------------------------------------------------------------------------------
