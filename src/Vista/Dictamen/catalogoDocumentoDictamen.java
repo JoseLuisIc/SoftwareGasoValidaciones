@@ -259,6 +259,11 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
 
         campoMarcaA.setEditable(true);
         campoMarcaA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoMarcaA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoMarcaAActionPerformed(evt);
+            }
+        });
 
         campoMarcaB.setEditable(true);
         campoMarcaB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -724,6 +729,10 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         System.out.println(cadenaDispensario);
         this.dispose();
     }//GEN-LAST:event_botonDictamenActionPerformed
+
+    private void campoMarcaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoMarcaAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoMarcaAActionPerformed
 
     /**
      * @param args the command line arguments
