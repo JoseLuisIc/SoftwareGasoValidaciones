@@ -201,7 +201,7 @@ xB.setEnabled(false);
     
     //SAR 13/04/21 INI
     private void operacionesdeInspeccionMedicion(){
-        
+    System.out.println("+==++==++==++==++==++==++==++==++==++==++==++==+++==++==+");
         //a-> manguera  p1->numero de prueba med->min,med,max
       //MANGUERA A  
      double  ap1maxI,ap2maxI,ap3maxI,ap1medI,ap2medI,ap3medI,ap1minI,ap2minI,ap3minI, alcprommax,alcprommed,alcprommin;
@@ -740,6 +740,50 @@ dvcmv1=Math.round((dv20+dlcprommax*dkc*dctsmaxp1)*100.0)/100.0;
             DVCMVMAX.setText(String.valueOf(dvcmvmax));
              DVCMVMED.setText(String.valueOf(dvcmvmed));
              DVCMVMIN.setText(String.valueOf(dvcmvmin));
+             
+                          //Error indicacion
+//individual
+double de1,de2,de3,de4,de5,de6,de7,de8,de9,di1,di2,di3,di4,di5,di6,di7,di8,di9;
+ di1=Double.parseDouble(this.DI1MAX.getText());    
+ de1=di1-dvcmv1;
+System.out.println("ErrorIndicacion 1 MD "+de1);
+ di2=Double.parseDouble(this.DI2MAX.getText());    
+ de2=di2-dvcmv2;
+System.out.println("ErrorIndicacion 2 MD "+de2);
+ di3=Double.parseDouble(this.DI3MAX.getText());    
+ de3=di3-dvcmv3;
+System.out.println("ErrorIndicacion 3 MD "+de3);
+ di4=Double.parseDouble(this.DI1MED.getText());    
+ de4=di4-dvcmv4;
+System.out.println("ErrorIndicacion 4 MD "+de4);
+ di5=Double.parseDouble(this.DI2MED.getText());    
+ de5=di5-dvcmv5;
+System.out.println("ErrorIndicacion 5 MD "+de5);
+ di6=Double.parseDouble(this.DI3MED.getText());    
+ de6=di6-dvcmv6;
+System.out.println("ErrorIndicacion 6 MD "+de6);
+ di7=Double.parseDouble(this.DI1MIN.getText());    
+ de7=di7-dvcmv7;
+System.out.println("ErrorIndicacion 7 MD "+de7);
+ di8=Double.parseDouble(this.DI2MIN.getText());    
+ de8=di8-dvcmv8;
+System.out.println("ErrorIndicacion 8 MD "+de8);
+ di9=Double.parseDouble(this.DI3MIN.getText());    
+ de9=di9-dvcmv9;
+System.out.println("ErrorIndicacion 9 MD "+de9);
+
+//promedio
+double deprom1,deprom2,deprom3;
+deprom1=Math.round(((de1+de2+de3)/3)*100.0)/100.0;
+System.out.println("ErrorIndicacion prom 1 MD "+deprom1);
+deprom2=Math.round(((de4+de5+de6)/3)*100.0)/100.0;
+System.out.println("ErrorIndicacion prom 2 MD "+deprom2);
+deprom3=Math.round(((de7+de8+de9)/3)*100.0)/100.0;
+System.out.println("ErrorIndicacion prom 3 MD "+deprom3);
+
+  DEMAX.setText(String.valueOf(deprom1));
+    DEMED.setText(String.valueOf(deprom2));
+      DEMIN.setText(String.valueOf(deprom3));
         //------------------------------------------------------------------------------
                //MANGUERA E  
      double  ep1maxI,ep2maxI,ep3maxI,ep1medI,ep2medI,ep3medI,ep1minI,ep2minI,ep3minI, elcprommax,elcprommed,elcprommin;
@@ -841,6 +885,50 @@ evcmv1=Math.round((ev20+elcprommax*ekc*ectsmaxp1)*100.0)/100.0;
             EVCMVMAX.setText(String.valueOf(evcmvmax));
              EVCMVMED.setText(String.valueOf(evcmvmed));
              EVCMVMIN.setText(String.valueOf(evcmvmin));
+             
+                          //Error indicacion
+//individual
+double ee1,ee2,ee3,ee4,ee5,ee6,ee7,ee8,ee9,ei1,ei2,ei3,ei4,ei5,ei6,ei7,ei8,ei9;
+ ei1=Double.parseDouble(this.EI1MAX.getText());    
+ ee1=ei1-evcmv1;
+System.out.println("ErrorIndicacion 1 ME "+ee1);
+ ei2=Double.parseDouble(this.EI2MAX.getText());    
+ ee2=ei2-evcmv2;
+System.out.println("ErrorIndicacion 2 ME "+ee2);
+ ei3=Double.parseDouble(this.EI3MAX.getText());    
+ ee3=ei3-evcmv3;
+System.out.println("ErrorIndicacion 3 ME "+ee3);
+ ei4=Double.parseDouble(this.EI1MED.getText());    
+ ee4=ei4-evcmv4;
+System.out.println("ErrorIndicacion 4 ME "+ee4);
+ ei5=Double.parseDouble(this.EI2MED.getText());    
+ ee5=ei5-evcmv5;
+System.out.println("ErrorIndicacion 5 ME "+ee5);
+ ei6=Double.parseDouble(this.EI3MED.getText());    
+ ee6=ei6-evcmv6;
+System.out.println("ErrorIndicacion 6 ME "+ee6);
+ ei7=Double.parseDouble(this.EI1MIN.getText());    
+ ee7=ei7-evcmv7;
+System.out.println("ErrorIndicacion 7 ME "+ee7);
+ ei8=Double.parseDouble(this.EI2MIN.getText());    
+ ee8=ei8-evcmv8;
+System.out.println("ErrorIndicacion 8 ME "+ee8);
+ ei9=Double.parseDouble(this.EI3MIN.getText());    
+ ee9=ei9-evcmv9;
+System.out.println("ErrorIndicacion 9 ME "+ee9);
+
+//promedio
+double eeprom1,eeprom2,eeprom3;
+eeprom1=Math.round(((ee1+ee2+ee3)/3)*100.0)/100.0;
+System.out.println("ErrorIndicacion prom 1 ME "+eeprom1);
+eeprom2=Math.round(((ee4+ee5+ee6)/3)*100.0)/100.0;
+System.out.println("ErrorIndicacion prom 2 ME "+eeprom2);
+eeprom3=Math.round(((ee7+ee8+ee9)/3)*100.0)/100.0;
+System.out.println("ErrorIndicacion prom 3 ME "+eeprom3);
+
+  EEMAX.setText(String.valueOf(eeprom1));
+    EEMED.setText(String.valueOf(eeprom2));
+      EEMIN.setText(String.valueOf(eeprom3));
     //------------------------------------------------------------------------------
                    //MANGUERA F  
      double  fp1maxI,fp2maxI,fp3maxI,fp1medI,fp2medI,fp3medI,fp1minI,fp2minI,fp3minI, flcprommax,flcprommed,flcprommin;
@@ -944,8 +1032,51 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
              FVCMVMED.setText(String.valueOf(fvcmvmed));
              FVCMVMIN.setText(String.valueOf(fvcmvmin));
               
+                          //Error indicacion
+//individual
+double fe1,fe2,fe3,fe4,fe5,fe6,fe7,fe8,fe9,fi1,fi2,fi3,fi4,fi5,fi6,fi7,fi8,fi9;
+ fi1=Double.parseDouble(this.FI1MAX.getText());    
+ fe1=fi1-fvcmv1;
+System.out.println("ErrorIndicacion 1 MF "+fe1);
+ fi2=Double.parseDouble(this.FI2MAX.getText());    
+ fe2=fi2-fvcmv2;
+System.out.println("ErrorIndicacion 2 MF "+fe2);
+ fi3=Double.parseDouble(this.FI3MAX.getText());    
+ fe3=fi3-fvcmv3;
+System.out.println("ErrorIndicacion 3 MF "+fe3);
+ fi4=Double.parseDouble(this.FI1MED.getText());    
+ fe4=fi4-fvcmv4;
+System.out.println("ErrorIndicacion 4 MF "+fe4);
+ fi5=Double.parseDouble(this.FI2MED.getText());    
+ fe5=fi5-fvcmv5;
+System.out.println("ErrorIndicacion 5 MF "+fe5);
+ fi6=Double.parseDouble(this.FI3MED.getText());    
+ fe6=fi6-fvcmv6;
+System.out.println("ErrorIndicacion 6 MF "+fe6);
+ fi7=Double.parseDouble(this.FI1MIN.getText());    
+ fe7=fi7-fvcmv7;
+System.out.println("ErrorIndicacion 7 MF "+fe7);
+ fi8=Double.parseDouble(this.FI2MIN.getText());    
+ fe8=fi8-fvcmv8;
+System.out.println("ErrorIndicacion 8 MF "+fe8);
+ fi9=Double.parseDouble(this.FI3MIN.getText());    
+ fe9=fi9-fvcmv9;
+System.out.println("ErrorIndicacion 9 MF "+fe9);
+
+//promedio
+double feprom1,feprom2,feprom3;
+feprom1=Math.round(((fe1+fe2+fe3)/3)*100.0)/100.0;
+System.out.println("ErrorIndicacion prom 1 MF "+feprom1);
+feprom2=Math.round(((fe4+fe5+fe6)/3)*100.0)/100.0;
+System.out.println("ErrorIndicacion prom 2 MF "+feprom2);
+feprom3=Math.round(((fe7+fe8+fe9)/3)*100.0)/100.0;
+System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
+
+  FEMAX.setText(String.valueOf(feprom1));
+    FEMED.setText(String.valueOf(feprom2));
+      FEMIN.setText(String.valueOf(feprom3));
              
-             System.out.println("+==++==++==++==++==++==++==++==++==++==++==++==+");
+             System.out.println("+==++==++==++==++==++==++==++==++==++==++==++==+++==++==+");
 
     //------------------------------------------------------------------------------
     }
@@ -1466,18 +1597,18 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel201 = new javax.swing.JLabel();
         jLabel202 = new javax.swing.JLabel();
         jLabel203 = new javax.swing.JLabel();
-        jTextField231 = new javax.swing.JTextField();
-        jTextField232 = new javax.swing.JTextField();
-        jTextField233 = new javax.swing.JTextField();
-        jTextField234 = new javax.swing.JTextField();
-        jTextField235 = new javax.swing.JTextField();
-        jTextField236 = new javax.swing.JTextField();
-        jTextField237 = new javax.swing.JTextField();
-        jTextField238 = new javax.swing.JTextField();
-        jTextField239 = new javax.swing.JTextField();
-        jTextField240 = new javax.swing.JTextField();
-        jTextField241 = new javax.swing.JTextField();
-        jTextField242 = new javax.swing.JTextField();
+        DI1MAX = new javax.swing.JTextField();
+        DI2MAX = new javax.swing.JTextField();
+        DI3MAX = new javax.swing.JTextField();
+        DI4MAX = new javax.swing.JTextField();
+        DI4MED = new javax.swing.JTextField();
+        DI4MIN = new javax.swing.JTextField();
+        DI3MIN = new javax.swing.JTextField();
+        DI3MED = new javax.swing.JTextField();
+        DI2MED = new javax.swing.JTextField();
+        DI2MIN = new javax.swing.JTextField();
+        DI1MIN = new javax.swing.JTextField();
+        DI1MED = new javax.swing.JTextField();
         jLabel204 = new javax.swing.JLabel();
         jLabel205 = new javax.swing.JLabel();
         jLabel206 = new javax.swing.JLabel();
@@ -1512,11 +1643,11 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel219 = new javax.swing.JLabel();
         jLabel220 = new javax.swing.JLabel();
         jTextField254 = new javax.swing.JTextField();
-        jTextField255 = new javax.swing.JTextField();
-        jTextField256 = new javax.swing.JTextField();
+        DEMAX = new javax.swing.JTextField();
+        DEMED = new javax.swing.JTextField();
         jTextField257 = new javax.swing.JTextField();
         jTextField258 = new javax.swing.JTextField();
-        jTextField259 = new javax.swing.JTextField();
+        DEMIN = new javax.swing.JTextField();
         jLabel221 = new javax.swing.JLabel();
         jLabel222 = new javax.swing.JLabel();
         jLabel223 = new javax.swing.JLabel();
@@ -1588,18 +1719,18 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel251 = new javax.swing.JLabel();
         jLabel252 = new javax.swing.JLabel();
         jLabel253 = new javax.swing.JLabel();
-        jTextField295 = new javax.swing.JTextField();
-        jTextField296 = new javax.swing.JTextField();
-        jTextField297 = new javax.swing.JTextField();
-        jTextField298 = new javax.swing.JTextField();
-        jTextField299 = new javax.swing.JTextField();
-        jTextField300 = new javax.swing.JTextField();
-        jTextField301 = new javax.swing.JTextField();
-        jTextField302 = new javax.swing.JTextField();
-        jTextField303 = new javax.swing.JTextField();
-        jTextField304 = new javax.swing.JTextField();
-        jTextField305 = new javax.swing.JTextField();
-        jTextField306 = new javax.swing.JTextField();
+        EI1MAX = new javax.swing.JTextField();
+        EI2MAX = new javax.swing.JTextField();
+        EI3MAX = new javax.swing.JTextField();
+        EI4MAX = new javax.swing.JTextField();
+        EI4MED = new javax.swing.JTextField();
+        EI4MIN = new javax.swing.JTextField();
+        EI3MIN = new javax.swing.JTextField();
+        EI3MED = new javax.swing.JTextField();
+        EI2MED = new javax.swing.JTextField();
+        EI2MIN = new javax.swing.JTextField();
+        EI1MIN = new javax.swing.JTextField();
+        EI1MED = new javax.swing.JTextField();
         jLabel254 = new javax.swing.JLabel();
         jLabel255 = new javax.swing.JLabel();
         jLabel256 = new javax.swing.JLabel();
@@ -1634,11 +1765,11 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel269 = new javax.swing.JLabel();
         jLabel270 = new javax.swing.JLabel();
         jTextField318 = new javax.swing.JTextField();
-        jTextField319 = new javax.swing.JTextField();
-        jTextField320 = new javax.swing.JTextField();
+        EEMAX = new javax.swing.JTextField();
+        EEMED = new javax.swing.JTextField();
         jTextField321 = new javax.swing.JTextField();
         jTextField322 = new javax.swing.JTextField();
-        jTextField323 = new javax.swing.JTextField();
+        EEMIN = new javax.swing.JTextField();
         jLabel271 = new javax.swing.JLabel();
         jLabel272 = new javax.swing.JLabel();
         jLabel273 = new javax.swing.JLabel();
@@ -1710,18 +1841,18 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel301 = new javax.swing.JLabel();
         jLabel302 = new javax.swing.JLabel();
         jLabel303 = new javax.swing.JLabel();
-        jTextField359 = new javax.swing.JTextField();
-        jTextField360 = new javax.swing.JTextField();
-        jTextField361 = new javax.swing.JTextField();
-        jTextField362 = new javax.swing.JTextField();
-        jTextField363 = new javax.swing.JTextField();
-        jTextField364 = new javax.swing.JTextField();
-        jTextField365 = new javax.swing.JTextField();
-        jTextField366 = new javax.swing.JTextField();
-        jTextField367 = new javax.swing.JTextField();
-        jTextField368 = new javax.swing.JTextField();
-        jTextField369 = new javax.swing.JTextField();
-        jTextField370 = new javax.swing.JTextField();
+        FI1MAX = new javax.swing.JTextField();
+        FI2MAX = new javax.swing.JTextField();
+        FI3MAX = new javax.swing.JTextField();
+        FI4MAX = new javax.swing.JTextField();
+        FI4MED = new javax.swing.JTextField();
+        FI4MIN = new javax.swing.JTextField();
+        FI3MIN = new javax.swing.JTextField();
+        FI3MED = new javax.swing.JTextField();
+        FI2MED = new javax.swing.JTextField();
+        FI2MIN = new javax.swing.JTextField();
+        FI1MIN = new javax.swing.JTextField();
+        FI1MED = new javax.swing.JTextField();
         jLabel304 = new javax.swing.JLabel();
         jLabel305 = new javax.swing.JLabel();
         jLabel306 = new javax.swing.JLabel();
@@ -1756,11 +1887,11 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel319 = new javax.swing.JLabel();
         jLabel320 = new javax.swing.JLabel();
         jTextField382 = new javax.swing.JTextField();
-        jTextField383 = new javax.swing.JTextField();
-        jTextField384 = new javax.swing.JTextField();
+        FEMAX = new javax.swing.JTextField();
+        FEMED = new javax.swing.JTextField();
         jTextField385 = new javax.swing.JTextField();
         jTextField386 = new javax.swing.JTextField();
-        jTextField387 = new javax.swing.JTextField();
+        FEMIN = new javax.swing.JTextField();
         jLabel321 = new javax.swing.JLabel();
         jLabel322 = new javax.swing.JLabel();
         jLabel323 = new javax.swing.JLabel();
@@ -5688,29 +5819,77 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel203.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel203.setText("Minimo");
 
-        jTextField231.setText("20000");
+        DI1MAX.setText("20000");
+        DI1MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DI1MAXFocusLost(evt);
+            }
+        });
 
-        jTextField232.setText("20000");
+        DI2MAX.setText("20000");
+        DI2MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DI2MAXFocusLost(evt);
+            }
+        });
 
-        jTextField233.setText("20000");
+        DI3MAX.setText("20000");
+        DI3MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DI3MAXFocusLost(evt);
+            }
+        });
 
-        jTextField234.setText("20000");
+        DI4MAX.setEditable(false);
+        DI4MAX.setText("20000");
 
-        jTextField235.setText("20000");
+        DI4MED.setEditable(false);
+        DI4MED.setText("20000");
 
-        jTextField236.setText("20000");
+        DI4MIN.setEditable(false);
+        DI4MIN.setText("20000");
 
-        jTextField237.setText("20000");
+        DI3MIN.setText("20000");
+        DI3MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DI3MINFocusLost(evt);
+            }
+        });
 
-        jTextField238.setText("20000");
+        DI3MED.setText("20000");
+        DI3MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DI3MEDFocusLost(evt);
+            }
+        });
 
-        jTextField239.setText("20000");
+        DI2MED.setText("20000");
+        DI2MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DI2MEDFocusLost(evt);
+            }
+        });
 
-        jTextField240.setText("20000");
+        DI2MIN.setText("20000");
+        DI2MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DI2MINFocusLost(evt);
+            }
+        });
 
-        jTextField241.setText("20000");
+        DI1MIN.setText("20000");
+        DI1MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DI1MINFocusLost(evt);
+            }
+        });
 
-        jTextField242.setText("20000");
+        DI1MED.setText("20000");
+        DI1MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DI1MEDFocusLost(evt);
+            }
+        });
 
         jLabel204.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel204.setText("Máximo(ml)");
@@ -5797,28 +5976,28 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                                         .addComponent(jLabel193))))
                             .addGroup(jPanel26Layout.createSequentialGroup()
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField241, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField231)
-                                        .addComponent(jTextField242, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(DI1MAX)
+                                        .addComponent(DI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField240, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField232)
-                                        .addComponent(jTextField239, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(DI2MAX)
+                                        .addComponent(DI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField237, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField233)
-                                        .addComponent(jTextField238, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(DI3MAX)
+                                        .addComponent(DI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField236, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField234)
-                                        .addComponent(jTextField235, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(DI4MAX)
+                                        .addComponent(DI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel26Layout.createSequentialGroup()
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5991,34 +6170,34 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel26Layout.createSequentialGroup()
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField231, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DI1MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel204))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField242, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel205))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField241, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel206)))
                             .addGroup(jPanel26Layout.createSequentialGroup()
-                                .addComponent(jTextField232, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DI2MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField239, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField240, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(DI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel26Layout.createSequentialGroup()
-                                .addComponent(jTextField233, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DI3MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField238, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField237, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(DI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel26Layout.createSequentialGroup()
-                                .addComponent(jTextField234, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DI4MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField235, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField236, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(DI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel26Layout.createSequentialGroup()
                             .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jTextField223, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6233,11 +6412,16 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel220.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel220.setText("qv");
 
-        jTextField255.addActionListener(new java.awt.event.ActionListener() {
+        DEMAX.setEditable(false);
+        DEMAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField255ActionPerformed(evt);
+                DEMAXActionPerformed(evt);
             }
         });
+
+        DEMED.setEditable(false);
+
+        DEMIN.setEditable(false);
 
         jLabel221.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel221.setForeground(new java.awt.Color(0, 51, 153));
@@ -6282,14 +6466,14 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                         .addGap(18, 18, 18)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel222)
-                            .addComponent(jTextField255)
+                            .addComponent(DEMAX)
                             .addComponent(jTextField254)
                             .addComponent(DVCMVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(DVCMVMED, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                .addComponent(jTextField256)
+                                .addComponent(DEMED)
                                 .addComponent(jTextField257))
                             .addComponent(jLabel223))
                         .addGap(18, 18, 18)
@@ -6300,7 +6484,7 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                             .addGroup(jPanel30Layout.createSequentialGroup()
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(DVCMVMIN, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                                    .addComponent(jTextField259)
+                                    .addComponent(DEMIN)
                                     .addComponent(jTextField258))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6333,7 +6517,7 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                             .addComponent(jLabel218))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField255, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DEMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel219))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -6342,13 +6526,13 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addComponent(DVCMVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField256, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DEMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField257, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addComponent(DVCMVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField259, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DEMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField258, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel30Layout.createSequentialGroup()
@@ -6618,29 +6802,77 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel253.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel253.setText("Minimo");
 
-        jTextField295.setText("20000");
+        EI1MAX.setText("20000");
+        EI1MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EI1MAXFocusLost(evt);
+            }
+        });
 
-        jTextField296.setText("20000");
+        EI2MAX.setText("20000");
+        EI2MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EI2MAXFocusLost(evt);
+            }
+        });
 
-        jTextField297.setText("20000");
+        EI3MAX.setText("20000");
+        EI3MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EI3MAXFocusLost(evt);
+            }
+        });
 
-        jTextField298.setText("20000");
+        EI4MAX.setEditable(false);
+        EI4MAX.setText("20000");
 
-        jTextField299.setText("20000");
+        EI4MED.setEditable(false);
+        EI4MED.setText("20000");
 
-        jTextField300.setText("20000");
+        EI4MIN.setEditable(false);
+        EI4MIN.setText("20000");
 
-        jTextField301.setText("20000");
+        EI3MIN.setText("20000");
+        EI3MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EI3MINFocusLost(evt);
+            }
+        });
 
-        jTextField302.setText("20000");
+        EI3MED.setText("20000");
+        EI3MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EI3MEDFocusLost(evt);
+            }
+        });
 
-        jTextField303.setText("20000");
+        EI2MED.setText("20000");
+        EI2MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EI2MEDFocusLost(evt);
+            }
+        });
 
-        jTextField304.setText("20000");
+        EI2MIN.setText("20000");
+        EI2MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EI2MINFocusLost(evt);
+            }
+        });
 
-        jTextField305.setText("20000");
+        EI1MIN.setText("20000");
+        EI1MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EI1MINFocusLost(evt);
+            }
+        });
 
-        jTextField306.setText("20000");
+        EI1MED.setText("20000");
+        EI1MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                EI1MEDFocusLost(evt);
+            }
+        });
 
         jLabel254.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel254.setText("Máximo(ml)");
@@ -6727,28 +6959,28 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                                         .addComponent(jLabel243))))
                             .addGroup(jPanel31Layout.createSequentialGroup()
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField305, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField295)
-                                        .addComponent(jTextField306, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(EI1MAX)
+                                        .addComponent(EI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField304, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField296)
-                                        .addComponent(jTextField303, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(EI2MAX)
+                                        .addComponent(EI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField301, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField297)
-                                        .addComponent(jTextField302, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(EI3MAX)
+                                        .addComponent(EI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField300, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField298)
-                                        .addComponent(jTextField299, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(EI4MAX)
+                                        .addComponent(EI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel31Layout.createSequentialGroup()
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6921,34 +7153,34 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel31Layout.createSequentialGroup()
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField295, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EI1MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel254))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField306, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel255))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField305, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel256)))
                             .addGroup(jPanel31Layout.createSequentialGroup()
-                                .addComponent(jTextField296, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EI2MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField303, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField304, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(EI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel31Layout.createSequentialGroup()
-                                .addComponent(jTextField297, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EI3MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField302, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField301, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(EI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel31Layout.createSequentialGroup()
-                                .addComponent(jTextField298, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EI4MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField299, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField300, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(EI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel31Layout.createSequentialGroup()
                             .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jTextField287, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7163,11 +7395,16 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel270.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel270.setText("qv");
 
-        jTextField319.addActionListener(new java.awt.event.ActionListener() {
+        EEMAX.setEditable(false);
+        EEMAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField319ActionPerformed(evt);
+                EEMAXActionPerformed(evt);
             }
         });
+
+        EEMED.setEditable(false);
+
+        EEMIN.setEditable(false);
 
         jLabel271.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel271.setForeground(new java.awt.Color(0, 51, 153));
@@ -7212,14 +7449,14 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                         .addGap(18, 18, 18)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel272)
-                            .addComponent(jTextField319)
+                            .addComponent(EEMAX)
                             .addComponent(jTextField318)
                             .addComponent(EVCMVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(EVCMVMED, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                .addComponent(jTextField320)
+                                .addComponent(EEMED)
                                 .addComponent(jTextField321))
                             .addComponent(jLabel273))
                         .addGap(18, 18, 18)
@@ -7230,7 +7467,7 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                             .addGroup(jPanel35Layout.createSequentialGroup()
                                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(EVCMVMIN, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                                    .addComponent(jTextField323)
+                                    .addComponent(EEMIN)
                                     .addComponent(jTextField322))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7263,7 +7500,7 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                             .addComponent(jLabel268))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField319, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EEMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel269))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -7272,13 +7509,13 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addComponent(EVCMVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField320, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(EEMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField321, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addComponent(EVCMVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField323, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(EEMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField322, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel35Layout.createSequentialGroup()
@@ -7548,29 +7785,77 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel303.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel303.setText("Minimo");
 
-        jTextField359.setText("20000");
+        FI1MAX.setText("20000");
+        FI1MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FI1MAXFocusLost(evt);
+            }
+        });
 
-        jTextField360.setText("20000");
+        FI2MAX.setText("20000");
+        FI2MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FI2MAXFocusLost(evt);
+            }
+        });
 
-        jTextField361.setText("20000");
+        FI3MAX.setText("20000");
+        FI3MAX.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FI3MAXFocusLost(evt);
+            }
+        });
 
-        jTextField362.setText("20000");
+        FI4MAX.setEditable(false);
+        FI4MAX.setText("20000");
 
-        jTextField363.setText("20000");
+        FI4MED.setEditable(false);
+        FI4MED.setText("20000");
 
-        jTextField364.setText("20000");
+        FI4MIN.setEditable(false);
+        FI4MIN.setText("20000");
 
-        jTextField365.setText("20000");
+        FI3MIN.setText("20000");
+        FI3MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FI3MINFocusLost(evt);
+            }
+        });
 
-        jTextField366.setText("20000");
+        FI3MED.setText("20000");
+        FI3MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FI3MEDFocusLost(evt);
+            }
+        });
 
-        jTextField367.setText("20000");
+        FI2MED.setText("20000");
+        FI2MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FI2MEDFocusLost(evt);
+            }
+        });
 
-        jTextField368.setText("20000");
+        FI2MIN.setText("20000");
+        FI2MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FI2MINFocusLost(evt);
+            }
+        });
 
-        jTextField369.setText("20000");
+        FI1MIN.setText("20000");
+        FI1MIN.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FI1MINFocusLost(evt);
+            }
+        });
 
-        jTextField370.setText("20000");
+        FI1MED.setText("20000");
+        FI1MED.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FI1MEDFocusLost(evt);
+            }
+        });
 
         jLabel304.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel304.setText("Máximo(ml)");
@@ -7612,28 +7897,33 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel36Layout.createSequentialGroup()
                                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(FP2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(FP2MAX)
-                                                .addComponent(FP2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(FP3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(FP3MAX)
-                                                .addComponent(FP3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(FLCMIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(FLCMAX)
-                                                .addComponent(FLCMED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField338, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField339)
-                                                .addComponent(jTextField340, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(jPanel36Layout.createSequentialGroup()
+                                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(FP2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(FP2MAX)
+                                                        .addComponent(FP2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(FP3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(FP3MAX)
+                                                        .addComponent(FP3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(FLCMIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(FLCMAX)
+                                                        .addComponent(FLCMED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jTextField338, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jTextField339)
+                                                        .addComponent(jTextField340, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addGroup(jPanel36Layout.createSequentialGroup()
+                                                .addGap(118, 118, 118)
+                                                .addComponent(FI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel285)
@@ -7657,28 +7947,26 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                                         .addComponent(jLabel293))))
                             .addGroup(jPanel36Layout.createSequentialGroup()
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField369, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField359)
-                                        .addComponent(jTextField370, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(FI1MAX)
+                                        .addComponent(FI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField368, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField360)
-                                        .addComponent(jTextField367, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(FI2MAX)
+                                        .addComponent(FI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField365, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField361)
-                                        .addComponent(jTextField366, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(FI3MAX)
+                                        .addComponent(FI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField364, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField362)
-                                        .addComponent(jTextField363, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(FI4MAX)
+                                    .addComponent(FI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel36Layout.createSequentialGroup()
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7851,34 +8139,34 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel36Layout.createSequentialGroup()
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField359, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FI1MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel304))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField370, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel305))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField369, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel306)))
                             .addGroup(jPanel36Layout.createSequentialGroup()
-                                .addComponent(jTextField360, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FI2MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField367, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField368, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(FI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel36Layout.createSequentialGroup()
-                                .addComponent(jTextField361, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FI3MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField366, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField365, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(FI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel36Layout.createSequentialGroup()
-                                .addComponent(jTextField362, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FI4MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField363, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField364, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(FI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel36Layout.createSequentialGroup()
                             .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jTextField351, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -8093,11 +8381,16 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
         jLabel320.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel320.setText("qv");
 
-        jTextField383.addActionListener(new java.awt.event.ActionListener() {
+        FEMAX.setEditable(false);
+        FEMAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField383ActionPerformed(evt);
+                FEMAXActionPerformed(evt);
             }
         });
+
+        FEMED.setEditable(false);
+
+        FEMIN.setEditable(false);
 
         jLabel321.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel321.setForeground(new java.awt.Color(0, 51, 153));
@@ -8142,14 +8435,14 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                         .addGap(18, 18, 18)
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel322)
-                            .addComponent(jTextField383)
+                            .addComponent(FEMAX)
                             .addComponent(jTextField382)
                             .addComponent(FVCMVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(FVCMVMED, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                .addComponent(jTextField384)
+                                .addComponent(FEMED)
                                 .addComponent(jTextField385))
                             .addComponent(jLabel323))
                         .addGap(18, 18, 18)
@@ -8160,7 +8453,7 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                             .addGroup(jPanel40Layout.createSequentialGroup()
                                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FVCMVMIN, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                                    .addComponent(jTextField387)
+                                    .addComponent(FEMIN)
                                     .addComponent(jTextField386))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8193,7 +8486,7 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                             .addComponent(jLabel318))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField383, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FEMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel319))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -8202,13 +8495,13 @@ fvcmv1=Math.round((fv20+flcprommax*fkc*fctsmaxp1)*100.0)/100.0;
                     .addGroup(jPanel40Layout.createSequentialGroup()
                         .addComponent(FVCMVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField384, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FEMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField385, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel40Layout.createSequentialGroup()
                         .addComponent(FVCMVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField387, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FEMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField386, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel40Layout.createSequentialGroup()
@@ -8442,25 +8735,25 @@ entraonoentra();        // TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField196ActionPerformed
 
-    private void jTextField255ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField255ActionPerformed
+    private void DEMAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DEMAXActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField255ActionPerformed
+    }//GEN-LAST:event_DEMAXActionPerformed
 
     private void jTextField260ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField260ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField260ActionPerformed
 
-    private void jTextField319ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField319ActionPerformed
+    private void EEMAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EEMAXActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField319ActionPerformed
+    }//GEN-LAST:event_EEMAXActionPerformed
 
     private void jTextField324ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField324ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField324ActionPerformed
 
-    private void jTextField383ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField383ActionPerformed
+    private void FEMAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FEMAXActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField383ActionPerformed
+    }//GEN-LAST:event_FEMAXActionPerformed
 
     private void jTextField388ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField388ActionPerformed
         // TODO add your handling code here:
@@ -9214,6 +9507,114 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
 operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     }//GEN-LAST:event_CI3MINFocusLost
 
+    private void DI1MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DI1MAXFocusLost
+   operacionesdeInspeccionMedicion();     // TODO add your handling code here:
+    }//GEN-LAST:event_DI1MAXFocusLost
+
+    private void DI2MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DI2MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DI2MAXFocusLost
+
+    private void DI3MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DI3MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DI3MAXFocusLost
+
+    private void DI1MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DI1MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DI1MEDFocusLost
+
+    private void DI2MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DI2MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DI2MEDFocusLost
+
+    private void DI3MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DI3MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DI3MEDFocusLost
+
+    private void DI1MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DI1MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DI1MINFocusLost
+
+    private void DI2MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DI2MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DI2MINFocusLost
+
+    private void DI3MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DI3MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DI3MINFocusLost
+
+    private void EI1MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EI1MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EI1MAXFocusLost
+
+    private void EI2MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EI2MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EI2MAXFocusLost
+
+    private void EI3MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EI3MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EI3MAXFocusLost
+
+    private void EI1MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EI1MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EI1MEDFocusLost
+
+    private void EI2MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EI2MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EI2MEDFocusLost
+
+    private void EI3MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EI3MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EI3MEDFocusLost
+
+    private void EI1MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EI1MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EI1MINFocusLost
+
+    private void EI2MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EI2MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EI2MINFocusLost
+
+    private void EI3MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EI3MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_EI3MINFocusLost
+
+    private void FI1MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FI1MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FI1MAXFocusLost
+
+    private void FI2MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FI2MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FI2MAXFocusLost
+
+    private void FI3MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FI3MAXFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FI3MAXFocusLost
+
+    private void FI1MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FI1MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FI1MEDFocusLost
+
+    private void FI2MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FI2MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FI2MEDFocusLost
+
+    private void FI3MEDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FI3MEDFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FI3MEDFocusLost
+
+    private void FI1MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FI1MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FI1MINFocusLost
+
+    private void FI2MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FI2MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FI2MINFocusLost
+
+    private void FI3MINFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FI3MINFocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FI3MINFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -9377,6 +9778,21 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField CVCMVMED;
     private javax.swing.JTextField CVCMVMIN;
     private javax.swing.ButtonGroup D;
+    private javax.swing.JTextField DEMAX;
+    private javax.swing.JTextField DEMED;
+    private javax.swing.JTextField DEMIN;
+    private javax.swing.JTextField DI1MAX;
+    private javax.swing.JTextField DI1MED;
+    private javax.swing.JTextField DI1MIN;
+    private javax.swing.JTextField DI2MAX;
+    private javax.swing.JTextField DI2MED;
+    private javax.swing.JTextField DI2MIN;
+    private javax.swing.JTextField DI3MAX;
+    private javax.swing.JTextField DI3MED;
+    private javax.swing.JTextField DI3MIN;
+    private javax.swing.JTextField DI4MAX;
+    private javax.swing.JTextField DI4MED;
+    private javax.swing.JTextField DI4MIN;
     private javax.swing.JTextField DKC;
     private javax.swing.JTextField DLCMAX;
     private javax.swing.JTextField DLCMED;
@@ -9404,6 +9820,21 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField DVCMVMED;
     private javax.swing.JTextField DVCMVMIN;
     private javax.swing.ButtonGroup E;
+    private javax.swing.JTextField EEMAX;
+    private javax.swing.JTextField EEMED;
+    private javax.swing.JTextField EEMIN;
+    private javax.swing.JTextField EI1MAX;
+    private javax.swing.JTextField EI1MED;
+    private javax.swing.JTextField EI1MIN;
+    private javax.swing.JTextField EI2MAX;
+    private javax.swing.JTextField EI2MED;
+    private javax.swing.JTextField EI2MIN;
+    private javax.swing.JTextField EI3MAX;
+    private javax.swing.JTextField EI3MED;
+    private javax.swing.JTextField EI3MIN;
+    private javax.swing.JTextField EI4MAX;
+    private javax.swing.JTextField EI4MED;
+    private javax.swing.JTextField EI4MIN;
     private javax.swing.JTextField EKC;
     private javax.swing.JTextField ELCMAX;
     private javax.swing.JTextField ELCMED;
@@ -9431,6 +9862,21 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField EVCMVMED;
     private javax.swing.JTextField EVCMVMIN;
     private javax.swing.ButtonGroup F;
+    private javax.swing.JTextField FEMAX;
+    private javax.swing.JTextField FEMED;
+    private javax.swing.JTextField FEMIN;
+    private javax.swing.JTextField FI1MAX;
+    private javax.swing.JTextField FI1MED;
+    private javax.swing.JTextField FI1MIN;
+    private javax.swing.JTextField FI2MAX;
+    private javax.swing.JTextField FI2MED;
+    private javax.swing.JTextField FI2MIN;
+    private javax.swing.JTextField FI3MAX;
+    private javax.swing.JTextField FI3MED;
+    private javax.swing.JTextField FI3MIN;
+    private javax.swing.JTextField FI4MAX;
+    private javax.swing.JTextField FI4MED;
+    private javax.swing.JTextField FI4MIN;
     private javax.swing.JTextField FKC;
     private javax.swing.JTextField FLCMAX;
     private javax.swing.JTextField FLCMED;
@@ -9923,18 +10369,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField228;
     private javax.swing.JTextField jTextField229;
     private javax.swing.JTextField jTextField230;
-    private javax.swing.JTextField jTextField231;
-    private javax.swing.JTextField jTextField232;
-    private javax.swing.JTextField jTextField233;
-    private javax.swing.JTextField jTextField234;
-    private javax.swing.JTextField jTextField235;
-    private javax.swing.JTextField jTextField236;
-    private javax.swing.JTextField jTextField237;
-    private javax.swing.JTextField jTextField238;
-    private javax.swing.JTextField jTextField239;
-    private javax.swing.JTextField jTextField240;
-    private javax.swing.JTextField jTextField241;
-    private javax.swing.JTextField jTextField242;
     private javax.swing.JTextField jTextField243;
     private javax.swing.JTextField jTextField244;
     private javax.swing.JTextField jTextField247;
@@ -9942,11 +10376,8 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField249;
     private javax.swing.JTextField jTextField250;
     private javax.swing.JTextField jTextField254;
-    private javax.swing.JTextField jTextField255;
-    private javax.swing.JTextField jTextField256;
     private javax.swing.JTextField jTextField257;
     private javax.swing.JTextField jTextField258;
-    private javax.swing.JTextField jTextField259;
     private javax.swing.JTextField jTextField260;
     private javax.swing.JTextField jTextField261;
     private javax.swing.JTextField jTextField274;
@@ -9961,20 +10392,8 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField292;
     private javax.swing.JTextField jTextField293;
     private javax.swing.JTextField jTextField294;
-    private javax.swing.JTextField jTextField295;
-    private javax.swing.JTextField jTextField296;
-    private javax.swing.JTextField jTextField297;
-    private javax.swing.JTextField jTextField298;
-    private javax.swing.JTextField jTextField299;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField300;
-    private javax.swing.JTextField jTextField301;
-    private javax.swing.JTextField jTextField302;
-    private javax.swing.JTextField jTextField303;
-    private javax.swing.JTextField jTextField304;
-    private javax.swing.JTextField jTextField305;
-    private javax.swing.JTextField jTextField306;
     private javax.swing.JTextField jTextField307;
     private javax.swing.JTextField jTextField308;
     private javax.swing.JTextField jTextField31;
@@ -9983,12 +10402,9 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField313;
     private javax.swing.JTextField jTextField314;
     private javax.swing.JTextField jTextField318;
-    private javax.swing.JTextField jTextField319;
     private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField320;
     private javax.swing.JTextField jTextField321;
     private javax.swing.JTextField jTextField322;
-    private javax.swing.JTextField jTextField323;
     private javax.swing.JTextField jTextField324;
     private javax.swing.JTextField jTextField325;
     private javax.swing.JTextField jTextField33;
@@ -10006,20 +10422,8 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField356;
     private javax.swing.JTextField jTextField357;
     private javax.swing.JTextField jTextField358;
-    private javax.swing.JTextField jTextField359;
     private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField360;
-    private javax.swing.JTextField jTextField361;
-    private javax.swing.JTextField jTextField362;
-    private javax.swing.JTextField jTextField363;
-    private javax.swing.JTextField jTextField364;
-    private javax.swing.JTextField jTextField365;
-    private javax.swing.JTextField jTextField366;
-    private javax.swing.JTextField jTextField367;
-    private javax.swing.JTextField jTextField368;
-    private javax.swing.JTextField jTextField369;
     private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField370;
     private javax.swing.JTextField jTextField371;
     private javax.swing.JTextField jTextField372;
     private javax.swing.JTextField jTextField375;
@@ -10028,11 +10432,8 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField378;
     private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField382;
-    private javax.swing.JTextField jTextField383;
-    private javax.swing.JTextField jTextField384;
     private javax.swing.JTextField jTextField385;
     private javax.swing.JTextField jTextField386;
-    private javax.swing.JTextField jTextField387;
     private javax.swing.JTextField jTextField388;
     private javax.swing.JTextField jTextField389;
     private javax.swing.JTextField jTextField53;
