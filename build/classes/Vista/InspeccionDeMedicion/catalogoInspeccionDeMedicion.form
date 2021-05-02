@@ -1286,10 +1286,10 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField32" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                              <Component id="ATIMIN1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jTextField31" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextField30" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="ATIMAX1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="ATIMED1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -1297,18 +1297,18 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField35" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="ATIMIN2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField33" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField34" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="ATIMAX2" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="ATIMED2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField36" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="ATIMIN3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField38" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField37" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="ATIMAX3" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="ATIMED3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -1457,18 +1457,18 @@
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField33" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ATIMAX2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField34" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ATIMED2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField35" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ATIMIN2" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField38" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ATIMAX3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField37" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ATIMED3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField36" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ATIMIN3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1512,17 +1512,17 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField31" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ATIMAX1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ATIMED1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField32" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ATIMIN1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -1834,53 +1834,78 @@
                     <Property name="text" type="java.lang.String" value="Prueba3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField30">
+                <Component class="javax.swing.JTextField" name="ATIMED1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField31">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField32">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField33">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField34">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField34ActionPerformed"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ATIMED1FocusLost"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField35">
+                <Component class="javax.swing.JTextField" name="ATIMAX1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ATIMAX1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField36">
+                <Component class="javax.swing.JTextField" name="ATIMIN1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ATIMIN1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField37">
+                <Component class="javax.swing.JTextField" name="ATIMAX2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ATIMAX2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField38">
+                <Component class="javax.swing.JTextField" name="ATIMED2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ATIMED2FocusLost"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ATIMED2ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="ATIMIN2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ATIMIN2FocusLost"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="ATIMIN3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ATIMIN3FocusLost"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="ATIMED3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ATIMED3FocusLost"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="ATIMAX3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ATIMAX3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel38">
                   <Properties>
@@ -2396,7 +2421,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="AEMAX" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField58" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="AQVMAX" alignment="0" max="32767" attributes="0"/>
                                       <Component id="AVCMVMAX" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -2404,7 +2429,7 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="AVCMVMED" pref="70" max="32767" attributes="0"/>
                                           <Component id="AEMED" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField61" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="AQVMED" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel59" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -2418,7 +2443,7 @@
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="AVCMVMIN" pref="75" max="32767" attributes="0"/>
                                               <Component id="AEMIN" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField62" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="AQVMIN" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -2466,7 +2491,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField58" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="AQVMAX" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2475,14 +2500,14 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="AEMED" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField61" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AQVMED" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="AVCMVMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="AEMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField62" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AQVMIN" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -2546,7 +2571,10 @@
                     <Property name="text" type="java.lang.String" value="qv"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField58">
+                <Component class="javax.swing.JTextField" name="AQVMAX">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="AEMAX">
                   <Properties>
@@ -2561,9 +2589,15 @@
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField61">
+                <Component class="javax.swing.JTextField" name="AQVMED">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField62">
+                <Component class="javax.swing.JTextField" name="AQVMIN">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="AEMIN">
                   <Properties>
@@ -2848,10 +2882,10 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField96" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                              <Component id="BTIMIN1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jTextField95" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextField94" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="BTIMAX1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="BTIMED1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel99" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -2859,18 +2893,18 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField99" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="BTIMIN2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField97" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField98" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="BTIMAX2" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="BTIMED2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField100" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="BTIMIN3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField102" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField101" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="BTIMAX3" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="BTIMED3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -3019,18 +3053,18 @@
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField97" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BTIMAX2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField98" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BTIMED2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField99" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BTIMIN2" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField102" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BTIMAX3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField101" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BTIMED3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField100" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BTIMIN3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -3074,17 +3108,17 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField95" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BTIMAX1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel101" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField94" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BTIMED1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel102" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField96" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BTIMIN1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel103" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -3398,53 +3432,78 @@
                     <Property name="text" type="java.lang.String" value="Prueba3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField94">
+                <Component class="javax.swing.JTextField" name="BTIMED1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField95">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField95ActionPerformed"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="BTIMED1FocusLost"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField96">
+                <Component class="javax.swing.JTextField" name="BTIMAX1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="BTIMAX1FocusLost"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTIMAX1ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField97">
+                <Component class="javax.swing.JTextField" name="BTIMIN1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="BTIMIN1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField98">
+                <Component class="javax.swing.JTextField" name="BTIMAX2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="BTIMAX2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField99">
+                <Component class="javax.swing.JTextField" name="BTIMED2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="BTIMED2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField100">
+                <Component class="javax.swing.JTextField" name="BTIMIN2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="BTIMIN2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField101">
+                <Component class="javax.swing.JTextField" name="BTIMIN3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="BTIMIN3FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField102">
+                <Component class="javax.swing.JTextField" name="BTIMED3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="BTIMED3FocusLost"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="BTIMAX3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="BTIMAX3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel97">
                   <Properties>
@@ -3958,7 +4017,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel122" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="BEMAX" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField126" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="BQVMAX" alignment="0" max="32767" attributes="0"/>
                                       <Component id="BVCMVMAX" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -3966,7 +4025,7 @@
                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="BVCMVMED" alignment="0" pref="70" max="32767" attributes="0"/>
                                           <Component id="BEMED" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField129" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="BQVMED" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel123" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -3980,7 +4039,7 @@
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="BVCMVMIN" alignment="0" pref="75" max="32767" attributes="0"/>
                                               <Component id="BEMIN" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField130" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="BQVMIN" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -4028,7 +4087,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField126" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="BQVMAX" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel120" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -4037,14 +4096,14 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="BEMED" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField129" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BQVMED" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="BVCMVMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="BEMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField130" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BQVMIN" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -4108,7 +4167,10 @@
                     <Property name="text" type="java.lang.String" value="qv"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField126">
+                <Component class="javax.swing.JTextField" name="BQVMAX">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="BEMAX">
                   <Properties>
@@ -4123,9 +4185,15 @@
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField129">
+                <Component class="javax.swing.JTextField" name="BQVMED">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField130">
+                <Component class="javax.swing.JTextField" name="BQVMIN">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="BEMIN">
                   <Properties>
@@ -4410,10 +4478,10 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField160" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                              <Component id="CTIMIN1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jTextField159" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextField158" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="CTIMAX1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="CTIMED1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel149" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -4421,18 +4489,18 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField163" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="CTIMIN2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField161" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField162" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="CTIMAX2" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="CTIMED2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField164" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="CTIMIN3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField166" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField165" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="CTIMAX3" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="CTIMED3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -4581,18 +4649,18 @@
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField161" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CTIMAX2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField162" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CTIMED2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField163" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CTIMIN2" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField166" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CTIMAX3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField165" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CTIMED3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField164" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CTIMIN3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -4636,17 +4704,17 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField159" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CTIMAX1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel151" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField158" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CTIMED1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel152" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField160" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CTIMIN1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel153" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -4954,53 +5022,78 @@
                     <Property name="text" type="java.lang.String" value="Prueba3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField158">
+                <Component class="javax.swing.JTextField" name="CTIMED1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField158ActionPerformed"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTIMED1FocusLost"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CTIMED1ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField159">
+                <Component class="javax.swing.JTextField" name="CTIMAX1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTIMAX1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField160">
+                <Component class="javax.swing.JTextField" name="CTIMIN1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTIMIN1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField161">
+                <Component class="javax.swing.JTextField" name="CTIMAX2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTIMAX2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField162">
+                <Component class="javax.swing.JTextField" name="CTIMED2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTIMED2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField163">
+                <Component class="javax.swing.JTextField" name="CTIMIN2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTIMIN2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField164">
+                <Component class="javax.swing.JTextField" name="CTIMIN3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTIMIN3FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField165">
+                <Component class="javax.swing.JTextField" name="CTIMED3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTIMED3FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField166">
+                <Component class="javax.swing.JTextField" name="CTIMAX3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="CTIMAX3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel147">
                   <Properties>
@@ -5513,7 +5606,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel172" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="CEMAX" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField190" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="CQVMAX" alignment="0" max="32767" attributes="0"/>
                                       <Component id="CVCMVMAX" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -5521,7 +5614,7 @@
                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="CVCMVMED" alignment="0" pref="70" max="32767" attributes="0"/>
                                           <Component id="CEMED" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField193" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="CQVMED" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel173" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -5535,7 +5628,7 @@
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="CVCMVMIN" alignment="0" pref="75" max="32767" attributes="0"/>
                                               <Component id="CEMIN" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField194" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="CQVMIN" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -5583,7 +5676,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField190" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CQVMAX" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel170" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -5592,14 +5685,14 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CEMED" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField193" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CQVMED" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="CVCMVMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CEMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField194" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CQVMIN" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -5663,7 +5756,10 @@
                     <Property name="text" type="java.lang.String" value="qv"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField190">
+                <Component class="javax.swing.JTextField" name="CQVMAX">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CEMAX">
                   <Properties>
@@ -5678,9 +5774,15 @@
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField193">
+                <Component class="javax.swing.JTextField" name="CQVMED">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField194">
+                <Component class="javax.swing.JTextField" name="CQVMIN">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CEMIN">
                   <Properties>
@@ -5965,10 +6067,10 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField224" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                              <Component id="DTIMIN1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jTextField223" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextField222" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="DTIMAX1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="DTIMED1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel199" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -5976,18 +6078,18 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField227" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="DTIMIN2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField225" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField226" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="DTIMAX2" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="DTIMED2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField228" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="DTIMIN3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField230" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField229" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="DTIMAX3" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="DTIMED3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -6136,18 +6238,18 @@
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField225" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DTIMAX2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField226" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DTIMED2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField227" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DTIMIN2" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField230" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DTIMAX3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField229" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DTIMED3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField228" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DTIMIN3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -6191,17 +6293,17 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField223" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="DTIMAX1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel201" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField222" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="DTIMED1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel202" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField224" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="DTIMIN1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel203" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -6509,50 +6611,77 @@
                     <Property name="text" type="java.lang.String" value="Prueba3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField222">
+                <Component class="javax.swing.JTextField" name="DTIMED1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTIMED1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField223">
+                <Component class="javax.swing.JTextField" name="DTIMAX1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTIMAX1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField224">
+                <Component class="javax.swing.JTextField" name="DTIMIN1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTIMIN1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField225">
+                <Component class="javax.swing.JTextField" name="DTIMAX2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTIMAX2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField226">
+                <Component class="javax.swing.JTextField" name="DTIMED2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTIMED2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField227">
+                <Component class="javax.swing.JTextField" name="DTIMIN2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTIMIN2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField228">
+                <Component class="javax.swing.JTextField" name="DTIMIN3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTIMIN3FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField229">
+                <Component class="javax.swing.JTextField" name="DTIMED3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTIMED3FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField230">
+                <Component class="javax.swing.JTextField" name="DTIMAX3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="DTIMAX3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel197">
                   <Properties>
@@ -7068,7 +7197,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel222" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="DEMAX" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField254" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="DQVMAX" alignment="0" max="32767" attributes="0"/>
                                       <Component id="DVCMVMAX" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -7076,7 +7205,7 @@
                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="DVCMVMED" alignment="0" pref="70" max="32767" attributes="0"/>
                                           <Component id="DEMED" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField257" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="DQVMED" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel223" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -7090,7 +7219,7 @@
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="DVCMVMIN" alignment="0" pref="75" max="32767" attributes="0"/>
                                               <Component id="DEMIN" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField258" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="DQVMIN" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -7138,7 +7267,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField254" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="DQVMAX" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel220" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -7147,14 +7276,14 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="DEMED" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField257" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DQVMED" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="DVCMVMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="DEMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField258" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DQVMIN" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -7218,7 +7347,10 @@
                     <Property name="text" type="java.lang.String" value="qv"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField254">
+                <Component class="javax.swing.JTextField" name="DQVMAX">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DEMAX">
                   <Properties>
@@ -7233,9 +7365,15 @@
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField257">
+                <Component class="javax.swing.JTextField" name="DQVMED">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField258">
+                <Component class="javax.swing.JTextField" name="DQVMIN">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="DEMIN">
                   <Properties>
@@ -7520,10 +7658,10 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField288" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                              <Component id="ETIMIN1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jTextField287" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextField286" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="ETIMAX1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="ETIMED1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel249" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -7531,18 +7669,18 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField291" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="ETIMIN2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField289" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField290" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="ETIMAX2" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="ETIMED2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField292" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="ETIMIN3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField294" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField293" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="ETIMAX3" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="ETIMED3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -7691,18 +7829,18 @@
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField289" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ETIMAX2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField290" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ETIMED2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField291" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ETIMIN2" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField294" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ETIMAX3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField293" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ETIMED3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField292" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ETIMIN3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -7746,17 +7884,17 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField287" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ETIMAX1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel251" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField286" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ETIMED1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel252" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField288" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ETIMIN1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel253" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -8064,50 +8202,77 @@
                     <Property name="text" type="java.lang.String" value="Prueba3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField286">
+                <Component class="javax.swing.JTextField" name="ETIMED1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETIMED1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField287">
+                <Component class="javax.swing.JTextField" name="ETIMAX1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETIMAX1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField288">
+                <Component class="javax.swing.JTextField" name="ETIMIN1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETIMIN1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField289">
+                <Component class="javax.swing.JTextField" name="ETIMAX2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETIMAX2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField290">
+                <Component class="javax.swing.JTextField" name="ETIMED2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETIMED2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField291">
+                <Component class="javax.swing.JTextField" name="ETIMIN2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETIMIN2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField292">
+                <Component class="javax.swing.JTextField" name="ETIMIN3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETIMIN3FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField293">
+                <Component class="javax.swing.JTextField" name="ETIMED3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETIMED3FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField294">
+                <Component class="javax.swing.JTextField" name="ETIMAX3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ETIMAX3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel247">
                   <Properties>
@@ -8623,7 +8788,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel272" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="EEMAX" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField318" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="EQVMAX" alignment="0" max="32767" attributes="0"/>
                                       <Component id="EVCMVMAX" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -8631,7 +8796,7 @@
                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="EVCMVMED" alignment="0" pref="70" max="32767" attributes="0"/>
                                           <Component id="EEMED" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField321" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="EQVMED" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel273" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -8645,7 +8810,7 @@
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="EVCMVMIN" alignment="0" pref="75" max="32767" attributes="0"/>
                                               <Component id="EEMIN" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField322" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="EQVMIN" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -8693,7 +8858,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField318" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="EQVMAX" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel270" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -8702,14 +8867,14 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="EEMED" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField321" min="-2" max="-2" attributes="0"/>
+                                  <Component id="EQVMED" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="EVCMVMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="EEMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField322" min="-2" max="-2" attributes="0"/>
+                                  <Component id="EQVMIN" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -8773,7 +8938,10 @@
                     <Property name="text" type="java.lang.String" value="qv"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField318">
+                <Component class="javax.swing.JTextField" name="EQVMAX">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EEMAX">
                   <Properties>
@@ -8788,9 +8956,15 @@
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField321">
+                <Component class="javax.swing.JTextField" name="EQVMED">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField322">
+                <Component class="javax.swing.JTextField" name="EQVMIN">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EEMIN">
                   <Properties>
@@ -9080,10 +9254,10 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField352" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                              <Component id="FTIMIN1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jTextField351" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextField350" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                  <Component id="FTIMAX1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="FTIMED1" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jLabel299" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -9091,18 +9265,18 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField355" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="FTIMIN2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField353" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField354" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="FTIMAX2" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="FTIMED2" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField356" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                      <Component id="FTIMIN3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextField358" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextField357" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                                          <Component id="FTIMAX3" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="FTIMED3" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -9251,18 +9425,18 @@
                           <EmptySpace pref="15" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField353" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FTIMAX2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField354" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FTIMED2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField355" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FTIMIN2" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextField358" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FTIMAX3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField357" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FTIMED3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField356" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FTIMIN3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -9306,17 +9480,17 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField351" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FTIMAX1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel301" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField350" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FTIMED1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel302" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField352" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FTIMIN1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel303" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -9624,50 +9798,77 @@
                     <Property name="text" type="java.lang.String" value="Prueba3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField350">
+                <Component class="javax.swing.JTextField" name="FTIMED1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTIMED1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField351">
+                <Component class="javax.swing.JTextField" name="FTIMAX1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTIMAX1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField352">
+                <Component class="javax.swing.JTextField" name="FTIMIN1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTIMIN1FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField353">
+                <Component class="javax.swing.JTextField" name="FTIMAX2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTIMAX2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField354">
+                <Component class="javax.swing.JTextField" name="FTIMED2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTIMED2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField355">
+                <Component class="javax.swing.JTextField" name="FTIMIN2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTIMIN2FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField356">
+                <Component class="javax.swing.JTextField" name="FTIMIN3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTIMIN3FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField357">
+                <Component class="javax.swing.JTextField" name="FTIMED3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTIMED3FocusLost"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField358">
+                <Component class="javax.swing.JTextField" name="FTIMAX3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="FTIMAX3FocusLost"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel297">
                   <Properties>
@@ -10183,7 +10384,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel322" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="FEMAX" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField382" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="FQVMAX" alignment="0" max="32767" attributes="0"/>
                                       <Component id="FVCMVMAX" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -10191,7 +10392,7 @@
                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="FVCMVMED" alignment="0" pref="70" max="32767" attributes="0"/>
                                           <Component id="FEMED" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField385" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="FQVMED" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel323" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -10205,7 +10406,7 @@
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="FVCMVMIN" alignment="0" pref="75" max="32767" attributes="0"/>
                                               <Component id="FEMIN" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField386" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="FQVMIN" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -10253,7 +10454,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField382" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FQVMAX" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel320" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -10262,14 +10463,14 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FEMED" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField385" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FQVMED" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="FVCMVMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FEMIN" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField386" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FQVMIN" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -10333,7 +10534,10 @@
                     <Property name="text" type="java.lang.String" value="qv"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField382">
+                <Component class="javax.swing.JTextField" name="FQVMAX">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FEMAX">
                   <Properties>
@@ -10348,9 +10552,15 @@
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField385">
+                <Component class="javax.swing.JTextField" name="FQVMED">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField386">
+                <Component class="javax.swing.JTextField" name="FQVMIN">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FEMIN">
                   <Properties>

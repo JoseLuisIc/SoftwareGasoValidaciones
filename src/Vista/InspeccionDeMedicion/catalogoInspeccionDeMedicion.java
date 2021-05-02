@@ -369,7 +369,79 @@ System.out.println("ErrorIndicacion prom 3 MA "+aeprom3);
       aer=aemax-aemin;
       System.out.println("MA El error repetibilidad "+aer);
       
+//tiempototal
+  double attmax1,attmax2,attmax3,attmed1,attmed2,attmed3,attmin1,attmin2,attmin3;
+double atimax1,atimax2,atimax3,atimed1,atimed2,atimed3,atimin1,atimin2,atimin3;
 
+     atimax1= Double.parseDouble(this.ATIMAX1.getText());
+     atimax2= Double.parseDouble(this.ATIMAX2.getText());
+     atimax3= Double.parseDouble(this.ATIMAX3.getText());
+     atimed1= Double.parseDouble(this.ATIMED1.getText());
+     atimed2= Double.parseDouble(this.ATIMED2.getText());
+     atimed3= Double.parseDouble(this.ATIMED3.getText());
+     atimin1= Double.parseDouble(this.ATIMIN1.getText());
+     atimin2= Double.parseDouble(this.ATIMIN2.getText());
+     atimin3= Double.parseDouble(this.ATIMIN3.getText());
+     
+     if(atimax1!=0 && atimax2!=0 && atimax3!=0 && atimed1!=0 && atimed2!=0 && atimed3!=0 && atimin1!=0 && atimin2!=0 && atimin3!=0){
+     
+         attmax1=Math.round(((atimax1/60)*4)*100.0)/100.0;
+     attmax2=Math.round(((atimax2/60)*4)*100.0)/100.0;
+     attmax3=Math.round(((atimax3/60)*4)*100.0)/100.0;
+     attmed1=Math.round(((atimed1/60)*4)*100.0)/100.0;
+     attmed2=Math.round(((atimed2/60)*4)*100.0)/100.0;
+     attmed3=Math.round(((atimed3/60)*4)*100.0)/100.0;
+     attmin1=Math.round(((atimin1/60)*4)*100.0)/100.0;
+     attmin2=Math.round(((atimin2/60)*4)*100.0)/100.0;
+     attmin3=Math.round(((atimin3/60)*4)*100.0)/100.0;
+     
+        System.out.println("TiempoTotal max p1 MA "+attmax1);
+        System.out.println("TiempoTotal max p2 MA "+attmax2);
+        System.out.println("TiempoTotal max p3 MA "+attmax3);
+        System.out.println("TiempoTotal med p1 MA "+attmed1);
+        System.out.println("TiempoTotal med p2 MA "+attmed2);
+        System.out.println("TiempoTotal med p3 MA "+attmed3);
+        System.out.println("TiempoTotal min p1 MA "+attmin1);
+        System.out.println("TiempoTotal min p2 MA "+attmin2);
+        System.out.println("TiempoTotal min p3 MA "+attmin3);
+
+//QV
+double aqv1,aqv2,aqv3,aqv4,aqv5,aqv6,aqv7,aqv8,aqv9,aqvmax,aqvmed,aqvmin;
+
+aqv1=avcmv1/attmax1;
+aqv2=avcmv2/attmax2;
+aqv3=avcmv3/attmax3;
+aqv4=avcmv4/attmed1;
+aqv5=avcmv5/attmed2;
+aqv6=avcmv6/attmed3;
+aqv7=avcmv7/attmin1;
+aqv8=avcmv8/attmin2;
+aqv9=avcmv9/attmin3;
+
+aqvmax=Math.round(((aqv1+aqv2+aqv3)/3)*100.0)/100.0;
+aqvmed=Math.round(((aqv4+aqv5+aqv6)/3)*100.0)/100.0;
+aqvmin=Math.round(((aqv7+aqv8+aqv9)/3)*100.0)/100.0;
+
+ System.out.println("QV 1 MA "+aqv1);
+   System.out.println("QV 2 MA "+aqv2);
+    System.out.println("QV 3 MA "+aqv3);
+          System.out.println("QV 4 MA "+aqv4);
+          System.out.println("QV 5 MA "+aqv5);
+            System.out.println("QV 6 MA "+aqv6);
+             System.out.println("QV 7 MA "+aqv7);
+              System.out.println("QV 8 MA "+aqv8);
+                System.out.println("QV 9 MA "+aqv9);
+
+                  System.out.println("QV max MA "+aqvmax);
+                System.out.println("QV med MA "+aqvmed);
+                System.out.println("QV min MA "+aqvmin);
+                
+             AQVMAX.setText(String.valueOf(aqvmax));
+            AQVMED.setText(String.valueOf(aqvmed));
+            AQVMIN.setText(String.valueOf(aqvmin));
+                
+     }else {System.out.println("ADVERTENCIA TIEMPO TOTAL MA EN 0\n INGRESE UN VALOR VALIDO\n");}
+     
     //------------------------------------------------------------------------------
           //MANGUERA B  
      double  bp1maxI,bp2maxI,bp3maxI,bp1medI,bp2medI,bp3medI,bp1minI,bp2minI,bp3minI, blcprommax,blcprommed,blcprommin;
@@ -537,6 +609,80 @@ System.out.println("ErrorIndicacion prom 3 MB "+beprom3);
       ber=bemax-bemin;
       System.out.println("MB El error repetibilidad "+ber);
       
+      //tiempototal
+  double bttmax1,bttmax2,bttmax3,bttmed1,bttmed2,bttmed3,bttmin1,bttmin2,bttmin3;
+double btimax1,btimax2,btimax3,btimed1,btimed2,btimed3,btimin1,btimin2,btimin3;
+
+     btimax1= Double.parseDouble(this.BTIMAX1.getText());
+     btimax2= Double.parseDouble(this.BTIMAX2.getText());
+     btimax3= Double.parseDouble(this.BTIMAX3.getText());
+     btimed1= Double.parseDouble(this.BTIMED1.getText());
+     btimed2= Double.parseDouble(this.BTIMED2.getText());
+     btimed3= Double.parseDouble(this.BTIMED3.getText());
+     btimin1= Double.parseDouble(this.BTIMIN1.getText());
+     btimin2= Double.parseDouble(this.BTIMIN2.getText());
+     btimin3= Double.parseDouble(this.BTIMIN3.getText());
+     
+     if(btimax1!=0 && btimax2!=0 && btimax3!=0 && btimed1!=0 && btimed2!=0 && btimed3!=0 && btimin1!=0 && btimin2!=0 && btimin3!=0){
+     
+         bttmax1=Math.round(((btimax1/60)*4)*100.0)/100.0;
+     bttmax2=Math.round(((btimax2/60)*4)*100.0)/100.0;
+     bttmax3=Math.round(((btimax3/60)*4)*100.0)/100.0;
+     bttmed1=Math.round(((btimed1/60)*4)*100.0)/100.0;
+     bttmed2=Math.round(((btimed2/60)*4)*100.0)/100.0;
+     bttmed3=Math.round(((btimed3/60)*4)*100.0)/100.0;
+     bttmin1=Math.round(((btimin1/60)*4)*100.0)/100.0;
+     bttmin2=Math.round(((btimin2/60)*4)*100.0)/100.0;
+     bttmin3=Math.round(((btimin3/60)*4)*100.0)/100.0;
+     
+        System.out.println("TiempoTotal max p1 MB "+bttmax1);
+        System.out.println("TiempoTotal max p2 MB "+bttmax2);
+        System.out.println("TiempoTotal max p3 MB "+bttmax3);
+        System.out.println("TiempoTotal med p1 MB "+bttmed1);
+        System.out.println("TiempoTotal med p2 MB "+bttmed2);
+        System.out.println("TiempoTotal med p3 MB "+bttmed3);
+        System.out.println("TiempoTotal min p1 MB "+bttmin1);
+        System.out.println("TiempoTotal min p2 MB "+bttmin2);
+        System.out.println("TiempoTotal min p3 MB "+bttmin3);
+
+//QV
+double bqv1,bqv2,bqv3,bqv4,bqv5,bqv6,bqv7,bqv8,bqv9,bqvmax,bqvmed,bqvmin;
+
+bqv1=bvcmv1/bttmax1;
+bqv2=bvcmv2/bttmax2;
+bqv3=bvcmv3/bttmax3;
+bqv4=bvcmv4/bttmed1;
+bqv5=bvcmv5/bttmed2;
+bqv6=bvcmv6/bttmed3;
+bqv7=bvcmv7/bttmin1;
+bqv8=bvcmv8/bttmin2;
+bqv9=bvcmv9/bttmin3;
+
+bqvmax=Math.round(((bqv1+bqv2+bqv3)/3)*100.0)/100.0;
+bqvmed=Math.round(((bqv4+bqv5+bqv6)/3)*100.0)/100.0;
+bqvmin=Math.round(((bqv7+bqv8+bqv9)/3)*100.0)/100.0;
+
+ System.out.println("QV 1 MB "+bqv1);
+   System.out.println("QV 2 MB "+bqv2);
+    System.out.println("QV 3 MB "+bqv3);
+          System.out.println("QV 4 MB "+bqv4);
+          System.out.println("QV 5 MB "+bqv5);
+            System.out.println("QV 6 MB "+bqv6);
+             System.out.println("QV 7 MB "+bqv7);
+              System.out.println("QV 8 MB "+bqv8);
+                System.out.println("QV 9 MB "+bqv9);
+
+                  System.out.println("QV max MB "+bqvmax);
+                System.out.println("QV med MB "+bqvmed);
+                System.out.println("QV min MB "+bqvmin);
+                
+             BQVMAX.setText(String.valueOf(bqvmax));
+            BQVMED.setText(String.valueOf(bqvmed));
+            BQVMIN.setText(String.valueOf(bqvmin));
+                
+     }else {System.out.println("ADVERTENCIA TIEMPO TOTAL MB EN 0\n INGRESE UN VALOR VALIDO\n");}
+     
+      
     //------------------------------------------------------------------------------
            //MANGUERA C  
      double  cp1maxI,cp2maxI,cp3maxI,cp1medI,cp2medI,cp3medI,cp1minI,cp2minI,cp3minI, clcprommax,clcprommed,clcprommin;
@@ -703,6 +849,79 @@ System.out.println("ErrorIndicacion prom 3 MC "+ceprom3);
       cer=cemax-cemin;
       System.out.println("MC El error repetibilidad "+cer);
       
+      //tiempototal
+  double cttmax1,cttmax2,cttmax3,cttmed1,cttmed2,cttmed3,cttmin1,cttmin2,cttmin3;
+double ctimax1,ctimax2,ctimax3,ctimed1,ctimed2,ctimed3,ctimin1,ctimin2,ctimin3;
+
+     ctimax1= Double.parseDouble(this.CTIMAX1.getText());
+     ctimax2= Double.parseDouble(this.CTIMAX2.getText());
+     ctimax3= Double.parseDouble(this.CTIMAX3.getText());
+     ctimed1= Double.parseDouble(this.CTIMED1.getText());
+     ctimed2= Double.parseDouble(this.CTIMED2.getText());
+     ctimed3= Double.parseDouble(this.CTIMED3.getText());
+     ctimin1= Double.parseDouble(this.CTIMIN1.getText());
+     ctimin2= Double.parseDouble(this.CTIMIN2.getText());
+     ctimin3= Double.parseDouble(this.CTIMIN3.getText());
+     
+     if(ctimax1!=0 && ctimax2!=0 && ctimax3!=0 && ctimed1!=0 && ctimed2!=0 && ctimed3!=0 && ctimin1!=0 && ctimin2!=0 && ctimin3!=0){
+     
+       cttmax1=Math.round(((ctimax1/60)*4)*100.0)/100.0;
+     cttmax2=Math.round(((ctimax2/60)*4)*100.0)/100.0;
+     cttmax3=Math.round(((ctimax3/60)*4)*100.0)/100.0;
+     cttmed1=Math.round(((ctimed1/60)*4)*100.0)/100.0;
+     cttmed2=Math.round(((ctimed2/60)*4)*100.0)/100.0;
+     cttmed3=Math.round(((ctimed3/60)*4)*100.0)/100.0;
+     cttmin1=Math.round(((ctimin1/60)*4)*100.0)/100.0;
+     cttmin2=Math.round(((ctimin2/60)*4)*100.0)/100.0;
+     cttmin3=Math.round(((ctimin3/60)*4)*100.0)/100.0;
+     
+        System.out.println("TiempoTotal max p1 MC "+cttmax1);
+        System.out.println("TiempoTotal max p2 MC "+cttmax2);
+        System.out.println("TiempoTotal max p3 MC "+cttmax3);
+        System.out.println("TiempoTotal med p1 MC "+cttmed1);
+        System.out.println("TiempoTotal med p2 MC "+cttmed2);
+        System.out.println("TiempoTotal med p3 MC "+cttmed3);
+        System.out.println("TiempoTotal min p1 MC "+cttmin1);
+        System.out.println("TiempoTotal min p2 MC "+cttmin2);
+        System.out.println("TiempoTotal min p3 MC "+cttmin3);
+
+//QV
+double cqv1,cqv2,cqv3,cqv4,cqv5,cqv6,cqv7,cqv8,cqv9,cqvmax,cqvmed,cqvmin;
+
+cqv1=cvcmv1/cttmax1;
+cqv2=cvcmv2/cttmax2;
+cqv3=cvcmv3/cttmax3;
+cqv4=cvcmv4/cttmed1;
+cqv5=cvcmv5/cttmed2;
+cqv6=cvcmv6/cttmed3;
+cqv7=cvcmv7/cttmin1;
+cqv8=cvcmv8/cttmin2;
+cqv9=cvcmv9/cttmin3;
+
+cqvmax=Math.round(((cqv1+cqv2+cqv3)/3)*100.0)/100.0;
+cqvmed=Math.round(((cqv4+cqv5+cqv6)/3)*100.0)/100.0;
+cqvmin=Math.round(((cqv7+cqv8+cqv9)/3)*100.0)/100.0;
+
+ System.out.println("QV 1 MC "+cqv1);
+   System.out.println("QV 2 MC "+cqv2);
+    System.out.println("QV 3 MC "+cqv3);
+          System.out.println("QV 4 MC "+cqv4);
+          System.out.println("QV 5 MC "+cqv5);
+            System.out.println("QV 6 MC "+cqv6);
+             System.out.println("QV 7 MC "+cqv7);
+              System.out.println("QV 8 MC "+cqv8);
+                System.out.println("QV 9 MC "+cqv9);
+
+                  System.out.println("QV max MC "+cqvmax);
+                System.out.println("QV med MC "+cqvmed);
+                System.out.println("QV min MC "+cqvmin);
+                
+             CQVMAX.setText(String.valueOf(cqvmax));
+            CQVMED.setText(String.valueOf(cqvmed));
+            CQVMIN.setText(String.valueOf(cqvmin));
+                
+     }else {System.out.println("ADVERTENCIA TIEMPO TOTAL MC EN 0\n INGRESE UN VALOR VALIDO\n");}
+     
     //------------------------------------------------------------------------------
                //MANGUERA D  
      double  dp1maxI,dp2maxI,dp3maxI,dp1medI,dp2medI,dp3medI,dp1minI,dp2minI,dp3minI, dlcprommax,dlcprommed,dlcprommin;
@@ -872,7 +1091,79 @@ System.out.println("ErrorIndicacion prom 3 MD "+deprom3);
             //diferenncia de el maximo y el minimo para error repetivilidad
       der=demax-demin;
       System.out.println("MD El error repetibilidad "+der);
-      
+            
+//tiempototal
+  double dttmax1,dttmax2,dttmax3,dttmed1,dttmed2,dttmed3,dttmin1,dttmin2,dttmin3;
+double dtimax1,dtimax2,dtimax3,dtimed1,dtimed2,dtimed3,dtimin1,dtimin2,dtimin3;
+
+     dtimax1= Double.parseDouble(this.DTIMAX1.getText());
+     dtimax2= Double.parseDouble(this.DTIMAX2.getText());
+     dtimax3= Double.parseDouble(this.DTIMAX3.getText());
+     dtimed1= Double.parseDouble(this.DTIMED1.getText());
+     dtimed2= Double.parseDouble(this.DTIMED2.getText());
+     dtimed3= Double.parseDouble(this.DTIMED3.getText());
+     dtimin1= Double.parseDouble(this.DTIMIN1.getText());
+     dtimin2= Double.parseDouble(this.DTIMIN2.getText());
+     dtimin3= Double.parseDouble(this.DTIMIN3.getText());
+     
+     if(dtimax1!=0 && dtimax2!=0 && dtimax3!=0 && dtimed1!=0 && dtimed2!=0 && dtimed3!=0 && dtimin1!=0 && dtimin2!=0 && dtimin3!=0){
+     
+    dttmax1=Math.round(((dtimax1/60)*4)*100.0)/100.0;
+     dttmax2=Math.round(((dtimax2/60)*4)*100.0)/100.0;
+     dttmax3=Math.round(((dtimax3/60)*4)*100.0)/100.0;
+     dttmed1=Math.round(((dtimed1/60)*4)*100.0)/100.0;
+     dttmed2=Math.round(((dtimed2/60)*4)*100.0)/100.0;
+     dttmed3=Math.round(((dtimed3/60)*4)*100.0)/100.0;
+     dttmin1=Math.round(((dtimin1/60)*4)*100.0)/100.0;
+     dttmin2=Math.round(((dtimin2/60)*4)*100.0)/100.0;
+     dttmin3=Math.round(((dtimin3/60)*4)*100.0)/100.0;
+     
+        System.out.println("TiempoTotal max p1 MD "+dttmax1);
+        System.out.println("TiempoTotal max p2 MD "+dttmax2);
+        System.out.println("TiempoTotal max p3 MD "+dttmax3);
+        System.out.println("TiempoTotal med p1 MD "+dttmed1);
+        System.out.println("TiempoTotal med p2 MD "+dttmed2);
+        System.out.println("TiempoTotal med p3 MD "+dttmed3);
+        System.out.println("TiempoTotal min p1 MD "+dttmin1);
+        System.out.println("TiempoTotal min p2 MD "+dttmin2);
+        System.out.println("TiempoTotal min p3 MD "+dttmin3);
+
+//QV
+double dqv1,dqv2,dqv3,dqv4,dqv5,dqv6,dqv7,dqv8,dqv9,dqvmax,dqvmed,dqvmin;
+
+dqv1=dvcmv1/dttmax1;
+dqv2=dvcmv2/dttmax2;
+dqv3=dvcmv3/dttmax3;
+dqv4=dvcmv4/dttmed1;
+dqv5=dvcmv5/dttmed2;
+dqv6=dvcmv6/dttmed3;
+dqv7=dvcmv7/dttmin1;
+dqv8=dvcmv8/dttmin2;
+dqv9=dvcmv9/dttmin3;
+
+dqvmax=Math.round(((dqv1+dqv2+dqv3)/3)*100.0)/100.0;
+dqvmed=Math.round(((dqv4+dqv5+dqv6)/3)*100.0)/100.0;
+dqvmin=Math.round(((dqv7+dqv8+dqv9)/3)*100.0)/100.0;
+
+ System.out.println("QV 1 MD "+dqv1);
+   System.out.println("QV 2 MD "+dqv2);
+    System.out.println("QV 3 MD "+dqv3);
+          System.out.println("QV 4 MD "+dqv4);
+          System.out.println("QV 5 MD "+dqv5);
+            System.out.println("QV 6 MD "+dqv6);
+             System.out.println("QV 7 MD "+dqv7);
+              System.out.println("QV 8 MD "+dqv8);
+                System.out.println("QV 9 MD "+dqv9);
+
+                  System.out.println("QV max MD "+dqvmax);
+                System.out.println("QV med MD "+dqvmed);
+                System.out.println("QV min MD "+dqvmin);
+                
+             DQVMAX.setText(String.valueOf(dqvmax));
+            DQVMED.setText(String.valueOf(dqvmed));
+            DQVMIN.setText(String.valueOf(dqvmin));
+                
+     }else {System.out.println("ADVERTENCIA TIEMPO TOTAL MD EN 0\n INGRESE UN VALOR VALIDO\n");}
         //------------------------------------------------------------------------------
                //MANGUERA E  
      double  ep1maxI,ep2maxI,ep3maxI,ep1medI,ep2medI,ep3medI,ep1minI,ep2minI,ep3minI, elcprommax,elcprommed,elcprommin;
@@ -1041,6 +1332,79 @@ System.out.println("ErrorIndicacion prom 3 ME "+eeprom3);
       eer=eemax-eemin;
       System.out.println("ME El error repetibilidad "+eer);
       
+            
+//tiempototal
+  double ettmax1,ettmax2,ettmax3,ettmed1,ettmed2,ettmed3,ettmin1,ettmin2,ettmin3;
+double etimax1,etimax2,etimax3,etimed1,etimed2,etimed3,etimin1,etimin2,etimin3;
+
+     etimax1= Double.parseDouble(this.ETIMAX1.getText());
+     etimax2= Double.parseDouble(this.ETIMAX2.getText());
+     etimax3= Double.parseDouble(this.ETIMAX3.getText());
+     etimed1= Double.parseDouble(this.ETIMED1.getText());
+     etimed2= Double.parseDouble(this.ETIMED2.getText());
+     etimed3= Double.parseDouble(this.ETIMED3.getText());
+     etimin1= Double.parseDouble(this.ETIMIN1.getText());
+     etimin2= Double.parseDouble(this.ETIMIN2.getText());
+     etimin3= Double.parseDouble(this.ETIMIN3.getText());
+     
+     if(etimax1!=0 && etimax2!=0 && etimax3!=0 && etimed1!=0 && etimed2!=0 && etimed3!=0 && etimin1!=0 && etimin2!=0 && etimin3!=0){
+     
+         ettmax1=Math.round(((etimax1/60)*4)*100.0)/100.0;
+     ettmax2=Math.round(((etimax2/60)*4)*100.0)/100.0;
+     ettmax3=Math.round(((etimax3/60)*4)*100.0)/100.0;
+     ettmed1=Math.round(((etimed1/60)*4)*100.0)/100.0;
+     ettmed2=Math.round(((etimed2/60)*4)*100.0)/100.0;
+     ettmed3=Math.round(((etimed3/60)*4)*100.0)/100.0;
+     ettmin1=Math.round(((etimin1/60)*4)*100.0)/100.0;
+     ettmin2=Math.round(((etimin2/60)*4)*100.0)/100.0;
+     ettmin3=Math.round(((etimin3/60)*4)*100.0)/100.0;
+     
+        System.out.println("TiempoTotal max p1 ME "+ettmax1);
+        System.out.println("TiempoTotal max p2 ME "+ettmax2);
+        System.out.println("TiempoTotal max p3 ME "+ettmax3);
+        System.out.println("TiempoTotal med p1 ME "+ettmed1);
+        System.out.println("TiempoTotal med p2 ME "+ettmed2);
+        System.out.println("TiempoTotal med p3 ME "+ettmed3);
+        System.out.println("TiempoTotal min p1 ME "+ettmin1);
+        System.out.println("TiempoTotal min p2 ME "+ettmin2);
+        System.out.println("TiempoTotal min p3 ME "+ettmin3);
+
+//QV
+double eqv1,eqv2,eqv3,eqv4,eqv5,eqv6,eqv7,eqv8,eqv9,eqvmax,eqvmed,eqvmin;
+
+eqv1=evcmv1/ettmax1;
+eqv2=evcmv2/ettmax2;
+eqv3=evcmv3/ettmax3;
+eqv4=evcmv4/ettmed1;
+eqv5=evcmv5/ettmed2;
+eqv6=evcmv6/ettmed3;
+eqv7=evcmv7/ettmin1;
+eqv8=evcmv8/ettmin2;
+eqv9=evcmv9/ettmin3;
+
+eqvmax=Math.round(((eqv1+eqv2+eqv3)/3)*100.0)/100.0;
+eqvmed=Math.round(((eqv4+eqv5+eqv6)/3)*100.0)/100.0;
+eqvmin=Math.round(((eqv7+eqv8+eqv9)/3)*100.0)/100.0;
+
+ System.out.println("QV 1 ME "+eqv1);
+   System.out.println("QV 2 ME "+eqv2);
+    System.out.println("QV 3 ME "+eqv3);
+          System.out.println("QV 4 ME "+eqv4);
+          System.out.println("QV 5 ME "+eqv5);
+            System.out.println("QV 6 ME "+eqv6);
+             System.out.println("QV 7 ME "+eqv7);
+              System.out.println("QV 8 ME "+eqv8);
+                System.out.println("QV 9 ME "+eqv9);
+
+                  System.out.println("QV max ME "+eqvmax);
+                System.out.println("QV med ME "+eqvmed);
+                System.out.println("QV min ME "+eqvmin);
+                
+             EQVMAX.setText(String.valueOf(eqvmax));
+            EQVMED.setText(String.valueOf(eqvmed));
+            EQVMIN.setText(String.valueOf(eqvmin));
+                
+     }else {System.out.println("ADVERTENCIA TIEMPO TOTAL ME EN 0\n INGRESE UN VALOR VALIDO\n");}
     //------------------------------------------------------------------------------
                    //MANGUERA F  
      double  fp1maxI,fp2maxI,fp3maxI,fp1medI,fp2medI,fp3medI,fp1minI,fp2minI,fp3minI, flcprommax,flcprommed,flcprommin;
@@ -1209,6 +1573,81 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
       fer=femax-femin;
       System.out.println("MF El error repetibilidad "+fer);
       
+            
+//tiempototal
+  double fttmax1,fttmax2,fttmax3,fttmed1,fttmed2,fttmed3,fttmin1,fttmin2,fttmin3;
+double ftimax1,ftimax2,ftimax3,ftimed1,ftimed2,ftimed3,ftimin1,ftimin2,ftimin3;
+
+     ftimax1= Double.parseDouble(this.FTIMAX1.getText());
+     ftimax2= Double.parseDouble(this.FTIMAX2.getText());
+     ftimax3= Double.parseDouble(this.FTIMAX3.getText());
+     ftimed1= Double.parseDouble(this.FTIMED1.getText());
+     ftimed2= Double.parseDouble(this.FTIMED2.getText());
+     ftimed3= Double.parseDouble(this.FTIMED3.getText());
+     ftimin1= Double.parseDouble(this.FTIMIN1.getText());
+     ftimin2= Double.parseDouble(this.FTIMIN2.getText());
+     ftimin3= Double.parseDouble(this.FTIMIN3.getText());
+     
+     if(atimax1!=0 && atimax2!=0 && atimax3!=0 && atimed1!=0 && atimed2!=0 && atimed3!=0 && atimin1!=0 && atimin2!=0 && atimin3!=0){
+     
+         fttmax1=Math.round(((ftimax1/60)*4)*100.0)/100.0;
+     fttmax2=Math.round(((ftimax2/60)*4)*100.0)/100.0;
+     fttmax3=Math.round(((ftimax3/60)*4)*100.0)/100.0;
+     fttmed1=Math.round(((ftimed1/60)*4)*100.0)/100.0;
+     fttmed2=Math.round(((ftimed2/60)*4)*100.0)/100.0;
+     fttmed3=Math.round(((ftimed3/60)*4)*100.0)/100.0;
+     fttmin1=Math.round(((ftimin1/60)*4)*100.0)/100.0;
+     fttmin2=Math.round(((ftimin2/60)*4)*100.0)/100.0;
+     fttmin3=Math.round(((ftimin3/60)*4)*100.0)/100.0;
+     
+        System.out.println("TiempoTotal max p1 MF "+fttmax1);
+        System.out.println("TiempoTotal max p2 MF "+fttmax2);
+        System.out.println("TiempoTotal max p3 MF "+fttmax3);
+        System.out.println("TiempoTotal med p1 MF "+fttmed1);
+        System.out.println("TiempoTotal med p2 MF "+fttmed2);
+        System.out.println("TiempoTotal med p3 MF "+fttmed3);
+        System.out.println("TiempoTotal min p1 MF "+fttmin1);
+        System.out.println("TiempoTotal min p2 MF "+fttmin2);
+        System.out.println("TiempoTotal min p3 MF "+fttmin3);
+
+//QV
+double fqv1,fqv2,fqv3,fqv4,fqv5,fqv6,fqv7,fqv8,fqv9,fqvmax,fqvmed,fqvmin;
+
+fqv1=fvcmv1/fttmax1;
+fqv2=fvcmv2/fttmax2;
+fqv3=fvcmv3/fttmax3;
+fqv4=fvcmv4/fttmed1;
+fqv5=fvcmv5/fttmed2;
+fqv6=fvcmv6/fttmed3;
+fqv7=fvcmv7/fttmin1;
+fqv8=fvcmv8/fttmin2;
+fqv9=fvcmv9/fttmin3;
+
+fqvmax=Math.round(((fqv1+fqv2+fqv3)/3)*100.0)/100.0;
+fqvmed=Math.round(((fqv4+fqv5+fqv6)/3)*100.0)/100.0;
+fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
+
+ System.out.println("QV 1 MF "+fqv1);
+   System.out.println("QV 2 MF "+fqv2);
+    System.out.println("QV 3 MF "+fqv3);
+          System.out.println("QV 4 MF "+fqv4);
+          System.out.println("QV 5 MF "+fqv5);
+            System.out.println("QV 6 MF "+fqv6);
+             System.out.println("QV 7 MF "+fqv7);
+              System.out.println("QV 8 MF "+fqv8);
+                System.out.println("QV 9 MF "+fqv9);
+
+                  System.out.println("QV max MF "+fqvmax);
+                System.out.println("QV med MF "+fqvmed);
+                System.out.println("QV min MF "+fqvmin);
+                
+             FQVMAX.setText(String.valueOf(fqvmax));
+            FQVMED.setText(String.valueOf(fqvmed));
+            FQVMIN.setText(String.valueOf(fqvmin));
+                
+     }else {System.out.println("ADVERTENCIA TIEMPO TOTAL MF EN 0\n INGRESE UN VALOR VALIDO\n");}
+      
+      
              System.out.println("+==++==++==++==++==++==++==++==++==++==++==++==+++==++==+");
 
     //------------------------------------------------------------------------------
@@ -1348,15 +1787,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField31 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
-        jTextField33 = new javax.swing.JTextField();
-        jTextField34 = new javax.swing.JTextField();
-        jTextField35 = new javax.swing.JTextField();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
-        jTextField38 = new javax.swing.JTextField();
+        ATIMED1 = new javax.swing.JTextField();
+        ATIMAX1 = new javax.swing.JTextField();
+        ATIMIN1 = new javax.swing.JTextField();
+        ATIMAX2 = new javax.swing.JTextField();
+        ATIMED2 = new javax.swing.JTextField();
+        ATIMIN2 = new javax.swing.JTextField();
+        ATIMIN3 = new javax.swing.JTextField();
+        ATIMED3 = new javax.swing.JTextField();
+        ATIMAX3 = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
@@ -1409,11 +1848,11 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
-        jTextField58 = new javax.swing.JTextField();
+        AQVMAX = new javax.swing.JTextField();
         AEMAX = new javax.swing.JTextField();
         AEMED = new javax.swing.JTextField();
-        jTextField61 = new javax.swing.JTextField();
-        jTextField62 = new javax.swing.JTextField();
+        AQVMED = new javax.swing.JTextField();
+        AQVMIN = new javax.swing.JTextField();
         AEMIN = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
@@ -1470,15 +1909,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel94 = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
         jLabel96 = new javax.swing.JLabel();
-        jTextField94 = new javax.swing.JTextField();
-        jTextField95 = new javax.swing.JTextField();
-        jTextField96 = new javax.swing.JTextField();
-        jTextField97 = new javax.swing.JTextField();
-        jTextField98 = new javax.swing.JTextField();
-        jTextField99 = new javax.swing.JTextField();
-        jTextField100 = new javax.swing.JTextField();
-        jTextField101 = new javax.swing.JTextField();
-        jTextField102 = new javax.swing.JTextField();
+        BTIMED1 = new javax.swing.JTextField();
+        BTIMAX1 = new javax.swing.JTextField();
+        BTIMIN1 = new javax.swing.JTextField();
+        BTIMAX2 = new javax.swing.JTextField();
+        BTIMED2 = new javax.swing.JTextField();
+        BTIMIN2 = new javax.swing.JTextField();
+        BTIMIN3 = new javax.swing.JTextField();
+        BTIMED3 = new javax.swing.JTextField();
+        BTIMAX3 = new javax.swing.JTextField();
         jLabel97 = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
         jLabel99 = new javax.swing.JLabel();
@@ -1531,11 +1970,11 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel118 = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
-        jTextField126 = new javax.swing.JTextField();
+        BQVMAX = new javax.swing.JTextField();
         BEMAX = new javax.swing.JTextField();
         BEMED = new javax.swing.JTextField();
-        jTextField129 = new javax.swing.JTextField();
-        jTextField130 = new javax.swing.JTextField();
+        BQVMED = new javax.swing.JTextField();
+        BQVMIN = new javax.swing.JTextField();
         BEMIN = new javax.swing.JTextField();
         jLabel121 = new javax.swing.JLabel();
         jLabel122 = new javax.swing.JLabel();
@@ -1592,15 +2031,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel144 = new javax.swing.JLabel();
         jLabel145 = new javax.swing.JLabel();
         jLabel146 = new javax.swing.JLabel();
-        jTextField158 = new javax.swing.JTextField();
-        jTextField159 = new javax.swing.JTextField();
-        jTextField160 = new javax.swing.JTextField();
-        jTextField161 = new javax.swing.JTextField();
-        jTextField162 = new javax.swing.JTextField();
-        jTextField163 = new javax.swing.JTextField();
-        jTextField164 = new javax.swing.JTextField();
-        jTextField165 = new javax.swing.JTextField();
-        jTextField166 = new javax.swing.JTextField();
+        CTIMED1 = new javax.swing.JTextField();
+        CTIMAX1 = new javax.swing.JTextField();
+        CTIMIN1 = new javax.swing.JTextField();
+        CTIMAX2 = new javax.swing.JTextField();
+        CTIMED2 = new javax.swing.JTextField();
+        CTIMIN2 = new javax.swing.JTextField();
+        CTIMIN3 = new javax.swing.JTextField();
+        CTIMED3 = new javax.swing.JTextField();
+        CTIMAX3 = new javax.swing.JTextField();
         jLabel147 = new javax.swing.JLabel();
         jLabel148 = new javax.swing.JLabel();
         jLabel149 = new javax.swing.JLabel();
@@ -1653,11 +2092,11 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel168 = new javax.swing.JLabel();
         jLabel169 = new javax.swing.JLabel();
         jLabel170 = new javax.swing.JLabel();
-        jTextField190 = new javax.swing.JTextField();
+        CQVMAX = new javax.swing.JTextField();
         CEMAX = new javax.swing.JTextField();
         CEMED = new javax.swing.JTextField();
-        jTextField193 = new javax.swing.JTextField();
-        jTextField194 = new javax.swing.JTextField();
+        CQVMED = new javax.swing.JTextField();
+        CQVMIN = new javax.swing.JTextField();
         CEMIN = new javax.swing.JTextField();
         jLabel171 = new javax.swing.JLabel();
         jLabel172 = new javax.swing.JLabel();
@@ -1714,15 +2153,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel194 = new javax.swing.JLabel();
         jLabel195 = new javax.swing.JLabel();
         jLabel196 = new javax.swing.JLabel();
-        jTextField222 = new javax.swing.JTextField();
-        jTextField223 = new javax.swing.JTextField();
-        jTextField224 = new javax.swing.JTextField();
-        jTextField225 = new javax.swing.JTextField();
-        jTextField226 = new javax.swing.JTextField();
-        jTextField227 = new javax.swing.JTextField();
-        jTextField228 = new javax.swing.JTextField();
-        jTextField229 = new javax.swing.JTextField();
-        jTextField230 = new javax.swing.JTextField();
+        DTIMED1 = new javax.swing.JTextField();
+        DTIMAX1 = new javax.swing.JTextField();
+        DTIMIN1 = new javax.swing.JTextField();
+        DTIMAX2 = new javax.swing.JTextField();
+        DTIMED2 = new javax.swing.JTextField();
+        DTIMIN2 = new javax.swing.JTextField();
+        DTIMIN3 = new javax.swing.JTextField();
+        DTIMED3 = new javax.swing.JTextField();
+        DTIMAX3 = new javax.swing.JTextField();
         jLabel197 = new javax.swing.JLabel();
         jLabel198 = new javax.swing.JLabel();
         jLabel199 = new javax.swing.JLabel();
@@ -1775,11 +2214,11 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel218 = new javax.swing.JLabel();
         jLabel219 = new javax.swing.JLabel();
         jLabel220 = new javax.swing.JLabel();
-        jTextField254 = new javax.swing.JTextField();
+        DQVMAX = new javax.swing.JTextField();
         DEMAX = new javax.swing.JTextField();
         DEMED = new javax.swing.JTextField();
-        jTextField257 = new javax.swing.JTextField();
-        jTextField258 = new javax.swing.JTextField();
+        DQVMED = new javax.swing.JTextField();
+        DQVMIN = new javax.swing.JTextField();
         DEMIN = new javax.swing.JTextField();
         jLabel221 = new javax.swing.JLabel();
         jLabel222 = new javax.swing.JLabel();
@@ -1836,15 +2275,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel244 = new javax.swing.JLabel();
         jLabel245 = new javax.swing.JLabel();
         jLabel246 = new javax.swing.JLabel();
-        jTextField286 = new javax.swing.JTextField();
-        jTextField287 = new javax.swing.JTextField();
-        jTextField288 = new javax.swing.JTextField();
-        jTextField289 = new javax.swing.JTextField();
-        jTextField290 = new javax.swing.JTextField();
-        jTextField291 = new javax.swing.JTextField();
-        jTextField292 = new javax.swing.JTextField();
-        jTextField293 = new javax.swing.JTextField();
-        jTextField294 = new javax.swing.JTextField();
+        ETIMED1 = new javax.swing.JTextField();
+        ETIMAX1 = new javax.swing.JTextField();
+        ETIMIN1 = new javax.swing.JTextField();
+        ETIMAX2 = new javax.swing.JTextField();
+        ETIMED2 = new javax.swing.JTextField();
+        ETIMIN2 = new javax.swing.JTextField();
+        ETIMIN3 = new javax.swing.JTextField();
+        ETIMED3 = new javax.swing.JTextField();
+        ETIMAX3 = new javax.swing.JTextField();
         jLabel247 = new javax.swing.JLabel();
         jLabel248 = new javax.swing.JLabel();
         jLabel249 = new javax.swing.JLabel();
@@ -1897,11 +2336,11 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel268 = new javax.swing.JLabel();
         jLabel269 = new javax.swing.JLabel();
         jLabel270 = new javax.swing.JLabel();
-        jTextField318 = new javax.swing.JTextField();
+        EQVMAX = new javax.swing.JTextField();
         EEMAX = new javax.swing.JTextField();
         EEMED = new javax.swing.JTextField();
-        jTextField321 = new javax.swing.JTextField();
-        jTextField322 = new javax.swing.JTextField();
+        EQVMED = new javax.swing.JTextField();
+        EQVMIN = new javax.swing.JTextField();
         EEMIN = new javax.swing.JTextField();
         jLabel271 = new javax.swing.JLabel();
         jLabel272 = new javax.swing.JLabel();
@@ -1958,15 +2397,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel294 = new javax.swing.JLabel();
         jLabel295 = new javax.swing.JLabel();
         jLabel296 = new javax.swing.JLabel();
-        jTextField350 = new javax.swing.JTextField();
-        jTextField351 = new javax.swing.JTextField();
-        jTextField352 = new javax.swing.JTextField();
-        jTextField353 = new javax.swing.JTextField();
-        jTextField354 = new javax.swing.JTextField();
-        jTextField355 = new javax.swing.JTextField();
-        jTextField356 = new javax.swing.JTextField();
-        jTextField357 = new javax.swing.JTextField();
-        jTextField358 = new javax.swing.JTextField();
+        FTIMED1 = new javax.swing.JTextField();
+        FTIMAX1 = new javax.swing.JTextField();
+        FTIMIN1 = new javax.swing.JTextField();
+        FTIMAX2 = new javax.swing.JTextField();
+        FTIMED2 = new javax.swing.JTextField();
+        FTIMIN2 = new javax.swing.JTextField();
+        FTIMIN3 = new javax.swing.JTextField();
+        FTIMED3 = new javax.swing.JTextField();
+        FTIMAX3 = new javax.swing.JTextField();
         jLabel297 = new javax.swing.JLabel();
         jLabel298 = new javax.swing.JLabel();
         jLabel299 = new javax.swing.JLabel();
@@ -2019,11 +2458,11 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel318 = new javax.swing.JLabel();
         jLabel319 = new javax.swing.JLabel();
         jLabel320 = new javax.swing.JLabel();
-        jTextField382 = new javax.swing.JTextField();
+        FQVMAX = new javax.swing.JTextField();
         FEMAX = new javax.swing.JTextField();
         FEMED = new javax.swing.JTextField();
-        jTextField385 = new javax.swing.JTextField();
-        jTextField386 = new javax.swing.JTextField();
+        FQVMED = new javax.swing.JTextField();
+        FQVMIN = new javax.swing.JTextField();
         FEMIN = new javax.swing.JTextField();
         jLabel321 = new javax.swing.JLabel();
         jLabel322 = new javax.swing.JLabel();
@@ -2923,28 +3362,73 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
 
         jLabel37.setText("Prueba3");
 
-        jTextField30.setText("0");
-
-        jTextField31.setText("0");
-
-        jTextField32.setText("0");
-
-        jTextField33.setText("0");
-
-        jTextField34.setText("0");
-        jTextField34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField34ActionPerformed(evt);
+        ATIMED1.setText("1");
+        ATIMED1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ATIMED1FocusLost(evt);
             }
         });
 
-        jTextField35.setText("0");
+        ATIMAX1.setText("1");
+        ATIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ATIMAX1FocusLost(evt);
+            }
+        });
 
-        jTextField36.setText("0");
+        ATIMIN1.setText("1");
+        ATIMIN1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ATIMIN1FocusLost(evt);
+            }
+        });
 
-        jTextField37.setText("0");
+        ATIMAX2.setText("1");
+        ATIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ATIMAX2FocusLost(evt);
+            }
+        });
 
-        jTextField38.setText("0");
+        ATIMED2.setText("1");
+        ATIMED2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ATIMED2FocusLost(evt);
+            }
+        });
+        ATIMED2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ATIMED2ActionPerformed(evt);
+            }
+        });
+
+        ATIMIN2.setText("1");
+        ATIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ATIMIN2FocusLost(evt);
+            }
+        });
+
+        ATIMIN3.setText("1");
+        ATIMIN3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ATIMIN3FocusLost(evt);
+            }
+        });
+
+        ATIMED3.setText("1");
+        ATIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ATIMED3FocusLost(evt);
+            }
+        });
+
+        ATIMAX3.setText("1");
+        ATIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ATIMAX3FocusLost(evt);
+            }
+        });
 
         jLabel38.setText("Prueba3");
 
@@ -3169,25 +3653,25 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                     .addComponent(jLabel37)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ATIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField31)
-                                        .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(ATIMAX1)
+                                        .addComponent(ATIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel40))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ATIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField33)
-                                                .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(ATIMAX2)
+                                                .addComponent(ATIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ATIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField38)
-                                                .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(ATIMAX3)
+                                                .addComponent(ATIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel39)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -3300,17 +3784,17 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ATIMAX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ATIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ATIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ATIMAX3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ATIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ATIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -3345,15 +3829,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addComponent(AI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ATIMAX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel42))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ATIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel43))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ATIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel44)))))
                 .addGap(35, 35, 35))
         );
@@ -3557,6 +4041,8 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel56.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel56.setText("qv");
 
+        AQVMAX.setEditable(false);
+
         AEMAX.setEditable(false);
         AEMAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3565,6 +4051,10 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         });
 
         AEMED.setEditable(false);
+
+        AQVMED.setEditable(false);
+
+        AQVMIN.setEditable(false);
 
         AEMIN.setEditable(false);
 
@@ -3612,14 +4102,14 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel58)
                             .addComponent(AEMAX)
-                            .addComponent(jTextField58)
+                            .addComponent(AQVMAX)
                             .addComponent(AVCMVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(AVCMVMED, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                 .addComponent(AEMED)
-                                .addComponent(jTextField61))
+                                .addComponent(AQVMED))
                             .addComponent(jLabel59))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3630,7 +4120,7 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(AVCMVMIN, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                                     .addComponent(AEMIN)
-                                    .addComponent(jTextField62))
+                                    .addComponent(AQVMIN))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel73)
@@ -3666,20 +4156,20 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                             .addComponent(jLabel55))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AQVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel56)))
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addComponent(AVCMVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AEMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(AQVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addComponent(AVCMVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AEMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(AQVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3941,28 +4431,73 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
 
         jLabel96.setText("Prueba3");
 
-        jTextField94.setText("0");
-
-        jTextField95.setText("0");
-        jTextField95.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField95ActionPerformed(evt);
+        BTIMED1.setText("1");
+        BTIMED1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BTIMED1FocusLost(evt);
             }
         });
 
-        jTextField96.setText("0");
+        BTIMAX1.setText("1");
+        BTIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BTIMAX1FocusLost(evt);
+            }
+        });
+        BTIMAX1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTIMAX1ActionPerformed(evt);
+            }
+        });
 
-        jTextField97.setText("0");
+        BTIMIN1.setText("1");
+        BTIMIN1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BTIMIN1FocusLost(evt);
+            }
+        });
 
-        jTextField98.setText("0");
+        BTIMAX2.setText("1");
+        BTIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BTIMAX2FocusLost(evt);
+            }
+        });
 
-        jTextField99.setText("0");
+        BTIMED2.setText("1");
+        BTIMED2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BTIMED2FocusLost(evt);
+            }
+        });
 
-        jTextField100.setText("0");
+        BTIMIN2.setText("1");
+        BTIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BTIMIN2FocusLost(evt);
+            }
+        });
 
-        jTextField101.setText("0");
+        BTIMIN3.setText("1");
+        BTIMIN3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BTIMIN3FocusLost(evt);
+            }
+        });
 
-        jTextField102.setText("0");
+        BTIMED3.setText("1");
+        BTIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BTIMED3FocusLost(evt);
+            }
+        });
+
+        BTIMAX3.setText("1");
+        BTIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BTIMAX3FocusLost(evt);
+            }
+        });
 
         jLabel97.setText("Prueba3");
 
@@ -4189,25 +4724,25 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                     .addComponent(jLabel96)))
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField96, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BTIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField95)
-                                        .addComponent(jTextField94, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(BTIMAX1)
+                                        .addComponent(BTIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel99))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel16Layout.createSequentialGroup()
                                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField99, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(BTIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField97)
-                                                .addComponent(jTextField98, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(BTIMAX2)
+                                                .addComponent(BTIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField100, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(BTIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField102)
-                                                .addComponent(jTextField101, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(BTIMAX3)
+                                                .addComponent(BTIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel16Layout.createSequentialGroup()
                                         .addComponent(jLabel98)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -4320,17 +4855,17 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(jTextField97, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BTIMAX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField98, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BTIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField99, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BTIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(jTextField102, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BTIMAX3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField101, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BTIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField100, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BTIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel16Layout.createSequentialGroup()
@@ -4365,15 +4900,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addComponent(BI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel16Layout.createSequentialGroup()
                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField95, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BTIMAX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel101))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField94, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BTIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel102))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField96, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BTIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel103)))))
                 .addGap(35, 35, 35))
         );
@@ -4577,6 +5112,8 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel120.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel120.setText("qv");
 
+        BQVMAX.setEditable(false);
+
         BEMAX.setEditable(false);
         BEMAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4585,6 +5122,10 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         });
 
         BEMED.setEditable(false);
+
+        BQVMED.setEditable(false);
+
+        BQVMIN.setEditable(false);
 
         BEMIN.setEditable(false);
 
@@ -4632,14 +5173,14 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel122)
                             .addComponent(BEMAX)
-                            .addComponent(jTextField126)
+                            .addComponent(BQVMAX)
                             .addComponent(BVCMVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(BVCMVMED, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                 .addComponent(BEMED)
-                                .addComponent(jTextField129))
+                                .addComponent(BQVMED))
                             .addComponent(jLabel123))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4650,7 +5191,7 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(BVCMVMIN, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                                     .addComponent(BEMIN)
-                                    .addComponent(jTextField130))
+                                    .addComponent(BQVMIN))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel127)
@@ -4686,20 +5227,20 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                             .addComponent(jLabel119))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField126, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BQVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel120)))
                     .addGroup(jPanel20Layout.createSequentialGroup()
                         .addComponent(BVCMVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BEMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField129, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BQVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel20Layout.createSequentialGroup()
                         .addComponent(BVCMVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BEMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField130, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BQVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel20Layout.createSequentialGroup()
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField133, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4931,28 +5472,73 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
 
         jLabel146.setText("Prueba3");
 
-        jTextField158.setText("0");
-        jTextField158.addActionListener(new java.awt.event.ActionListener() {
+        CTIMED1.setText("1");
+        CTIMED1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTIMED1FocusLost(evt);
+            }
+        });
+        CTIMED1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField158ActionPerformed(evt);
+                CTIMED1ActionPerformed(evt);
             }
         });
 
-        jTextField159.setText("0");
+        CTIMAX1.setText("1");
+        CTIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTIMAX1FocusLost(evt);
+            }
+        });
 
-        jTextField160.setText("0");
+        CTIMIN1.setText("1");
+        CTIMIN1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTIMIN1FocusLost(evt);
+            }
+        });
 
-        jTextField161.setText("0");
+        CTIMAX2.setText("1");
+        CTIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTIMAX2FocusLost(evt);
+            }
+        });
 
-        jTextField162.setText("0");
+        CTIMED2.setText("1");
+        CTIMED2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTIMED2FocusLost(evt);
+            }
+        });
 
-        jTextField163.setText("0");
+        CTIMIN2.setText("1");
+        CTIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTIMIN2FocusLost(evt);
+            }
+        });
 
-        jTextField164.setText("0");
+        CTIMIN3.setText("1");
+        CTIMIN3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTIMIN3FocusLost(evt);
+            }
+        });
 
-        jTextField165.setText("0");
+        CTIMED3.setText("1");
+        CTIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTIMED3FocusLost(evt);
+            }
+        });
 
-        jTextField166.setText("0");
+        CTIMAX3.setText("1");
+        CTIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CTIMAX3FocusLost(evt);
+            }
+        });
 
         jLabel147.setText("Prueba3");
 
@@ -5174,25 +5760,25 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                     .addComponent(jLabel146)))
                             .addGroup(jPanel21Layout.createSequentialGroup()
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField160, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CTIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField159)
-                                        .addComponent(jTextField158, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(CTIMAX1)
+                                        .addComponent(CTIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel149))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel21Layout.createSequentialGroup()
                                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField163, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(CTIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField161)
-                                                .addComponent(jTextField162, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(CTIMAX2)
+                                                .addComponent(CTIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField164, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(CTIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField166)
-                                                .addComponent(jTextField165, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(CTIMAX3)
+                                                .addComponent(CTIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel21Layout.createSequentialGroup()
                                         .addComponent(jLabel148)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -5305,17 +5891,17 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addComponent(jTextField161, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CTIMAX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField162, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CTIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField163, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CTIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addComponent(jTextField166, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CTIMAX3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField165, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CTIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField164, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CTIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel21Layout.createSequentialGroup()
@@ -5350,15 +5936,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addComponent(CI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel21Layout.createSequentialGroup()
                             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField159, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CTIMAX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel151))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField158, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CTIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel152))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField160, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CTIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel153)))))
                 .addGap(35, 35, 35))
         );
@@ -5562,6 +6148,8 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel170.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel170.setText("qv");
 
+        CQVMAX.setEditable(false);
+
         CEMAX.setEditable(false);
         CEMAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -5570,6 +6158,10 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         });
 
         CEMED.setEditable(false);
+
+        CQVMED.setEditable(false);
+
+        CQVMIN.setEditable(false);
 
         CEMIN.setEditable(false);
 
@@ -5617,14 +6209,14 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel172)
                             .addComponent(CEMAX)
-                            .addComponent(jTextField190)
+                            .addComponent(CQVMAX)
                             .addComponent(CVCMVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(CVCMVMED, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                 .addComponent(CEMED)
-                                .addComponent(jTextField193))
+                                .addComponent(CQVMED))
                             .addComponent(jLabel173))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5635,7 +6227,7 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(CVCMVMIN, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                                     .addComponent(CEMIN)
-                                    .addComponent(jTextField194))
+                                    .addComponent(CQVMIN))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel177)
@@ -5671,20 +6263,20 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                             .addComponent(jLabel169))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField190, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CQVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel170)))
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addComponent(CVCMVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CEMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField193, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CQVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addComponent(CVCMVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CEMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField194, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CQVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField197, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5916,23 +6508,68 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
 
         jLabel196.setText("Prueba3");
 
-        jTextField222.setText("0");
+        DTIMED1.setText("1");
+        DTIMED1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTIMED1FocusLost(evt);
+            }
+        });
 
-        jTextField223.setText("0");
+        DTIMAX1.setText("1");
+        DTIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTIMAX1FocusLost(evt);
+            }
+        });
 
-        jTextField224.setText("0");
+        DTIMIN1.setText("1");
+        DTIMIN1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTIMIN1FocusLost(evt);
+            }
+        });
 
-        jTextField225.setText("0");
+        DTIMAX2.setText("1");
+        DTIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTIMAX2FocusLost(evt);
+            }
+        });
 
-        jTextField226.setText("0");
+        DTIMED2.setText("1");
+        DTIMED2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTIMED2FocusLost(evt);
+            }
+        });
 
-        jTextField227.setText("0");
+        DTIMIN2.setText("1");
+        DTIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTIMIN2FocusLost(evt);
+            }
+        });
 
-        jTextField228.setText("0");
+        DTIMIN3.setText("1");
+        DTIMIN3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTIMIN3FocusLost(evt);
+            }
+        });
 
-        jTextField229.setText("0");
+        DTIMED3.setText("1");
+        DTIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTIMED3FocusLost(evt);
+            }
+        });
 
-        jTextField230.setText("0");
+        DTIMAX3.setText("1");
+        DTIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                DTIMAX3FocusLost(evt);
+            }
+        });
 
         jLabel197.setText("Prueba3");
 
@@ -6157,25 +6794,25 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                     .addComponent(jLabel196)))
                             .addGroup(jPanel26Layout.createSequentialGroup()
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField224, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DTIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField223)
-                                        .addComponent(jTextField222, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DTIMAX1)
+                                        .addComponent(DTIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel199))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel26Layout.createSequentialGroup()
                                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField227, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(DTIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField225)
-                                                .addComponent(jTextField226, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(DTIMAX2)
+                                                .addComponent(DTIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField228, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(DTIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField230)
-                                                .addComponent(jTextField229, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(DTIMAX3)
+                                                .addComponent(DTIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel26Layout.createSequentialGroup()
                                         .addComponent(jLabel198)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -6288,17 +6925,17 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addComponent(jTextField225, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DTIMAX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField226, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DTIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField227, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DTIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addComponent(jTextField230, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DTIMAX3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField229, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DTIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField228, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DTIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel26Layout.createSequentialGroup()
@@ -6333,15 +6970,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addComponent(DI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel26Layout.createSequentialGroup()
                             .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField223, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DTIMAX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel201))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField222, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DTIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel202))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField224, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DTIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel203)))))
                 .addGap(35, 35, 35))
         );
@@ -6545,6 +7182,8 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel220.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel220.setText("qv");
 
+        DQVMAX.setEditable(false);
+
         DEMAX.setEditable(false);
         DEMAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -6553,6 +7192,10 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         });
 
         DEMED.setEditable(false);
+
+        DQVMED.setEditable(false);
+
+        DQVMIN.setEditable(false);
 
         DEMIN.setEditable(false);
 
@@ -6600,14 +7243,14 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel222)
                             .addComponent(DEMAX)
-                            .addComponent(jTextField254)
+                            .addComponent(DQVMAX)
                             .addComponent(DVCMVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(DVCMVMED, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                 .addComponent(DEMED)
-                                .addComponent(jTextField257))
+                                .addComponent(DQVMED))
                             .addComponent(jLabel223))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6618,7 +7261,7 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(DVCMVMIN, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                                     .addComponent(DEMIN)
-                                    .addComponent(jTextField258))
+                                    .addComponent(DQVMIN))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel227)
@@ -6654,20 +7297,20 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                             .addComponent(jLabel219))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField254, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DQVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel220)))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addComponent(DVCMVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DEMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField257, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DQVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addComponent(DVCMVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DEMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField258, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DQVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField261, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6899,23 +7542,68 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
 
         jLabel246.setText("Prueba3");
 
-        jTextField286.setText("0");
+        ETIMED1.setText("1");
+        ETIMED1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETIMED1FocusLost(evt);
+            }
+        });
 
-        jTextField287.setText("0");
+        ETIMAX1.setText("1");
+        ETIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETIMAX1FocusLost(evt);
+            }
+        });
 
-        jTextField288.setText("0");
+        ETIMIN1.setText("1");
+        ETIMIN1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETIMIN1FocusLost(evt);
+            }
+        });
 
-        jTextField289.setText("0");
+        ETIMAX2.setText("1");
+        ETIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETIMAX2FocusLost(evt);
+            }
+        });
 
-        jTextField290.setText("0");
+        ETIMED2.setText("1");
+        ETIMED2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETIMED2FocusLost(evt);
+            }
+        });
 
-        jTextField291.setText("0");
+        ETIMIN2.setText("1");
+        ETIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETIMIN2FocusLost(evt);
+            }
+        });
 
-        jTextField292.setText("0");
+        ETIMIN3.setText("1");
+        ETIMIN3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETIMIN3FocusLost(evt);
+            }
+        });
 
-        jTextField293.setText("0");
+        ETIMED3.setText("1");
+        ETIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETIMED3FocusLost(evt);
+            }
+        });
 
-        jTextField294.setText("0");
+        ETIMAX3.setText("1");
+        ETIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ETIMAX3FocusLost(evt);
+            }
+        });
 
         jLabel247.setText("Prueba3");
 
@@ -7140,25 +7828,25 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                     .addComponent(jLabel246)))
                             .addGroup(jPanel31Layout.createSequentialGroup()
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField288, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ETIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField287)
-                                        .addComponent(jTextField286, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(ETIMAX1)
+                                        .addComponent(ETIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel249))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel31Layout.createSequentialGroup()
                                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField291, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ETIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField289)
-                                                .addComponent(jTextField290, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(ETIMAX2)
+                                                .addComponent(ETIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField292, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ETIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField294)
-                                                .addComponent(jTextField293, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(ETIMAX3)
+                                                .addComponent(ETIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel31Layout.createSequentialGroup()
                                         .addComponent(jLabel248)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -7271,17 +7959,17 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
-                        .addComponent(jTextField289, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ETIMAX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField290, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ETIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField291, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ETIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel31Layout.createSequentialGroup()
-                        .addComponent(jTextField294, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ETIMAX3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField293, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ETIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField292, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ETIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel31Layout.createSequentialGroup()
@@ -7316,15 +8004,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addComponent(EI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel31Layout.createSequentialGroup()
                             .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField287, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ETIMAX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel251))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField286, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ETIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel252))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField288, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ETIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel253)))))
                 .addGap(35, 35, 35))
         );
@@ -7528,6 +8216,8 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel270.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel270.setText("qv");
 
+        EQVMAX.setEditable(false);
+
         EEMAX.setEditable(false);
         EEMAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -7536,6 +8226,10 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         });
 
         EEMED.setEditable(false);
+
+        EQVMED.setEditable(false);
+
+        EQVMIN.setEditable(false);
 
         EEMIN.setEditable(false);
 
@@ -7583,14 +8277,14 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel272)
                             .addComponent(EEMAX)
-                            .addComponent(jTextField318)
+                            .addComponent(EQVMAX)
                             .addComponent(EVCMVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(EVCMVMED, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                 .addComponent(EEMED)
-                                .addComponent(jTextField321))
+                                .addComponent(EQVMED))
                             .addComponent(jLabel273))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7601,7 +8295,7 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(EVCMVMIN, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                                     .addComponent(EEMIN)
-                                    .addComponent(jTextField322))
+                                    .addComponent(EQVMIN))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel277)
@@ -7637,20 +8331,20 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                             .addComponent(jLabel269))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField318, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EQVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel270)))
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addComponent(EVCMVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(EEMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField321, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(EQVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addComponent(EVCMVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(EEMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField322, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(EQVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField325, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7882,23 +8576,68 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
 
         jLabel296.setText("Prueba3");
 
-        jTextField350.setText("0");
+        FTIMED1.setText("1");
+        FTIMED1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTIMED1FocusLost(evt);
+            }
+        });
 
-        jTextField351.setText("0");
+        FTIMAX1.setText("1");
+        FTIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTIMAX1FocusLost(evt);
+            }
+        });
 
-        jTextField352.setText("0");
+        FTIMIN1.setText("1");
+        FTIMIN1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTIMIN1FocusLost(evt);
+            }
+        });
 
-        jTextField353.setText("0");
+        FTIMAX2.setText("1");
+        FTIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTIMAX2FocusLost(evt);
+            }
+        });
 
-        jTextField354.setText("0");
+        FTIMED2.setText("1");
+        FTIMED2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTIMED2FocusLost(evt);
+            }
+        });
 
-        jTextField355.setText("0");
+        FTIMIN2.setText("1");
+        FTIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTIMIN2FocusLost(evt);
+            }
+        });
 
-        jTextField356.setText("0");
+        FTIMIN3.setText("1");
+        FTIMIN3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTIMIN3FocusLost(evt);
+            }
+        });
 
-        jTextField357.setText("0");
+        FTIMED3.setText("1");
+        FTIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTIMED3FocusLost(evt);
+            }
+        });
 
-        jTextField358.setText("0");
+        FTIMAX3.setText("1");
+        FTIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FTIMAX3FocusLost(evt);
+            }
+        });
 
         jLabel297.setText("Prueba3");
 
@@ -8126,25 +8865,25 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                     .addComponent(jLabel296)))
                             .addGroup(jPanel36Layout.createSequentialGroup()
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField352, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FTIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField351)
-                                        .addComponent(jTextField350, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(FTIMAX1)
+                                        .addComponent(FTIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel299))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel36Layout.createSequentialGroup()
                                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField355, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(FTIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField353)
-                                                .addComponent(jTextField354, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(FTIMAX2)
+                                                .addComponent(FTIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField356, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(FTIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField358)
-                                                .addComponent(jTextField357, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(FTIMAX3)
+                                                .addComponent(FTIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel36Layout.createSequentialGroup()
                                         .addComponent(jLabel298)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -8257,17 +8996,17 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel36Layout.createSequentialGroup()
-                        .addComponent(jTextField353, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FTIMAX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField354, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FTIMED2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField355, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FTIMIN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel36Layout.createSequentialGroup()
-                        .addComponent(jTextField358, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FTIMAX3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField357, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FTIMED3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField356, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FTIMIN3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel36Layout.createSequentialGroup()
@@ -8302,15 +9041,15 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addComponent(FI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel36Layout.createSequentialGroup()
                             .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField351, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FTIMAX1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel301))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField350, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FTIMED1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel302))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField352, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FTIMIN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel303)))))
                 .addGap(35, 35, 35))
         );
@@ -8514,6 +9253,8 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         jLabel320.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel320.setText("qv");
 
+        FQVMAX.setEditable(false);
+
         FEMAX.setEditable(false);
         FEMAX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -8522,6 +9263,10 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
         });
 
         FEMED.setEditable(false);
+
+        FQVMED.setEditable(false);
+
+        FQVMIN.setEditable(false);
 
         FEMIN.setEditable(false);
 
@@ -8569,14 +9314,14 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel322)
                             .addComponent(FEMAX)
-                            .addComponent(jTextField382)
+                            .addComponent(FQVMAX)
                             .addComponent(FVCMVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(FVCMVMED, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                 .addComponent(FEMED)
-                                .addComponent(jTextField385))
+                                .addComponent(FQVMED))
                             .addComponent(jLabel323))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8587,7 +9332,7 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FVCMVMIN, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                                     .addComponent(FEMIN)
-                                    .addComponent(jTextField386))
+                                    .addComponent(FQVMIN))
                                 .addGap(42, 42, 42)
                                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel327)
@@ -8623,20 +9368,20 @@ System.out.println("ErrorIndicacion prom 3 MF "+feprom3);
                             .addComponent(jLabel319))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField382, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FQVMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel320)))
                     .addGroup(jPanel40Layout.createSequentialGroup()
                         .addComponent(FVCMVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FEMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField385, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FQVMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel40Layout.createSequentialGroup()
                         .addComponent(FVCMVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FEMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField386, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FQVMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel40Layout.createSequentialGroup()
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField389, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -9048,9 +9793,9 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_ATMINP3ActionPerformed
 
-    private void jTextField34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34ActionPerformed
+    private void ATIMED2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ATIMED2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField34ActionPerformed
+    }//GEN-LAST:event_ATIMED2ActionPerformed
 
     private void ATMAXP1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATMAXP1FocusLost
 operacionesdeInspeccionMedicion();        // TODO add your handling code here:
@@ -9124,13 +9869,13 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_BTMINP2ActionPerformed
 
-    private void jTextField95ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField95ActionPerformed
+    private void BTIMAX1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTIMAX1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField95ActionPerformed
+    }//GEN-LAST:event_BTIMAX1ActionPerformed
 
-    private void jTextField158ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField158ActionPerformed
+    private void CTIMED1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CTIMED1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField158ActionPerformed
+    }//GEN-LAST:event_CTIMED1ActionPerformed
 
     private void BP1MAXFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BP1MAXFocusLost
 operacionesdeInspeccionMedicion();        // TODO add your handling code here:
@@ -9748,6 +10493,222 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
 operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     }//GEN-LAST:event_FI3MINFocusLost
 
+    private void ATIMAX1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATIMAX1FocusLost
+  operacionesdeInspeccionMedicion();      // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMAX1FocusLost
+
+    private void ATIMAX2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATIMAX2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMAX2FocusLost
+
+    private void ATIMAX3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATIMAX3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMAX3FocusLost
+
+    private void ATIMED1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATIMED1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMED1FocusLost
+
+    private void ATIMED2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATIMED2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMED2FocusLost
+
+    private void ATIMED3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATIMED3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMED3FocusLost
+
+    private void ATIMIN1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATIMIN1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMIN1FocusLost
+
+    private void ATIMIN2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATIMIN2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMIN2FocusLost
+
+    private void ATIMIN3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ATIMIN3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMIN3FocusLost
+
+    private void BTIMAX1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTIMAX1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMAX1FocusLost
+
+    private void BTIMAX2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTIMAX2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMAX2FocusLost
+
+    private void BTIMAX3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTIMAX3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMAX3FocusLost
+
+    private void BTIMED1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTIMED1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMED1FocusLost
+
+    private void BTIMED2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTIMED2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMED2FocusLost
+
+    private void BTIMED3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTIMED3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMED3FocusLost
+
+    private void BTIMIN1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTIMIN1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMIN1FocusLost
+
+    private void BTIMIN2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTIMIN2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMIN2FocusLost
+
+    private void BTIMIN3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BTIMIN3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMIN3FocusLost
+
+    private void CTIMAX1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTIMAX1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMAX1FocusLost
+
+    private void CTIMAX2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTIMAX2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMAX2FocusLost
+
+    private void CTIMAX3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTIMAX3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMAX3FocusLost
+
+    private void CTIMED1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTIMED1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMED1FocusLost
+
+    private void CTIMED2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTIMED2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMED2FocusLost
+
+    private void CTIMED3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTIMED3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMED3FocusLost
+
+    private void CTIMIN1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTIMIN1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMIN1FocusLost
+
+    private void CTIMIN2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTIMIN2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMIN2FocusLost
+
+    private void CTIMIN3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CTIMIN3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMIN3FocusLost
+
+    private void DTIMAX1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTIMAX1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMAX1FocusLost
+
+    private void DTIMAX2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTIMAX2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMAX2FocusLost
+
+    private void DTIMAX3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTIMAX3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMAX3FocusLost
+
+    private void DTIMED1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTIMED1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMED1FocusLost
+
+    private void DTIMED2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTIMED2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMED2FocusLost
+
+    private void DTIMED3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTIMED3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMED3FocusLost
+
+    private void DTIMIN1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTIMIN1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMIN1FocusLost
+
+    private void DTIMIN2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTIMIN2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMIN2FocusLost
+
+    private void DTIMIN3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DTIMIN3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMIN3FocusLost
+
+    private void ETIMAX1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETIMAX1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMAX1FocusLost
+
+    private void ETIMAX2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETIMAX2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMAX2FocusLost
+
+    private void ETIMAX3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETIMAX3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMAX3FocusLost
+
+    private void ETIMED1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETIMED1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMED1FocusLost
+
+    private void ETIMED2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETIMED2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMED2FocusLost
+
+    private void ETIMED3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETIMED3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMED3FocusLost
+
+    private void ETIMIN1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETIMIN1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMIN1FocusLost
+
+    private void ETIMIN2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETIMIN2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMIN2FocusLost
+
+    private void ETIMIN3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ETIMIN3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMIN3FocusLost
+
+    private void FTIMAX1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTIMAX1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMAX1FocusLost
+
+    private void FTIMAX2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTIMAX2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMAX2FocusLost
+
+    private void FTIMAX3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTIMAX3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMAX3FocusLost
+
+    private void FTIMED1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTIMED1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMED1FocusLost
+
+    private void FTIMED2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTIMED2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMED2FocusLost
+
+    private void FTIMED3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTIMED3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMED3FocusLost
+
+    private void FTIMIN1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTIMIN1FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMIN1FocusLost
+
+    private void FTIMIN2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTIMIN2FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMIN2FocusLost
+
+    private void FTIMIN3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FTIMIN3FocusLost
+operacionesdeInspeccionMedicion();        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMIN3FocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -9813,6 +10774,18 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField AP3MAX;
     private javax.swing.JTextField AP3MED;
     private javax.swing.JTextField AP3MIN;
+    private javax.swing.JTextField AQVMAX;
+    private javax.swing.JTextField AQVMED;
+    private javax.swing.JTextField AQVMIN;
+    private javax.swing.JTextField ATIMAX1;
+    private javax.swing.JTextField ATIMAX2;
+    private javax.swing.JTextField ATIMAX3;
+    private javax.swing.JTextField ATIMED1;
+    private javax.swing.JTextField ATIMED2;
+    private javax.swing.JTextField ATIMED3;
+    private javax.swing.JTextField ATIMIN1;
+    private javax.swing.JTextField ATIMIN2;
+    private javax.swing.JTextField ATIMIN3;
     private javax.swing.JTextField ATMAXP1;
     private javax.swing.JTextField ATMAXP2;
     private javax.swing.JTextField ATMAXP3;
@@ -9855,6 +10828,18 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField BP3MAX;
     private javax.swing.JTextField BP3MED;
     private javax.swing.JTextField BP3MIN;
+    private javax.swing.JTextField BQVMAX;
+    private javax.swing.JTextField BQVMED;
+    private javax.swing.JTextField BQVMIN;
+    private javax.swing.JTextField BTIMAX1;
+    private javax.swing.JTextField BTIMAX2;
+    private javax.swing.JTextField BTIMAX3;
+    private javax.swing.JTextField BTIMED1;
+    private javax.swing.JTextField BTIMED2;
+    private javax.swing.JTextField BTIMED3;
+    private javax.swing.JTextField BTIMIN1;
+    private javax.swing.JTextField BTIMIN2;
+    private javax.swing.JTextField BTIMIN3;
     private javax.swing.JTextField BTMAXP1;
     private javax.swing.JTextField BTMAXP2;
     private javax.swing.JTextField BTMAXP3;
@@ -9897,6 +10882,18 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField CP3MAX;
     private javax.swing.JTextField CP3MED;
     private javax.swing.JTextField CP3MIN;
+    private javax.swing.JTextField CQVMAX;
+    private javax.swing.JTextField CQVMED;
+    private javax.swing.JTextField CQVMIN;
+    private javax.swing.JTextField CTIMAX1;
+    private javax.swing.JTextField CTIMAX2;
+    private javax.swing.JTextField CTIMAX3;
+    private javax.swing.JTextField CTIMED1;
+    private javax.swing.JTextField CTIMED2;
+    private javax.swing.JTextField CTIMED3;
+    private javax.swing.JTextField CTIMIN1;
+    private javax.swing.JTextField CTIMIN2;
+    private javax.swing.JTextField CTIMIN3;
     private javax.swing.JTextField CTMAXP1;
     private javax.swing.JTextField CTMAXP2;
     private javax.swing.JTextField CTMAXP3;
@@ -9939,6 +10936,18 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField DP3MAX;
     private javax.swing.JTextField DP3MED;
     private javax.swing.JTextField DP3MIN;
+    private javax.swing.JTextField DQVMAX;
+    private javax.swing.JTextField DQVMED;
+    private javax.swing.JTextField DQVMIN;
+    private javax.swing.JTextField DTIMAX1;
+    private javax.swing.JTextField DTIMAX2;
+    private javax.swing.JTextField DTIMAX3;
+    private javax.swing.JTextField DTIMED1;
+    private javax.swing.JTextField DTIMED2;
+    private javax.swing.JTextField DTIMED3;
+    private javax.swing.JTextField DTIMIN1;
+    private javax.swing.JTextField DTIMIN2;
+    private javax.swing.JTextField DTIMIN3;
     private javax.swing.JTextField DTMAXP1;
     private javax.swing.JTextField DTMAXP2;
     private javax.swing.JTextField DTMAXP3;
@@ -9981,6 +10990,18 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField EP3MAX;
     private javax.swing.JTextField EP3MED;
     private javax.swing.JTextField EP3MIN;
+    private javax.swing.JTextField EQVMAX;
+    private javax.swing.JTextField EQVMED;
+    private javax.swing.JTextField EQVMIN;
+    private javax.swing.JTextField ETIMAX1;
+    private javax.swing.JTextField ETIMAX2;
+    private javax.swing.JTextField ETIMAX3;
+    private javax.swing.JTextField ETIMED1;
+    private javax.swing.JTextField ETIMED2;
+    private javax.swing.JTextField ETIMED3;
+    private javax.swing.JTextField ETIMIN1;
+    private javax.swing.JTextField ETIMIN2;
+    private javax.swing.JTextField ETIMIN3;
     private javax.swing.JTextField ETMAXP1;
     private javax.swing.JTextField ETMAXP2;
     private javax.swing.JTextField ETMAXP3;
@@ -10023,6 +11044,18 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField FP3MAX;
     private javax.swing.JTextField FP3MED;
     private javax.swing.JTextField FP3MIN;
+    private javax.swing.JTextField FQVMAX;
+    private javax.swing.JTextField FQVMED;
+    private javax.swing.JTextField FQVMIN;
+    private javax.swing.JTextField FTIMAX1;
+    private javax.swing.JTextField FTIMAX2;
+    private javax.swing.JTextField FTIMAX3;
+    private javax.swing.JTextField FTIMED1;
+    private javax.swing.JTextField FTIMED2;
+    private javax.swing.JTextField FTIMED3;
+    private javax.swing.JTextField FTIMIN1;
+    private javax.swing.JTextField FTIMIN2;
+    private javax.swing.JTextField FTIMIN3;
     private javax.swing.JTextField FTMAXP1;
     private javax.swing.JTextField FTMAXP2;
     private javax.swing.JTextField FTMAXP3;
@@ -10449,32 +11482,17 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JRadioButton jRadioButton37;
     private javax.swing.JRadioButton jRadioButton38;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField100;
-    private javax.swing.JTextField jTextField101;
-    private javax.swing.JTextField jTextField102;
     private javax.swing.JTextField jTextField115;
     private javax.swing.JTextField jTextField116;
     private javax.swing.JTextField jTextField119;
     private javax.swing.JTextField jTextField120;
     private javax.swing.JTextField jTextField121;
     private javax.swing.JTextField jTextField122;
-    private javax.swing.JTextField jTextField126;
-    private javax.swing.JTextField jTextField129;
-    private javax.swing.JTextField jTextField130;
     private javax.swing.JTextField jTextField132;
     private javax.swing.JTextField jTextField133;
     private javax.swing.JTextField jTextField146;
     private javax.swing.JTextField jTextField147;
     private javax.swing.JTextField jTextField148;
-    private javax.swing.JTextField jTextField158;
-    private javax.swing.JTextField jTextField159;
-    private javax.swing.JTextField jTextField160;
-    private javax.swing.JTextField jTextField161;
-    private javax.swing.JTextField jTextField162;
-    private javax.swing.JTextField jTextField163;
-    private javax.swing.JTextField jTextField164;
-    private javax.swing.JTextField jTextField165;
-    private javax.swing.JTextField jTextField166;
     private javax.swing.JTextField jTextField179;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField180;
@@ -10483,9 +11501,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField185;
     private javax.swing.JTextField jTextField186;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField190;
-    private javax.swing.JTextField jTextField193;
-    private javax.swing.JTextField jTextField194;
     private javax.swing.JTextField jTextField196;
     private javax.swing.JTextField jTextField197;
     private javax.swing.JTextField jTextField2;
@@ -10493,87 +11508,39 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField210;
     private javax.swing.JTextField jTextField211;
     private javax.swing.JTextField jTextField212;
-    private javax.swing.JTextField jTextField222;
-    private javax.swing.JTextField jTextField223;
-    private javax.swing.JTextField jTextField224;
-    private javax.swing.JTextField jTextField225;
-    private javax.swing.JTextField jTextField226;
-    private javax.swing.JTextField jTextField227;
-    private javax.swing.JTextField jTextField228;
-    private javax.swing.JTextField jTextField229;
-    private javax.swing.JTextField jTextField230;
     private javax.swing.JTextField jTextField243;
     private javax.swing.JTextField jTextField244;
     private javax.swing.JTextField jTextField247;
     private javax.swing.JTextField jTextField248;
     private javax.swing.JTextField jTextField249;
     private javax.swing.JTextField jTextField250;
-    private javax.swing.JTextField jTextField254;
-    private javax.swing.JTextField jTextField257;
-    private javax.swing.JTextField jTextField258;
     private javax.swing.JTextField jTextField260;
     private javax.swing.JTextField jTextField261;
     private javax.swing.JTextField jTextField274;
     private javax.swing.JTextField jTextField275;
     private javax.swing.JTextField jTextField276;
-    private javax.swing.JTextField jTextField286;
-    private javax.swing.JTextField jTextField287;
-    private javax.swing.JTextField jTextField288;
-    private javax.swing.JTextField jTextField289;
-    private javax.swing.JTextField jTextField290;
-    private javax.swing.JTextField jTextField291;
-    private javax.swing.JTextField jTextField292;
-    private javax.swing.JTextField jTextField293;
-    private javax.swing.JTextField jTextField294;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField307;
     private javax.swing.JTextField jTextField308;
-    private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField311;
     private javax.swing.JTextField jTextField312;
     private javax.swing.JTextField jTextField313;
     private javax.swing.JTextField jTextField314;
-    private javax.swing.JTextField jTextField318;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField321;
-    private javax.swing.JTextField jTextField322;
     private javax.swing.JTextField jTextField324;
     private javax.swing.JTextField jTextField325;
-    private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField338;
     private javax.swing.JTextField jTextField339;
-    private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField340;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField350;
-    private javax.swing.JTextField jTextField351;
-    private javax.swing.JTextField jTextField352;
-    private javax.swing.JTextField jTextField353;
-    private javax.swing.JTextField jTextField354;
-    private javax.swing.JTextField jTextField355;
-    private javax.swing.JTextField jTextField356;
-    private javax.swing.JTextField jTextField357;
-    private javax.swing.JTextField jTextField358;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
     private javax.swing.JTextField jTextField371;
     private javax.swing.JTextField jTextField372;
     private javax.swing.JTextField jTextField375;
     private javax.swing.JTextField jTextField376;
     private javax.swing.JTextField jTextField377;
     private javax.swing.JTextField jTextField378;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField382;
-    private javax.swing.JTextField jTextField385;
-    private javax.swing.JTextField jTextField386;
     private javax.swing.JTextField jTextField388;
     private javax.swing.JTextField jTextField389;
     private javax.swing.JTextField jTextField53;
     private javax.swing.JTextField jTextField54;
-    private javax.swing.JTextField jTextField58;
-    private javax.swing.JTextField jTextField61;
-    private javax.swing.JTextField jTextField62;
     private javax.swing.JTextField jTextField64;
     private javax.swing.JTextField jTextField65;
     private javax.swing.JTextField jTextField66;
@@ -10583,12 +11550,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField82;
     private javax.swing.JTextField jTextField83;
     private javax.swing.JTextField jTextField84;
-    private javax.swing.JTextField jTextField94;
-    private javax.swing.JTextField jTextField95;
-    private javax.swing.JTextField jTextField96;
-    private javax.swing.JTextField jTextField97;
-    private javax.swing.JTextField jTextField98;
-    private javax.swing.JTextField jTextField99;
     private javax.swing.JPanel mangueraA;
     private javax.swing.JPanel mangueraA1;
     private javax.swing.JPanel mangueraA2;
