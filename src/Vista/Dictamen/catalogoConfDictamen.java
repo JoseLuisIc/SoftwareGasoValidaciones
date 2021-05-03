@@ -275,11 +275,11 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
             HoraFin += (String) campoHoraAmPmFin.getSelectedItem();
             //        List <String> listaCadena = null;
             catalogoDocumentoDictamen cdd = null;
-            for(int i = 0; i<totalDispensarios;i++){
+            //for(int i = 0; i<totalDispensarios;i++){
                 cdd = new catalogoDocumentoDictamen(null,
-                    rootPaneCheckingEnabled, i, noEstacion, folioDocumento,fechaDictamen, HoraInicio,HoraFin);
+                    rootPaneCheckingEnabled, totalDispensarios, noEstacion, folioDocumento,fechaDictamen, HoraInicio,HoraFin);
                 cdd.show();
-            }
+      //      }
             this.dispose();
         }
         //        catalogoDictamenConfirmacion cdc = new catalogoDictamenConfirmacion(this, rootPaneCheckingEnabled);

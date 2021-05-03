@@ -107,8 +107,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel480" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="jLabel509" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="campoDispensario" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -137,69 +137,61 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="campoSerieA" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoSerieB" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoSerieC" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoSerieD" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoSerieE" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoSerieF" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel488" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="campoModeloA" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoModeloB" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoModeloC" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoModeloD" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoModeloE" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoModeloF" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel491" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="20" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="campoProfecoA" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoProfecoB" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoProfecoC" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoProfecoD" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoProfecoE" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoProfecoF" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel489" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel490" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="campoUVAA" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoUVAB" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoUVAC" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoUVAD" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoUVAE" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="campoUVAF" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="campoCumpleF" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="campoCumpleE" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="campoCumpleD" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="campoCumpleC" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="campoCumpleB" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="campoCumpleA" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="campoSerieA" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoSerieB" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoSerieC" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoSerieD" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoSerieE" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoSerieF" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="campoDispensario" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="jLabel488" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="campoModeloA" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoModeloB" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoModeloC" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoModeloD" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoModeloE" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoModeloF" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabel491" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="campoProfecoA" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoProfecoB" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoProfecoC" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoProfecoD" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoProfecoE" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoProfecoF" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel489" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel490" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="campoUVAA" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoUVAB" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoUVAC" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoUVAD" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoUVAE" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoUVAF" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="campoCumpleF" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCumpleE" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCumpleD" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCumpleC" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCumpleB" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCumpleA" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -210,7 +202,6 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel480" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel509" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoDispensario" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -438,16 +429,6 @@
             <Component class="javax.swing.JCheckBox" name="campoCumpleF">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cumple"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel509">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="#"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="campoDispensario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="#"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="campoMarcaA">
@@ -925,6 +906,21 @@
             <Component class="javax.swing.JComboBox" name="campoModeloF">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="1" value="Item 2"/>
+                    <StringItem index="2" value="Item 3"/>
+                    <StringItem index="3" value="Item 4"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="campoDispensario">
+              <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
                     <StringItem index="0" value="Item 1"/>
