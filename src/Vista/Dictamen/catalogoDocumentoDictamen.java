@@ -554,7 +554,7 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
 
         campoEstacion.setText("jLabel3");
 
-        botonDictamen.setText("Aceptar");
+        botonDictamen.setText("Guardar");
         botonDictamen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonDictamenActionPerformed(evt);
@@ -715,17 +715,41 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
          "Lado F\t TGas: "+campoMarcaFDocumento+"\t N.Serie: "+campoSerieFDocumento+"\t Mod:"+campoModeloFDocumento+"\t HProfeco: "+campoProfecoFDocumento+"\t HUVA: "+campoUVAFDocumento+"\t Estatus: "+campoCumpleFDocumento+"\n";
         
         //lbd.openConnection();
+        int validaProceso = lbd.validarDispensario(dispensarioActual);
+        if(validaProceso == 0){
+            lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensario, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"Z");
+            lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioA, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"A");
+            lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioB, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"B");
+            lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioC, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"C");
+            lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioD, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"D");
+            lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioE, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"E");
+            lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioF, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"F");
+            lbd.insertarDatosDictamen("",folioDocumento, noEstacion, "________________________________________________________________________________________________________", Fecha, HorarioInicio, HorarioFin,dispensarioActual,"G");
+            JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa.");
+        }
+        else{
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            JOptionPane.showMessageDialog(null, "Ya has actualizado el Dispensario: "+ dispensarioActual);
+            int dialogResult = JOptionPane.showConfirmDialog (null, "¿Desea editar el dispensario?.","Warning",dialogButton);
+            if(dialogResult == JOptionPane.YES_OPTION){
+                //Nota: Se envían los datos adicionales por si en algún momento es necesario utilizarlos. JLCI 07/05/2021
+                lbd.actualizarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensario, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"Z");
+                lbd.actualizarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioA, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"A");
+                lbd.actualizarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioB, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"B");
+                lbd.actualizarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioC, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"C");
+                lbd.actualizarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioD, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"D");
+                lbd.actualizarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioE, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"E");
+                lbd.actualizarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioF, Fecha, HorarioInicio, HorarioFin,dispensarioActual,"F");
+                lbd.actualizarDatosDictamen("",folioDocumento, noEstacion, "________________________________________________________________________________________________________", Fecha, HorarioInicio, HorarioFin,dispensarioActual,"G");
+                JOptionPane.showMessageDialog(null, "Datos actualizados de forma exitosa.");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Los datos permanecerán iguales.");
+            }
+            
+        }
         
-        lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensario, Fecha, HorarioInicio, HorarioFin,dispensarioActual);
-        lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioA, Fecha, HorarioInicio, HorarioFin,dispensarioActual);
-        lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioB, Fecha, HorarioInicio, HorarioFin,dispensarioActual);
-        lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioC, Fecha, HorarioInicio, HorarioFin,dispensarioActual);
-        lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioD, Fecha, HorarioInicio, HorarioFin,dispensarioActual);
-        lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioE, Fecha, HorarioInicio, HorarioFin,dispensarioActual);
-        lbd.insertarDatosDictamen("",folioDocumento, noEstacion, cadenaDispensarioF, Fecha, HorarioInicio, HorarioFin,dispensarioActual);
-        lbd.insertarDatosDictamen("",folioDocumento, noEstacion, "________________________________________________________________________________________________________", Fecha, HorarioInicio, HorarioFin,dispensarioActual);
         
-        JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
         //lbd.closeConnection();
         
         System.out.println(cadenaDispensario);
