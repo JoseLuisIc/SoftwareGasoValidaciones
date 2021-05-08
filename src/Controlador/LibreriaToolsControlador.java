@@ -12,6 +12,8 @@ import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Desktop;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.file.Files;
@@ -22,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -324,5 +327,21 @@ public class LibreriaToolsControlador {
        //JOptionPane.showMessageDialog(null, "Elige una fecha:");}
        
        return s;
+    }
+    /*
+        Obtengo los parametros en la bd para evitar ir cambiando a cada rato la contraseña
+        y asegurarnos que nadie pueda utilizarlo.
+        Author: José Luis Caamal Ic
+        Date: 07/05/2021
+    */
+    public String obtenerClave(String clave) throws FileNotFoundException, IOException{
+        String respClave = "";
+        Properties propiedades = new Properties();
+        
+        propiedades.load(new FileReader("src/Controlador/propiedades.properties"));
+        //C:\Users\joseluis.caamal\Documents\GitProjects\SoftwareGasoValidaciones\src\Controlador\propiedades.properties
+        respClave = propiedades.getProperty(clave);
+        System.out.println("La clave especificada es: " +  respClave);
+        return respClave;
     }
 }

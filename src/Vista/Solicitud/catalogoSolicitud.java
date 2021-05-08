@@ -470,19 +470,18 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
                     "«CP»",
                     "«ESTADO»",
                     "«NOCRE»",
-                    "«TELEF»",
-                    "«UTM»",
+                    "«OBSV»",
+                    "«OBSVC»",
+                    "«TECNICO»",
+                    "«PAPOYO»",
+                    "«SOLICITANTEF»",
                     "«MEDIDAS»",
                     "«CRONO»",
                     "«TERMO»",
-                    "«OBSV»",
-                    "«TECNICO»",
-                    "«PAPOYO»",
-                    "«SOLICITANTE»",
+                    "«PERIODO»",
                     "«HORAUNO»",
                     "«HORADOS»",
-                    "«DATE»",
-                    "«PERIODO»"
+                    "«DATE»"
                 };
                 /*Recupero la información para mi documento :) */
                 lbd.openConnection();
@@ -524,11 +523,13 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
                 
             }else{
                 
-                if(validaFSol == 0)
+                if(validaFSol == 0 && validaEstacion ==0 )
+                    JOptionPane.showMessageDialog(null,"No existe el folio & la estación que quiere imprimir.");
+                if(validaFSol ==0)
                     JOptionPane.showMessageDialog(null,"No existe el folio que quiere imprimir.");
                 if(validaEstacion ==0)
                     JOptionPane.showMessageDialog(null,"No existe la estación que quiere imprimir.");
-                 if(validaPosicion ==0) 
+                if(validaPosicion ==0) 
                     JOptionPane.showMessageDialog(null,"El folio y la estación, no están relacionados.");
                 
             }

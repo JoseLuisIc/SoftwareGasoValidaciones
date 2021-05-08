@@ -81,8 +81,10 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         labelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("GasValid 2.0");
         setLocation(new java.awt.Point(600, 0));
         setMinimumSize(new java.awt.Dimension(1000, 600));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -179,17 +181,19 @@ public class ventanaPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(catalogoUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 80, 80));
+
+        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/fondoGVV.jpg"))); // NOI18N
         jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
