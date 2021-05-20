@@ -620,6 +620,7 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonDictamenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDictamenActionPerformed
