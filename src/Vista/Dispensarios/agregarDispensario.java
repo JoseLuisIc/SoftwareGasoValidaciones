@@ -274,6 +274,7 @@ public class agregarDispensario extends javax.swing.JDialog {
 
         jLabel22.setText("Marca Gasolina:");
 
+        etiquetaMarcaGasolina.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaMarcaGasolina.setText("jLabel23");
 
         campoNoDispensario.setEditable(false);
