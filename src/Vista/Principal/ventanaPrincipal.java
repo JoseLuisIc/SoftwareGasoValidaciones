@@ -93,7 +93,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         jPanel1.setAlignmentY(60.0F);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        catalogoCronometros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/termometro_de_gas (1)_opt.jpg"))); // NOI18N
+        catalogoCronometros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/chronometer.png"))); // NOI18N
         catalogoCronometros.setAlignmentX(0.5F);
         catalogoCronometros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +136,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
                 inspeccionMedicionActionPerformed(evt);
             }
         });
-        jPanel1.add(inspeccionMedicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 80, 80));
+        jPanel1.add(inspeccionMedicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 80, 80));
 
         registroSolicitud.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/to_do_list_checked2.png"))); // NOI18N
         registroSolicitud.setAlignmentX(0.5F);
@@ -145,9 +145,9 @@ public class ventanaPrincipal extends javax.swing.JFrame {
                 registroSolicitudActionPerformed(evt);
             }
         });
-        jPanel1.add(registroSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 80, 80));
+        jPanel1.add(registroSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 80, 80));
 
-        catalogoEstaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/pemex.png"))); // NOI18N
+        catalogoEstaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/pemex2.png"))); // NOI18N
         catalogoEstaciones.setAlignmentX(0.5F);
         catalogoEstaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,7 +180,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
                 catalogoUsuariosActionPerformed(evt);
             }
         });
-        jPanel1.add(catalogoUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 80, 80));
+        jPanel1.add(catalogoUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 80, 80));
 
         labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/fondoGVV.jpg"))); // NOI18N
         jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, -1, -1));
