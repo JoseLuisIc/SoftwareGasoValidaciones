@@ -65,7 +65,7 @@
         <Component class="javax.swing.JButton" name="catalogoCronometros">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Multimedia/termometro_de_gas (1)_opt.jpg"/>
+              <Image iconType="3" name="/Multimedia/chronometer.png"/>
             </Property>
             <Property name="alignmentX" type="float" value="0.5"/>
           </Properties>
@@ -138,7 +138,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="130" y="500" width="80" height="80"/>
+              <AbsoluteConstraints x="10" y="410" width="80" height="80"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -154,14 +154,14 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="500" width="80" height="80"/>
+              <AbsoluteConstraints x="10" y="320" width="80" height="80"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JButton" name="catalogoEstaciones">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Multimedia/pemex.png"/>
+              <Image iconType="3" name="/Multimedia/pemex2.png"/>
             </Property>
             <Property name="alignmentX" type="float" value="0.5"/>
           </Properties>
@@ -217,7 +217,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="500" width="80" height="80"/>
+              <AbsoluteConstraints x="10" y="500" width="80" height="80"/>
             </Constraint>
           </Constraints>
         </Component>

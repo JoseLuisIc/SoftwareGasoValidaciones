@@ -263,6 +263,7 @@ public class agregarMedVolumetrica extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void campoVolVeinteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoVolVeinteActionPerformed
