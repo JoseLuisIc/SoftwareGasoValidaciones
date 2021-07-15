@@ -151,10 +151,13 @@ public class LibreriaToolsControlador {
                 tipoDocumento = "SOLICITUD2021.docx";
             break;
             case 3:
-                tipoDocumento = "DICTAMENBOMBAS2021.docx";
+                tipoDocumento = "DICTAMENBOMBAS2021.docx"; //Sirve para generar el último documento
             break;
             case 4:
-                tipoDocumento = "DICTAMENBOMBAS2021H2.docx";
+                tipoDocumento = "DICTAMENBOMBAS2021H2.docx"; //Sirve para generar el último documento
+            break;
+            case 5:
+                tipoDocumento = "DICTAMENDEBOMBAS2021.docx";
             break;
             default:
                 //tipoDocumento = "CONTRATO2021.docx";
@@ -185,6 +188,9 @@ public class LibreriaToolsControlador {
             break;
             case 4:
                 tipoDocumento = "DictamenBombaDos-"+nameArchive;
+            break;
+            case 5:
+                tipoDocumento = "DictamenBombas-"+nameArchive;
             break;
             default:
                 //tipoDocumento = "CONTRATO2021.docx";
@@ -250,7 +256,8 @@ public class LibreriaToolsControlador {
     public String obtenerHorarioInicio(){
      
        JOptionPane.showMessageDialog(null, "Por favor, ingresa la hora inicial en formato: AM/PM");
-       String[] periodo={"00:00 AM/PM"};
+       Date newDate = new Date();
+       String[] periodo={newDate.getHours()+":"+newDate.getMinutes() +":"+newDate.getSeconds() + "AM/PM"};
        
        JComboBox jcd = new JComboBox(periodo);
        jcd.setEditable(true);
@@ -266,7 +273,8 @@ public class LibreriaToolsControlador {
     public String obtenerHorarioFIN(){
      
        JOptionPane.showMessageDialog(null, "Por favor, ingresa la hora fin en formato: AM/PM");
-       String[] periodo={"00:00 AM/PM"};
+       Date newDate = new Date();
+       String[] periodo={newDate.getHours()+":"+newDate.getMinutes() +":"+newDate.getSeconds() + "AM/PM"};
        
        JComboBox jcd = new JComboBox(periodo);
        jcd.setEditable(true);

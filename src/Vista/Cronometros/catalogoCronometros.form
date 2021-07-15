@@ -107,10 +107,8 @@
                   <EmptySpace pref="12" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="eliminarCC" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="editarCC" alignment="1" max="32767" attributes="0"/>
-                          <Component id="agregarCC" alignment="1" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="editarCC" alignment="1" max="32767" attributes="0"/>
+                      <Component id="agregarCC" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
