@@ -2,10 +2,12 @@ package Controlador;
 
 import java.awt.Desktop;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -208,6 +210,13 @@ public static void reemplazarDatosWord(String name,String nameSalida, String dir
         
         /*El nombre de la carpeta de salida debe ser fijo*/
         String carpetaSalida = "C:\\Formatos\\";
+        
+        File archivoFinalFormato = new File(carpetaSalida);
+        if (archivoFinalFormato.mkdirs()) {//Se crea la carpeta
+                System.out.println("Directorio C:\\Formatos\\ creado.");
+        } else {
+                System.out.println("Directorio C:\\Formatos\\ ya existe.");
+        }    
         /*El nombre de la carpeta de salida debe ser fijo*/
         String nameSalida = ".docx"; //Pretendo recibir folio y fecha //06/08/2020
         String extensiónSalida = ".docx";
@@ -228,9 +237,9 @@ public static void reemplazarDatosWord(String name,String nameSalida, String dir
 //        
 //        if (!archivoFinal.exists()) {
             if (archivoFinal.mkdirs()) {//Se crea la carpeta
-                System.out.println("Directorio creado");
+                System.out.println("Directorio "+carpetaSalida+" creado.");
             } else {
-                System.out.println("Directorio ya existe.");
+                System.out.println("Directorio "+carpetaSalida+" ya existe.");
             }
                 
                 FileOutputStream salida = new FileOutputStream(carpetaSalida+nameSalida);
@@ -239,6 +248,8 @@ public static void reemplazarDatosWord(String name,String nameSalida, String dir
                 System.out.println("Lo que escribí:"+carpetaSalida+nameSalida);
                 salida.close();
                 crearDocumentoContrato( datosPalabra,datosReemplazo, carpetaSalida, nameSalida, tipoDocumento);
+                if(tipoDocumento == 4) //Crea el documento solo si es igual a 4.
+                    crearDictamenBomba(carpetaSalida, folioDocumento, tipoDocumento,datosReemplazo);
 //                System.out.println("Error al crear directorio");
 //                crearDocumentoContrato( datosPalabra,datosReemplazo, carpetaSalida, nameSalida, tipoDocumento);
             
@@ -314,22 +325,117 @@ public static void reemplazarDatosWord(String name,String nameSalida, String dir
             }
             //Files.delete(Paths.get(direccion+nameArchive));
             //Files.move(Paths.get(direccion+nameArchive+".docx"), Paths.get(direccion+nameArchive+".docx"));
-            int dialogButton = JOptionPane.YES_NO_OPTION;
-            JOptionPane.showMessageDialog(null,"El archivo se creo con éxito en la siguiente dirección: "+direccion+nombreNuevo);
-            int dialogResult = JOptionPane.showConfirmDialog (null, "¿Desea abrir el archivo generado?","Warning",dialogButton);
-            if(dialogResult == JOptionPane.YES_OPTION){
-              // Saving code here
-              //nameArchive archivoGenerado sin permiso :v
-              int elimine = lbtc.deleteDocumento(direccion+nameArchive);
-              if(elimine == 1){
-                lbtc.openWord(direccion+nombreNuevo);
-              }
-              else{
-                  System.out.println("La dirección:"+direccion+nameArchive+". No Existe.");
-              }
+            if(tipoDoc != 4 && tipoDoc != 3){ //Evita abrir los archivos de bombas 14/07/2021
+                int dialogButton = JOptionPane.YES_NO_OPTION;
+                JOptionPane.showMessageDialog(null,"El archivo se creo con éxito en la siguiente dirección: "+direccion+nombreNuevo);
+                int dialogResult = JOptionPane.showConfirmDialog (null, "¿Desea abrir el archivo generado?","Warning",dialogButton);
+                if(dialogResult == JOptionPane.YES_OPTION){
+                  // Saving code here
+                  //nameArchive archivoGenerado sin permiso :v
+                  int elimine = lbtc.deleteDocumento(direccion+nameArchive);
+                  if(elimine == 1){
+                    lbtc.openWord(direccion+nombreNuevo);
+                  }
+                  else{
+                      System.out.println("La dirección:"+direccion+nameArchive+". No Existe.");
+                  }
+                }else{
+                    System.out.println("Independientemente de la documentación, se eliminan los archivos extras.");
+                    //lbtc.deleteDocumento(direccion+nameArchive);
+                }
             }
+            lbtc.deleteDocumento(direccion+nameArchive);
+            direccion_local = direccion;
     
     }
+    public String direccion_local = "";
+    public void crearDictamenBomba(String direccion, String folioDocumento, int tipoDocumento,Object[] datosReemplazo) 
+            throws InvalidFormatException, IOException{
+        String nombreAux = "";
+        String nameSalida = "";
+        String extensiónSalida = ".docx";
+        tipoDocumento = 3;
+        nameSalida = folioDocumento+"-"+tipoDocumento; //Genera el nombre único
+        //carpetaSalida = carpetaSalida+"\\"+folioDocumento+"\\"; //Creo la carpeta
+        nameSalida = nameSalida + extensiónSalida;
+        String nombreNuevo = lbtc.tipoDocumentoGenerar(tipoDocumento, nameSalida);
+        nombreAux = nombreNuevo;
+        //String nombreNuevo = lbtc.tipoDocumentoGenerar(tipoDoc, nameArchive);
+        XWPFDocument doc = new XWPFDocument(OPCPackage.open(direccion+nombreNuevo));
+        System.out.println("Salida original: "+direccion+nombreNuevo);
+        //String nombreNuevo = lbtc.tipoDocumentoGenerar(tipoDoc, nameArchive);
+        tipoDocumento = 4;
+        nameSalida = folioDocumento+"-"+tipoDocumento; //Genera el nombre único
+        //carpetaSalida = carpetaSalida+"\\"+folioDocumento+"\\"; //Creo la carpeta
+        nameSalida = nameSalida + extensiónSalida;
+        nombreNuevo = lbtc.tipoDocumentoGenerar(tipoDocumento, nameSalida);
+        System.out.println("Salida copia: "+direccion+nombreNuevo);
+        XWPFDocument docCopy = new XWPFDocument(OPCPackage.open(direccion+nombreNuevo));
+        tipoDocumento = 5;
+        crearDictamenBombaDoc(doc, docCopy,direccion,tipoDocumento,nameSalida, datosReemplazo);
+        eliminarCopiaDictamen(direccion,nombreNuevo,nombreAux);
+//        XWPFDocument doc = new XWPFDocument(OPCPackage.open(direccion+nameArchive));
+//        System.out.println(doc.toString());
+//        String nombreNuevo = lbtc.tipoDocumentoGenerar(tipoDoc, nameArchive);
+//        try (FileOutputStream fileOut = new FileOutputStream(direccion+nombreNuevo)) {
+//                doc.write(fileOut);
+//                doc.close();
+//        }
+    }
+    /*Une los documentos para tener un solo documento
+    @Jose Luis Caamal Ic
+    doc = documento original
+    docCopy = documento que se unira al original
+    14/07/2021
+    */
+    public void crearDictamenBombaDoc( XWPFDocument doc, XWPFDocument docCopy, 
+        String direccion,int tipoDocumento, String nombreArchivo, Object [] datosReemplazo) throws FileNotFoundException, IOException{
+        int pos = doc.getParagraphs().size() - 1;
+        System.out.println(pos);
+        int contador = 0;
+        System.out.println("datosReemplazo.length:"+datosReemplazo.length +3);
+        for (XWPFParagraph par : docCopy.getParagraphs()) {
+            doc.createParagraph();
+            if(contador < datosReemplazo.length +3){ //Se complementa y no permite ingresar más caracteres
+                doc.setParagraph(par, pos++);
+                contador ++;
+            }
+//            System.out.println("par: "+par.toString()+":");
+//            System.out.println("pos:"+pos);
+        }
+        System.out.println(tipoDocumento);
+        System.out.println(nombreArchivo);
+        String nombreNuevo = lbtc.tipoDocumentoGenerar(tipoDocumento, nombreArchivo);
+        System.out.println(direccion+nombreNuevo);
+        try (FileOutputStream fileOut = new FileOutputStream(direccion+nombreNuevo)) {
+                doc.write(fileOut);
+                doc.close();
+        }
+        
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        JOptionPane.showMessageDialog(null,"El archivo se creo con éxito en la siguiente dirección: "+direccion+nombreNuevo);
+        int dialogResult = JOptionPane.showConfirmDialog (null, "¿Desea abrir el archivo generado?","Warning",dialogButton);
+        if(dialogResult == JOptionPane.YES_OPTION){
+              // Saving code here
+              //nameArchive archivoGenerado sin permiso :v
+              
+            lbtc.openWord(direccion+nombreNuevo);
+             
+        }else{
+            System.out.println("El archivo no se que desea abrir.");
+               // lbtc.deleteDocumento(direccion+nameArchive);
+        }
+        
+    }
+    public void eliminarCopiaDictamen(String direccion, String nameArchive, String nombreAux){
+        lbtc.deleteDocumento(direccion+nameArchive);
+        lbtc.deleteDocumento(direccion+nombreAux);
+        System.out.println("Se borran los archivos finales.");
+    }
     
+<<<<<<< HEAD
     
+=======
+    //public void limpiarDocBomba(String)
+>>>>>>> b84e24715997523a5ed7bd0f81a0642d415ed005
 }

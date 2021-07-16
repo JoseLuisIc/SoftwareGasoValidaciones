@@ -434,6 +434,7 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
             int operacionExitosa = 1;
             int tipoDoc = 4;
             int tipoDocDic = 3;
+            int tipoDocDicFinal = 5; //El dictamen Final se genera apartir de este documento.
             Object [] arregloDatosDoc;
             Object [] arregloDatosDocDic = null;
             String folioSol = folioSolicitudCS.getText();
@@ -491,13 +492,13 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
                 //lbd.obtenerDatosDictamenHU(folioSol,periodo);
                 arregloDatosDocDic = lbd.obtenerDatosDictamen(folioSol,periodo,horarioInicio,horarioFin,fechaLocal);
                 List <String> datosDictamen = lbd.obtenerDatosDictamenHD(folioSol,idEstacion);
-                arregloDatosDoc = new Object[85];
-                String [] etiquetasReemplazo = new String[85];// {"«FOLY»","«DICTAMENLISTA»"};
-                for (int i = 0; i < 85; i++) {
+                arregloDatosDoc = new Object[datosDictamen.size()];
+                String [] etiquetasReemplazo = new String[datosDictamen.size()];// {"«FOLY»","«DICTAMENLISTA»"};
+                for (int i = 0; i < datosDictamen.size(); i++) {
                     arregloDatosDoc[i] = " ";
                     etiquetasReemplazo[i]= " ";
                 }
-                
+                System.out.println("datosDictamen: "+datosDictamen.size());
                 for (int i = 0; i < datosDictamen.size(); i++) {
                     arregloDatosDoc[i] = datosDictamen.get(i);
                     etiquetasReemplazo[i]= "«DICTAMENLISTA"+i+"»";
@@ -516,6 +517,9 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
                     /*NoTocar*/
                     
                     reporteWord.creaDocContrato(etiquetasReemplazo,arregloDatosDoc, tipoDoc,folioSol);
+                    /*Generar el documento completo*/
+                    //tipoDocDicFinal;
+                    //reporteWord
                 } catch (InvalidFormatException | IOException ex) {
                     Logger.getLogger(catalogoInspeccionDeMedicion.class.getName()).log(Level.SEVERE, null, ex);
                     JOptionPane.showMessageDialog(null, "Ocurrio un error al crear el archivo error es el siguiente:"+ex);
