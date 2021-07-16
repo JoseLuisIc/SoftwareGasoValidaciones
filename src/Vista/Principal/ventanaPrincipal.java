@@ -36,6 +36,8 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form ventanaPrincipal
      */
+    
+            
     String ruta = "";
     public URL url = getClass().getResource(ruta);
     Image image = new ImageIcon(url).getImage();

@@ -8,6 +8,7 @@ import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import java.util.List;
 import javax.swing.JOptionPane;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 /**
  *
  * @author joseluis.caamal
@@ -34,6 +35,43 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
             boolean modal,int i,String noEstacion, String folioDocumento,String Fecha, String HoraInicio,String HoraFin) {
         super(parent, modal);
         initComponents();
+        //AutoAcompletar en comboBox 13/07/2021
+        //Auto Acompletar Marca
+        AutoCompleteDecorator.decorate(campoMarcaA);
+        AutoCompleteDecorator.decorate(campoMarcaB);
+        AutoCompleteDecorator.decorate(campoMarcaC);
+        AutoCompleteDecorator.decorate(campoMarcaD);
+        AutoCompleteDecorator.decorate(campoMarcaE);
+        AutoCompleteDecorator.decorate(campoMarcaF);
+        //Auto Acompletar Serie
+        AutoCompleteDecorator.decorate(campoSerieA);
+        AutoCompleteDecorator.decorate(campoSerieB);
+        AutoCompleteDecorator.decorate(campoSerieC);
+        AutoCompleteDecorator.decorate(campoSerieD);
+        AutoCompleteDecorator.decorate(campoSerieE);
+        AutoCompleteDecorator.decorate(campoSerieF);
+        //Auto Acompletar Modelo
+        AutoCompleteDecorator.decorate(campoModeloA);
+        AutoCompleteDecorator.decorate(campoModeloB);
+        AutoCompleteDecorator.decorate(campoModeloC);
+        AutoCompleteDecorator.decorate(campoModeloD);
+        AutoCompleteDecorator.decorate(campoModeloE);
+        AutoCompleteDecorator.decorate(campoModeloF);
+        //Auto Acompletar Profeco
+        AutoCompleteDecorator.decorate(campoProfecoA);
+        AutoCompleteDecorator.decorate(campoProfecoB);
+        AutoCompleteDecorator.decorate(campoProfecoC);
+        AutoCompleteDecorator.decorate(campoProfecoD);
+        AutoCompleteDecorator.decorate(campoProfecoE);
+        AutoCompleteDecorator.decorate(campoProfecoF);
+        //Auto Acompletar UVA
+        AutoCompleteDecorator.decorate(campoUVAA);
+        AutoCompleteDecorator.decorate(campoUVAB);
+        AutoCompleteDecorator.decorate(campoUVAC);
+        AutoCompleteDecorator.decorate(campoUVAD);
+        AutoCompleteDecorator.decorate(campoUVAE);
+        AutoCompleteDecorator.decorate(campoUVAF);
+        
       //this.dispensarioActual = i+1;
         this.folioDocumento = folioDocumento;
         this.noEstacion = noEstacion;
@@ -247,6 +285,11 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         jLabel5.setText("Estatus");
 
         campoCumpleA.setText("Cumple");
+        campoCumpleA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoCumpleAActionPerformed(evt);
+            }
+        });
 
         campoCumpleB.setText("Cumple");
 
@@ -301,6 +344,11 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
 
         campoProfecoA.setEditable(true);
         campoProfecoA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoProfecoA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoProfecoAActionPerformed(evt);
+            }
+        });
 
         campoProfecoB.setEditable(true);
         campoProfecoB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -760,6 +808,14 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
     private void campoMarcaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoMarcaAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoMarcaAActionPerformed
+
+    private void campoProfecoAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoProfecoAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoProfecoAActionPerformed
+
+    private void campoCumpleAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCumpleAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoCumpleAActionPerformed
 
     /**
      * @param args the command line arguments

@@ -8,6 +8,7 @@ package Vista.Principal;
 import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import Modelo.TextPrompt;
+import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -203,6 +204,16 @@ public class accesoPrincipal extends javax.swing.JFrame {
 
     private void botonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicioSesionActionPerformed
         // TODO add your handling code here:
+        //Crea carpeta Formatos en el disco C: para el empleo del programa 13/07/2021
+        File direccion = new File("C:/Formatos");
+        if (!direccion.exists()) {
+            if (direccion.mkdirs()) {
+                System.out.println("Directorio creado");
+            } else {
+                System.out.println("Error al crear directorio");
+            }
+        }        
+        
         int validaResp = 0; //valida los resultados de la constula jlci 28/06/2020
         Usuario = campoUsuario.getText();
         Password = jPasswordField1.getText();
