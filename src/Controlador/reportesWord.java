@@ -432,6 +432,4 @@ public static void reemplazarDatosWord(String name,String nameSalida, String dir
         lbtc.deleteDocumento(direccion+nombreAux);
         System.out.println("Se borran los archivos finales.");
     }
-    
-    //public void limpiarDocBomba(String)
 }

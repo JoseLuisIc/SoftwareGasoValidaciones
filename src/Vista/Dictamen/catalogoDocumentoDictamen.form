@@ -413,6 +413,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cumple"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoCumpleAActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="campoCumpleB">
               <Properties>
@@ -646,6 +649,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoProfecoAActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
