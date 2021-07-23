@@ -6,6 +6,7 @@
 package Vista.Jarras;
 
 import Controlador.LibreriaBDControlador;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -26,6 +27,7 @@ public class catalogoMedidadVolumetricasJarras extends javax.swing.JFrame {
         modeloJarras = lbd.modeloJarras(columna); //Cargo el contenido por defecto
         lbd.closeConnection();
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
     
     /*Obtengo los titulos de mi tabla*/

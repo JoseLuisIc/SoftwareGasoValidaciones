@@ -6,6 +6,7 @@
 package Vista.Estacion;
 
 import Controlador.LibreriaBDControlador;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -29,6 +30,7 @@ public class catalogoEstaciones extends javax.swing.JFrame {
         modeloEstaciones = lbd.modeloEstaciones(columna,"","",""); //Cargo el contenido por defecto
         lbd.closeConnection();
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {

@@ -10,6 +10,7 @@ import Controlador.LibreriaToolsControlador;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -31,7 +32,7 @@ public class agregarDispensario extends javax.swing.JDialog {
         super(parent, modal);
         
         initComponents();
-        
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         String numEstación = campoNoEstacion.getText();
         lbd.openConnection();
         List<String> marcasGasolina = lbd.obtenerMarcaGasolina();

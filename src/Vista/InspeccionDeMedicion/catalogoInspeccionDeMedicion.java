@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
@@ -34,6 +35,7 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
     public catalogoInspeccionDeMedicion() {
         
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
 //        // Indicamos como sera el resaltado de la tabla
 //        jTable1.setDefaultRenderer(Object.class, colorT);
 //        colorT.setColumna(0);

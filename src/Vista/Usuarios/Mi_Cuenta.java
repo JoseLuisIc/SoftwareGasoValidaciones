@@ -8,6 +8,7 @@ package Vista.Usuarios;
 import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import Modelo.modeloTablaUsuario;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -24,6 +25,7 @@ public class Mi_Cuenta extends javax.swing.JDialog {
     public Mi_Cuenta(java.awt.Frame parent, boolean modal, modeloTablaUsuario mtu) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         this.mtu = mtu;
         String tipoUsuario = "";
         int idMC = mtu.getIdActual();

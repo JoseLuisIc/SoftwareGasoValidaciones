@@ -10,6 +10,7 @@ import Controlador.LibreriaToolsControlador;
 import Modelo.modeloTablaUsuario;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -44,6 +45,7 @@ public class Agregar_Usuarios extends javax.swing.JDialog {
     public Agregar_Usuarios(java.awt.Frame parent, boolean modal,int newIdUser) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         campoIDUsuario.setText(String.valueOf(newIdUser));
         this.newIdUser = newIdUser; //Obtengo el Id que sigue
     }

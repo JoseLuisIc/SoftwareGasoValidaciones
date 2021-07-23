@@ -5,6 +5,8 @@
  */
 package Vista.InspeccionDeMedicion;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author joseluis.caamal
@@ -16,6 +18,7 @@ public class panelInfo extends javax.swing.JFrame {
      */
     public panelInfo() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

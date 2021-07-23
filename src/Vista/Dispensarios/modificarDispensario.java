@@ -12,6 +12,7 @@ import java.awt.event.ItemListener;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -33,7 +34,7 @@ public class modificarDispensario extends javax.swing.JDialog {
         super(parent, modal);
         
         initComponents();
-        
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         String numEstación = campoNoEstacion.getText();
 //        if(numEstación.equals("")){
 //            

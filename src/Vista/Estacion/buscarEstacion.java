@@ -5,6 +5,8 @@
  */
 package Vista.Estacion;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author admin
@@ -16,6 +18,7 @@ public class buscarEstacion extends javax.swing.JFrame {
      */
     public buscarEstacion() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
 //    /**

@@ -8,11 +8,13 @@ package Vista.Principal;
 import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import Modelo.TextPrompt;
+import java.awt.Image;
 import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -38,6 +40,12 @@ public class accesoPrincipal extends javax.swing.JFrame {
         
     public accesoPrincipal() {
         initComponents();
+        
+        //try{
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
+        //}catch(Exception ex){
+        //}
+        
         TextPrompt placeholder = new TextPrompt("Usuario",campoUsuario);
         TextPrompt placeholderPass = new TextPrompt("Password", jPasswordField1);
     /*Calendar cal = Calendar.getInstance();  //Llama la libreria de fechas

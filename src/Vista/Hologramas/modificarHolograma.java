@@ -6,6 +6,7 @@
 package Vista.Hologramas;
 
 import Controlador.LibreriaBDControlador;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,6 +22,7 @@ public class modificarHolograma extends javax.swing.JDialog {
     public modificarHolograma(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

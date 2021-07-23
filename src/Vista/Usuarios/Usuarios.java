@@ -10,6 +10,7 @@ import Controlador.LibreriaToolsControlador;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,6 +31,7 @@ public class Usuarios extends javax.swing.JDialog {
         modeloUsuarios = new DefaultTableModel(null, getColumnas());
         setFilas();
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**
