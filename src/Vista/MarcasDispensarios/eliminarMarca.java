@@ -5,6 +5,8 @@
  */
 package Vista.MarcasDispensarios;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author admin
@@ -16,6 +18,7 @@ public class eliminarMarca extends javax.swing.JFrame {
      */
     public eliminarMarca() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

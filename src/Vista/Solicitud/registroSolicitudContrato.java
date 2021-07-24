@@ -14,6 +14,7 @@ import java.util.Date;
 import Modelo.modeloTablaUsuario;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -31,6 +32,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                 this.mtu = mtu;
                 Usuario = mtu.getNombreCompleto();
                 initComponents();
+                setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
                 personalApoyo.setEnabled(false);
                 tecnicoRSC.setEnabled(false);
                 //Jose Luis Caamal Ic

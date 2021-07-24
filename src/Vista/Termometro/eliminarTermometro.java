@@ -6,6 +6,7 @@
 package Vista.Termometro;
 
 import Controlador.LibreriaBDControlador;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +21,7 @@ public class eliminarTermometro extends javax.swing.JDialog {
     public eliminarTermometro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

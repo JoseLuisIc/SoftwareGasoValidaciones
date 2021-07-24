@@ -5,6 +5,8 @@
  */
 package Vista.Hologramas;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author admin
@@ -16,6 +18,7 @@ public class agregarHologramas extends javax.swing.JFrame {
      */
     public agregarHologramas() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

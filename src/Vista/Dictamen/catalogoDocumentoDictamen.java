@@ -7,6 +7,7 @@ package Vista.Dictamen;
 import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 /**
@@ -35,6 +36,7 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
             boolean modal,int i,String noEstacion, String folioDocumento,String Fecha, String HoraInicio,String HoraFin) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         //AutoAcompletar en comboBox 13/07/2021
         //Auto Acompletar Marca
         AutoCompleteDecorator.decorate(campoMarcaA);
@@ -615,6 +617,11 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         campoFolioDictamen.setText("jLabel3");
 
         jButton1.setText("Terminar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -824,6 +831,10 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
     private void campoCumpleAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCumpleAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCumpleAActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

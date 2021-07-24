@@ -5,6 +5,8 @@
  */
 package Vista.Estacion;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author yuliana adame
@@ -16,6 +18,7 @@ public class capturaEstacion extends javax.swing.JFrame {
      */
     public capturaEstacion() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

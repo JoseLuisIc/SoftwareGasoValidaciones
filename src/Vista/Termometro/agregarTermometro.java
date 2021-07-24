@@ -9,6 +9,7 @@ import Controlador.LibreriaBDControlador;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,6 +24,7 @@ public class agregarTermometro extends javax.swing.JDialog {
     public agregarTermometro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

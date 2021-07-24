@@ -8,6 +8,7 @@ package Vista.Jarras;
 import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import java.util.Date;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,6 +25,7 @@ public class agregarMedVolumetrica extends javax.swing.JDialog {
     public agregarMedVolumetrica(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

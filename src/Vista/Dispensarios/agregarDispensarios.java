@@ -5,6 +5,8 @@
  */
 package Vista.Dispensarios;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author yuliana adame
@@ -16,6 +18,7 @@ public class agregarDispensarios extends javax.swing.JFrame {
      */
     public agregarDispensarios() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

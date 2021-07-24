@@ -6,6 +6,7 @@
 package Vista.Dispensarios;
 
 import Vista.Estacion.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,6 +19,7 @@ public class consultaDispensario extends javax.swing.JFrame {
      */
     public consultaDispensario() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

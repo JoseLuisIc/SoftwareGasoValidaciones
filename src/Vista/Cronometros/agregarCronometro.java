@@ -9,6 +9,7 @@ import Controlador.LibreriaBDControlador;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -22,6 +23,7 @@ public class agregarCronometro extends javax.swing.JDialog {
     public agregarCronometro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

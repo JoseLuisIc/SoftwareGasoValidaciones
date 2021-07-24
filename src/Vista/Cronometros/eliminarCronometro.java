@@ -6,6 +6,7 @@
 package Vista.Cronometros;
 
 import Controlador.LibreriaBDControlador;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +21,7 @@ public class eliminarCronometro extends javax.swing.JDialog {
     public eliminarCronometro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

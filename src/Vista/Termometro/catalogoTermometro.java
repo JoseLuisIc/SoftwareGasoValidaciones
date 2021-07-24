@@ -10,6 +10,7 @@ import Vista.Hologramas.modificarHolograma;
 import Vista.Termometro.agregarTermometro;
 import Vista.Termometro.editarTermometro;
 import Vista.Termometro.eliminarTermometro;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -31,6 +32,7 @@ public class catalogoTermometro extends javax.swing.JDialog {
         lbd.closeConnection();
 
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         //Valido eltipo de usuario
         if(tipoUsuario != 0){
             editarCT.setEnabled(false);

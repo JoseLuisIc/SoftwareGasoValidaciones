@@ -42,6 +42,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     modeloTablaUsuario mtu = new modeloTablaUsuario();
     public ventanaPrincipal(modeloTablaUsuario mtu) {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         this.mtu = mtu;
         catalogoCronometros.setToolTipText("Cátologo Cronometros");
         catalogoJarras.setToolTipText("Cátologo Jarras");

@@ -8,6 +8,7 @@ package Vista.Usuarios;
 import Controlador.LibreriaBDControlador;
 import Modelo.modeloTablaUsuario;
 import Vista.Principal.ventanaPrincipal;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 /**
  *
@@ -25,6 +26,7 @@ public class Administracion_de_usuarios extends javax.swing.JFrame {
     public int idUsuario = 0;
     public Administracion_de_usuarios(modeloTablaUsuario mtu) {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         this.mtu = mtu;
         this.tipoUsuario = mtu.getTipoUsuario();//Obtengo el tipo de usuario
         this.idUsuario = mtu.getIdActual();
