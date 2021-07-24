@@ -10,5 +10,5 @@ package Controlador;
  * @author Jose Luis
  */
 public class reporteExcel {
-    
+    LibreriaToolsControlador lbtc = new LibreriaToolsControlador();
 }

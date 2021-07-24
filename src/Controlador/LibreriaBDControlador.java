@@ -2971,7 +2971,11 @@ public void EliminarHolograma(String Holograma){
                     JOptionPane.showMessageDialog(null, a);
                     listaAux = null;
                 }
-                list = listaAux.toString();
+                for (String listaAux1 : listaAux) {
+                   list = list +""+listaAux1+"          \n";
+                   System.out.println(list);
+                }  
+                //list = listaAux.toString();
         
             return list;
         
@@ -3009,8 +3013,11 @@ public void EliminarHolograma(String Holograma){
                     JOptionPane.showMessageDialog(null, a);
                     listaAux = null;
                 }
-                
-            list = listaAux.toString();
+               for (String listaAux1 : listaAux) {
+                   list = list +""+listaAux1+"        \n";
+                   System.out.println(list);
+                }  
+            //list = listaAux.toString();
         
             return list;
         
@@ -3048,7 +3055,11 @@ public void EliminarHolograma(String Holograma){
                     JOptionPane.showMessageDialog(null, a);
                     listaAux = null;
                 }
-                list = listaAux.toString();
+                for (String listaAux1 : listaAux) {
+                   list = list +""+listaAux1+"        \n";
+                   System.out.println(list);
+                }  
+                //list = listaAux.toString();
             return list;
         
         }

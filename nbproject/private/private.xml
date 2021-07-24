@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
-        <file>
-            <url>src/Vista/Solicitud/registroSolicitudContrato.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>28</line>
-                <key/>
-            </bookmark>
-        </file>
-    </editor-bookmarks>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Dictamen/catalogoDocumentoDictamen.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Controlador/reportesWord.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Principal/ventanaPrincipal.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Usuarios/Administracion_de_usuarios.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Principal/accesoPrincipal.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Solicitud/catalogoSolicitud.java</file>
+            <file>file:/C:/Users/joseluis.caamal/Documents/GitProjects/SoftwareGasoValidaciones/src/Controlador/reportesWord.java</file>
+            <file>file:/C:/Users/joseluis.caamal/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Solicitud/catalogoSolicitud.java</file>
+            <file>file:/C:/Users/joseluis.caamal/Documents/GitProjects/SoftwareGasoValidaciones/src/Controlador/LibreriaBDControlador.java</file>
+            <file>file:/C:/Users/joseluis.caamal/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Principal/ventanaPrincipal.java</file>
+            <file>file:/C:/Users/joseluis.caamal/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/InspeccionDeMedicion/catalogoInspeccionDeMedicion.java</file>
+            <file>file:/C:/Users/joseluis.caamal/Documents/GitProjects/SoftwareGasoValidaciones/src/Controlador/reporteExcel.java</file>
         </group>
-=======
-        <group/>
->>>>>>> b84e24715997523a5ed7bd0f81a0642d415ed005
     </open-files>
 </project-private>
