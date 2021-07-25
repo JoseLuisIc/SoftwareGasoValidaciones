@@ -18,7 +18,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
@@ -465,7 +464,7 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
             
             if(validaFSol != 0 && validaEstacion !=0 && validaPosicion !=0){
             /*Creo un arreglo con las etiquetas que se necesitan modificar/reemplazar*/
-                String periodo = lbt.obtenerPeriodo();
+                String periodo = ""; //lbt.obtenerPeriodo(); El periodo se pide al cargar la configuración, por eso se comenta JLCI 24/07/2021
                 String horarioInicio = lbt.obtenerHorarioInicio();
                 String horarioFin = lbt.obtenerHorarioFIN();
                 String fechaLocal = lbt.obtenerFecha();

@@ -8,9 +8,7 @@ import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import Controlador.configuracionDictamen;
 import java.util.Date;
-import java.util.List;
 import javax.swing.ImageIcon;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 /**
