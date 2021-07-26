@@ -36,11 +36,12 @@ public class LeerFicherosExcel {
 			XSSFSheet sheet = worbook.getSheetAt(0);
 			//obtener todas las filas de la hoja excel
 			Iterator<Row> rowIterator = sheet.iterator();
-
+                        //System.out.println(rowIterator.toString());
 			Row row;
 			// se recorre cada fila hasta el final
 			while (rowIterator.hasNext()) {
 				row = rowIterator.next();
+                                //System.out.println(row.getHeight());
 				//se obtiene las celdas por fila
 				Iterator<Cell> cellIterator = row.cellIterator();
 				Cell cell;
@@ -48,9 +49,9 @@ public class LeerFicherosExcel {
 				while (cellIterator.hasNext()) {
 					// se obtiene la celda en específico y se la imprime
 					cell = cellIterator.next();
-					System.out.print(cell.getStringCellValue()+" | ");
+					System.out.print(" | "+cell.getStringCellValue()+" | ");
                                         if(cell.getStringCellValue().equals("DISP"))
-                                            cell.setCellValue("Hola");
+                                            cell.setCellValue("20.2");
                                         //System.out.println(cell.toString());
 				}
 				System.out.println();
@@ -72,7 +73,7 @@ public class LeerFicherosExcel {
                 fileOuS.flush();
                 fileOuS.close();
                 System.out.println("Archivo Creado.!");
-
+                
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -170,6 +170,9 @@ public class LibreriaToolsControlador {
             case 5:
                 tipoDocumento = "DICTAMENDEBOMBAS2021.docx";
             break;
+            case 6:
+                tipoDocumento = "registropruebas.xlsx";
+            break;
             default:
                 //tipoDocumento = "CONTRATO2021.docx";
             break;
@@ -202,6 +205,9 @@ public class LibreriaToolsControlador {
             break;
             case 5:
                 tipoDocumento = "DictamenBombas-"+nameArchive;
+            break;
+            case 6:
+                tipoDocumento = "RegistroPruebas-"+nameArchive;
             break;
             default:
                 //tipoDocumento = "CONTRATO2021.docx";

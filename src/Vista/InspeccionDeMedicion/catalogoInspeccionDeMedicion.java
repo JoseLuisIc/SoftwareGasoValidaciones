@@ -6,7 +6,10 @@
 package Vista.InspeccionDeMedicion;
 
 import Controlador.LibreriaBDControlador;
+import Controlador.LibreriaToolsControlador;
 import Controlador.colorTabla;
+import Controlador.configuracionDictamen;
+import Controlador.reporteExcel;
 import Controlador.reportesWord;
 import Modelo.modeloTablaUsuario;
 import java.awt.Component;
@@ -26,6 +29,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
  */
 public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
     LibreriaBDControlador lbd = new LibreriaBDControlador();
+    LibreriaToolsControlador lbtc = new LibreriaToolsControlador();
     modeloTablaUsuario mtu = new modeloTablaUsuario();
     reportesWord reporteWord = new reportesWord();
     colorTabla colorT = new colorTabla(0,0);
@@ -1686,7 +1690,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         campoEstacion = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        campoInformacionEstacion = new javax.swing.JTextField();
         jComboBoxCronometro = new javax.swing.JComboBox<>();
         jComboBoxDispensarios = new javax.swing.JComboBox<>();
         jComboBoxTermometro = new javax.swing.JComboBox<>();
@@ -2593,7 +2597,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(campoEstacion)
                                     .addComponent(jTextField3)))
-                            .addComponent(jTextField2)
+                            .addComponent(campoInformacionEstacion)
                             .addComponent(datosTermometro, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(datosCronometro, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2621,7 +2625,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoInformacionEstacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBoxDispensarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -7958,7 +7962,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel236)))
                             .addGap(43, 43, 43))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
                         .addComponent(ETIMAX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -9662,7 +9666,8 @@ entraonoentra();        // TODO add your handling code here:
                 JOptionPane.showMessageDialog(null,"Se cargaran los datos del cliente: "+campoEstacion.getText());
                 int dialogResult = JOptionPane.showConfirmDialog (null, "¿Está de acuerdo?","Warning",dialogButton);
                 if(dialogResult == JOptionPane.YES_OPTION){
-                   
+                   Object [] estacion = lbd.obtenerDatosEstacion(nEstacion);
+                   campoInformacionEstacion.setText("Se añade la información xd");
                 }
                 else{
                 
@@ -9705,6 +9710,15 @@ entraonoentra();        // TODO add your handling code here:
 
     private void btnGuardarExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarExcelActionPerformed
         // TODO add your handling code here:
+        reporteExcel repExcel = new reporteExcel();
+        if(!folioSolicitud.getText().isEmpty() /*&& !campoEstacion.getText().isEmpty()*/){
+//            int proceoExitoso = lbd.obtenerValidacionFolioEstacion(folioSolicitud.getText(),campoEstacion.getText());
+//            if(proceoExitoso == 1)
+                repExcel.crearDocumentoExcel(6, folioSolicitud.getText());
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "El folio no se ingreso ó no es válido.");
+        }
         
     }//GEN-LAST:event_btnGuardarExcelActionPerformed
 
@@ -11077,6 +11091,7 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.ButtonGroup I;
     private javax.swing.JButton btnGuardarExcel;
     private javax.swing.JTextField campoEstacion;
+    private javax.swing.JTextField campoInformacionEstacion;
     private javax.swing.JTextField datosCronometro;
     private javax.swing.JTextField datosTermometro;
     private javax.swing.JTextField folioSolicitud;
@@ -11506,7 +11521,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField196;
     private javax.swing.JTextField jTextField197;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField210;
     private javax.swing.JTextField jTextField211;

@@ -112,7 +112,7 @@
                                       <Component id="jTextField3" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jTextField2" max="32767" attributes="0"/>
+                              <Component id="campoInformacionEstacion" max="32767" attributes="0"/>
                               <Component id="datosTermometro" alignment="1" max="32767" attributes="0"/>
                               <Component id="datosCronometro" alignment="1" max="32767" attributes="0"/>
                           </Group>
@@ -147,7 +147,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoInformacionEstacion" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBoxDispensarios" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -260,7 +260,7 @@
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="campoEstacionKeyTyped"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="campoInformacionEstacion">
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBoxCronometro">
           <Properties>
