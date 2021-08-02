@@ -293,6 +293,7 @@
           </Properties>
           <Events>
             <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jComboBoxTermometroItemStateChanged"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxTermometroActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -2113,8 +2114,8 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField53" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField54" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <Component id="FechaCal_A" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="InfCal_A" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -2144,7 +2145,7 @@
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                                           <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField54" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="InfCal_A" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -2154,7 +2155,7 @@
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField53" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FechaCal_A" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -2172,9 +2173,12 @@
                     <Property name="text" type="java.lang.String" value="Jarra"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField53">
+                <Component class="javax.swing.JTextField" name="FechaCal_A">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FechaCal_AActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField54">
+                <Component class="javax.swing.JTextField" name="InfCal_A">
                 </Component>
                 <Component class="javax.swing.JTextField" name="AV20">
                   <Properties>
@@ -2246,6 +2250,10 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jComboBoxJarraAItemStateChanged"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxJarraAActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -3709,8 +3717,8 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField115" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField116" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <Component id="FechaCal_B" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="InfCal_B" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -3740,7 +3748,7 @@
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                                           <Component id="jLabel112" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField116" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="InfCal_B" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3750,7 +3758,7 @@
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField115" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FechaCal_B" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel111" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -3768,9 +3776,9 @@
                     <Property name="text" type="java.lang.String" value="Jarra"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField115">
+                <Component class="javax.swing.JTextField" name="FechaCal_B">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField116">
+                <Component class="javax.swing.JTextField" name="InfCal_B">
                 </Component>
                 <Component class="javax.swing.JTextField" name="BV20">
                   <Properties>
@@ -3842,6 +3850,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jComboBoxJarraBItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -5298,8 +5309,8 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField179" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField180" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <Component id="FechaCal_C" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="InfCal_C" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -5329,7 +5340,7 @@
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                                           <Component id="jLabel162" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField180" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="InfCal_C" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -5339,7 +5350,7 @@
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField179" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FechaCal_C" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel161" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -5357,9 +5368,9 @@
                     <Property name="text" type="java.lang.String" value="Jarra"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField179">
+                <Component class="javax.swing.JTextField" name="FechaCal_C">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField180">
+                <Component class="javax.swing.JTextField" name="InfCal_C">
                 </Component>
                 <Component class="javax.swing.JTextField" name="CV20">
                   <Properties>
@@ -5431,6 +5442,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jComboBoxJarraCItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -6889,8 +6903,8 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField243" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField244" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <Component id="FechaCal_D" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="InfCal_D" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -6920,7 +6934,7 @@
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                                           <Component id="jLabel212" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField244" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="InfCal_D" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6930,7 +6944,7 @@
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField243" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FechaCal_D" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel211" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -6948,9 +6962,9 @@
                     <Property name="text" type="java.lang.String" value="Jarra"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField243">
+                <Component class="javax.swing.JTextField" name="FechaCal_D">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField244">
+                <Component class="javax.swing.JTextField" name="InfCal_D">
                 </Component>
                 <Component class="javax.swing.JTextField" name="DV20">
                   <Properties>
@@ -7022,6 +7036,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jComboBoxJarraDItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -8480,8 +8497,8 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField307" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField308" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <Component id="FechaCal_E" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="InfCal_E" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -8511,7 +8528,7 @@
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                                           <Component id="jLabel262" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField308" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="InfCal_E" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -8521,7 +8538,7 @@
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField307" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FechaCal_E" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel261" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -8539,9 +8556,9 @@
                     <Property name="text" type="java.lang.String" value="Jarra"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField307">
+                <Component class="javax.swing.JTextField" name="FechaCal_E">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField308">
+                <Component class="javax.swing.JTextField" name="InfCal_E">
                 </Component>
                 <Component class="javax.swing.JTextField" name="EV20">
                   <Properties>
@@ -8613,6 +8630,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jComboBoxJarraEItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -10076,8 +10096,8 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField371" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField372" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <Component id="FechaCal_F" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="InfCal_F" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -10107,7 +10127,7 @@
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                                           <Component id="jLabel312" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField372" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="InfCal_F" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -10117,7 +10137,7 @@
                                   </Group>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField371" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FechaCal_F" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel311" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -10135,9 +10155,9 @@
                     <Property name="text" type="java.lang.String" value="Jarra"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField371">
+                <Component class="javax.swing.JTextField" name="FechaCal_F">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField372">
+                <Component class="javax.swing.JTextField" name="InfCal_F">
                 </Component>
                 <Component class="javax.swing.JTextField" name="FV20">
                   <Properties>
@@ -10209,6 +10229,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jComboBoxJarraFItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>

@@ -3076,6 +3076,49 @@ public String obtenerEstacionDeFolio(String idFolio){
         
         }
         
+        public List <String> obtenerJarrasId(int consulta, String idJarra){
+            List <String> listaAux = new ArrayList<String>();
+            String list = "";
+                try{
+                    String Query = "";
+                    if(consulta == 1) Query = "SELECT * FROM gasvalid.tabla_jarras where estatus = 'VIGENTE' and id_Jarra = '"+idJarra+"'";
+                    if(consulta == 2) Query = "SELECT id_Jarra FROM gasvalid.tabla_jarras";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                     
+                    while (res.next())
+                    {
+                        if(consulta == 1){
+                            listaAux.add(res.getString("vol_conv"));
+                            listaAux.add(res.getString("factor_kc"));
+                            listaAux.add(res.getString("fecha_calibracion"));
+                            listaAux.add(res.getString("informe_calibracion"));
+                        }
+                        if(consulta == 2){
+                            listaAux.add(res.getString("id_Jarra"));
+                        }
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+                for (String listaAux1 : listaAux) {
+                   list = list +""+listaAux1+"          \n";
+                   System.out.println(list);
+                }  
+                //list = listaAux.toString();
+        
+            return listaAux;
+        
+        }        
+        
         /*
         Inicio: Jose Luis Caamal Ic
         12/12/2020
