@@ -20,6 +20,8 @@ import javax.swing.JOptionPane;
 import java.sql.*;
 import java.util.Arrays;
 import static java.util.Collections.list;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -867,7 +869,18 @@ public void EliminarHolograma(String Holograma){
         
     }
                
-               
+    /*
+        Caamal Ic Jose Luis
+        Obtiene los campos de la tabla clientes, para que se pueda realizar el set en inspección de Medición
+        Since 26/07/2021
+        */ 
+        
+        public informacionCliente infoCliente(){
+        informacionCliente infoCliente = new informacionCliente();
+        
+        
+        return infoCliente;
+        }
                
                
                
@@ -946,6 +959,43 @@ public void EliminarHolograma(String Holograma){
         
     }
     
+    /*obtenerTipoVerificación
+        Author: Jose Luis Caamal Ic
+        Fecha: 13/12/2020
+        Obtener el tipo de Verificación*/    
+    public String obtenerTipoVerificación(String folio, String idEstacion) 
+                {
+                String aux = "";
+        
+                try{
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement("SELECT tipo_solicitud FROM tabla_registro_solicitud "
+                            + "WHERE idestacion = '" +idEstacion+ "' and folio_solicitud = '"+folio+"'");
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+
+                    if(res.next()){
+                            //JOptionPane.showMessageDialog(null, "Si existe la estacion: " + idEstacion, "ATENCIÓN",JOptionPane.ERROR_MESSAGE);
+                            aux = res.getString("tipo_solicitud");
+                            return aux;
+                    }
+                    else{//no se 
+                            //JOptionPane.showMessageDialog(null, "No existe la estacion: " + idEstacion, "ATENCIÓN",JOptionPane.ERROR_MESSAGE);
+                            res.close();
+                            return aux;
+                    }
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a.getMessage());
+                    aux = "";
+                }
+        
+        return aux;
+        
+    }
+    /*Obtiene el array de las Estaciones*/
      public Object[] obtenerArrEstaciones(String idEstacion) 
                 {
                 Object [] arrObjetos = null;
@@ -1073,11 +1123,12 @@ public void EliminarHolograma(String Holograma){
                 Object[] auxObject = null;
         
                 try{
+                    String Query = "SELECT idestacion FROM tabla_clientes WHERE idestacion = '" +idEstacion+ "'";
                     PreparedStatement stmt;
-                    stmt = Conexion.prepareStatement("SELECT idestacion FROM tabla_clientes WHERE idestacion = '" +idEstacion+ "'");
+                    stmt = Conexion.prepareStatement(Query);
                     java.sql.ResultSet res;
                     res = stmt.executeQuery();
-
+                    System.out.println(Query);
                     if(res.next()){
                             //JOptionPane.showMessageDialog(null, "Si existe la estacion: " + idEstacion, "ATENCIÓN",JOptionPane.ERROR_MESSAGE);
                            // auxObject = res.getObject("idestacion");
@@ -1600,6 +1651,50 @@ public void EliminarHolograma(String Holograma){
             }
     
     return modeloRetorno;
+}
+    
+/*
+    Caamal Ic José Luis
+    Obtiene la información de la estación a partir del folio
+    Since 30/07/2021
+*/
+
+public String obtenerEstacionDeFolio(String idFolio){
+    String estacion = "";
+    
+    try{
+                    String Query = "SELECT idestacion FROM tabla_registro_solicitud WHERE folio_solicitud = '"+idFolio+"'";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                    
+
+                    if(res.next()){
+                            //JOptionPane.showMessageDialog(null, "Si existe la estacion: " + idEstacion, "ATENCIÓN",JOptionPane.ERROR_MESSAGE);
+                            estacion = res.getString("idestacion");
+                            //if(aux)
+                            //aux = aux + 1; //Aumento si la consulta me arroja cero y solo si existe el numero de estación
+                            //Se cambia para aumentar por codigo
+                            return estacion;
+                    }
+                    else{//no se 
+                            //JOptionPane.showMessageDialog(null, "No existe la estacion: " + idEstacion, "ATENCIÓN",JOptionPane.ERROR_MESSAGE);
+//                          if(aux==0)
+//                                aux = aux + 1;
+                            res.close();
+                            return estacion;
+                    }
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    estacion = "";
+                }
+    
+    return estacion;
 }
 
 /*
@@ -3095,6 +3190,43 @@ public void EliminarHolograma(String Holograma){
                 }
         
             return listaAux;
+        
+        }
+        
+        /*  
+        Obtiene los dispensarios de acuerdo al id y numero dispensarios
+        Caamal José Luis
+        30/07/2021
+        */
+        
+        public Map<Integer, Integer> obtenerDispensarios(String noEstacion){
+            
+            Map<Integer, Integer> mapDispensarios = new HashMap<Integer, Integer>();
+            
+                try{
+                    String Query = "";
+                    Query = "SELECT id_dispensario,no_dispensario FROM tabla_dispensarios "
+                            + "WHERE numero_estacion = '"+noEstacion+"' ";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                     
+                    while (res.next())
+                    {
+                        //dispensarios.add(res.getString("marca_dispensario"));
+                        mapDispensarios.put(res.getInt("id_dispensario"), res.getInt("no_dispensario"));
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a.getMessage());
+                    mapDispensarios = null;
+                }
+            
+            return mapDispensarios;
         
         }
         

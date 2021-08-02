@@ -14,8 +14,10 @@ import Controlador.reportesWord;
 import Modelo.modeloTablaUsuario;
 import java.awt.Component;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ComboBoxModel;
@@ -33,6 +35,7 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
     modeloTablaUsuario mtu = new modeloTablaUsuario();
     reportesWord reporteWord = new reportesWord();
     colorTabla colorT = new colorTabla(0,0);
+    public Map<Integer, Integer> mapDispensarios = null;
     /**
      * Creates new form catalogoInspeccionDeMedicion
      */
@@ -1694,7 +1697,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jComboBoxCronometro = new javax.swing.JComboBox<>();
         jComboBoxDispensarios = new javax.swing.JComboBox<>();
         jComboBoxTermometro = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
+        campoTipoVerificacion = new javax.swing.JTextField();
         datosTermometro = new javax.swing.JTextField();
         datosCronometro = new javax.swing.JTextField();
         jDateChooserFechaIM = new com.toedter.calendar.JDateChooser();
@@ -2596,7 +2599,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(campoEstacion)
-                                    .addComponent(jTextField3)))
+                                    .addComponent(campoTipoVerificacion)))
                             .addComponent(campoInformacionEstacion)
                             .addComponent(datosTermometro, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(datosCronometro, javax.swing.GroupLayout.Alignment.TRAILING))))
@@ -2633,7 +2636,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel8)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(campoTipoVerificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jDateChooserFechaIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -9452,22 +9455,56 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
     private void folioSolicitudKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_folioSolicitudKeyPressed
         // TODO add your handling code here:
        if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
-           
+            
+            jComboBoxDispensarios.removeAllItems();
             String folioSol = folioSolicitud.getText();
             int validaFSol = 0;
-
+            int validaEstacion = 0;
+            String noEstacion = "";
+            String tipoVerificacion = "";
             lbd.openConnection();
-            validaFSol = lbd.validaFolioSolicitud(folioSol);
+                validaFSol = lbd.validaFolioSolicitud(folioSol);
+                noEstacion = lbd.obtenerEstacionDeFolio(folioSol);
+                validaEstacion = lbd.obtenerEstaciones(noEstacion);
+                tipoVerificacion = lbd.obtenerTipoVerificación(folioSol, noEstacion);
             lbd.closeConnection();
+            
+            if(validaFSol != 0 && validaEstacion != 0){
 
-            if(validaFSol != 0){
-
-                JOptionPane.showMessageDialog(null,"El folio es valido, da clic al boton imprimir para continuar.");
+                JOptionPane.showMessageDialog(null,"El folio es valido.");
+                if(validaEstacion != 0){
+                //JOptionPane.showMessageDialog(null,"El cliente si existe, da si para cargar la información");
+                int dialogButton = JOptionPane.YES_NO_OPTION;
+                campoEstacion.setText(noEstacion);
+                JOptionPane.showMessageDialog(null,"Se cargaran los datos del cliente: "+campoEstacion.getText());
+                int dialogResult = JOptionPane.showConfirmDialog (null, "¿Está de acuerdo?","Warning",dialogButton);
+                if(dialogResult == JOptionPane.YES_OPTION){
+                   lbd.openConnection();
+                   Object [] estacion = lbd.obtenerArrEstaciones(noEstacion);
+                   campoInformacionEstacion.setText(Arrays.toString(estacion));
+                   mapDispensarios = lbd.obtenerDispensarios(noEstacion);
+                   lbd.closeConnection();
+                   System.out.println(mapDispensarios.toString());
+                   /*Recorre el mapa y lo llena con el dispensario :)*/
+                   mapDispensarios.forEach((k,v)->{
+                   System.out.println("LLave = " + k + ", Valor = " + v);
+                    //Aqui llenas tu JComboBox
+                    jComboBoxDispensarios.addItem(String.valueOf(v));
+                   });
+                   campoTipoVerificacion.setText(tipoVerificacion);
+                }
+                else{
                 
+                }
+                }
+                else{
+
+                    JOptionPane.showMessageDialog(null,"No existe el cliente que quiere consultar.");
+                }
             }
             else{
 
-                JOptionPane.showMessageDialog(null,"No existe el folio que quiere imprimir");
+                JOptionPane.showMessageDialog(null,"No existe el folio ó la estación que quiere imprimir.");
             }
        }
            
@@ -9666,8 +9703,10 @@ entraonoentra();        // TODO add your handling code here:
                 JOptionPane.showMessageDialog(null,"Se cargaran los datos del cliente: "+campoEstacion.getText());
                 int dialogResult = JOptionPane.showConfirmDialog (null, "¿Está de acuerdo?","Warning",dialogButton);
                 if(dialogResult == JOptionPane.YES_OPTION){
-                   Object [] estacion = lbd.obtenerDatosEstacion(nEstacion);
-                   campoInformacionEstacion.setText("Se añade la información xd");
+                   lbd.openConnection();
+                   Object [] estacion = lbd.obtenerArrEstaciones(nEstacion);
+                   campoInformacionEstacion.setText(Arrays.toString(estacion));
+                   lbd.closeConnection();
                 }
                 else{
                 
@@ -11092,6 +11131,7 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JButton btnGuardarExcel;
     private javax.swing.JTextField campoEstacion;
     private javax.swing.JTextField campoInformacionEstacion;
+    private javax.swing.JTextField campoTipoVerificacion;
     private javax.swing.JTextField datosCronometro;
     private javax.swing.JTextField datosTermometro;
     private javax.swing.JTextField folioSolicitud;
@@ -11536,7 +11576,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField274;
     private javax.swing.JTextField jTextField275;
     private javax.swing.JTextField jTextField276;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField307;
     private javax.swing.JTextField jTextField308;
     private javax.swing.JTextField jTextField311;
