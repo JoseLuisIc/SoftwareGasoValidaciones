@@ -73,6 +73,13 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         AutoCompleteDecorator.decorate(campoUVAD);
         AutoCompleteDecorator.decorate(campoUVAE);
         AutoCompleteDecorator.decorate(campoUVAF);
+        //Auto Acompletar Precinto
+        AutoCompleteDecorator.decorate(campoPrecintoA);
+        AutoCompleteDecorator.decorate(campoPrecintoB);
+        AutoCompleteDecorator.decorate(campoPrecintoC);
+        AutoCompleteDecorator.decorate(campoPrecintoD);
+        AutoCompleteDecorator.decorate(campoPrecintoE);
+        AutoCompleteDecorator.decorate(campoPrecintoF);
         
       //this.dispensarioActual = i+1;
         this.folioDocumento = folioDocumento;
@@ -179,6 +186,9 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
            campoUVAF.addItem(noHologramaUVA.get(i));
         }
         //campoMarcaA.addItem();
+        
+        
+        
     }
 
     public String getCadenaDispensario() {
@@ -247,6 +257,13 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         campoModeloE = new javax.swing.JComboBox<>();
         campoModeloF = new javax.swing.JComboBox<>();
         campoDispensario = new javax.swing.JComboBox<>();
+        jLabel492 = new javax.swing.JLabel();
+        campoPrecintoA = new javax.swing.JComboBox<>();
+        campoPrecintoF = new javax.swing.JComboBox<>();
+        campoPrecintoB = new javax.swing.JComboBox<>();
+        campoPrecintoE = new javax.swing.JComboBox<>();
+        campoPrecintoD = new javax.swing.JComboBox<>();
+        campoPrecintoC = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         campoEstacion = new javax.swing.JLabel();
@@ -379,6 +396,11 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
 
         campoUVAA.setEditable(true);
         campoUVAA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoUVAA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoUVAAActionPerformed(evt);
+            }
+        });
 
         campoUVAF.setEditable(true);
         campoUVAF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -407,6 +429,36 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         campoModeloF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoDispensario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel492.setText("Precinto");
+
+        campoPrecintoA.setEditable(true);
+        campoPrecintoA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoPrecintoA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoPrecintoAActionPerformed(evt);
+            }
+        });
+
+        campoPrecintoF.setEditable(true);
+        campoPrecintoF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        campoPrecintoB.setEditable(true);
+        campoPrecintoB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        campoPrecintoE.setEditable(true);
+        campoPrecintoE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoPrecintoE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoPrecintoEActionPerformed(evt);
+            }
+        });
+
+        campoPrecintoD.setEditable(true);
+        campoPrecintoD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        campoPrecintoC.setEditable(true);
+        campoPrecintoC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -459,7 +511,7 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
                         .addComponent(campoModeloE, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(campoModeloF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel491))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(campoProfecoA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -469,7 +521,7 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
                         .addComponent(campoProfecoE, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(campoProfecoF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel489))
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel490)
                     .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -479,7 +531,17 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
                         .addComponent(campoUVAD, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(campoUVAE, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(campoUVAF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel492)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(campoPrecintoA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(campoPrecintoB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(campoPrecintoC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(campoPrecintoD, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(campoPrecintoE, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(campoPrecintoF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(campoCumpleF)
                     .addComponent(campoCumpleE)
@@ -500,13 +562,11 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel482)
-                                    .addComponent(jLabel479)
-                                    .addComponent(jLabel488)))
-                            .addComponent(jLabel490, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel482)
+                                .addComponent(jLabel479)
+                                .addComponent(jLabel488)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -514,7 +574,6 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
                                 .addComponent(campoSerieA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel15Layout.createSequentialGroup()
-                                    .addGap(27, 27, 27)
                                     .addComponent(campoSerieB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(campoSerieC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -524,64 +583,36 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
                                     .addComponent(campoSerieE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(campoSerieF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel15Layout.createSequentialGroup()
-                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel473)
-                                            .addComponent(campoCumpleA))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel474)
-                                            .addComponent(campoCumpleB)
-                                            .addComponent(campoMarcaB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel475)
-                                            .addComponent(campoCumpleC)
-                                            .addComponent(campoMarcaC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel476)
-                                            .addComponent(campoCumpleD)
-                                            .addComponent(campoMarcaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel477)
-                                            .addComponent(campoCumpleE)
-                                            .addComponent(campoMarcaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel478)
-                                            .addComponent(campoCumpleF)
-                                            .addComponent(campoMarcaF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(campoUVAA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel15Layout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(campoUVAB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoUVAC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoUVAD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoUVAE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoUVAF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jLabel489)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoProfecoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(campoProfecoB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoProfecoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoProfecoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoProfecoE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoProfecoF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel15Layout.createSequentialGroup()
+                                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel473)
+                                        .addComponent(campoCumpleA))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel474)
+                                        .addComponent(campoCumpleB)
+                                        .addComponent(campoMarcaB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel475)
+                                        .addComponent(campoCumpleC)
+                                        .addComponent(campoMarcaC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel476)
+                                        .addComponent(campoCumpleD)
+                                        .addComponent(campoMarcaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel477)
+                                        .addComponent(campoCumpleE)
+                                        .addComponent(campoMarcaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel478)
+                                        .addComponent(campoCumpleF)
+                                        .addComponent(campoMarcaF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(1, 1, 1)))))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jLabel491)
                         .addGap(18, 18, 18)
@@ -597,7 +628,58 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
                                 .addComponent(campoModeloE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(campoModeloF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(campoModeloA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(campoModeloA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jLabel489)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campoProfecoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addGap(27, 27, 27)
+                                        .addComponent(campoProfecoB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoProfecoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoProfecoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoProfecoE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoProfecoF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addComponent(jLabel490)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(jPanel15Layout.createSequentialGroup()
+                                        .addComponent(jLabel492)
+                                        .addGap(18, 18, 18)))
+                                .addComponent(campoUVAA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(campoUVAB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoUVAC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoUVAD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoUVAE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoUVAF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(1, 1, 1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addComponent(campoPrecintoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(campoPrecintoB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoPrecintoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoPrecintoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoPrecintoE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoPrecintoF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -629,25 +711,28 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(campoEstacion)
-                                .addGap(97, 97, 97)
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(campoFolioDictamen))
-                            .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(342, 342, 342)
-                        .addComponent(botonDictamen)
-                        .addGap(103, 103, 103)
-                        .addComponent(jButton1)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(campoEstacion)
+                                        .addGap(97, 97, 97)
+                                        .addComponent(jLabel4)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(campoFolioDictamen))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(464, 464, 464)
+                                .addComponent(botonDictamen, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(51, 51, 51)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -661,12 +746,14 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
                     .addComponent(jLabel4)
                     .addComponent(campoFolioDictamen))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonDictamen)
                     .addComponent(jButton1))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -728,6 +815,13 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         String campoUVAEDocumento = (String) campoUVAE.getSelectedItem();
         String campoUVAFDocumento = (String) campoUVAF.getSelectedItem();
         
+        String campoPrecintoADocumento = (String) campoPrecintoA.getSelectedItem();
+        String campoPrecintoBDocumento = (String) campoPrecintoB.getSelectedItem();
+        String campoPrecintoCDocumento = (String) campoPrecintoC.getSelectedItem();
+        String campoPrecintoDDocumento = (String) campoPrecintoD.getSelectedItem();
+        String campoPrecintoEDocumento = (String) campoPrecintoE.getSelectedItem();
+        String campoPrecintoFDocumento = (String) campoPrecintoF.getSelectedItem();
+        
         String campoCumpleADocumento = "No Cumple";
         String campoCumpleBDocumento = "No Cumple";
         String campoCumpleCDocumento = "No Cumple";
@@ -766,17 +860,17 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
          cadenaDispensario =      
          "Número Estación: "+noEstacion+"\t Folio: "+folioDocumento+"\t Dispensario: "+dispensarioActual+"\n";
          cadenaDispensarioA =      
-         "Lado A\t TGas: "+campoMarcaADocumento+"\t N.Serie: "+campoSerieADocumento+"\t Mod:"+campoModeloADocumento+"\t HProfeco: "+campoProfecoADocumento+"\t HUVA: "+campoUVAADocumento+"\t Estatus: "+campoCumpleADocumento+"\n";
+         "Lado A\t TGas: "+campoMarcaADocumento+"\t N.Serie: "+campoSerieADocumento+"\t Mod:"+campoModeloADocumento+"\t HProfeco: "+campoProfecoADocumento+"\t HUVA: "+campoUVAADocumento+"\t Estatus: "+campoCumpleADocumento+"\t Precinto: "+campoPrecintoADocumento+"\n";
          cadenaDispensarioB =
-         "Lado B\t TGas: "+campoMarcaBDocumento+"\t N.Serie: "+campoSerieBDocumento+"\t Mod:"+campoModeloBDocumento+"\t HProfeco: "+campoProfecoBDocumento+"\t HUVA: "+campoUVABDocumento+"\t Estatus: "+campoCumpleBDocumento+"\n";
+         "Lado B\t TGas: "+campoMarcaBDocumento+"\t N.Serie: "+campoSerieBDocumento+"\t Mod:"+campoModeloBDocumento+"\t HProfeco: "+campoProfecoBDocumento+"\t HUVA: "+campoUVABDocumento+"\t Estatus: "+campoCumpleBDocumento+"\t Precinto: "+campoPrecintoBDocumento+"\n";
          cadenaDispensarioC =
-         "Lado C\t TGas: "+campoMarcaCDocumento+"\t N.Serie: "+campoSerieCDocumento+"\t Mod:"+campoModeloCDocumento+"\t HProfeco: "+campoProfecoCDocumento+"\t HUVA: "+campoUVACDocumento+"\t Estatus: "+campoCumpleCDocumento+"\n";
+         "Lado C\t TGas: "+campoMarcaCDocumento+"\t N.Serie: "+campoSerieCDocumento+"\t Mod:"+campoModeloCDocumento+"\t HProfeco: "+campoProfecoCDocumento+"\t HUVA: "+campoUVACDocumento+"\t Estatus: "+campoCumpleCDocumento+"\t Precinto: "+campoPrecintoCDocumento+"\n";
          cadenaDispensarioD =
-         "Lado D\t TGas: "+campoMarcaDDocumento+"\t N.Serie: "+campoSerieDDocumento+"\t Mod:"+campoModeloDDocumento+"\t HProfeco: "+campoProfecoDDocumento+"\t HUVA: "+campoUVADDocumento+"\t Estatus: "+campoCumpleDDocumento+"\n";
+         "Lado D\t TGas: "+campoMarcaDDocumento+"\t N.Serie: "+campoSerieDDocumento+"\t Mod:"+campoModeloDDocumento+"\t HProfeco: "+campoProfecoDDocumento+"\t HUVA: "+campoUVADDocumento+"\t Estatus: "+campoCumpleDDocumento+"\t Precinto: "+campoPrecintoDDocumento+"\n";
          cadenaDispensarioE =
-         "Lado E\t TGas: "+campoMarcaEDocumento+"\t N.Serie: "+campoSerieEDocumento+"\t Mod:"+campoModeloEDocumento+"\t HProfeco: "+campoProfecoEDocumento+"\t HUVA: "+campoUVAEDocumento+"\t Estatus: "+campoCumpleEDocumento+"\n";
+         "Lado E\t TGas: "+campoMarcaEDocumento+"\t N.Serie: "+campoSerieEDocumento+"\t Mod:"+campoModeloEDocumento+"\t HProfeco: "+campoProfecoEDocumento+"\t HUVA: "+campoUVAEDocumento+"\t Estatus: "+campoCumpleEDocumento+"\t Precinto: "+campoPrecintoEDocumento+"\n";
          cadenaDispensarioF =
-         "Lado F\t TGas: "+campoMarcaFDocumento+"\t N.Serie: "+campoSerieFDocumento+"\t Mod:"+campoModeloFDocumento+"\t HProfeco: "+campoProfecoFDocumento+"\t HUVA: "+campoUVAFDocumento+"\t Estatus: "+campoCumpleFDocumento+"\n";
+         "Lado F\t TGas: "+campoMarcaFDocumento+"\t N.Serie: "+campoSerieFDocumento+"\t Mod:"+campoModeloFDocumento+"\t HProfeco: "+campoProfecoFDocumento+"\t HUVA: "+campoUVAFDocumento+"\t Estatus: "+campoCumpleFDocumento+"\t Precinto: "+campoPrecintoFDocumento+"\n";
         
         //lbd.openConnection();
         int validaProceso = lbd.validarDispensario(dispensarioActual);
@@ -835,6 +929,18 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void campoUVAAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUVAAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoUVAAActionPerformed
+
+    private void campoPrecintoAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPrecintoAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoPrecintoAActionPerformed
+
+    private void campoPrecintoEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPrecintoEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoPrecintoEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -901,6 +1007,12 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> campoModeloD;
     private javax.swing.JComboBox<String> campoModeloE;
     private javax.swing.JComboBox<String> campoModeloF;
+    private javax.swing.JComboBox<String> campoPrecintoA;
+    private javax.swing.JComboBox<String> campoPrecintoB;
+    private javax.swing.JComboBox<String> campoPrecintoC;
+    private javax.swing.JComboBox<String> campoPrecintoD;
+    private javax.swing.JComboBox<String> campoPrecintoE;
+    private javax.swing.JComboBox<String> campoPrecintoF;
     private javax.swing.JComboBox<String> campoProfecoA;
     private javax.swing.JComboBox<String> campoProfecoB;
     private javax.swing.JComboBox<String> campoProfecoC;
@@ -936,6 +1048,7 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel489;
     private javax.swing.JLabel jLabel490;
     private javax.swing.JLabel jLabel491;
+    private javax.swing.JLabel jLabel492;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel15;

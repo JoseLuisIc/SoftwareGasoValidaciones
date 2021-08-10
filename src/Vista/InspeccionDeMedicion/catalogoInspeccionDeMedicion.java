@@ -14,6 +14,7 @@ import Controlador.reportesWord;
 import Modelo.modeloTablaUsuario;
 import java.awt.Component;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -57,6 +63,19 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
 //        colorT.setColumna(2);
 //        //colorT.setColumna(2);
          //lleno el combo de termometros
+         //lleno la hora
+         Date fecha = new Date();
+         Date dateNow = new Date();
+        SimpleDateFormat formFecha = new SimpleDateFormat("dd/MM/yyyy");         
+         Date fechaCalA = new Date();
+         Date fechaCalB = new Date();
+         Date fechaCalC = new Date();
+         Date fechaCalD = new Date();
+         Date fechaCalE = new Date();
+         Date fechaCalF = new Date();
+         
+         jDateChooserFechaIM.setDate(fecha);  
+         
          lbd.openConnection();
          List <String> listaAux = lbd.obtenerTermometros(2,"");
          String [] lista = new String[listaAux.size()];
@@ -73,7 +92,8 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
          item_seleccionado = jComboBoxCronometro.getSelectedItem().toString();
          listaAux = lbd.obtenerCronometros(1,item_seleccionado);
          datosCronometro.setText(listaAux.toString());
-         //lleno los combos jarra
+         //Llenado automático de combobox y espacios de información del área de las jarras.
+         // Hecho por Ángel González Ríncón
          listaAux = lbd.obtenerJarrasId(2,"");
          lista = new String[listaAux.size()];
          lista = listaAux.toArray(lista);        
@@ -140,12 +160,116 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
          FechaCal_F.setText(listaAux.get(2).toString());
          InfCal_F.setText(listaAux.get(3).toString());         
          
+        String fechaCalibA = listaAux.get(2).toString();                
+        String fechaCalibB = listaAux.get(2).toString();                
+        String fechaCalibC = listaAux.get(2).toString();                
+        String fechaCalibD = listaAux.get(2).toString();                
+        String fechaCalibE = listaAux.get(2).toString();                
+        String fechaCalibF = listaAux.get(2).toString();  
+        
+            
+        
+         
          lbd.closeConnection();
-         //lleno la hora
-         Date fecha = new Date();
-         jDateChooserFechaIM.setDate(fecha);
+  
+         
+         System.out.println(fecha);
+         
 entraonoentra();
 operacionesdeInspeccionMedicion();
+    // Analiza las fechas de las jarras con respecto a las actuales para saber si ya caducaron o están por caducar.
+    // Hecho por Ángel González Rincón
+        System.out.println("Fecha A: "+fechaCalibA);
+        fechaCalA =  lbtc.fechaFormato(fechaCalibA);
+        System.out.println("Fecha calibración A: "+formFecha.format(fechaCalA));    
+        System.out.println("Fecha actual: "+formFecha.format(fecha));
+        
+            long diffA = fechaCalA.getTime() - dateNow.getTime();
+            TimeUnit timeA = TimeUnit.DAYS; 
+            long diferenciaA = timeA.convert(diffA, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera A: " + diferenciaA);
+            if(diferenciaA >= 1 && diferenciaA <= 90){
+                avisoLabelA.setText("*La jarra está por caducar*");
+            }else if(diferenciaA <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelA.setText("");
+            }            
+        System.out.println("Fecha B: "+fechaCalibB);
+        fechaCalB =  lbtc.fechaFormato(fechaCalibB);
+        System.out.println("Fecha calibración B: "+formFecha.format(fechaCalB));    
+        System.out.println("Fecha actual: "+formFecha.format(fecha));
+        
+            long diffB = fechaCalB.getTime() - dateNow.getTime();
+            TimeUnit timeB = TimeUnit.DAYS; 
+            long diferenciaB = timeB.convert(diffB, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera B: " + diferenciaB);
+            if(diferenciaB >= 1 && diferenciaB <= 90){
+                avisoLabelB.setText("*La jarra está por caducar*");
+            }else if(diferenciaB <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelB.setText("");
+            }
+        System.out.println("Fecha B: "+fechaCalibB);
+        fechaCalB =  lbtc.fechaFormato(fechaCalibB);
+        System.out.println("Fecha calibración B: "+formFecha.format(fechaCalB));    
+        System.out.println("Fecha actual: "+formFecha.format(fecha));
+        
+            long diffC = fechaCalC.getTime() - dateNow.getTime();
+            TimeUnit timeC = TimeUnit.DAYS; 
+            long diferenciaC = timeC.convert(diffC, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera C: " + diferenciaC);
+            if(diferenciaC >= 1 && diferenciaC <= 90){
+                avisoLabelC.setText("*La jarra está por caducar*");
+            }else if(diferenciaC <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelC.setText("");
+            }
+        System.out.println("Fecha D: "+fechaCalibD);
+        fechaCalD =  lbtc.fechaFormato(fechaCalibD);
+        System.out.println("Fecha calibración D: "+formFecha.format(fechaCalD));    
+        System.out.println("Fecha actual: "+formFecha.format(fecha));
+        
+            long diffD = fechaCalD.getTime() - dateNow.getTime();
+            TimeUnit timeD = TimeUnit.DAYS; 
+            long diferenciaD = timeD.convert(diffD, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera D: " + diferenciaD);
+            if(diferenciaD >= 1 && diferenciaD <= 90){
+                avisoLabelD.setText("*La jarra está por caducar*");
+            }else if(diferenciaD <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelD.setText("");
+            }
+        System.out.println("Fecha E: "+fechaCalibE);
+        fechaCalE =  lbtc.fechaFormato(fechaCalibE);
+        System.out.println("Fecha calibración E: "+formFecha.format(fechaCalE));    
+        System.out.println("Fecha actual: "+formFecha.format(fecha));
+        
+            long diffE = fechaCalE.getTime() - dateNow.getTime();
+            TimeUnit timeE = TimeUnit.DAYS; 
+            long diferenciaE = timeE.convert(diffE, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera E: " + diferenciaE);
+            if(diferenciaE >= 1 && diferenciaE <= 90){
+                avisoLabelE.setText("*La jarra está por caducar*");
+            }else if(diferenciaE <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelE.setText("");
+            }
+        System.out.println("Fecha F: "+fechaCalibF);
+        fechaCalF =  lbtc.fechaFormato(fechaCalibF);
+        System.out.println("Fecha calibración F: "+formFecha.format(fechaCalF));    
+        System.out.println("Fecha actual: "+formFecha.format(fecha));
+        
+            long diffF = fechaCalF.getTime() - dateNow.getTime();
+            TimeUnit timeF = TimeUnit.DAYS; 
+            long diferenciaF = timeF.convert(diffF, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera F: " + diferenciaF);
+            if(diferenciaF >= 1 && diferenciaF <= 90){
+                avisoLabelF.setText("*La jarra está por caducar*");
+            }else if(diferenciaF <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelF.setText("");
+            }
+
     }
     //SAR 12/04/21 INI
     private void entraonoentra(){
@@ -1913,6 +2037,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jComboBoxJarraA = new javax.swing.JComboBox<>();
+        avisoLabelA = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -2035,6 +2160,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel111 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
         jComboBoxJarraB = new javax.swing.JComboBox<>();
+        avisoLabelB = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
         jLabel113 = new javax.swing.JLabel();
@@ -2157,6 +2283,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel161 = new javax.swing.JLabel();
         jLabel162 = new javax.swing.JLabel();
         jComboBoxJarraC = new javax.swing.JComboBox<>();
+        avisoLabelC = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
         jLabel163 = new javax.swing.JLabel();
@@ -2279,6 +2406,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel211 = new javax.swing.JLabel();
         jLabel212 = new javax.swing.JLabel();
         jComboBoxJarraD = new javax.swing.JComboBox<>();
+        avisoLabelD = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
         jLabel213 = new javax.swing.JLabel();
@@ -2401,6 +2529,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel261 = new javax.swing.JLabel();
         jLabel262 = new javax.swing.JLabel();
         jComboBoxJarraE = new javax.swing.JComboBox<>();
+        avisoLabelE = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
         jLabel263 = new javax.swing.JLabel();
@@ -2523,6 +2652,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel311 = new javax.swing.JLabel();
         jLabel312 = new javax.swing.JLabel();
         jComboBoxJarraF = new javax.swing.JComboBox<>();
+        avisoLabelF = new javax.swing.JLabel();
         jPanel38 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
         jLabel313 = new javax.swing.JLabel();
@@ -3029,7 +3159,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addComponent(jLabel68)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel69)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 542, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 583, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton32)
@@ -3983,6 +4113,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        avisoLabelA.setForeground(new java.awt.Color(255, 0, 0));
+        avisoLabelA.setText("Aviso");
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -3995,26 +4128,29 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel48)
-                                .addComponent(jLabel50, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBoxJarraA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AV20)
-                            .addComponent(AKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(avisoLabelA)
                             .addGroup(jPanel12Layout.createSequentialGroup()
-                                .addComponent(jLabel53)
-                                .addGap(9, 9, 9))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                                .addComponent(jLabel52)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(FechaCal_A)
-                            .addComponent(InfCal_A, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel48)
+                                        .addComponent(jLabel50, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBoxJarraA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(AV20)
+                                    .addComponent(AKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel12Layout.createSequentialGroup()
+                                        .addComponent(jLabel53)
+                                        .addGap(9, 9, 9))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                                        .addComponent(jLabel52)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(FechaCal_A)
+                                    .addComponent(InfCal_A, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel12Layout.setVerticalGroup(
@@ -4044,7 +4180,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(FechaCal_A, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel52)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(avisoLabelA)
+                .addGap(69, 69, 69))
         );
 
         jPanel13.setBackground(new java.awt.Color(255, 153, 153));
@@ -4286,7 +4424,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel73)
                             .addComponent(jButton1))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraALayout = new javax.swing.GroupLayout(mangueraA);
@@ -5059,6 +5197,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        avisoLabelB.setForeground(new java.awt.Color(255, 0, 0));
+        avisoLabelB.setText("Aviso");
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
@@ -5071,27 +5212,30 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel107)
-                                .addComponent(jLabel109, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel108, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBoxJarraB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BV20)
-                            .addComponent(BKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(avisoLabelB)
                             .addGroup(jPanel17Layout.createSequentialGroup()
-                                .addComponent(jLabel112)
-                                .addGap(9, 9, 9))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                                .addComponent(jLabel111)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(FechaCal_B)
-                            .addComponent(InfCal_B, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel107)
+                                        .addComponent(jLabel109, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jLabel108, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBoxJarraB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(BV20)
+                                    .addComponent(BKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel17Layout.createSequentialGroup()
+                                        .addComponent(jLabel112)
+                                        .addGap(9, 9, 9))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                                        .addComponent(jLabel111)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(FechaCal_B)
+                                    .addComponent(InfCal_B, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5120,7 +5264,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(FechaCal_B, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel111)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(avisoLabelB)
+                .addGap(68, 68, 68))
         );
 
         jPanel18.setBackground(new java.awt.Color(255, 153, 153));
@@ -5362,7 +5508,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel127)
                             .addComponent(jButton3))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA1Layout = new javax.swing.GroupLayout(mangueraA1);
@@ -6100,6 +6246,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        avisoLabelC.setForeground(new java.awt.Color(255, 0, 0));
+        avisoLabelC.setText("Aviso");
+
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
@@ -6112,27 +6261,30 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel22Layout.createSequentialGroup()
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel157)
-                                .addComponent(jLabel159, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel158, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBoxJarraC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CV20)
-                            .addComponent(CKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(avisoLabelC)
                             .addGroup(jPanel22Layout.createSequentialGroup()
-                                .addComponent(jLabel162)
-                                .addGap(9, 9, 9))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                                .addComponent(jLabel161)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(FechaCal_C)
-                            .addComponent(InfCal_C, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel157)
+                                        .addComponent(jLabel159, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jLabel158, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBoxJarraC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CV20)
+                                    .addComponent(CKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel22Layout.createSequentialGroup()
+                                        .addComponent(jLabel162)
+                                        .addGap(9, 9, 9))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                                        .addComponent(jLabel161)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(FechaCal_C)
+                                    .addComponent(InfCal_C, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6161,7 +6313,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(FechaCal_C, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel161)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(avisoLabelC)
+                .addGap(55, 55, 55))
         );
 
         jPanel23.setBackground(new java.awt.Color(255, 153, 153));
@@ -6403,7 +6557,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel177)
                             .addComponent(jButton4))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA2Layout = new javax.swing.GroupLayout(mangueraA2);
@@ -7139,6 +7293,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        avisoLabelD.setForeground(new java.awt.Color(255, 0, 0));
+        avisoLabelD.setText("Aviso");
+
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
@@ -7151,27 +7308,30 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel27Layout.createSequentialGroup()
                         .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel207)
-                                .addComponent(jLabel209, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel208, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBoxJarraD, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(DV20)
-                            .addComponent(DKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(avisoLabelD)
                             .addGroup(jPanel27Layout.createSequentialGroup()
-                                .addComponent(jLabel212)
-                                .addGap(9, 9, 9))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
-                                .addComponent(jLabel211)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(FechaCal_D)
-                            .addComponent(InfCal_D, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel207)
+                                        .addComponent(jLabel209, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jLabel208, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBoxJarraD, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(DV20)
+                                    .addComponent(DKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel27Layout.createSequentialGroup()
+                                        .addComponent(jLabel212)
+                                        .addGap(9, 9, 9))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
+                                        .addComponent(jLabel211)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(FechaCal_D)
+                                    .addComponent(InfCal_D, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7200,7 +7360,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(FechaCal_D, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel211)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(avisoLabelD)
+                .addGap(71, 71, 71))
         );
 
         jPanel28.setBackground(new java.awt.Color(255, 153, 153));
@@ -7442,7 +7604,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel227)
                             .addComponent(jButton5))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA3Layout = new javax.swing.GroupLayout(mangueraA3);
@@ -8178,6 +8340,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        avisoLabelE.setForeground(new java.awt.Color(255, 0, 0));
+        avisoLabelE.setText("Aviso");
+
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
         jPanel32Layout.setHorizontalGroup(
@@ -8190,27 +8355,30 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel257)
-                                .addComponent(jLabel259, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel258, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBoxJarraE, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EV20)
-                            .addComponent(EKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(avisoLabelE)
                             .addGroup(jPanel32Layout.createSequentialGroup()
-                                .addComponent(jLabel262)
-                                .addGap(9, 9, 9))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
-                                .addComponent(jLabel261)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(FechaCal_E)
-                            .addComponent(InfCal_E, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel257)
+                                        .addComponent(jLabel259, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jLabel258, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBoxJarraE, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(EV20)
+                                    .addComponent(EKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel32Layout.createSequentialGroup()
+                                        .addComponent(jLabel262)
+                                        .addGap(9, 9, 9))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
+                                        .addComponent(jLabel261)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(FechaCal_E)
+                                    .addComponent(InfCal_E, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8239,7 +8407,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(FechaCal_E, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel261)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(avisoLabelE)
+                .addGap(40, 40, 40))
         );
 
         jPanel33.setBackground(new java.awt.Color(255, 153, 153));
@@ -9220,6 +9390,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        avisoLabelF.setForeground(new java.awt.Color(255, 0, 0));
+        avisoLabelF.setText("Aviso");
+
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
         jPanel37Layout.setHorizontalGroup(
@@ -9232,27 +9405,30 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel37Layout.createSequentialGroup()
                         .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel307)
-                                .addComponent(jLabel309, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel308, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBoxJarraF, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FV20)
-                            .addComponent(FKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(avisoLabelF)
                             .addGroup(jPanel37Layout.createSequentialGroup()
-                                .addComponent(jLabel312)
-                                .addGap(9, 9, 9))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel37Layout.createSequentialGroup()
-                                .addComponent(jLabel311)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(FechaCal_F)
-                            .addComponent(InfCal_F, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel307)
+                                        .addComponent(jLabel309, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jLabel308, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBoxJarraF, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(FV20)
+                                    .addComponent(FKC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel37Layout.createSequentialGroup()
+                                        .addComponent(jLabel312)
+                                        .addGap(9, 9, 9))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel37Layout.createSequentialGroup()
+                                        .addComponent(jLabel311)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(FechaCal_F)
+                                    .addComponent(InfCal_F, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9281,7 +9457,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(FechaCal_F, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel311)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(avisoLabelF)
+                .addGap(60, 60, 60))
         );
 
         jPanel38.setBackground(new java.awt.Color(255, 153, 153));
@@ -9523,7 +9701,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel327)
                             .addComponent(jButton7))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA5Layout = new javax.swing.GroupLayout(mangueraA5);
@@ -10890,18 +11068,38 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxTermometroActionPerformed
 
     private void jComboBoxJarraAItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxJarraAItemStateChanged
+        Date dateNow = new Date();
+        Date dateCalibA = new Date();
+        SimpleDateFormat formFecha = new SimpleDateFormat("dd/MM/yyyy");
+        
         lbd.openConnection();
         List <String> listaAux = lbd.obtenerJarrasId(1,(String) evt.getItem());
-        
-        //System.out.println((String) evt.getItem());
-        System.out.println(listaAux.toString());
         
         AV20.setText(listaAux.get(0).toString());
         AKC.setText(listaAux.get(1).toString());        
         FechaCal_A.setText(listaAux.get(2).toString());
         InfCal_A.setText(listaAux.get(3).toString());
-        
         lbd.closeConnection();
+        
+        String fechaCalibA = listaAux.get(2).toString();
+        System.out.println("Fecha A: "+fechaCalibA);
+        dateCalibA =  lbtc.fechaFormato(fechaCalibA);
+        System.out.println("Fecha calibración A: "+formFecha.format(dateCalibA));    
+        System.out.println("Fecha actual: "+formFecha.format(dateNow));
+        
+        if(jComboBoxJarraA.getSelectedItem().equals(evt.getItem())){
+            long diff = dateCalibA.getTime() - dateNow.getTime();
+            TimeUnit time = TimeUnit.DAYS; 
+            long diferencia = time.convert(diff, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera A: " + diferencia);
+            if(diferencia >= 1 && diferencia <= 90){
+                avisoLabelA.setText("*La jarra está por caducar*");
+            }else if(diferencia <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelA.setText("");
+            }            
+        }
+        
     }//GEN-LAST:event_jComboBoxJarraAItemStateChanged
 
     private void jComboBoxJarraAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxJarraAActionPerformed
@@ -10913,11 +11111,15 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     }//GEN-LAST:event_FechaCal_AActionPerformed
 
     private void jComboBoxJarraBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxJarraBItemStateChanged
+        Date dateNow = new Date();
+        Date dateCalibB = new Date();
+        SimpleDateFormat formFecha = new SimpleDateFormat("dd/MM/yyyy");
+                
         lbd.openConnection();
         List <String> listaAux = lbd.obtenerJarrasId(1,(String) evt.getItem());
         
         //System.out.println((String) evt.getItem());
-        System.out.println(listaAux.toString());
+        //System.out.println(listaAux.toString());
         
         BV20.setText(listaAux.get(0).toString());
         BKC.setText(listaAux.get(1).toString());        
@@ -10925,29 +11127,73 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
         InfCal_B.setText(listaAux.get(3).toString());
         
         lbd.closeConnection();
+        
+        String fechaCalibB = listaAux.get(2).toString();
+        System.out.println("Fecha B: "+fechaCalibB);
+        dateCalibB =  lbtc.fechaFormato(fechaCalibB);
+        System.out.println("Fecha calibración B: "+formFecha.format(dateCalibB));    
+        System.out.println("Fecha actual: "+formFecha.format(dateNow));
+        
+        if(jComboBoxJarraB.getSelectedItem().equals(evt.getItem())){
+            long diff = dateCalibB.getTime() - dateNow.getTime();
+            TimeUnit time = TimeUnit.DAYS; 
+            long diferencia = time.convert(diff, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera B: " + diferencia);
+            if(diferencia >= 1 && diferencia <= 90){
+                avisoLabelB.setText("*La jarra está por caducar*");
+            }else if(diferencia <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelB.setText("");
+            }            
+        }
+        
     }//GEN-LAST:event_jComboBoxJarraBItemStateChanged
 
     private void jComboBoxJarraCItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxJarraCItemStateChanged
+        Date dateNow = new Date();
+        Date dateCalibC = new Date();
+        SimpleDateFormat formFecha = new SimpleDateFormat("dd/MM/yyyy");        
         lbd.openConnection();
         List <String> listaAux = lbd.obtenerJarrasId(1,(String) evt.getItem());
         
         //System.out.println((String) evt.getItem());
-        System.out.println(listaAux.toString());
+        //System.out.println(listaAux.toString());
         
         CV20.setText(listaAux.get(0).toString());
         CKC.setText(listaAux.get(1).toString());        
         FechaCal_C.setText(listaAux.get(2).toString());
         InfCal_C.setText(listaAux.get(3).toString());
         
-        lbd.closeConnection();        
+        lbd.closeConnection();  
+        String fechaCalibC = listaAux.get(2).toString();
+        System.out.println("Fecha C: "+fechaCalibC);
+        dateCalibC =  lbtc.fechaFormato(fechaCalibC);
+        System.out.println("Fecha calibración C: "+formFecha.format(dateCalibC));    
+        System.out.println("Fecha actual: "+formFecha.format(dateNow));
+        
+        if(jComboBoxJarraC.getSelectedItem().equals(evt.getItem())){
+            long diff = dateCalibC.getTime() - dateNow.getTime();
+            TimeUnit time = TimeUnit.DAYS; 
+            long diferencia = time.convert(diff, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera C: " + diferencia);
+            if(diferencia >= 1 && diferencia <= 90){
+                avisoLabelC.setText("*La jarra está por caducar*");
+            }else if(diferencia <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelC.setText("");
+            }            
+        }        
     }//GEN-LAST:event_jComboBoxJarraCItemStateChanged
 
     private void jComboBoxJarraDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxJarraDItemStateChanged
+        Date dateNow = new Date();
+        Date dateCalibD = new Date();
+        SimpleDateFormat formFecha = new SimpleDateFormat("dd/MM/yyyy");         
         lbd.openConnection();
         List <String> listaAux = lbd.obtenerJarrasId(1,(String) evt.getItem());
         
         //System.out.println((String) evt.getItem());
-        System.out.println(listaAux.toString());
+        //System.out.println(listaAux.toString());
         
         DV20.setText(listaAux.get(0).toString());
         DKC.setText(listaAux.get(1).toString());        
@@ -10955,14 +11201,35 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
         InfCal_D.setText(listaAux.get(3).toString());
         
         lbd.closeConnection();
+        String fechaCalibD = listaAux.get(2).toString();
+        System.out.println("Fecha D: "+fechaCalibD);
+        dateCalibD =  lbtc.fechaFormato(fechaCalibD);
+        System.out.println("Fecha calibración D: "+formFecha.format(dateCalibD));    
+        System.out.println("Fecha actual: "+formFecha.format(dateNow));
+        
+        if(jComboBoxJarraD.getSelectedItem().equals(evt.getItem())){
+            long diff = dateCalibD.getTime() - dateNow.getTime();
+            TimeUnit time = TimeUnit.DAYS; 
+            long diferencia = time.convert(diff, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera D: " + diferencia);
+            if(diferencia >= 1 && diferencia <= 90){
+                avisoLabelD.setText("*La jarra está por caducar*");
+            }else if(diferencia <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelD.setText("");
+            }            
+        }        
     }//GEN-LAST:event_jComboBoxJarraDItemStateChanged
 
     private void jComboBoxJarraEItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxJarraEItemStateChanged
+        Date dateNow = new Date();
+        Date dateCalibE = new Date();
+        SimpleDateFormat formFecha = new SimpleDateFormat("dd/MM/yyyy");         
         lbd.openConnection();
         List <String> listaAux = lbd.obtenerJarrasId(1,(String) evt.getItem());
         
         //System.out.println((String) evt.getItem());
-        System.out.println(listaAux.toString());
+        //System.out.println(listaAux.toString());
         
         EV20.setText(listaAux.get(0).toString());
         EKC.setText(listaAux.get(1).toString());        
@@ -10970,14 +11237,35 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
         InfCal_E.setText(listaAux.get(3).toString());
         
         lbd.closeConnection();
+        String fechaCalibE = listaAux.get(2).toString();
+        System.out.println("Fecha E: "+fechaCalibE);
+        dateCalibE =  lbtc.fechaFormato(fechaCalibE);
+        System.out.println("Fecha calibración E: "+formFecha.format(dateCalibE));    
+        System.out.println("Fecha actual: "+formFecha.format(dateNow));
+        
+        if(jComboBoxJarraE.getSelectedItem().equals(evt.getItem())){
+            long diff = dateCalibE.getTime() - dateNow.getTime();
+            TimeUnit time = TimeUnit.DAYS; 
+            long diferencia = time.convert(diff, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera E: " + diferencia);
+            if(diferencia >= 1 && diferencia <= 90){
+                avisoLabelE.setText("*La jarra está por caducar*");
+            }else if(diferencia <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelE.setText("");
+            }            
+        }        
     }//GEN-LAST:event_jComboBoxJarraEItemStateChanged
 
     private void jComboBoxJarraFItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxJarraFItemStateChanged
+        Date dateNow = new Date();
+        Date dateCalibF = new Date();
+        SimpleDateFormat formFecha = new SimpleDateFormat("dd/MM/yyyy");          
         lbd.openConnection();
         List <String> listaAux = lbd.obtenerJarrasId(1,(String) evt.getItem());
         
         //System.out.println((String) evt.getItem());
-        System.out.println(listaAux.toString());
+        //System.out.println(listaAux.toString());
         
         FV20.setText(listaAux.get(0).toString());
         FKC.setText(listaAux.get(1).toString());        
@@ -10985,6 +11273,24 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
         InfCal_F.setText(listaAux.get(3).toString());
         
         lbd.closeConnection();
+        String fechaCalibF = listaAux.get(2).toString();
+        System.out.println("Fecha F: "+fechaCalibF);
+        dateCalibF =  lbtc.fechaFormato(fechaCalibF);
+        System.out.println("Fecha calibración F: "+formFecha.format(dateCalibF));    
+        System.out.println("Fecha actual: "+formFecha.format(dateNow));
+        
+        if(jComboBoxJarraF.getSelectedItem().equals(evt.getItem())){
+            long diff = dateCalibF.getTime() - dateNow.getTime();
+            TimeUnit time = TimeUnit.DAYS; 
+            long diferencia = time.convert(diff, TimeUnit.MILLISECONDS);        
+            System.out.println("Diferencia en días de la calibración Manguera F: " + diferencia);
+            if(diferencia >= 1 && diferencia <= 90){
+                avisoLabelF.setText("*La jarra está por caducar*");
+            }else if(diferencia <= 0){
+                JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
+                avisoLabelF.setText("");
+            }            
+        }        
     }//GEN-LAST:event_jComboBoxJarraFItemStateChanged
 
     /**
@@ -11362,6 +11668,12 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField InfCal_D;
     private javax.swing.JTextField InfCal_E;
     private javax.swing.JTextField InfCal_F;
+    private javax.swing.JLabel avisoLabelA;
+    private javax.swing.JLabel avisoLabelB;
+    private javax.swing.JLabel avisoLabelC;
+    private javax.swing.JLabel avisoLabelD;
+    private javax.swing.JLabel avisoLabelE;
+    private javax.swing.JLabel avisoLabelF;
     private javax.swing.JButton btnGuardarExcel;
     private javax.swing.JTextField campoEstacion;
     private javax.swing.JTextField campoInformacionEstacion;
@@ -11804,7 +12116,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField274;
     private javax.swing.JTextField jTextField275;
     private javax.swing.JTextField jTextField276;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField311;
     private javax.swing.JTextField jTextField312;
     private javax.swing.JTextField jTextField313;

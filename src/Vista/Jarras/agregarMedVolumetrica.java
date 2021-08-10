@@ -107,11 +107,21 @@ public class agregarMedVolumetrica extends javax.swing.JDialog {
                 campoVolVeinteActionPerformed(evt);
             }
         });
+        campoVolVeinte.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoVolVeinteKeyTyped(evt);
+            }
+        });
 
         campoFactorKC.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         campoFactorKC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoFactorKCActionPerformed(evt);
+            }
+        });
+        campoFactorKC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoFactorKCKeyTyped(evt);
             }
         });
 
@@ -294,24 +304,79 @@ public class agregarMedVolumetrica extends javax.swing.JDialog {
         String estatus = (String) campoEstatus.getSelectedItem();
         String vol_conv = campoVolVeinte.getText();
         String factor_kc = campoFactorKC.getText();
-        String fecha_calibracion = ltc.convertirFecha(fechaToday);
+        //String fecha_calibracion = ltc.convertirFecha(fechaToday); Se cambio por el formato de fecha que se manejaba
+        String fecha_calibracion = ltc.convertirFechaDict(fechaToday);
         String resultado = campoResultado.getText();
         String informe_calibracion = campoInformeCalibracion.getText();
         int valida = 0;
-        lbd.openConnection();
-        valida = lbd.agregarJarras(id_Jarra, marca, modelo, serie, estatus, vol_conv, factor_kc, fecha_calibracion, resultado, informe_calibracion);
-        lbd.closeConnection();
-        if(valida == 0){
-            JOptionPane.showMessageDialog(null, "Ocurrio un error al procesar los datos. Por favor, verifique su ID o datos no estén repetido o consulte con el administrador.");
+        //Sección que valida que dentro de las etiquetas Vol V20 y facotr KC contengan sólo números 
+        // y que evalue si el número escrito tiene el formato adecuado sea número entero o decimal.
+        // Hecho por Ángel González Rincón
+        int puntos_vc = 0;
+        int puntos_kc = 0;
+        
+        for (int n = 0; n < vol_conv.length(); n ++){
+        char c = vol_conv.charAt(n);
+        System.out.println(c);
+        if(c == '.'){
+            puntos_vc ++;
+            
         }
-        else{
-            System.out.println("No ocurrio nada en el sistema. Felicidades :v");
-            this.hide();
+        }
+        for (int n = 0; n < factor_kc.length(); n ++){
+        char c = factor_kc.charAt(n);
+        System.out.println(c);
+        if(c == '.'){
+            puntos_kc ++;
+            }
         }
         
+        if(puntos_vc > 1){
+            
+            JOptionPane.showMessageDialog(rootPane, "¡El valor de Vol V20 no es valido!");
+            
+        }else if(puntos_kc > 1){
+            
+            JOptionPane.showMessageDialog(rootPane, "¡El valor de Factor Kc no es valido!");
+            
+        }
+        else{
+            lbd.openConnection();
+            valida = lbd.agregarJarras(id_Jarra, marca, modelo, serie, estatus, vol_conv, factor_kc, fecha_calibracion, resultado, informe_calibracion);
+            lbd.closeConnection();
+            if(valida == 0){
+                JOptionPane.showMessageDialog(null, "Ocurrio un error al procesar los datos. Por favor, verifique su ID o datos no estén repetido o consulte con el administrador.");
+            }
+            else{
+                System.out.println("No ocurrio nada en el sistema. Felicidades :v");
+                this.hide();
+            }        
+        }
         
         
     }//GEN-LAST:event_botonGuardarActionPerformed
+
+    private void campoVolVeinteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoVolVeinteKeyTyped
+        char validar = evt.getKeyChar();
+        
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "¡Ingresar sólo números!");
+        }
+    }//GEN-LAST:event_campoVolVeinteKeyTyped
+
+    private void campoFactorKCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoFactorKCKeyTyped
+        char validar = evt.getKeyChar();
+        
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "¡Ingresar sólo números!");
+        }
+    }//GEN-LAST:event_campoFactorKCKeyTyped
 
     /**
      * @param args the command line arguments
