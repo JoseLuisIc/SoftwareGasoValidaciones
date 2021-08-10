@@ -12,19 +12,14 @@ import Vista.Estacion.*;
 import Vista.Hologramas.catalogoHologramas;
 import Vista.InspeccionDeMedicion.catalogoInspeccionDeMedicion;
 import Vista.Jarras.catalogoMedidadVolumetricasJarras;
-import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 import Vista.Usuarios.Administracion_de_usuarios;
-import Vista.Solicitud.registroSolicitudContrato;
 import Vista.Solicitud.catalogoSolicitud;
-
 import Vista.Termometro.catalogoTermometro;
 
 /**

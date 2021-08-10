@@ -10,195 +10,211 @@ import java.util.Date;
 /**
  *
  * @author joseluis.caamal
- * id_dispensario int AI PK 
-* no_dispensario int 
-*    numero_estacion varchar(45) 
- *   marca_dispensario varchar(45) 
- *   modelo varchar(45) 
- *   numSerie varchar(45) 
- *   alcanceMin varchar(45) 
- *   aprobacionDGN varchar(45) 
- *   alcanceMax varchar(45) 
-  *  mangueraA varchar(45) 
-  *  mangueraB varchar(45) 
-  *  mangueraC varchar(45) 
-   * mangueraD varchar(45) 
-  *  mangueraE varchar(45) 
-  *  mangueraF varchar(45) 
-  *  fecha_reg_disp datetime
+ * Modelo de la tabla Clientes 10/08/2021
  */
 public class informacionCliente {
-    private int id_dispensario;
-    private int no_dispensario;
-    private String numero_estacion;
-    private String marca_dispensario;
-    private String modelo;
-    private String numSerie;
-    private String alcanceMin;
-    private String aprobacionDGN;
-    private String alcanceMax;
-    private String mangueraA; 
-    private String mangueraB;
-    private String mangueraC;
-    private String mangueraD; 
-    private String mangueraE;
-    private String mangueraF;
-    private Date fecha_reg_disp;
+   private String idEstacion;
+   private Date fecha_registro;
+   private String nombre_responsable;
+   private String razon_social;
+   private String registro_fedcausante;
+   private String domicilio;
+   private String colonia;
+   private String ciudad;
+   private String estado;
+   private String telefono;
+   private String correo_electronico;
+   private String coordenadasUTM;
+   private String codigo_postal;
+   private String numero_cre;
+   private String marca_gasolina;
+   private int mangueraMagna;
+   private int mangueraPremium;
+   private int mangueraDiesel;
+   private String estatus_maguera;
 
     public informacionCliente() {
     }
-    
-    
-    public informacionCliente(int id_dispensario, int no_dispensario, String numero_estacion, String marca_dispensario, String modelo, String numSerie, String alcanceMin, String aprobacionDGN, String alcanceMax, String mangueraA, String mangueraB, String mangueraC, String mangueraD, String mangueraE, String mangueraF, Date fecha_reg_disp) {
-        this.id_dispensario = id_dispensario;
-        this.no_dispensario = no_dispensario;
-        this.numero_estacion = numero_estacion;
-        this.marca_dispensario = marca_dispensario;
-        this.modelo = modelo;
-        this.numSerie = numSerie;
-        this.alcanceMin = alcanceMin;
-        this.aprobacionDGN = aprobacionDGN;
-        this.alcanceMax = alcanceMax;
-        this.mangueraA = mangueraA;
-        this.mangueraB = mangueraB;
-        this.mangueraC = mangueraC;
-        this.mangueraD = mangueraD;
-        this.mangueraE = mangueraE;
-        this.mangueraF = mangueraF;
-        this.fecha_reg_disp = fecha_reg_disp;
-    }
 
-    public int getId_dispensario() {
-        return id_dispensario;
-    }
-
-    public void setId_dispensario(int id_dispensario) {
-        this.id_dispensario = id_dispensario;
-    }
-
-    public int getNo_dispensario() {
-        return no_dispensario;
-    }
-
-    public void setNo_dispensario(int no_dispensario) {
-        this.no_dispensario = no_dispensario;
-    }
-
-    public String getNumero_estacion() {
-        return numero_estacion;
-    }
-
-    public void setNumero_estacion(String numero_estacion) {
-        this.numero_estacion = numero_estacion;
-    }
-
-    public String getMarca_dispensario() {
-        return marca_dispensario;
-    }
-
-    public void setMarca_dispensario(String marca_dispensario) {
-        this.marca_dispensario = marca_dispensario;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getNumSerie() {
-        return numSerie;
-    }
-
-    public void setNumSerie(String numSerie) {
-        this.numSerie = numSerie;
-    }
-
-    public String getAlcanceMin() {
-        return alcanceMin;
-    }
-
-    public void setAlcanceMin(String alcanceMin) {
-        this.alcanceMin = alcanceMin;
-    }
-
-    public String getAprobacionDGN() {
-        return aprobacionDGN;
-    }
-
-    public void setAprobacionDGN(String aprobacionDGN) {
-        this.aprobacionDGN = aprobacionDGN;
-    }
-
-    public String getAlcanceMax() {
-        return alcanceMax;
-    }
-
-    public void setAlcanceMax(String alcanceMax) {
-        this.alcanceMax = alcanceMax;
-    }
-
-    public String getMangueraA() {
-        return mangueraA;
-    }
-
-    public void setMangueraA(String mangueraA) {
-        this.mangueraA = mangueraA;
-    }
-
-    public String getMangueraB() {
-        return mangueraB;
-    }
-
-    public void setMangueraB(String mangueraB) {
-        this.mangueraB = mangueraB;
-    }
-
-    public String getMangueraC() {
-        return mangueraC;
-    }
-
-    public void setMangueraC(String mangueraC) {
-        this.mangueraC = mangueraC;
-    }
-
-    public String getMangueraD() {
-        return mangueraD;
-    }
-
-    public void setMangueraD(String mangueraD) {
-        this.mangueraD = mangueraD;
-    }
-
-    public String getMangueraE() {
-        return mangueraE;
-    }
-
-    public void setMangueraE(String mangueraE) {
-        this.mangueraE = mangueraE;
-    }
-
-    public String getMangueraF() {
-        return mangueraF;
-    }
-
-    public void setMangueraF(String mangueraF) {
-        this.mangueraF = mangueraF;
-    }
-
-    public Date getFecha_reg_disp() {
-        return fecha_reg_disp;
-    }
-
-    public void setFecha_reg_disp(Date fecha_reg_disp) {
-        this.fecha_reg_disp = fecha_reg_disp;
+    public informacionCliente(String idEstacion, Date fecha_registro, String nombre_responsable, String razon_social, String registro_fedcausante, String domicilio, String colonia, String ciudad, String estado, String telefono, String correo_electronico, String coordenadasUTM, String codigo_postal, String numero_cre, String marca_gasolina, int mangueraMagna, int mangueraPremium, int mangueraDiesel, String estatus_maguera) {
+        this.idEstacion = idEstacion;
+        this.fecha_registro = fecha_registro;
+        this.nombre_responsable = nombre_responsable;
+        this.razon_social = razon_social;
+        this.registro_fedcausante = registro_fedcausante;
+        this.domicilio = domicilio;
+        this.colonia = colonia;
+        this.ciudad = ciudad;
+        this.estado = estado;
+        this.telefono = telefono;
+        this.correo_electronico = correo_electronico;
+        this.coordenadasUTM = coordenadasUTM;
+        this.codigo_postal = codigo_postal;
+        this.numero_cre = numero_cre;
+        this.marca_gasolina = marca_gasolina;
+        this.mangueraMagna = mangueraMagna;
+        this.mangueraPremium = mangueraPremium;
+        this.mangueraDiesel = mangueraDiesel;
+        this.estatus_maguera = estatus_maguera;
     }
     
+    public String getIdEstacion() {
+        return idEstacion;
+    }
+
+    public void setIdEstacion(String idEstacion) {
+        this.idEstacion = idEstacion;
+    }
+
+    public Date getFecha_registro() {
+        return fecha_registro;
+    }
+
+    public void setFecha_registro(Date fecha_registro) {
+        this.fecha_registro = fecha_registro;
+    }
+
+    public String getNombre_responsable() {
+        return nombre_responsable;
+    }
+
+    public void setNombre_responsable(String nombre_responsable) {
+        this.nombre_responsable = nombre_responsable;
+    }
+
+    public String getRazon_social() {
+        return razon_social;
+    }
+
+    public void setRazon_social(String razon_social) {
+        this.razon_social = razon_social;
+    }
+
+    public String getRegistro_fedcausante() {
+        return registro_fedcausante;
+    }
+
+    public void setRegistro_fedcausante(String registro_fedcausante) {
+        this.registro_fedcausante = registro_fedcausante;
+    }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
+    public String getColonia() {
+        return colonia;
+    }
+
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo_electronico() {
+        return correo_electronico;
+    }
+
+    public void setCorreo_electronico(String correo_electronico) {
+        this.correo_electronico = correo_electronico;
+    }
+
+    public String getCoordenadasUTM() {
+        return coordenadasUTM;
+    }
+
+    public void setCoordenadasUTM(String coordenadasUTM) {
+        this.coordenadasUTM = coordenadasUTM;
+    }
+
+    public String getCodigo_postal() {
+        return codigo_postal;
+    }
+
+    public void setCodigo_postal(String codigo_postal) {
+        this.codigo_postal = codigo_postal;
+    }
+
+    public String getNumero_cre() {
+        return numero_cre;
+    }
+
+    public void setNumero_cre(String numero_cre) {
+        this.numero_cre = numero_cre;
+    }
+
+    public String getMarca_gasolina() {
+        return marca_gasolina;
+    }
+
+    public void setMarca_gasolina(String marca_gasolina) {
+        this.marca_gasolina = marca_gasolina;
+    }
+
+    public int getMangueraMagna() {
+        return mangueraMagna;
+    }
+
+    public void setMangueraMagna(int mangueraMagna) {
+        this.mangueraMagna = mangueraMagna;
+    }
+
+    public int getMangueraPremium() {
+        return mangueraPremium;
+    }
+
+    public void setMangueraPremium(int mangueraPremium) {
+        this.mangueraPremium = mangueraPremium;
+    }
+
+    public int getMangueraDiesel() {
+        return mangueraDiesel;
+    }
+
+    public void setMangueraDiesel(int mangueraDiesel) {
+        this.mangueraDiesel = mangueraDiesel;
+    }
+
+    public String getEstatus_maguera() {
+        return estatus_maguera;
+    }
+
+    public void setEstatus_maguera(String estatus_maguera) {
+        this.estatus_maguera = estatus_maguera;
+    }
+
     @Override
     public String toString() {
-        return "informacionCliente{" + "id_dispensario=" + id_dispensario + ", no_dispensario=" + no_dispensario + ", numero_estacion=" + numero_estacion + ", marca_dispensario=" + marca_dispensario + ", modelo=" + modelo + ", numSerie=" + numSerie + ", alcanceMin=" + alcanceMin + ", aprobacionDGN=" + aprobacionDGN + ", alcanceMax=" + alcanceMax + ", mangueraA=" + mangueraA + ", mangueraB=" + mangueraB + ", mangueraC=" + mangueraC + ", mangueraD=" + mangueraD + ", mangueraE=" + mangueraE + ", mangueraF=" + mangueraF + ", fecha_reg_disp=" + fecha_reg_disp + '}';
+        return "informacionClientes{" + "idEstacion=" + idEstacion + ", fecha_registro=" + fecha_registro + ", nombre_responsable=" + nombre_responsable + ", razon_social=" + razon_social + ", registro_fedcausante=" + registro_fedcausante + ", domicilio=" + domicilio + ", colonia=" + colonia + ", ciudad=" + ciudad + ", estado=" + estado + ", telefono=" + telefono + ", correo_electronico=" + correo_electronico + ", coordenadasUTM=" + coordenadasUTM + ", codigo_postal=" + codigo_postal + ", numero_cre=" + numero_cre + ", marca_gasolina=" + marca_gasolina + ", mangueraMagna=" + mangueraMagna + ", mangueraPremium=" + mangueraPremium + ", mangueraDiesel=" + mangueraDiesel + ", estatus_maguera=" + estatus_maguera + '}';
     }
-    
+   
+   
+   
 }

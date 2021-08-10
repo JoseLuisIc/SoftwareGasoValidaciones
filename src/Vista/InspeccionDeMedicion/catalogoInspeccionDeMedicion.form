@@ -2273,6 +2273,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel328" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel77" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel76" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel75" min="-2" max="-2" attributes="0"/>
@@ -2285,8 +2286,9 @@
                               <Component id="jTextField67" min="-2" pref="215" max="-2" attributes="0"/>
                               <Component id="jTextField68" min="-2" pref="215" max="-2" attributes="0"/>
                               <Component id="jTextField69" min="-2" pref="215" max="-2" attributes="0"/>
+                              <Component id="campoPrecintoA" min="-2" pref="215" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2315,6 +2317,11 @@
                               <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField69" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="campoPrecintoA" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel328" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2333,7 +2340,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                              <Component id="etiquetaIncluir" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -2342,14 +2349,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                              <Component id="etiquetaIncluir" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel19">
+                    <Component class="javax.swing.JLabel" name="etiquetaIncluir">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Arial Narrow" size="18" style="1"/>
@@ -2359,6 +2366,10 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="ACEPTADA"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="etiquetaIncluirMouseClicked"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="etiquetaIncluirKeyPressed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2401,6 +2412,16 @@
                 <Component class="javax.swing.JTextField" name="jTextField68">
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField69">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel328">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Precinto"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="campoPrecintoA">
                 </Component>
               </SubComponents>
             </Container>
@@ -2534,7 +2555,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="46" max="32767" attributes="0"/>
+                          <EmptySpace pref="88" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3586,16 +3607,19 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="BI4MAX">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="20000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="BI4MED">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="20000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="BI4MIN">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="20000"/>
                   </Properties>
                 </Component>
@@ -3872,20 +3896,29 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel117" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel116" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel115" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jPanel19" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel114" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel329" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="campoPrecintoB" min="-2" pref="215" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel117" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel116" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel115" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanel19" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel114" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextField119" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField120" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField121" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField122" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField119" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField120" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField121" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField122" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3913,6 +3946,11 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel117" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField122" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel329" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoPrecintoB" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -4000,6 +4038,16 @@
                 <Component class="javax.swing.JTextField" name="jTextField121">
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField122">
+                </Component>
+                <Component class="javax.swing.JTextField" name="campoPrecintoB">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel329">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Precinto"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -4133,7 +4181,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="46" max="32767" attributes="0"/>
+                          <EmptySpace pref="88" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -5179,16 +5227,19 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="CI4MAX">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="20000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CI4MED">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="20000"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CI4MIN">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="20000"/>
                   </Properties>
                 </Component>
@@ -5463,21 +5514,31 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel167" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel166" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel165" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jPanel24" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel164" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField183" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField184" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField185" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField186" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel167" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel166" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel165" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanel24" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel164" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextField183" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField184" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField185" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField186" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                  <Component id="jLabel330" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="campoPrecintoC" min="-2" pref="215" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -5505,6 +5566,11 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel167" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField186" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel330" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoPrecintoC" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -5592,6 +5658,16 @@
                 <Component class="javax.swing.JTextField" name="jTextField185">
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField186">
+                </Component>
+                <Component class="javax.swing.JTextField" name="campoPrecintoC">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel330">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Preciento"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -5725,7 +5801,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="46" max="32767" attributes="0"/>
+                          <EmptySpace pref="88" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -7058,20 +7134,29 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel217" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel216" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel215" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jPanel29" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel214" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel331" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="campoPrecintoD" min="-2" pref="215" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel217" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel216" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel215" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanel29" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel214" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextField247" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField248" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField249" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField250" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField247" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField248" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField249" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField250" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -7099,6 +7184,11 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel217" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField250" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel331" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoPrecintoD" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -7186,6 +7276,16 @@
                 <Component class="javax.swing.JTextField" name="jTextField249">
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField250">
+                </Component>
+                <Component class="javax.swing.JTextField" name="campoPrecintoD">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel331">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Precinto"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -7319,7 +7419,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="46" max="32767" attributes="0"/>
+                          <EmptySpace pref="88" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -7494,13 +7594,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jPanel31" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jPanel33" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jPanel31" max="32767" attributes="0"/>
+                          <Component id="jPanel33" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel32" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jPanel35" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jPanel32" max="32767" attributes="0"/>
+                          <Component id="jPanel35" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -7843,7 +7943,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="57" max="32767" attributes="0"/>
+                          <EmptySpace pref="16" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="ETIMAX2" min="-2" max="-2" attributes="0"/>
@@ -8652,20 +8752,29 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel267" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel266" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel265" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jPanel34" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel264" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel333" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="campoPrecintoE" min="-2" pref="215" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel267" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel266" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel265" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanel34" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel264" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextField311" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField312" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField313" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField314" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField311" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField312" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField313" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField314" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -8694,7 +8803,12 @@
                               <Component id="jLabel267" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField314" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="127" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel333" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoPrecintoE" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -8781,6 +8895,16 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField314">
                 </Component>
+                <Component class="javax.swing.JTextField" name="campoPrecintoE">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel333">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Precinto"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel35">
@@ -8856,7 +8980,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel271" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -8913,7 +9037,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="46" max="32767" attributes="0"/>
+                          <EmptySpace pref="88" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -10251,20 +10375,29 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel317" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel316" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel315" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jPanel39" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel314" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel332" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="campoPrecintoF" min="-2" pref="215" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel317" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel316" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel315" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanel39" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel314" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextField375" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField376" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField377" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                      <Component id="jTextField378" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField375" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField376" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField377" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                              <Component id="jTextField378" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -10292,6 +10425,11 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel317" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField378" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel332" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoPrecintoF" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -10379,6 +10517,16 @@
                 <Component class="javax.swing.JTextField" name="jTextField377">
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField378">
+                </Component>
+                <Component class="javax.swing.JTextField" name="campoPrecintoF">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel332">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Precinto"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -10512,7 +10660,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="46" max="32767" attributes="0"/>
+                          <EmptySpace pref="88" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

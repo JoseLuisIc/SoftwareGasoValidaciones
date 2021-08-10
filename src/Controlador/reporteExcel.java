@@ -25,8 +25,13 @@ public class reporteExcel {
     int tipoDocumento;
     public reporteExcel(){}
     
-    public void crearDocumentoExcel(int tipoDocumento, String folioDocumento){
-        
+    public void crearDocumentoExcel(int tipoDocumento, 
+            String folioDocumento, 
+            informacionCliente infoCliente, 
+            informacionDispensarios infoDispensarios){
+                /*Lista de etiquetas en el Excel:
+                
+                */
                 //String nombreArchivo = "registropruebas.xlsx"; 
                 String nombreArchivo = lbtc.tipoDocumentoImprimir(tipoDocumento);
                 /*El nombre de la carpeta de salida debe ser fijo*/
@@ -115,6 +120,7 @@ public class reporteExcel {
                 }
                 } catch (Exception e) {
                     e.printStackTrace();
+                    System.out.println(e.getMessage());
                 }
     
     }

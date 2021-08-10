@@ -867,24 +867,7 @@ public void EliminarHolograma(String Holograma){
         
         
         
-    }
-               
-    /*
-        Caamal Ic Jose Luis
-        Obtiene los campos de la tabla clientes, para que se pueda realizar el set en inspección de Medición
-        Since 26/07/2021
-        */ 
-        
-        public informacionCliente infoCliente(){
-        informacionCliente infoCliente = new informacionCliente();
-        
-        
-        return infoCliente;
-        }
-               
-               
-               
-               
+    }         
         /*
         Caamal Ic Jose Luis
         Obtiene los campos de la tabla clientes para poder modificar
@@ -1031,6 +1014,105 @@ public void EliminarHolograma(String Holograma){
         
         return arrObjetos;
         
+    }
+    
+   /*
+     Se obtiene la información de la tabala de clientes,
+     se valida y retorna.
+     Caamal Ic José Luis
+     10/08/2021
+     */
+     
+    public informacionDispensarios infoDispensarios(String idEstacion, String idDispensario){
+        informacionDispensarios infoDispensarios = new informacionDispensarios();
+            try{
+                    PreparedStatement stmt;
+                    String Query = "SELECT * FROM tabla_dispensarios WHERE numero_estacion = '" +idEstacion+ "' AND no_dispensario = '" +idDispensario+ "';";
+                    //stmt = Conexion.prepareStatement("SELECT * FROM tabla_clientes WHERE idestacion = '" +idEstacion+ "'");
+                    stmt = Conexion.prepareStatement(Query);
+                    System.out.println(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                        
+                        while (res.next())
+                        {
+                            infoDispensarios = new informacionDispensarios(
+                            res.getInt("id_dispensario"),
+                            res.getInt("no_dispensario"),
+                            res.getString("numero_estacion"),
+                            res.getString("marca_dispensario"),
+                            res.getString("modelo"),
+                            res.getString("numSerie"),
+                            res.getString("alcanceMin"),
+                            res.getString("aprobacionDGN"),
+                            res.getString("alcanceMax"),
+                            res.getString("mangueraA"),
+                            res.getString("mangueraB"),
+                            res.getString("mangueraC"),
+                            res.getString("mangueraD"),
+                            res.getString("mangueraE"),
+                            res.getString("mangueraF"),
+                            res.getDate("fecha_reg_disp"));
+
+                        }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a.getMessage());
+                }
+        return infoDispensarios;
+    }
+     
+     
+    /*
+     Se obtiene la información de la tabala de clientes,
+     se valida y retorna.
+     Caamal Ic José Luis
+     10/08/2021
+     */
+     
+    public informacionCliente infoCliente(String idEstacion){
+        informacionCliente infoCliente = new informacionCliente();
+            try{
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement("SELECT * FROM tabla_clientes WHERE idestacion = '" +idEstacion+ "'");
+                    System.out.println("SELECT * FROM tabla_clientes WHERE idestacion = '" +idEstacion+ "'");
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                        
+                        while (res.next())
+                        {
+                            infoCliente = new informacionCliente(res.getString("idestacion"),
+                                    res.getDate("fecharegistro"),
+                                    res.getString("nombre_responsable"), 
+                                    res.getString("razon_social"), 
+                                    res.getString("registro_fedcausante"), 
+                                    res.getString("domicilio"), 
+                                    res.getString("colonia"), 
+                                    res.getString("ciudad"), 
+                                    res.getString("estado"), 
+                                    res.getString("telefono"), 
+                                    res.getString("correo_electronico"), 
+                                    res.getString("coordenadasUTM"), 
+                                    res.getString("codigo_postal"),
+                                    res.getString("numero_cre"),
+                                    res.getString("marca_gasolina"),
+                                    res.getInt("mangueraMagna"), 
+                                    res.getInt("mangueraPremium"), 
+                                    res.getInt("mangueraDiesel"),
+                                    res.getString("estatus_maguera"));
+
+                        }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a.getMessage());
+                }
+        return infoCliente;
     }
      
     /*  ----------------------------------------------------------------------------------
