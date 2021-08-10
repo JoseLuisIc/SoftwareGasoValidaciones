@@ -227,7 +227,7 @@ public class agregarTermometro extends javax.swing.JDialog {
        estatus=(String) estatusAT.getSelectedItem();
   
        Date  fecha=fechaAT.getDate();
-       DateFormat f=new SimpleDateFormat("dd-MM-yyyy");
+       DateFormat f=new SimpleDateFormat("dd/MM/yyyy");
        fecha_calibracion=f.format(fecha);
        
        resultado=resultadoAT.getText();

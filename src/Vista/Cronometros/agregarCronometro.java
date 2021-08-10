@@ -225,7 +225,7 @@ public class agregarCronometro extends javax.swing.JDialog {
         estatus=(String) estatusAC.getSelectedItem();
 
         Date  fecha=fechaAC.getDate();
-        DateFormat f=new SimpleDateFormat("dd-MM-yyyy");
+        DateFormat f=new SimpleDateFormat("dd/MM/yyyy");
         fecha_calibracion=f.format(fecha);
 
         resultado=resultadoAC.getText();
