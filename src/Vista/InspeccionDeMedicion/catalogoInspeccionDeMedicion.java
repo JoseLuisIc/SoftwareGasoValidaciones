@@ -213,9 +213,9 @@ operacionesdeInspeccionMedicion();
                 JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
                 avisoLabelB.setText("");
             }
-        System.out.println("Fecha B: "+fechaCalibB);
-        fechaCalB =  lbtc.fechaFormato(fechaCalibB);
-        System.out.println("Fecha calibración B: "+formFecha.format(fechaCalB));    
+        System.out.println("Fecha C: "+fechaCalibC);
+        fechaCalC =  lbtc.fechaFormato(fechaCalibC);
+        System.out.println("Fecha calibración B: "+formFecha.format(fechaCalC));    
         System.out.println("Fecha actual: "+formFecha.format(fecha));
         
             long diffC = fechaCalC.getTime() - dateNow.getTime();
