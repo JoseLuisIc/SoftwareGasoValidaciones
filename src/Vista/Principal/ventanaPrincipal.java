@@ -12,6 +12,7 @@ import Vista.Estacion.*;
 import Vista.Hologramas.catalogoHologramas;
 import Vista.InspeccionDeMedicion.catalogoInspeccionDeMedicion;
 import Vista.Jarras.catalogoMedidadVolumetricasJarras;
+import Vista.Precinto.catalogoPrecinto;
 import java.awt.Image;
 import java.io.File;
 import java.net.URL;
@@ -50,6 +51,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         cambiarImagen.setToolTipText("Cambiar Imagen");
         catalogoUsuarios.setToolTipText("Cátologo Usuarios");
         catalogoHologramas.setToolTipText("Cátologo Hologramas");
+        catalogoPrecinto.setToolTipText("Cátologo Precinto");
     }
         
     
@@ -74,6 +76,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         catalogoDispensarios = new javax.swing.JButton();
         cambiarImagen = new javax.swing.JButton();
         catalogoUsuarios = new javax.swing.JButton();
+        catalogoPrecinto = new javax.swing.JButton();
         labelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -178,6 +181,15 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(catalogoUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 80, 80));
 
+        catalogoPrecinto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/precinto.jpg"))); // NOI18N
+        catalogoPrecinto.setAlignmentX(0.5F);
+        catalogoPrecinto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                catalogoPrecintoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(catalogoPrecinto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 80, 80));
+
         labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/fondoGVV.jpg"))); // NOI18N
         jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, -1, -1));
 
@@ -281,6 +293,11 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_catalogoUsuariosActionPerformed
 
+    private void catalogoPrecintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catalogoPrecintoActionPerformed
+        catalogoPrecinto cP = new catalogoPrecinto();
+        cP.show();        
+    }//GEN-LAST:event_catalogoPrecintoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -323,6 +340,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton catalogoEstaciones;
     private javax.swing.JButton catalogoHologramas;
     private javax.swing.JButton catalogoJarras;
+    private javax.swing.JButton catalogoPrecinto;
     private javax.swing.JButton catalogoTermometros;
     private javax.swing.JButton catalogoUsuarios;
     private javax.swing.JButton inspeccionMedicion;

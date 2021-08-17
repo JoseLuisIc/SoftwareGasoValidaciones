@@ -74,7 +74,6 @@ public class catalogoMedidadVolumetricasJarras extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Catálogo Jarras");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

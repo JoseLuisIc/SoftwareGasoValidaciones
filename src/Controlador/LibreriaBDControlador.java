@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
 import java.sql.*;
 import java.util.Arrays;
 import static java.util.Collections.list;
@@ -2198,7 +2197,7 @@ public String obtenerEstacionDeFolio(String idFolio){
      }
     /*  ----------------------------------------------------------------------------------
     Nombre: Clase modeloJarras
-    Función: Se realiza la implementación del modelo par el llenado de tabla
+    Función: Se realiza la implementación del modelo para el llenado de tabla
     Date: 23/08/2020
     Aut@r: Saul Arenas Ramirez
     @Modify: José Luis Caamal Ic
@@ -3354,6 +3353,171 @@ public String obtenerEstacionDeFolio(String idFolio){
             return mapDispensarios;
         
         }
+
+    /*
+    Hecho por Ángel González Rincón
+    Fecha: 17-Ago-2021
+    "Modelo para la tabla de precinto en el catálogo."
+    */
         
-     
-}//final de LibreriaBDControlador
+    public DefaultTableModel modeloPrecinto(String columna[]){
+        DefaultTableModel modeloRetorno;
+        modeloRetorno = new DefaultTableModel(null, columna); 
+        try{
+                String Query = "SELECT * FROM gasvalid.tabla_precinto";
+
+                System.out.println("Contenido en ejecución: "+Query);
+
+                PreparedStatement us = Conexion.prepareStatement(Query);
+                ResultSet res = us.executeQuery();
+                Object objDatos[] = new Object[columna.length];
+
+                while(res.next()){
+                    for (int i = 0; i<columna.length; i++){
+                        objDatos[i] = res.getObject(i+1);
+                        //System.out.println(objDatos[i]);
+                    }
+                    modeloRetorno.addRow(objDatos);
+                }
+            }
+            catch(SQLException ex){
+                Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.toString());
+            }
+    
+    return modeloRetorno;
+}        
+    /*
+    Hecho por Ángel González Rincón
+    Fecha: 17-Ago-2021
+    "Método para agregar precinto a la base de datos."
+    */
+     public int  agregarPrecinto(String n_precinto){
+         int valida = 0;
+         try {
+                PreparedStatement pps=Conexion.prepareStatement("INSERT INTO tabla_precinto (nprecinto) VALUES ('"+n_precinto+"');");
+                pps.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa.");
+                valida = 1;
+        } catch (SQLException ex) {
+                //Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.getMessage());
+                //JOptionPane.showMessageDialog(null, "Error en el almacenamiento de datos"+ex);
+                valida = 0;
+        }
+         
+         return valida;
+     }
+        /*
+    Hecho por Ángel González Rincón
+    Fecha: 17-Ago-2021
+    "Método para eliminar precintos en la base de datos."
+    */
+    public int eliminarPrecinto(String n_precinto){
+        int valida = 0;
+        try{
+        PreparedStatement stmt;
+        stmt = Conexion.prepareStatement("SELECT nprecinto FROM tabla_precinto WHERE nprecinto = '" + n_precinto+ "';");
+        java.sql.ResultSet res;
+        res = stmt.executeQuery();
+
+        if(res.next()){
+            try {
+                stmt=Conexion.prepareStatement("DELETE FROM tabla_precinto WHERE nprecinto = '" + n_precinto+ "';");
+                stmt.executeUpdate();
+
+                JOptionPane.showMessageDialog(null, "El precinto "+n_precinto+" ha sido ELIMINADO exitosamente.");
+                valida = 1;
+            } 
+            catch (SQLException ex){
+                Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, ex);
+                valida = 0;
+            } 
+        }
+        else{
+                JOptionPane.showMessageDialog(null, "No existe el precinto: " + n_precinto, " por favor revise nuevamente.",JOptionPane.ERROR_MESSAGE);
+                res.close();
+                valida = 1;
+            }
+        } catch(SQLException a){
+            Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+            valida = 0;
+        }
+         
+         return valida;
+     }  
+    /*
+    Hecho por Ángel González Rincón
+    Fecha: 17-Ago-2021
+    "Método para editar precintos en la base de datos."
+    */
+    public int editarPrecinto(String n_precinto, String n_precinto_modificado) {
+    int valida = 0;
+    try{
+        PreparedStatement stmt;
+        stmt = Conexion.prepareStatement("SELECT nprecinto FROM tabla_precinto WHERE nprecinto = '" +n_precinto+ "';");
+        java.sql.ResultSet res;
+        res = stmt.executeQuery();
+
+        if(res.next()){
+                        
+            try {
+               String Query =  "UPDATE tabla_precinto SET nprecinto= '"+n_precinto_modificado+"' WHERE nprecinto = '"+n_precinto+"'";
+               PreparedStatement pps = Conexion.prepareStatement(Query);
+               pps.executeUpdate();
+                Statement st = Conexion.createStatement();
+                JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa.");
+                valida = 1;
+            } 
+            catch (SQLException ex){
+                Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.getMessage());
+                valida = 0;
+            }          }
+        else{//no se 
+               JOptionPane.showMessageDialog(null, "No EXISTE el precinto: " + n_precinto, "ATENCIÓN",JOptionPane.ERROR_MESSAGE);
+               res.close();
+               valida = 1;
+            }
+        } catch(SQLException a){
+            Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+            JOptionPane.showMessageDialog(null, a);
+            valida = 0;
+        } 
+    return valida;
+    }    
+    /*
+    Hecho por Ángel González Rincón
+    Fecha: 17-Ago-2021
+    "Método para realizar busquedas de Números de precinto en la base de datos y mostrar en pantalla."
+    */    
+    public DefaultTableModel modeloPrecintoBuscar(String columna[], String n_Precinto){
+        DefaultTableModel modeloRetorno;
+        modeloRetorno = new DefaultTableModel(null, columna); 
+        try{
+                String Query = "SELECT * FROM tabla_precinto WHERE nprecinto = '" +n_Precinto+ "';";
+
+                System.out.println("Contenido en ejecución: "+Query);
+
+                PreparedStatement us = Conexion.prepareStatement(Query);
+                ResultSet res = us.executeQuery();
+                Object objDatos[] = new Object[columna.length];
+
+                while(res.next()){
+                    for (int i = 0; i<columna.length; i++){
+                        objDatos[i] = res.getObject(i+1);
+                        //System.out.println(objDatos[i]);
+                    }
+                    modeloRetorno.addRow(objDatos);
+                }
+            }
+            catch(SQLException ex){
+                Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.toString());
+            }
+    
+    return modeloRetorno;
+}        
+    
+}
+//Final de LibreriaBDControlador.
