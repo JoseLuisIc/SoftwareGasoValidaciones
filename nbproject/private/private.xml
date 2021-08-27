@@ -5,19 +5,12 @@
             <url>src/Controlador/LibreriaBDControlador.java</url>
             <bookmark id="1">
                 <name/>
-                <line>672</line>
+                <line>671</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Precinto/eliminarPrecinto.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Precinto/agregarPrecinto.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Precinto/catalogoPrecinto.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/Precinto/editarPrecinto.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Vista/InspeccionDeMedicion/catalogoInspeccionDeMedicion.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitProjects/SoftwareGasoValidaciones/src/Controlador/LibreriaBDControlador.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
