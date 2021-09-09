@@ -5,6 +5,7 @@
  */
 package Vista.Usuarios;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,7 @@ public class Edita_IUsuario extends javax.swing.JDialog {
     public Edita_IUsuario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

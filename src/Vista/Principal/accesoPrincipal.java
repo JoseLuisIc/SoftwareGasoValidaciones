@@ -8,10 +8,13 @@ package Vista.Principal;
 import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import Modelo.TextPrompt;
+import java.awt.Image;
+import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -37,6 +40,12 @@ public class accesoPrincipal extends javax.swing.JFrame {
         
     public accesoPrincipal() {
         initComponents();
+        
+        //try{
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
+        //}catch(Exception ex){
+        //}
+        
         TextPrompt placeholder = new TextPrompt("Usuario",campoUsuario);
         TextPrompt placeholderPass = new TextPrompt("Password", jPasswordField1);
     /*Calendar cal = Calendar.getInstance();  //Llama la libreria de fechas
@@ -115,6 +124,11 @@ public class accesoPrincipal extends javax.swing.JFrame {
         etiquetaHora.setText("Hora");
 
         jPasswordField1.setBackground(new java.awt.Color(204, 204, 255));
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyPressed(evt);
+            }
+        });
 
         labelNotificacionError.setBackground(new java.awt.Color(204, 255, 204));
         labelNotificacionError.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
@@ -203,6 +217,16 @@ public class accesoPrincipal extends javax.swing.JFrame {
 
     private void botonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicioSesionActionPerformed
         // TODO add your handling code here:
+        //Crea carpeta Formatos en el disco C: para el empleo del programa 13/07/2021
+        File direccion = new File("C:/Formatos");
+        if (!direccion.exists()) {
+            if (direccion.mkdirs()) {
+                System.out.println("Directorio creado");
+            } else {
+                System.out.println("Error al crear directorio");
+            }
+        }        
+        
         int validaResp = 0; //valida los resultados de la constula jlci 28/06/2020
         Usuario = campoUsuario.getText();
         Password = jPasswordField1.getText();
@@ -241,6 +265,59 @@ public class accesoPrincipal extends javax.swing.JFrame {
                 //Añadir un log de errores
             }
     }//GEN-LAST:event_botonInicioSesionActionPerformed
+
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
+        // TODO add your handling code here:
+        /*Se añade el keyPressed del Password 26/07/2021 Jose Caamal*/
+        if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
+        File direccion = new File("C:/Formatos");
+        if (!direccion.exists()) {
+            if (direccion.mkdirs()) {
+                System.out.println("Directorio creado");
+            } else {
+                System.out.println("Error al crear directorio");
+            }
+        }        
+        
+        int validaResp = 0; //valida los resultados de la constula jlci 28/06/2020
+        Usuario = campoUsuario.getText();
+        Password = jPasswordField1.getText();
+        Password = lbt.obtenerMD5(Password);
+        /*Inicia: Se añade la validación del sistema para que se obtenga la información del usuario
+        de manera global usaremos el modeloTablas Jose Luis Caamal Ic 28/06/2020 */
+        lbd.openConnection();
+        listaDatosUsuarios = lbd.obtenerDatosUsuario("tabla_usuarios", Usuario, Password);
+        System.out.println("listaDatosUsuarios tamaño obtenido: "+listaDatosUsuarios.size()+"\nbotonInicioSesionActionPerformed :"+listaDatosUsuarios);
+        lbd.closeConnection();
+        validaResp = listaDatosUsuarios.size();
+        //Hay que añadir md5 para comparar la contraseña actual con la insertada // JLCI 23/08/2020
+        /*Se validan con usuarios temporales*/
+        if(validaResp != 0){
+//            if(Usuario.equals("gasvalid") && Password.equals("gasvalid")){
+                //Inicia: Se obtienen toda la información del usuario en modelo Tablas JLCI 28/06/2020
+                
+                //lbt.obtenerDatosUsuarioGlobal(listaDatosUsuarios);
+                //Imprimo mis datos del modeloTablas para verificar que ya los tenga
+                //lbd.mt.toString();
+                //Para recuperar el usuario se valida con lo siguiente lbd.mt.toString
+                System.out.println(lbd.mtu.toString());
+                //Termina.
+                ventanaPrincipal ventanaPrincipal = new ventanaPrincipal(lbd.mtu);
+                this.dispose();
+                ventanaPrincipal.show();
+//            }
+//            else{
+//                System.out.println("Verifica tu usuario y contraseña.");
+//                labelNotificacionError.setText("Verifica tu usuario y contraseña.");
+//                //Añadir un log de errores
+//            }
+        }else{
+                System.out.println("No existe el usuario.");
+                labelNotificacionError.setText("No existe el usuario.\nVerifica tu usuario y contraseña.");
+                //Añadir un log de errores
+            }
+        }
+    }//GEN-LAST:event_jPasswordField1KeyPressed
 
     /**
      * @param args the command line arguments

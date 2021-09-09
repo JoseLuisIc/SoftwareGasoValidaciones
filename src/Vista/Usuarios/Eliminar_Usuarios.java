@@ -6,6 +6,7 @@
 package Vista.Usuarios;
 
 import Controlador.LibreriaBDControlador;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +23,7 @@ public class Eliminar_Usuarios extends javax.swing.JDialog {
     public Eliminar_Usuarios(java.awt.Frame parent, boolean modal, int tipoUsuarioActual) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         this.tipoUsuario = tipoUsuarioActual;
     }
 

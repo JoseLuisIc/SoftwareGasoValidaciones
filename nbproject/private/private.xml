@@ -2,10 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
         <file>
-            <url>src/Vista/Solicitud/registroSolicitudContrato.java</url>
+            <url>src/Controlador/LibreriaBDControlador.java</url>
             <bookmark id="1">
                 <name/>
-                <line>28</line>
+                <line>671</line>
                 <key/>
             </bookmark>
         </file>

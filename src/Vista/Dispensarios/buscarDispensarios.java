@@ -6,6 +6,7 @@
 package Vista.Dispensarios;
 
 import Vista.Estacion.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,6 +19,7 @@ public class buscarDispensarios extends javax.swing.JFrame {
      */
     public buscarDispensarios() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**
@@ -86,6 +88,7 @@ public class buscarDispensarios extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

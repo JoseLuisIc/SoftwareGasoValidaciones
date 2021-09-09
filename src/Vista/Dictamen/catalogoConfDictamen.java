@@ -6,10 +6,11 @@
 package Vista.Dictamen;
 import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
+import Controlador.configuracionDictamen;
 import java.util.Date;
-import java.util.List;
-import javax.swing.JDialog;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 /**
  *
  * @author joseluis.caamal
@@ -23,15 +24,25 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
     private String folioDocumento;
     private String noEstacion;
     private int totalDispensarios;
+    private String periodo;
     private String fechaDictamen;
     private String HoraInicio;
     private String HoraFin;
+    public configuracionDictamen confDic = new configuracionDictamen();
     
     LibreriaBDControlador lbd = new LibreriaBDControlador();
     LibreriaToolsControlador lbt = new LibreriaToolsControlador();
     public catalogoConfDictamen(java.awt.Frame parent, boolean modal,String folio, String noEstacion) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
+        AutoCompleteDecorator.decorate(campoHora);
+        AutoCompleteDecorator.decorate(campoHoraMin);
+        AutoCompleteDecorator.decorate(campoHoraAmPm);
+        AutoCompleteDecorator.decorate(campoHoraFin);
+        AutoCompleteDecorator.decorate(campoHoraMinFin);
+        AutoCompleteDecorator.decorate(campoHoraAmPmFin);
+        
         this.folioDocumento = folio;
         this.noEstacion = noEstacion;
         Date fecha = new Date();
@@ -39,7 +50,10 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
         
         //lbd.openConnection();
         totalDispensarios = lbd.obtenerTotalDispensarios(noEstacion);
+        periodo = lbt.obtenerPeriodo();
         //lbd.closeConnection();
+        
+        campoPeriodo.setText(String.valueOf(periodo));
         
         if(totalDispensarios<=0){
             JOptionPane.showMessageDialog(null, "No existen dispensarios para está estación.");
@@ -53,6 +67,7 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
         System.out.println("NoEstacion:"+noEstacion);
         System.out.println("FechaDictamen:"+fechaDictamen);
         System.out.println("totalDispensarios:"+totalDispensarios);
+        System.out.println("periodo:"+periodo);
         
         campoNoCRE.setText(noEstacion);
         campoFolio.setText(folio);
@@ -88,6 +103,8 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
         campoHoraMinFin = new javax.swing.JComboBox<>();
         campoHoraFin = new javax.swing.JComboBox<>();
         campoHoraAmPmFin = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        campoPeriodo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -106,7 +123,7 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,6 +136,12 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
         jLabel2.setText("Total de Dispensarios:");
 
         jLabel3.setText("No. CRE/ No. Estación:");
+
+        campoNoCRE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoNoCREActionPerformed(evt);
+            }
+        });
 
         botonAceptar.setText("Aceptar");
         botonAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -141,67 +164,72 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
 
         campoHora.setEditable(true);
         campoHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
-        campoHora.setEnabled(false);
 
         campoHoraMin.setEditable(true);
         campoHoraMin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60" }));
-        campoHoraMin.setEnabled(false);
 
+        campoHoraAmPm.setEditable(true);
         campoHoraAmPm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "am", "pm" }));
-        campoHoraAmPm.setEnabled(false);
 
         campoHoraMinFin.setEditable(true);
         campoHoraMinFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60" }));
-        campoHoraMinFin.setEnabled(false);
 
         campoHoraFin.setEditable(true);
         campoHoraFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
-        campoHoraFin.setEnabled(false);
 
+        campoHoraAmPmFin.setEditable(true);
         campoHoraAmPmFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "am", "pm" }));
-        campoHoraAmPmFin.setEnabled(false);
+
+        jLabel9.setText("Periodo: ");
+
+        campoPeriodo.setText("Periodo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonAceptar)
+                .addGap(126, 126, 126))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(60, 60, 60)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(campoFechaDictamenAdicional, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(campoFolio, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(campoTotalDispensarios, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(campoHora, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(campoHoraFin, 0, 1, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(campoHoraMinFin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(campoHoraAmPmFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(campoHoraMin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(campoHoraAmPm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(campoNoCRE)))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addComponent(botonAceptar))
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoPeriodo)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(campoFechaDictamenAdicional, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(campoFolio, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(campoTotalDispensarios, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(campoHora, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(campoHoraFin, 0, 1, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(campoHoraMinFin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(campoHoraAmPmFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(campoHoraMin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(campoHoraAmPm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(campoNoCRE)))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,11 +263,15 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(campoPeriodo))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonAceptar)
-                .addGap(30, 30, 30))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -256,16 +288,19 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
         // TODO add your handling code here:
+        
+        
         Date fecha = campoFechaDictamenAdicional.getDate();
         if(fecha == null){
             JOptionPane.showMessageDialog(null, "Por favor, inserta una fecha valida.");
         }
         else{
-            fechaDictamen = lbt.convertirFecha(fecha);
+            fechaDictamen = lbt.convertirFechaDict(fecha);
             HoraInicio = (String) campoHora.getSelectedItem() +":";
             HoraInicio += (String) campoHoraMin.getSelectedItem()+" ";
             HoraInicio += (String) campoHoraAmPm.getSelectedItem();
@@ -275,16 +310,26 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
             HoraFin += (String) campoHoraAmPmFin.getSelectedItem();
             //        List <String> listaCadena = null;
             catalogoDocumentoDictamen cdd = null;
-            for(int i = 0; i<totalDispensarios;i++){
+            //for(int i = 0; i<totalDispensarios;i++){
                 cdd = new catalogoDocumentoDictamen(null,
-                    rootPaneCheckingEnabled, i, noEstacion, folioDocumento,fechaDictamen, HoraInicio,HoraFin);
+                    rootPaneCheckingEnabled, totalDispensarios, noEstacion, folioDocumento,fechaDictamen, HoraInicio,HoraFin);
                 cdd.show();
-            }
+      //      }
             this.dispose();
         }
+        
+        confDic.setFecha(fechaDictamen);
+        confDic.setHoraIn(HoraInicio);
+        confDic.setHoraFin(HoraFin);
+        confDic.setPeriodo(periodo);
+        
         //        catalogoDictamenConfirmacion cdc = new catalogoDictamenConfirmacion(this, rootPaneCheckingEnabled);
         //        cdc.show();
     }//GEN-LAST:event_botonAceptarActionPerformed
+
+    private void campoNoCREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNoCREActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNoCREActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,6 +384,7 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> campoHoraMin;
     private javax.swing.JComboBox<String> campoHoraMinFin;
     private javax.swing.JTextField campoNoCRE;
+    private javax.swing.JLabel campoPeriodo;
     private javax.swing.JLabel campoTotalDispensarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -348,6 +394,7 @@ public class catalogoConfDictamen extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

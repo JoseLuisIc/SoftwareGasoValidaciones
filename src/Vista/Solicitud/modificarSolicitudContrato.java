@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 import java.util.Date;
 import Modelo.modeloTablaUsuario;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
@@ -27,7 +28,8 @@ public class modificarSolicitudContrato extends javax.swing.JDialog {
                 super(parent, modal);
                 this.mtu = mtu;
                 Usuario = mtu.getNombreCompleto();
-                initComponents();             
+                initComponents();  
+                setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

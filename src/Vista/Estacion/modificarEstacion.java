@@ -8,6 +8,7 @@ package Vista.Estacion;
 import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import java.util.Date;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,6 +25,7 @@ public class modificarEstacion extends javax.swing.JDialog {
     public modificarEstacion(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

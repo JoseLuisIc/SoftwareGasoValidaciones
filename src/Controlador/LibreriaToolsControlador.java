@@ -12,16 +12,21 @@ import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Desktop;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -111,6 +116,7 @@ public class LibreriaToolsControlador {
     Formateo la fecha para recibirla y guardarla en MySQL
     @Author: Jose Caamal 15/07/2020
     */
+    
     public String convertirFecha(Date fecha){
         SimpleDateFormat plantilla;
         //fecha = new java.util.Date();  
@@ -118,7 +124,30 @@ public class LibreriaToolsControlador {
         String tiempo = plantilla.format(fecha);
         return tiempo;
     }
+    //Formateo de fecha Ángel González
+    public String convertirFechaDict(Date fecha){
+        SimpleDateFormat plantilla;
+        //fecha = new java.util.Date();  
+        plantilla = new SimpleDateFormat("dd/MM/yyyy"); //Obtengo Horas y 
+        String tiempo = plantilla.format(fecha);
+        
+        return tiempo;
+    }
 
+    public static Date fechaFormato(String fecha)
+    {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaDate = new Date();
+        try {
+            fechaDate = formato.parse(fecha);
+        } 
+        catch (ParseException ex) 
+        {
+            System.out.println(ex);
+        }
+        return fechaDate;
+    }    
+    
     /*
     Se abre la ventana principal desde el acceso principal
     @Author: Christian Olmedo 23/07/2020
@@ -148,10 +177,16 @@ public class LibreriaToolsControlador {
                 tipoDocumento = "SOLICITUD2021.docx";
             break;
             case 3:
-                tipoDocumento = "DICTAMENBOMBAS2021.docx";
+                tipoDocumento = "DICTAMENBOMBAS2021.docx"; //Sirve para generar el último documento
             break;
             case 4:
-                tipoDocumento = "DICTAMENBOMBAS2021H2.docx";
+                tipoDocumento = "DICTAMENBOMBAS2021H2.docx"; //Sirve para generar el último documento
+            break;
+            case 5:
+                tipoDocumento = "DICTAMENDEBOMBAS2021.docx";
+            break;
+            case 6:
+                tipoDocumento = "registropruebas.xlsx";
             break;
             default:
                 //tipoDocumento = "CONTRATO2021.docx";
@@ -182,6 +217,12 @@ public class LibreriaToolsControlador {
             break;
             case 4:
                 tipoDocumento = "DictamenBombaDos-"+nameArchive;
+            break;
+            case 5:
+                tipoDocumento = "DictamenBombas-"+nameArchive;
+            break;
+            case 6:
+                tipoDocumento = "RegistroPruebas-"+nameArchive;
             break;
             default:
                 //tipoDocumento = "CONTRATO2021.docx";
@@ -237,7 +278,7 @@ public class LibreriaToolsControlador {
        jcd.setEditable(true);
        jcd.setSelectedIndex(1);
        
-       JOptionPane.showMessageDialog(null, jcd, "Title",JOptionPane.QUESTION_MESSAGE);
+       JOptionPane.showMessageDialog(null, jcd, "Periodo",JOptionPane.QUESTION_MESSAGE);
        
        String opcion = (String) jcd.getSelectedItem();
        
@@ -245,15 +286,20 @@ public class LibreriaToolsControlador {
     }
     
     public String obtenerHorarioInicio(){
-     
-       JOptionPane.showMessageDialog(null, "Por favor, ingresa la hora inicial en formato: AM/PM");
-       String[] periodo={"00:00 AM/PM"};
+        
+       //JOptionPane.showMessageDialog(null, "Por favor, ingresa la hora inicial en formato: AM/PM");
+       DateFormat dateFormat = new SimpleDateFormat("hh:mm a");
+       String formattedDate = dateFormat.format(new Date()).toString();
+       System.out.println(formattedDate);
        
+       //Date newDate = new Date();
+       String[] periodo={formattedDate};
+      
        JComboBox jcd = new JComboBox(periodo);
        jcd.setEditable(true);
        jcd.setSelectedIndex(0);
        
-       JOptionPane.showMessageDialog(null, jcd, "Title",JOptionPane.QUESTION_MESSAGE);
+       //JOptionPane.showMessageDialog(null, jcd, "Hora Inicio",JOptionPane.QUESTION_MESSAGE);
        
        String opcion = (String) jcd.getSelectedItem();
        
@@ -262,14 +308,20 @@ public class LibreriaToolsControlador {
     
     public String obtenerHorarioFIN(){
      
-       JOptionPane.showMessageDialog(null, "Por favor, ingresa la hora fin en formato: AM/PM");
-       String[] periodo={"00:00 AM/PM"};
+       //JOptionPane.showMessageDialog(null, "Por favor, ingresa la hora fin en formato: AM/PM");
+       //Date newDate = new Date();
+       
+       DateFormat dateFormat = new SimpleDateFormat("hh:mm a");
+       String formattedDate = dateFormat.format(new Date()).toString();
+       System.out.println(formattedDate);       
+       
+       String[] periodo={formattedDate};
        
        JComboBox jcd = new JComboBox(periodo);
        jcd.setEditable(true);
        jcd.setSelectedIndex(0);
        
-       JOptionPane.showMessageDialog(null, jcd, "Title",JOptionPane.QUESTION_MESSAGE);
+       //JOptionPane.showMessageDialog(null, jcd, "Hora Fin",JOptionPane.QUESTION_MESSAGE);
        
        String opcion = (String) jcd.getSelectedItem();
        
@@ -299,24 +351,24 @@ public class LibreriaToolsControlador {
        String horarioinicio = (String) jcd1.getSelectedItem();
        String horariofin = (String) jcd2.getSelectedItem();
        
-       JOptionPane.showMessageDialog(null, jcd, "Title",JOptionPane.QUESTION_MESSAGE);
+       JOptionPane.showMessageDialog(null, jcd, "Periodo",JOptionPane.QUESTION_MESSAGE);
        buh = new baseUserHorario(opcion,horarioinicio,horariofin);
        return buh;
     }
     
     public String obtenerFecha(){
      
-       JOptionPane.showMessageDialog(null, "Por favor, ingresa la fecha");
+       //JOptionPane.showMessageDialog(null, "Por favor, ingresa la fecha");
        JDateChooser jd = new JDateChooser();
        Date date = new Date();
-       date.setMonth(12);
-       date.setYear(1993);
-       date.setDate(13);
+       date.getMonth();
+       date.getYear();
+       date.getDate();
        jd.setDate(date);
        String message ="Elija la fecha:\n";
        Object[] params = {message,jd};
        
-       JOptionPane.showConfirmDialog(null,params,"Fecha", JOptionPane.PLAIN_MESSAGE);
+       //JOptionPane.showConfirmDialog(null,params,"Fecha", JOptionPane.PLAIN_MESSAGE);
        String s="";
        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
        s=sdf.format(((JDateChooser)params[1]).getDate());//Casting params[1] makes me able to get its information
@@ -324,5 +376,21 @@ public class LibreriaToolsControlador {
        //JOptionPane.showMessageDialog(null, "Elige una fecha:");}
        
        return s;
+    }
+    /*
+        Obtengo los parametros en la bd para evitar ir cambiando a cada rato la contraseña
+        y asegurarnos que nadie pueda utilizarlo.
+        Author: José Luis Caamal Ic
+        Date: 07/05/2021
+    */
+    public String obtenerClave(String clave) throws FileNotFoundException, IOException{
+        String respClave = "";
+        Properties propiedades = new Properties();
+        
+        propiedades.load(new FileReader("src/Controlador/propiedades.properties"));
+        //C:\Users\joseluis.caamal\Documents\GitProjects\SoftwareGasoValidaciones\src\Controlador\propiedades.properties
+        respClave = propiedades.getProperty(clave);
+        System.out.println("La clave especificada es: " +  respClave);
+        return respClave;
     }
 }

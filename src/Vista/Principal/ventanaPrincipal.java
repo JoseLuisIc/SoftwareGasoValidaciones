@@ -12,19 +12,15 @@ import Vista.Estacion.*;
 import Vista.Hologramas.catalogoHologramas;
 import Vista.InspeccionDeMedicion.catalogoInspeccionDeMedicion;
 import Vista.Jarras.catalogoMedidadVolumetricasJarras;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import Vista.Precinto.catalogoPrecinto;
 import java.awt.Image;
 import java.io.File;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 import Vista.Usuarios.Administracion_de_usuarios;
-import Vista.Solicitud.registroSolicitudContrato;
 import Vista.Solicitud.catalogoSolicitud;
-
 import Vista.Termometro.catalogoTermometro;
 
 /**
@@ -42,6 +38,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     modeloTablaUsuario mtu = new modeloTablaUsuario();
     public ventanaPrincipal(modeloTablaUsuario mtu) {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         this.mtu = mtu;
         catalogoCronometros.setToolTipText("Cátologo Cronometros");
         catalogoJarras.setToolTipText("Cátologo Jarras");
@@ -54,6 +51,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         cambiarImagen.setToolTipText("Cambiar Imagen");
         catalogoUsuarios.setToolTipText("Cátologo Usuarios");
         catalogoHologramas.setToolTipText("Cátologo Hologramas");
+        catalogoPrecinto.setToolTipText("Cátologo Precinto");
     }
         
     
@@ -78,11 +76,14 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         catalogoDispensarios = new javax.swing.JButton();
         cambiarImagen = new javax.swing.JButton();
         catalogoUsuarios = new javax.swing.JButton();
+        catalogoPrecinto = new javax.swing.JButton();
         labelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("GasValid 2.0");
         setLocation(new java.awt.Point(600, 0));
         setMinimumSize(new java.awt.Dimension(1000, 600));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -91,7 +92,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         jPanel1.setAlignmentY(60.0F);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        catalogoCronometros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/termometro_de_gas (1)_opt.jpg"))); // NOI18N
+        catalogoCronometros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/chronometer.png"))); // NOI18N
         catalogoCronometros.setAlignmentX(0.5F);
         catalogoCronometros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +135,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
                 inspeccionMedicionActionPerformed(evt);
             }
         });
-        jPanel1.add(inspeccionMedicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 80, 80));
+        jPanel1.add(inspeccionMedicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 80, 80));
 
         registroSolicitud.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/to_do_list_checked2.png"))); // NOI18N
         registroSolicitud.setAlignmentX(0.5F);
@@ -143,9 +144,9 @@ public class ventanaPrincipal extends javax.swing.JFrame {
                 registroSolicitudActionPerformed(evt);
             }
         });
-        jPanel1.add(registroSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 80, 80));
+        jPanel1.add(registroSolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 80, 80));
 
-        catalogoEstaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/pemex.png"))); // NOI18N
+        catalogoEstaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/pemex2.png"))); // NOI18N
         catalogoEstaciones.setAlignmentX(0.5F);
         catalogoEstaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,18 +179,29 @@ public class ventanaPrincipal extends javax.swing.JFrame {
                 catalogoUsuariosActionPerformed(evt);
             }
         });
-        jPanel1.add(catalogoUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 80, 80));
+        jPanel1.add(catalogoUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 80, 80));
+
+        catalogoPrecinto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/precinto.jpg"))); // NOI18N
+        catalogoPrecinto.setAlignmentX(0.5F);
+        catalogoPrecinto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                catalogoPrecintoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(catalogoPrecinto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 80, 80));
+
+        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/fondoGVV.jpg"))); // NOI18N
         jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -281,6 +293,11 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_catalogoUsuariosActionPerformed
 
+    private void catalogoPrecintoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catalogoPrecintoActionPerformed
+        catalogoPrecinto cP = new catalogoPrecinto();
+        cP.show();        
+    }//GEN-LAST:event_catalogoPrecintoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -323,6 +340,7 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton catalogoEstaciones;
     private javax.swing.JButton catalogoHologramas;
     private javax.swing.JButton catalogoJarras;
+    private javax.swing.JButton catalogoPrecinto;
     private javax.swing.JButton catalogoTermometros;
     private javax.swing.JButton catalogoUsuarios;
     private javax.swing.JButton inspeccionMedicion;

@@ -5,6 +5,8 @@
  */
 package Vista.MarcasDispensarios;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author admin
@@ -16,6 +18,7 @@ public class panelMarcas extends javax.swing.JFrame {
      */
     public panelMarcas() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**

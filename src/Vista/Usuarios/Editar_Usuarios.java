@@ -10,6 +10,7 @@ import Controlador.LibreriaToolsControlador;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,6 +28,7 @@ public class Editar_Usuarios extends javax.swing.JDialog {
     public Editar_Usuarios(java.awt.Frame parent, boolean modal, String editarID) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         this.editarID = editarID;
         setFilas(editarID);
     }

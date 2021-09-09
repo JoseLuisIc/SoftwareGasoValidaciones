@@ -8,6 +8,7 @@ package Vista.Estacion;
 import Controlador.LibreriaBDControlador;
 import Controlador.LibreriaToolsControlador;
 import java.util.Date;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -23,6 +24,7 @@ public class agregarEstaciones extends javax.swing.JDialog {
     public agregarEstaciones(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**
@@ -399,6 +401,7 @@ public class agregarEstaciones extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void campoEstacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoEstacionKeyTyped

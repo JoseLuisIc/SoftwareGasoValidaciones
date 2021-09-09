@@ -5,6 +5,8 @@
  */
 package Vista.Dispensarios;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author yuliana adame
@@ -16,6 +18,7 @@ public class agregarDispensarios extends javax.swing.JFrame {
      */
     public agregarDispensarios() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
 
     /**
@@ -201,7 +204,7 @@ public class agregarDispensarios extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox3, 0, 88, Short.MAX_VALUE)
+                                .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(17, 17, 17)
                                 .addComponent(jLabel14)
                                 .addGap(1, 1, 1))
@@ -210,7 +213,7 @@ public class agregarDispensarios extends javax.swing.JFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel10)
                                         .addGap(19, 19, 19)
-                                        .addComponent(jComboBox2, 0, 88, Short.MAX_VALUE))
+                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addGap(18, 18, 18)
@@ -321,6 +324,7 @@ public class agregarDispensarios extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
