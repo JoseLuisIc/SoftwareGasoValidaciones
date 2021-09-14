@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.modeloTablaUsuario;
+import Modelo.modeloVerificacionVisual;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -3517,7 +3518,55 @@ public String obtenerEstacionDeFolio(String idFolio){
             }
     
     return modeloRetorno;
-}        
+}
+    
+        //@Author Jose Luis Caamal Ic 1/09/2021
+        //insertar los dipensarios en la tabla_verificacion_visual, únicamente
+        //enviando el modelo
+        public int insertarModeloVerificacionVisual(modeloVerificacionVisual modeloVVisual) {
+        int valida = 0;
+        try {
+                String idDispAux = "default";
+                PreparedStatement pps=Conexion.prepareStatement("INSERT INTO "
+                        + "tabla_verificacion_visual(idtabla_verificacion_visual,"
+                        + "folio,"
+                        + "n_estacion,"
+                        + "dispensario,"
+                        + "leyendas,"
+                        + "placa,"
+                        + "caratula,"
+                        + "signo,"
+                        + "disp_contador,"
+                        + "mecanismo,"
+                        + "disp_despacho,"
+                        + "golpes,"
+                        + "tiempo) "
+                        + "VALUES (default,?,?,?,?,?,?,?,?,?,?,?,?) ");
+                //Aquí le envío la información debe coincidir con el total de ? = 12 el default envía el dato por defecto
+                pps.setString(1,modeloVVisual.getFolio());
+                pps.setString(2,modeloVVisual.getN_estacion());
+                pps.setString(3,modeloVVisual.getDispensario());
+                pps.setString(4,modeloVVisual.getLeyendas());
+                pps.setString(5,modeloVVisual.getPlaca());
+                pps.setString(6,modeloVVisual.getCaratula());
+                pps.setString(7,modeloVVisual.getSigno());
+                pps.setString(8,modeloVVisual.getDisp_contador());
+                pps.setString(9,modeloVVisual.getMecanismo());
+                pps.setString(10,modeloVVisual.getDisp_despacho());
+                pps.setString(11,modeloVVisual.getGolpes());
+                pps.setString(12,modeloVVisual.getTiempo());
+                pps.executeUpdate();
+                //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
+                System.out.println("Datos almacenados de forma exitosa");
+                valida = 1;
+        } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+                //JOptionPane.showMessageDialog(null, "Error en el almacenamiento de datos"+ex);
+                System.out.println("Error en el almacenamiento de datos"+ex);
+                valida = 0;
+        }
+        return valida;
+    }
     
 }
 //Final de LibreriaBDControlador.

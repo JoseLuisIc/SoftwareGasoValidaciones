@@ -33,6 +33,8 @@ import java.util.Date;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
+import Modelo.modeloVerificacionVisual;
+import javax.swing.ButtonGroup;
 
 /**
  *
@@ -10205,7 +10207,83 @@ entraonoentra();        // TODO add your handling code here:
         if(!folioSolicitud.getText().isEmpty() /*&& !campoEstacion.getText().isEmpty()*/){
 //            int proceoExitoso = lbd.obtenerValidacionFolioEstacion(folioSolicitud.getText(),campoEstacion.getText());
 //            if(proceoExitoso == 1)
-              repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
+              //Aquí vamos a insertar la información a la base de datos JLCI 12/09/2021
+              //Instancio la clase modelo verificacion visual
+              modeloVerificacionVisual modeloVVisual = new modeloVerificacionVisual();
+              //Después no es necesario el seteo dentro el metodo de la información solamente llenamos según lo que correspondá
+              modeloVVisual.setId(0); //El valor es cero por defecto al insertar
+              modeloVVisual.setFolio(folioSolicitud.getText());
+              modeloVVisual.setN_estacion(folioSolicitud.getText());
+              modeloVVisual.setDispensario((String) jComboBoxDispensarios.getSelectedItem());
+              
+              if(jRadioButton21.isSelected())
+                modeloVVisual.setLeyendas("C");
+              else
+                modeloVVisual.setLeyendas("N");
+              
+              if(jRadioButton24.isSelected())
+                modeloVVisual.setPlaca("C");
+              else
+                modeloVVisual.setPlaca("N");
+              
+              if(jRadioButton26.isSelected())
+                modeloVVisual.setCaratula("C");
+              else
+                modeloVVisual.setCaratula("N");
+              
+              if(jRadioButton28.isSelected())
+                modeloVVisual.setSigno("C");
+              else
+                modeloVVisual.setSigno("N");
+              
+              if(jRadioButton30.isSelected())
+                modeloVVisual.setDisp_contador("C");
+              else
+                modeloVVisual.setDisp_contador("N");
+              
+              if(jRadioButton32.isSelected())
+                modeloVVisual.setMecanismo("C");
+              else
+                modeloVVisual.setMecanismo("N");
+              
+              if(jRadioButton34.isSelected())
+                modeloVVisual.setDisp_despacho("C");
+              else
+                modeloVVisual.setDisp_despacho("N");
+              
+              if(jRadioButton36.isSelected())
+                modeloVVisual.setGolpes("C");
+              else
+                modeloVVisual.setGolpes("N");
+              
+              if(jRadioButton38.isSelected())
+                modeloVVisual.setTiempo("C");
+              else
+                modeloVVisual.setTiempo("N");
+              
+              //modeloVVisual.setPlaca(folioSolicitud.getText());
+              //modeloVVisual.setCaratula(folioSolicitud.getText());
+              //modeloVVisual.setSigno(folioSolicitud.getText());
+              //modeloVVisual.setDisp_contador(folioSolicitud.getText());
+              //modeloVVisual.setMecanismo(folioSolicitud.getText());
+              //modeloVVisual.setDisp_despacho(folioSolicitud.getText());
+              //modeloVVisual.setGolpes(folioSolicitud.getText());
+              //modeloVVisual.setTiempo(folioSolicitud.getText());
+              //por qué el modelo ya se inserto pero imprimo para ver el contenido
+              System.out.println(modeloVVisual.toString());
+              lbd.openConnection(); //Abro Conexíon
+              int operacionExitosa = lbd.insertarModeloVerificacionVisual(modeloVVisual);
+              lbd.closeConnection(); //Cierro Conexíon
+              if(operacionExitosa == 1){
+                  JOptionPane.showMessageDialog(null, "Los datos de la verificiación "
+                          + "visual fueron ingresados correctamente.");
+                  //repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
+              }
+              else{
+                  JOptionPane.showMessageDialog(null, "Los datos de la verificiación "
+                          + "visual ya fueron ingresados anteriormente. ");
+              }
+              
         }
         else{
             JOptionPane.showMessageDialog(null, "El folio no se ingreso ó no es válido.");
