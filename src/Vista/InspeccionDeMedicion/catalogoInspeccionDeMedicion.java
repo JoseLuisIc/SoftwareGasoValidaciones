@@ -10075,7 +10075,7 @@ entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton24ActionPerformed
 
     private void jRadioButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton21ActionPerformed
-entraonoentra();        // TODO add your handling code here:
+entraonoentra();        //lllll TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton21ActionPerformed
 
     private void jRadioButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton26ActionPerformed
@@ -10210,6 +10210,8 @@ entraonoentra();        // TODO add your handling code here:
         else{
             JOptionPane.showMessageDialog(null, "El folio no se ingreso ó no es válido.");
         }
+        
+        
         
     }//GEN-LAST:event_btnGuardarExcelActionPerformed
 
