@@ -49,6 +49,13 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
     informacionDispensarios infoDispensarios = new informacionDispensarios();
     colorTabla colorT = new colorTabla(0,0);
     public Map<Integer, Integer> mapDispensarios = null;
+    /*Variables para saber si se incluyen o no la información en el excel*/
+    public int incluirA = 0;
+    public int incluirB = 0;
+    public int incluirC = 0;
+    public int incluirD = 0;
+    public int incluirE = 0;
+    public int incluirF = 0;
     /**
      * Creates new form catalogoInspeccionDeMedicion
      */
@@ -2031,7 +2038,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
         FechaCal_A = new javax.swing.JTextField();
@@ -2080,7 +2086,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel73 = new javax.swing.JLabel();
         jTextField65 = new javax.swing.JTextField();
         jTextField66 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        botonIncluirMA = new javax.swing.JButton();
         mangueraA1 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel78 = new javax.swing.JLabel();
@@ -2157,7 +2163,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel104 = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
         jLabel106 = new javax.swing.JLabel();
-        jLabel334 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jLabel107 = new javax.swing.JLabel();
         FechaCal_B = new javax.swing.JTextField();
@@ -2206,7 +2211,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel127 = new javax.swing.JLabel();
         jTextField132 = new javax.swing.JTextField();
         jTextField133 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        botonIncluirMB = new javax.swing.JButton();
         mangueraA2 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel128 = new javax.swing.JLabel();
@@ -2283,7 +2288,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel154 = new javax.swing.JLabel();
         jLabel155 = new javax.swing.JLabel();
         jLabel156 = new javax.swing.JLabel();
-        jLabel335 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jLabel157 = new javax.swing.JLabel();
         FechaCal_C = new javax.swing.JTextField();
@@ -2332,7 +2336,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel177 = new javax.swing.JLabel();
         jTextField196 = new javax.swing.JTextField();
         jTextField197 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        botonIncluirMC = new javax.swing.JButton();
         mangueraA3 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
         jLabel178 = new javax.swing.JLabel();
@@ -2409,7 +2413,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel204 = new javax.swing.JLabel();
         jLabel205 = new javax.swing.JLabel();
         jLabel206 = new javax.swing.JLabel();
-        jLabel338 = new javax.swing.JLabel();
         jPanel27 = new javax.swing.JPanel();
         jLabel207 = new javax.swing.JLabel();
         FechaCal_D = new javax.swing.JTextField();
@@ -2458,7 +2461,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel227 = new javax.swing.JLabel();
         jTextField260 = new javax.swing.JTextField();
         jTextField261 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        botonIncluirMD = new javax.swing.JButton();
         mangueraA4 = new javax.swing.JPanel();
         jPanel31 = new javax.swing.JPanel();
         jLabel228 = new javax.swing.JLabel();
@@ -2535,7 +2538,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel254 = new javax.swing.JLabel();
         jLabel255 = new javax.swing.JLabel();
         jLabel256 = new javax.swing.JLabel();
-        jLabel337 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
         jLabel257 = new javax.swing.JLabel();
         FechaCal_E = new javax.swing.JTextField();
@@ -2584,7 +2586,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel277 = new javax.swing.JLabel();
         jTextField324 = new javax.swing.JTextField();
         jTextField325 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        botonIncluirME = new javax.swing.JButton();
         mangueraA5 = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jLabel278 = new javax.swing.JLabel();
@@ -2661,7 +2663,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel304 = new javax.swing.JLabel();
         jLabel305 = new javax.swing.JLabel();
         jLabel306 = new javax.swing.JLabel();
-        jLabel336 = new javax.swing.JLabel();
         jPanel37 = new javax.swing.JPanel();
         jLabel307 = new javax.swing.JLabel();
         FechaCal_F = new javax.swing.JTextField();
@@ -2710,7 +2711,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel327 = new javax.swing.JLabel();
         jTextField388 = new javax.swing.JTextField();
         jTextField389 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
+        botonIncluirMF = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Inspeccion de Medición");
@@ -3183,7 +3184,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addComponent(jLabel68)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel69)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 611, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 583, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton32)
@@ -3771,8 +3772,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel47.setText("Minimo(ml)");
 
-        jLabel19.setText("Instrumento");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -3781,18 +3780,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jLabel24)
-                                            .addComponent(jLabel25))
-                                        .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel19))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel20)
+                                        .addComponent(jLabel24)
+                                        .addComponent(jLabel25))
+                                    .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -4026,9 +4023,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel27)))
-                            .addGap(26, 26, 26)
-                            .addComponent(jLabel19)
-                            .addGap(3, 3, 3))))
+                            .addGap(43, 43, 43))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -4374,7 +4369,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton1.setText("Incluir");
+        botonIncluirMA.setText("Incluir");
+        botonIncluirMA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMAActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -4421,7 +4421,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField65, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField66, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -4472,8 +4472,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel73)
-                            .addComponent(jButton1))))
-                .addContainerGap(71, Short.MAX_VALUE))
+                            .addComponent(botonIncluirMA))))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraALayout = new javax.swing.GroupLayout(mangueraA);
@@ -4894,8 +4894,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel106.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel106.setText("Minimo(ml)");
 
-        jLabel334.setText("Instrumento");
-
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
@@ -4904,18 +4902,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel79)
-                                            .addComponent(jLabel83)
-                                            .addComponent(jLabel84))
-                                        .addComponent(jLabel104, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jLabel105, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel106, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel334))
+                                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel79)
+                                        .addComponent(jLabel83)
+                                        .addComponent(jLabel84))
+                                    .addComponent(jLabel104, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(jLabel105, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel106, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel16Layout.createSequentialGroup()
@@ -5149,9 +5145,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel16Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel86)))
-                            .addGap(26, 26, 26)
-                            .addComponent(jLabel334)
-                            .addGap(3, 3, 3))))
+                            .addGap(43, 43, 43))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
@@ -5293,7 +5287,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_B)
                                     .addComponent(InfCal_B, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(166, Short.MAX_VALUE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5480,7 +5474,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton3.setText("Incluir");
+        botonIncluirMB.setText("Incluir");
+        botonIncluirMB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -5527,7 +5526,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField132, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField133, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel121, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -5578,7 +5577,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel127)
-                            .addComponent(jButton3))))
+                            .addComponent(botonIncluirMB))))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
@@ -5965,8 +5964,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel156.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel156.setText("Minimo(ml)");
 
-        jLabel335.setText("Instrumento");
-
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
@@ -5975,18 +5972,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addContainerGap()
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel129)
-                                            .addComponent(jLabel133)
-                                            .addComponent(jLabel134))
-                                        .addComponent(jLabel154, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jLabel155, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel156, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel335))
+                                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel129)
+                                        .addComponent(jLabel133)
+                                        .addComponent(jLabel134))
+                                    .addComponent(jLabel154, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(jLabel155, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel156, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel21Layout.createSequentialGroup()
@@ -6220,9 +6215,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel21Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel136)))
-                            .addGap(26, 26, 26)
-                            .addComponent(jLabel335)
-                            .addGap(3, 3, 3))))
+                            .addGap(43, 43, 43))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
@@ -6364,7 +6357,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_C)
                                     .addComponent(InfCal_C, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(166, Short.MAX_VALUE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6552,7 +6545,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton4.setText("Incluir");
+        botonIncluirMC.setText("Incluir");
+        botonIncluirMC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -6599,7 +6597,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField196, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField197, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel171, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -6650,7 +6648,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel177)
-                            .addComponent(jButton4))))
+                            .addComponent(botonIncluirMC))))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
@@ -7032,8 +7030,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel206.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel206.setText("Minimo(ml)");
 
-        jLabel338.setText("Instrumento");
-
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
@@ -7042,18 +7038,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addContainerGap()
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel179)
-                                            .addComponent(jLabel183)
-                                            .addComponent(jLabel184))
-                                        .addComponent(jLabel204, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jLabel205, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel206, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel338))
+                                    .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel179)
+                                        .addComponent(jLabel183)
+                                        .addComponent(jLabel184))
+                                    .addComponent(jLabel204, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(jLabel205, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel206, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel26Layout.createSequentialGroup()
@@ -7287,9 +7281,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel26Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel186)))
-                            .addGap(26, 26, 26)
-                            .addComponent(jLabel338)
-                            .addGap(3, 3, 3))))
+                            .addGap(43, 43, 43))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel26Layout.createSequentialGroup()
@@ -7431,7 +7423,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_D)
                                     .addComponent(InfCal_D, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(166, Short.MAX_VALUE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7618,7 +7610,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton5.setText("Incluir");
+        botonIncluirMD.setText("Incluir");
+        botonIncluirMD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMDActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -7665,7 +7662,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField260, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField261, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMD, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel221, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -7716,7 +7713,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel227)
-                            .addComponent(jButton5))))
+                            .addComponent(botonIncluirMD))))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
@@ -8098,8 +8095,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel256.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel256.setText("Minimo(ml)");
 
-        jLabel337.setText("Instrumento");
-
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
@@ -8108,18 +8103,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addContainerGap()
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
-                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel229)
-                                            .addComponent(jLabel233)
-                                            .addComponent(jLabel234))
-                                        .addComponent(jLabel254, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jLabel255, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel256, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel337))
+                                    .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel229)
+                                        .addComponent(jLabel233)
+                                        .addComponent(jLabel234))
+                                    .addComponent(jLabel254, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(jLabel255, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel256, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel31Layout.createSequentialGroup()
@@ -8353,9 +8346,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel31Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel236)))
-                            .addGap(27, 27, 27)
-                            .addComponent(jLabel337)
-                            .addGap(2, 2, 2))))
+                            .addGap(43, 43, 43))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
@@ -8497,7 +8488,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_E)
                                     .addComponent(InfCal_E, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(166, Short.MAX_VALUE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8684,7 +8675,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton6.setText("Incluir");
+        botonIncluirME.setText("Incluir");
+        botonIncluirME.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMEActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -8731,7 +8727,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField324, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField325, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirME, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel271, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -8782,7 +8778,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel277)
-                            .addComponent(jButton6))))
+                            .addComponent(botonIncluirME))))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
@@ -9164,8 +9160,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel306.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel306.setText("Minimo(ml)");
 
-        jLabel336.setText("Instrumento");
-
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
         jPanel36Layout.setHorizontalGroup(
@@ -9174,18 +9168,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addContainerGap()
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel36Layout.createSequentialGroup()
-                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel279)
-                                            .addComponent(jLabel283)
-                                            .addComponent(jLabel284))
-                                        .addComponent(jLabel304, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jLabel305, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel306, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel336))
+                                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel279)
+                                        .addComponent(jLabel283)
+                                        .addComponent(jLabel284))
+                                    .addComponent(jLabel304, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(jLabel305, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel306, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel36Layout.createSequentialGroup()
@@ -9422,9 +9414,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel36Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel286)))
-                            .addGap(26, 26, 26)
-                            .addComponent(jLabel336)
-                            .addGap(3, 3, 3))))
+                            .addGap(43, 43, 43))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel36Layout.createSequentialGroup()
@@ -9566,7 +9556,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_F)
                                     .addComponent(InfCal_F, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(166, Short.MAX_VALUE))))
+                        .addContainerGap(138, Short.MAX_VALUE))))
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9753,7 +9743,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton7.setText("Incluir");
+        botonIncluirMF.setText("Incluir");
+        botonIncluirMF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMFActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
@@ -9800,7 +9795,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField388, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField389, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel321, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -9851,7 +9846,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel327)
-                            .addComponent(jButton7))))
+                            .addComponent(botonIncluirMF))))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
@@ -11535,6 +11530,79 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
 //        JOptionPane.showMessageDialog(null, "El proyecto ya paso");
     }//GEN-LAST:event_etiquetaIncluirMouseClicked
 
+    private void botonIncluirMAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMAActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirMA.getText().equals("Incluir")){
+           incluirA = 1;
+           botonIncluirMA.setText("No Incluir");
+        }
+        else{
+           incluirA = 0;
+           botonIncluirMA.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMAActionPerformed
+
+    private void botonIncluirMBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMBActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirMB.getText().equals("Incluir")){
+           incluirB = 1;
+           botonIncluirMB.setText("No Incluir");
+        }
+        else{
+            incluirB = 0;
+           botonIncluirMB.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMBActionPerformed
+
+    private void botonIncluirMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMCActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirMC.getText().equals("Incluir")){
+            incluirC = 1;
+           botonIncluirMC.setText("No Incluir");
+        }
+        else{
+            incluirC = 0;
+           botonIncluirMC.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMCActionPerformed
+
+    private void botonIncluirMDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMDActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirMD.getText().equals("Incluir")){
+            incluirD = 1;
+           botonIncluirMD.setText("No Incluir");
+        }
+        else{
+           incluirD = 0;
+           botonIncluirMD.setText("Incluir");
+        }
+        
+    }//GEN-LAST:event_botonIncluirMDActionPerformed
+
+    private void botonIncluirMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMEActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirME.getText().equals("Incluir")){
+            incluirE = 1;
+           botonIncluirME.setText("No Incluir");
+        }
+        else{
+             incluirE = 0;
+           botonIncluirME.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMEActionPerformed
+
+    private void botonIncluirMFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMFActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirMF.getText().equals("Incluir")){
+             incluirF = 1;
+           botonIncluirMF.setText("No Incluir");
+        }
+        else{
+           incluirF = 0;
+           botonIncluirMF.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMFActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -11916,6 +11984,12 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JLabel avisoLabelD;
     private javax.swing.JLabel avisoLabelE;
     private javax.swing.JLabel avisoLabelF;
+    private javax.swing.JButton botonIncluirMA;
+    private javax.swing.JButton botonIncluirMB;
+    private javax.swing.JButton botonIncluirMC;
+    private javax.swing.JButton botonIncluirMD;
+    private javax.swing.JButton botonIncluirME;
+    private javax.swing.JButton botonIncluirMF;
     private javax.swing.JButton btnGuardarExcel;
     private javax.swing.JTextField campoEstacion;
     private javax.swing.JTextField campoInformacionEstacion;
@@ -11930,12 +12004,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField datosTermometro;
     private javax.swing.JLabel etiquetaIncluir;
     private javax.swing.JTextField folioSolicitud;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButtonImprimir;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBoxImprimir;
@@ -12049,7 +12117,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JLabel jLabel187;
     private javax.swing.JLabel jLabel188;
     private javax.swing.JLabel jLabel189;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel190;
     private javax.swing.JLabel jLabel191;
     private javax.swing.JLabel jLabel192;
@@ -12210,11 +12277,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JLabel jLabel331;
     private javax.swing.JLabel jLabel332;
     private javax.swing.JLabel jLabel333;
-    private javax.swing.JLabel jLabel334;
-    private javax.swing.JLabel jLabel335;
-    private javax.swing.JLabel jLabel336;
-    private javax.swing.JLabel jLabel337;
-    private javax.swing.JLabel jLabel338;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;

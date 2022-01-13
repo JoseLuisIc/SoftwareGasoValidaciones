@@ -2499,7 +2499,7 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jTextField65" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jTextField66" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jButton1" alignment="0" pref="87" max="32767" attributes="0"/>
+                                              <Component id="botonIncluirMA" alignment="0" pref="87" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -2566,7 +2566,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel73" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonIncluirMA" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -2705,10 +2705,13 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField66">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="botonIncluirMA">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Incluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonIncluirMAActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -4140,7 +4143,7 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jTextField132" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jTextField133" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jButton3" alignment="0" pref="87" max="32767" attributes="0"/>
+                                              <Component id="botonIncluirMB" alignment="0" pref="87" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -4207,7 +4210,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel127" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonIncluirMB" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -4346,10 +4349,13 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField133">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton3">
+                <Component class="javax.swing.JButton" name="botonIncluirMB">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Incluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonIncluirMBActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -5775,7 +5781,7 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jTextField196" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jTextField197" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jButton4" alignment="0" pref="87" max="32767" attributes="0"/>
+                                              <Component id="botonIncluirMC" alignment="0" pref="87" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -5842,7 +5848,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel177" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonIncluirMC" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -5981,10 +5987,13 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField197">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton4">
+                <Component class="javax.swing.JButton" name="botonIncluirMC">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Incluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonIncluirMCActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -7408,7 +7417,7 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jTextField260" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jTextField261" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jButton5" alignment="0" pref="87" max="32767" attributes="0"/>
+                                              <Component id="botonIncluirMD" alignment="0" pref="87" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -7475,7 +7484,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel227" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonIncluirMD" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -7614,10 +7623,13 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField261">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton5">
+                <Component class="javax.swing.JButton" name="botonIncluirMD">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Incluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonIncluirMDActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -9041,7 +9053,7 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jTextField324" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jTextField325" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jButton6" alignment="0" pref="87" max="32767" attributes="0"/>
+                                              <Component id="botonIncluirME" alignment="0" pref="87" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -9108,7 +9120,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel277" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonIncluirME" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -9247,10 +9259,13 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField325">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton6">
+                <Component class="javax.swing.JButton" name="botonIncluirME">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Incluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonIncluirMEActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -10679,7 +10694,7 @@
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jTextField388" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jTextField389" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jButton7" alignment="0" pref="87" max="32767" attributes="0"/>
+                                              <Component id="botonIncluirMF" alignment="0" pref="87" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -10746,7 +10761,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel327" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonIncluirMF" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -10885,10 +10900,13 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField389">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton7">
+                <Component class="javax.swing.JButton" name="botonIncluirMF">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Incluir"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonIncluirMFActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
