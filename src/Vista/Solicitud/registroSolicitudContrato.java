@@ -355,6 +355,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         folioSolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
         noEstacionRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        noEstacionRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noEstacionRSCActionPerformed(evt);
+            }
+        });
         noEstacionRSC.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 noEstacionRSCKeyPressed(evt);
@@ -629,6 +634,10 @@ char solonumero=evt.getKeyChar();
     private void observacionesRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observacionesRSCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_observacionesRSCActionPerformed
+
+    private void noEstacionRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noEstacionRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionRSCActionPerformed
 
     /**
      * @param args the command line arguments
