@@ -353,6 +353,16 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         tecnicoRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
         folioSolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        folioSolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                folioSolicitudRSCActionPerformed(evt);
+            }
+        });
+        folioSolicitudRSC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                folioSolicitudRSCKeyPressed(evt);
+            }
+        });
 
         noEstacionRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         noEstacionRSC.addActionListener(new java.awt.event.ActionListener() {
@@ -638,6 +648,14 @@ char solonumero=evt.getKeyChar();
     private void noEstacionRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noEstacionRSCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_noEstacionRSCActionPerformed
+
+    private void folioSolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioSolicitudRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_folioSolicitudRSCActionPerformed
+
+    private void folioSolicitudRSCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_folioSolicitudRSCKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_folioSolicitudRSCKeyPressed
 
     /**
      * @param args the command line arguments

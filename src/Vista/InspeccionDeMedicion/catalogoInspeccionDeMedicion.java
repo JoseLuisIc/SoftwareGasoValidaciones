@@ -2777,6 +2777,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        jComboBoxDispensarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxDispensariosActionPerformed(evt);
+            }
+        });
+
         jComboBoxTermometro.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxTermometroItemStateChanged(evt);
@@ -12039,6 +12045,10 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private void folioSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioSolicitudActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_folioSolicitudActionPerformed
+
+    private void jComboBoxDispensariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDispensariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxDispensariosActionPerformed
 
     /**
      * @param args the command line arguments

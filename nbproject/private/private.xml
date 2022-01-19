@@ -22,8 +22,8 @@
         <group>
             <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Dictamen/catalogoDocumentoDictamen.java</file>
             <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Solicitud/registroSolicitudContrato.java</file>
-            <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Modelo/modeloInspeccionMedicion.java</file>
             <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Controlador/LibreriaBDControlador.java</file>
+            <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/InspeccionDeMedicion/catalogoInspeccionDeMedicion.java</file>
         </group>
     </open-files>
 </project-private>
