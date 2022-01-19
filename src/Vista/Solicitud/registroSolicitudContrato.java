@@ -624,8 +624,9 @@ int validaEstacion = 0;
                   //            valida = lbd.updateMGasolinas(Foliodesolicitud, Fecha2, perApoyo, Fecha2)
                       }
                     else{
-                          JOptionPane.showMessageDialog(null,"Hubo un error en el proceso, valida nuevamente los datos.");
-                      }
+        JOptionPane.showMessageDialog(null,"Hubo un error en el proceso, no se pudo guardar el registro debido "
+                + "\na que el folio ingresado ya existe, por favor ingrese un nuevo folio.");
+        }
                       lbd.closeConnection();
                   }
                   else
