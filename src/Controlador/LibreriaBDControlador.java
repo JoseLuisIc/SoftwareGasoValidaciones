@@ -3713,7 +3713,7 @@ public String obtenerEstacionDeFolio(String idFolio){
             ppm.setString(63, modeloIMangueras.getQv_gmax());
             ppm.setString(64, modeloIMangueras.getQv_gmed());
             ppm.setString(65, modeloIMangueras.getQv_gmin());
-            ppm.setString(66, modeloIMangueras.getResultados_ml1());
+            ppm.setString(66, modeloIMangueras.getRestultados_ml1());
             ppm.setString(67, modeloIMangueras.getResultados_ml2());         
             ppm.executeUpdate();
             //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
