@@ -36,11 +36,16 @@ import java.util.concurrent.TimeUnit;
 import Modelo.modeloVerificacionVisual;
 import javax.swing.ButtonGroup;
 
+import com.mxrck.autocompleter.TextAutoCompleter;
+
 /**
  *
  * @author Jose Luis
  */
 public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
+    
+    private TextAutoCompleter opciones;
+    
     LibreriaBDControlador lbd = new LibreriaBDControlador();
     LibreriaToolsControlador lbtc = new LibreriaToolsControlador();
     modeloTablaUsuario mtu = new modeloTablaUsuario();
@@ -4473,7 +4478,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel73)
                             .addComponent(botonIncluirMA))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraALayout = new javax.swing.GroupLayout(mangueraA);
@@ -5578,7 +5583,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel127)
                             .addComponent(botonIncluirMB))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA1Layout = new javax.swing.GroupLayout(mangueraA1);
@@ -6649,7 +6654,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel177)
                             .addComponent(botonIncluirMC))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA2Layout = new javax.swing.GroupLayout(mangueraA2);
@@ -7714,7 +7719,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel227)
                             .addComponent(botonIncluirMD))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA3Layout = new javax.swing.GroupLayout(mangueraA3);
@@ -9847,7 +9852,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel327)
                             .addComponent(botonIncluirMF))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA5Layout = new javax.swing.GroupLayout(mangueraA5);
