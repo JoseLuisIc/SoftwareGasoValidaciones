@@ -12,11 +12,16 @@ import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 import java.util.Date;
 import Modelo.modeloTablaUsuario;
+import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import org.jdesktop.swingx.autocomplete.ObjectToStringConverter;
 
 /**
  *
@@ -25,7 +30,9 @@ import javax.swing.JOptionPane;
 public class registroSolicitudContrato extends javax.swing.JDialog {
     LibreriaBDControlador lbd = new LibreriaBDControlador();
     modeloTablaUsuario mtu = new modeloTablaUsuario();
-    public String Usuario;
+    public String Usuario;    
+    private String noEstacion;
+     public int i=0;
     //personalApoyo.setEnabled(true);
     public registroSolicitudContrato(java.awt.Frame parent, boolean modal,modeloTablaUsuario mtu) {
                 super(parent, modal);
@@ -36,6 +43,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                 personalApoyo.setEnabled(false);
                 tecnicoRSC.setEnabled(false);
                 //Jose Luis Caamal Ic
+                
                 //23/08/2020 Se añade un checkbox para validar si entra o no la información.
                 jCheckBoxTecnico.addItemListener(new ItemListener(){
                 @Override
@@ -69,12 +77,32 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                     repaint();
                 }
                 });
-
+                
+                
+             
+            
+     
+               
+              
+              lbd.openConnection();
+                List<String> noEstaciones = lbd.obtenerNoEstacion();
+                lbd.closeConnection();
+                    JComboBox cbInput = new JComboBox();
+                    cbInput.setEditable(true);
+                    noEstacionRSC.setLayout(new BorderLayout());
+                    noEstacionRSC.add(cbInput, BorderLayout.SOUTH);
+                        
+            //cbInput.removeAllItems();
+          for(i=0; i< noEstaciones.size();i++){
+           cbInput.addItem(noEstaciones.get(i));  
+        }
+            AutoCompleteDecorator.decorate(cbInput);
+       
 //            add(jCheckBoxTecnico);
 //            add(tecnicoRSC);
                 
     }
-
+   
 
 
     /**
@@ -127,7 +155,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         premiumRSC = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         diselRSC = new javax.swing.JTextField();
-        tiposolicitudRSC = new javax.swing.JComboBox<>();
+        tiposolicitudRSC = new javax.swing.JComboBox<String>();
         jLabel18 = new javax.swing.JLabel();
         tecnicoRSC = new javax.swing.JTextField();
         fechaRCS = new com.toedter.calendar.JDateChooser();
@@ -202,6 +230,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
 
         razonSocialRSC.setEditable(false);
         razonSocialRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        razonSocialRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                razonSocialRSCActionPerformed(evt);
+            }
+        });
 
         domicilioRSC.setEditable(false);
         domicilioRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
@@ -211,6 +244,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
 
         estacionRSC.setEditable(false);
         estacionRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        estacionRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estacionRSCActionPerformed(evt);
+            }
+        });
 
         regfedCausantesRSC.setEditable(false);
         regfedCausantesRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
@@ -345,16 +383,36 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         );
 
         tiposolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        tiposolicitudRSC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
+        tiposolicitudRSC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
+        tiposolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tiposolicitudRSCActionPerformed(evt);
+            }
+        });
 
         jLabel18.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jLabel18.setText("Fecha");
 
         tecnicoRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        tecnicoRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tecnicoRSCActionPerformed(evt);
+            }
+        });
 
         folioSolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        folioSolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                folioSolicitudRSCActionPerformed(evt);
+            }
+        });
 
         noEstacionRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        noEstacionRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noEstacionRSCActionPerformed(evt);
+            }
+        });
         noEstacionRSC.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 noEstacionRSCKeyPressed(evt);
@@ -368,6 +426,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
 
         referenciaSolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         referenciaSolicitudRSC.setText("  ");
+        referenciaSolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                referenciaSolicitudRSCActionPerformed(evt);
+            }
+        });
 
         observacionesRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         observacionesRSC.setText("   ");
@@ -472,10 +535,10 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel18)))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(noEstacionRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(fechaPropuestaRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -559,7 +622,7 @@ int validaEstacion = 0;
                                                      emailRSC.setText((String)Datos[10]);
                                                        
                                                      
-                                                     
+                                                                                                          
                }
  
 }
@@ -628,6 +691,35 @@ char solonumero=evt.getKeyChar();
     private void observacionesRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observacionesRSCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_observacionesRSCActionPerformed
+
+    private void noEstacionRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noEstacionRSCActionPerformed
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionRSCActionPerformed
+
+    private void folioSolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioSolicitudRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_folioSolicitudRSCActionPerformed
+
+    private void tiposolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiposolicitudRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tiposolicitudRSCActionPerformed
+
+    private void referenciaSolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_referenciaSolicitudRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_referenciaSolicitudRSCActionPerformed
+
+    private void tecnicoRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tecnicoRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tecnicoRSCActionPerformed
+
+    private void razonSocialRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_razonSocialRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_razonSocialRSCActionPerformed
+
+    private void estacionRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estacionRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_estacionRSCActionPerformed
 
     /**
      * @param args the command line arguments

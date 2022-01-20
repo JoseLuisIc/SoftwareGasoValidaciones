@@ -139,11 +139,11 @@
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="noEstacionRSC" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="noEstacionRSC" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <Component id="fechaPropuestaRSC" min="-2" max="-2" attributes="0"/>
@@ -449,6 +449,9 @@
                   <Font name="Lucida Grande" size="15" style="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="razonSocialRSCActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="domicilioRSC">
               <Properties>
@@ -473,6 +476,9 @@
                   <Font name="Lucida Grande" size="15" style="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="estacionRSCActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="regfedCausantesRSC">
               <Properties>
@@ -561,6 +567,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tiposolicitudRSCActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -579,6 +588,9 @@
               <Font name="Lucida Grande" size="15" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tecnicoRSCActionPerformed"/>
+          </Events>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="fechaRCS">
         </Component>
@@ -588,6 +600,9 @@
               <Font name="Lucida Grande" size="15" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="folioSolicitudRSCActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="noEstacionRSC">
           <Properties>
@@ -596,6 +611,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="noEstacionRSCActionPerformed"/>
             <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="noEstacionRSCKeyPressed"/>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="noEstacionRSCKeyTyped"/>
           </Events>
@@ -612,6 +628,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="  "/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="referenciaSolicitudRSCActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="observacionesRSC">
           <Properties>

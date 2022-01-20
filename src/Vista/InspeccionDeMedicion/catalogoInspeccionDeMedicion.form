@@ -302,6 +302,9 @@
         <Component class="javax.swing.JTextField" name="campoTipoVerificacion">
         </Component>
         <Component class="javax.swing.JTextField" name="datosTermometro">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="datosTermometroActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="datosCronometro">
         </Component>
