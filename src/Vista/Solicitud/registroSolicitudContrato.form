@@ -266,7 +266,7 @@
                                           <Component id="manguerasaVerificarRSC" min="-2" pref="53" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="6" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Component id="magnaRSC" min="-2" pref="53" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -626,7 +626,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Grande" size="15" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="  "/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="referenciaSolicitudRSCActionPerformed"/>
@@ -637,7 +636,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Grande" size="15" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="   "/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="observacionesRSCActionPerformed"/>
@@ -674,6 +672,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="T&#xe9;cnico"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxTecnicoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBoxPApoyo">
           <Properties>

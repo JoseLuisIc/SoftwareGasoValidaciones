@@ -425,7 +425,6 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         fechaPropuestaRSC.setEnabled(false);
 
         referenciaSolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        referenciaSolicitudRSC.setText("  ");
         referenciaSolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 referenciaSolicitudRSCActionPerformed(evt);
@@ -433,7 +432,6 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         });
 
         observacionesRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        observacionesRSC.setText("   ");
         observacionesRSC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 observacionesRSCActionPerformed(evt);
@@ -451,6 +449,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         jLabel23.setText("de ingresar el No.Estacion");
 
         jCheckBoxTecnico.setText("Técnico");
+        jCheckBoxTecnico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxTecnicoActionPerformed(evt);
+            }
+        });
 
         jCheckBoxPApoyo.setText("Personal Apoyo");
 
@@ -639,44 +642,68 @@ int validaEstacion = 0;
     Foliodesolicitud=folioSolicitudRSC.getText();
     Tipodesolicitud=(String)tiposolicitudRSC.getSelectedItem();
  
+          NoEstacion=noEstacionRSC.getText();
+          //Usuario=solicitanteRSC.getText();
+         //Usuario=mtu.getNombreUsuario();
+
+
+          ReferenciadeSolicitud=referenciaSolicitudRSC.getText();
+          Observaciones=observacionesRSC.getText();
+          Tecnico=tecnicoRSC.getText();
+          perApoyo = personalApoyo.getText();
+          total_mangueras=manguerasaVerificarRSC.getText();
           Date  fecha=fechaRCS.getDate();
-          DateFormat f=new SimpleDateFormat("dd-MM-yyyy");
-          Fecha2=f.format(fecha);
+          
+          if(fecha!=null && !Foliodesolicitud.equals("") && !NoEstacion.equals("") && !ReferenciadeSolicitud.equals("") && !Observaciones.equals("") && !total_mangueras.equals(""))
+          {
+  
+              if( tecnicoRSC.isEnabled() && personalApoyo.isEnabled())
+              {
+                  if(!Tecnico.equals(" ") && !perApoyo.equals(" "))
+                  {
+                    DateFormat f=new SimpleDateFormat("dd-MM-yyyy");
+                    Fecha2=f.format(fecha);
+                    
+                                  
+                    int valida = 0;
+                    lbd.openConnection();
+                      /*Se añade la misma fecha para ambos campos*/
+                      //lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, FechaPropuesta2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones);
+                    valida = lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, Fecha2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones,perApoyo);
+                    if(valida == 1)
+                      {
+                          valida = lbd.guardarMangueras(Foliodesolicitud,total_mangueras,magnaRSC.getText(),premiumRSC.getText(),diselRSC.getText());
+                  //        if(valida ==1)
+                  //            valida = lbd.updateMGasolinas(Foliodesolicitud, Fecha2, perApoyo, Fecha2)
+                      }
+                    else{
+        JOptionPane.showMessageDialog(null,"Hubo un error en el proceso, no se pudo guardar el registro debido "
+                + "\na que el folio ingresado ya existe, por favor ingrese un nuevo folio.");
+        }
+                      lbd.closeConnection();
+                  }
+                  else
+                  {
+                      JOptionPane.showMessageDialog(null,"El nombre del Tecnico y del personal de apoyo son requeridos");
+                  }
+              }
+              else
+              {
+                  JOptionPane.showMessageDialog(null,"Habilite los campos para ingresar el nombre del Técnico y del personal de apoyo");
+              }
+
+    
+          }
+          else
+          {
+              JOptionPane.showMessageDialog(null,"Por favor, Complete todos los campos antes de guardar");
+          }
+
        
 //       Date FechaPropuesta=fechaPropuestaRSC.getDate();
 //       DateFormat F=new SimpleDateFormat("dd-MM-yyyy");
 //       FechaPropuesta2=F.format(FechaPropuesta);
        
-       
- 
-    NoEstacion=noEstacionRSC.getText();
-    //Usuario=solicitanteRSC.getText();
-   //Usuario=mtu.getNombreUsuario();
- 
- 
-    ReferenciadeSolicitud=referenciaSolicitudRSC.getText();
-    Observaciones=observacionesRSC.getText();
-    Tecnico=tecnicoRSC.getText();
-    perApoyo = personalApoyo.getText();
-    total_mangueras=manguerasaVerificarRSC.getText();
-    
-    int valida = 0;
-    lbd.openConnection();
-    /*Se añade la misma fecha para ambos campos*/
-    //lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, FechaPropuesta2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones);
-    valida = lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, Fecha2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones,perApoyo);
-    if(valida == 1)
-    {
-        valida = lbd.guardarMangueras(Foliodesolicitud,total_mangueras,magnaRSC.getText(),premiumRSC.getText(),diselRSC.getText());
-//        if(valida ==1)
-//            valida = lbd.updateMGasolinas(Foliodesolicitud, Fecha2, perApoyo, Fecha2)
-    }
-    else{
-        JOptionPane.showMessageDialog(null,"Hubo un error en el proceso, valida nuevamente los datos.");
-    }
-    lbd.closeConnection();
- 
-
     }//GEN-LAST:event_guardarRSCActionPerformed
 
     private void noEstacionRSCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyTyped
