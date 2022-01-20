@@ -77,27 +77,26 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                     repaint();
                 }
                 });
-                
-                
-             
-            
-     
+         
+                AutoCompleteDecorator.decorate(noEstacionRSC);
                
               
               lbd.openConnection();
                 List<String> noEstaciones = lbd.obtenerNoEstacion();
                 lbd.closeConnection();
-                    JComboBox cbInput = new JComboBox();
-                    cbInput.setEditable(true);
-                    noEstacionRSC.setLayout(new BorderLayout());
-                    noEstacionRSC.add(cbInput, BorderLayout.SOUTH);
+                    
                         
-            //cbInput.removeAllItems();
+            noEstacionRSC.removeAllItems();
+            
+            
           for(i=0; i< noEstaciones.size();i++){
-           cbInput.addItem(noEstaciones.get(i));  
+           noEstacionRSC.addItem(noEstaciones.get(i));  
         }
-            AutoCompleteDecorator.decorate(cbInput);
-       
+                
+           
+                    
+                        
+            
 //            add(jCheckBoxTecnico);
 //            add(tecnicoRSC);
                 
@@ -160,7 +159,6 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         tecnicoRSC = new javax.swing.JTextField();
         fechaRCS = new com.toedter.calendar.JDateChooser();
         folioSolicitudRSC = new javax.swing.JTextField();
-        noEstacionRSC = new javax.swing.JTextField();
         fechaPropuestaRSC = new com.toedter.calendar.JDateChooser();
         referenciaSolicitudRSC = new javax.swing.JTextField();
         observacionesRSC = new javax.swing.JTextField();
@@ -171,6 +169,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         jCheckBoxPApoyo = new javax.swing.JCheckBox();
         personalApoyo = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
+        noEstacionRSC = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Solicitud de Contrato");
@@ -296,7 +295,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                                     .addComponent(manguerasaVerificarRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(magnaRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel9)
@@ -407,21 +406,6 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
             }
         });
 
-        noEstacionRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        noEstacionRSC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noEstacionRSCActionPerformed(evt);
-            }
-        });
-        noEstacionRSC.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                noEstacionRSCKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                noEstacionRSCKeyTyped(evt);
-            }
-        });
-
         fechaPropuestaRSC.setEnabled(false);
 
         referenciaSolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
@@ -456,11 +440,32 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         });
 
         jCheckBoxPApoyo.setText("Personal Apoyo");
+        jCheckBoxPApoyo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxPApoyoActionPerformed(evt);
+            }
+        });
 
         personalApoyo.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
         jLabel20.setForeground(new java.awt.Color(0, 51, 51));
         jLabel20.setText("Para habilitar el nombre del Técnico o Personal de Apoyo, favor de hacer clic en las casillas de verificación e ingrese la información.");
+
+        noEstacionRSC.setEditable(true);
+        noEstacionRSC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        noEstacionRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noEstacionRSCActionPerformed(evt);
+            }
+        });
+        noEstacionRSC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                noEstacionRSCKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                noEstacionRSCKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -486,21 +491,21 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(noEstacionRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                        .addGap(12, 12, 12)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel22)
                                             .addComponent(jLabel23)))
                                     .addComponent(referenciaSolicitudRSC)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(tiposolicitudRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                                         .addComponent(jLabel18)
                                         .addGap(18, 18, 18)
                                         .addComponent(fechaRCS, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(3, 3, 3)))
                                 .addComponent(fechaPropuestaRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(folioSolicitudRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(folioSolicitudRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(noEstacionRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel6)
@@ -537,11 +542,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel18)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(noEstacionRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(fechaPropuestaRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -585,53 +590,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void noEstacionRSCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyPressed
-Object  Datos[]=null;
-if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
-String idestacion=noEstacionRSC.getText();
  
-int validaEstacion = 0;
-
-       lbd.openConnection();
-               validaEstacion = lbd.validaDispensario(idestacion);
-               lbd.closeConnection();
-               if(validaEstacion!=0 && !idestacion.equals("")){
-                                  System.out.println("Si existe la estación, se procedera a consultar los datos.");
-                                                     lbd.openConnection();
-                                                     Datos=lbd.obtenerdatosparasolicitud(idestacion);
-                                                     lbd.closeConnection();
-                                                     
-                                                     
-                                                     magnaRSC.setText((String) String.valueOf(Datos[15]));
-                                                     premiumRSC.setText((String)String.valueOf(Datos[16]));
-                                                     diselRSC.setText((String)String.valueOf(Datos[17]));
-                                                     
-                                                     int magna=Integer.parseInt(magnaRSC.getText());
-                                                     int premium=Integer.parseInt(premiumRSC.getText());
-                                                     int disel=Integer.parseInt(diselRSC.getText());
-                                                     
-                                                     int total=magna+premium+disel;
-                                                     
-                                                     manguerasaVerificarRSC.setText((String)String.valueOf(total));
-                                                     
-                                                     nombreSolicitanteRSC.setText((String)Datos[2]);
-                                                     razonSocialRSC.setText((String)Datos[3]);
-                                                     regfedCausantesRSC.setText((String)Datos[4]);
-                                                     estacionRSC.setText((String)String.valueOf(Datos[0]));
-                                                     domicilioRSC.setText((String)Datos[5]);
-                                                     telefonoRSC.setText((String)Datos[9]);
-                                                     estadoRSC.setText((String)Datos[8]);
-                                                     emailRSC.setText((String)Datos[10]);
-                                                       
-                                                     
-                                                                                                          
-               }
- 
-}
-        // TODO add your handling code here:
-    }//GEN-LAST:event_noEstacionRSCKeyPressed
-
     private void guardarRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarRSCActionPerformed
     String  Foliodesolicitud,Tipodesolicitud,Fecha2, NoEstacion,/*Usuario,*/FechaPropuesta2;
     String ReferenciadeSolicitud,Observaciones,Tecnico;
@@ -642,7 +601,8 @@ int validaEstacion = 0;
     Foliodesolicitud=folioSolicitudRSC.getText();
     Tipodesolicitud=(String)tiposolicitudRSC.getSelectedItem();
  
-          NoEstacion=noEstacionRSC.getText();
+          
+          NoEstacion=(String) noEstacionRSC.getSelectedItem();
           //Usuario=solicitanteRSC.getText();
          //Usuario=mtu.getNombreUsuario();
 
@@ -706,23 +666,9 @@ int validaEstacion = 0;
        
     }//GEN-LAST:event_guardarRSCActionPerformed
 
-    private void noEstacionRSCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyTyped
-char solonumero=evt.getKeyChar();
-
-//if(Character.isLetter(solonumero)){
-//        getToolkit().beep();
-//        evt.consume();
-//        JOptionPane.showMessageDialog(rootPane, "Ingresar solo numeros");}
-    }//GEN-LAST:event_noEstacionRSCKeyTyped
-
     private void observacionesRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observacionesRSCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_observacionesRSCActionPerformed
-
-    private void noEstacionRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noEstacionRSCActionPerformed
-
-// TODO add your handling code here:
-    }//GEN-LAST:event_noEstacionRSCActionPerformed
 
     private void folioSolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioSolicitudRSCActionPerformed
         // TODO add your handling code here:
@@ -748,6 +694,69 @@ char solonumero=evt.getKeyChar();
         // TODO add your handling code here:
     }//GEN-LAST:event_estacionRSCActionPerformed
 
+    private void jCheckBoxPApoyoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxPApoyoActionPerformed
+        //jCheckBoxTecnicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxPApoyoActionPerformed
+
+    private void noEstacionRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noEstacionRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionRSCActionPerformed
+
+    private void noEstacionRSCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyPressed
+Object  Datos[]=null;
+if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
+ String idestacion=(String) noEstacionRSC.getSelectedItem();
+int validaEstacion = 0;
+
+       lbd.openConnection();
+               validaEstacion = lbd.validaDispensario(idestacion);
+               lbd.closeConnection();
+               if(validaEstacion!=0 && !idestacion.equals("")){
+                                  System.out.println("Si existe la estación, se procedera a consultar los datos.");
+                                                     lbd.openConnection();
+                                                     Datos=lbd.obtenerdatosparasolicitud(idestacion);
+                                                     lbd.closeConnection();
+                                                     
+                                                     
+                                                     magnaRSC.setText((String) String.valueOf(Datos[15]));
+                                                     premiumRSC.setText((String)String.valueOf(Datos[16]));
+                                                     diselRSC.setText((String)String.valueOf(Datos[17]));
+                                                     
+                                                     int magna=Integer.parseInt(magnaRSC.getText());
+                                                     int premium=Integer.parseInt(premiumRSC.getText());
+                                                     int disel=Integer.parseInt(diselRSC.getText());
+                                                     
+                                                     int total=magna+premium+disel;
+                                                     
+                                                     manguerasaVerificarRSC.setText((String)String.valueOf(total));
+                                                     
+                                                     nombreSolicitanteRSC.setText((String)Datos[2]);
+                                                     razonSocialRSC.setText((String)Datos[3]);
+                                                     regfedCausantesRSC.setText((String)Datos[4]);
+                                                     estacionRSC.setText((String)String.valueOf(Datos[0]));
+                                                     domicilioRSC.setText((String)Datos[5]);
+                                                     telefonoRSC.setText((String)Datos[9]);
+                                                     estadoRSC.setText((String)Datos[8]);
+                                                     emailRSC.setText((String)Datos[10]);
+                                                       
+                                                     
+                                                                                                          
+               }
+ 
+}
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionRSCKeyPressed
+
+    private void noEstacionRSCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyTyped
+char solonumero=evt.getKeyChar();
+// TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionRSCKeyTyped
+
+     private void jCheckBoxTecnicoActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        //jCheckBoxTecnicoActionPerformed
+        // TODO add your handling code here:
+    }
     /**
      * @param args the command line arguments
      */
@@ -792,7 +801,7 @@ char solonumero=evt.getKeyChar();
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField magnaRSC;
     private javax.swing.JTextField manguerasaVerificarRSC;
-    private javax.swing.JTextField noEstacionRSC;
+    private javax.swing.JComboBox noEstacionRSC;
     private javax.swing.JTextField nombreSolicitanteRSC;
     private javax.swing.JTextField observacionesRSC;
     private javax.swing.JTextField personalApoyo;
