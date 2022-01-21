@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
-        <file>
-            <url>src/Vista/Solicitud/registroSolicitudContrato.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>28</line>
-                <key/>
-            </bookmark>
-        </file>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
         <file>
             <url>src/Controlador/LibreriaBDControlador.java</url>
-            <bookmark id="2">
+            <bookmark id="1">
                 <name/>
-                <line>3526</line>
+                <line>671</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Vista/InspeccionDeMedicion/catalogoInspeccionDeMedicion.java</file>
             <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Modelo/modeloInspeccionMedicion.java</file>
+=======
+            <file>file:/C:/Users/reyan/OneDrive/Escritorio/git/SoftwareGasoValidaciones/src/Vista/Solicitud/registroSolicitudContrato.java</file>
+            <file>file:/C:/Users/reyan/OneDrive/Escritorio/git/SoftwareGasoValidaciones/src/Controlador/LibreriaBDControlador.java</file>
+            <file>file:/C:/Users/reyan/OneDrive/Escritorio/git/SoftwareGasoValidaciones/src/Vista/Dictamen/catalogoDocumentoDictamen.java</file>
+>>>>>>> 5d4446931a80d47f37e49de5cc4eaffbc54148b7
         </group>
     </open-files>
 </project-private>

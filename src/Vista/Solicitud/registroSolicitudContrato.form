@@ -70,8 +70,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="noEstacionRSC" min="-2" pref="251" max="-2" attributes="0"/>
-                                          <EmptySpace pref="44" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
@@ -80,7 +79,7 @@
                                       <Component id="referenciaSolicitudRSC" max="32767" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="tiposolicitudRSC" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="86" max="32767" attributes="0"/>
                                           <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="fechaRCS" min="-2" pref="172" max="-2" attributes="0"/>
@@ -89,6 +88,7 @@
                                   </Group>
                                   <Component id="fechaPropuestaRSC" min="-2" pref="154" max="-2" attributes="0"/>
                                   <Component id="folioSolicitudRSC" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
+                                  <Component id="noEstacionRSC" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -138,12 +138,12 @@
                                   <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="noEstacionRSC" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <Component id="fechaPropuestaRSC" min="-2" max="-2" attributes="0"/>
@@ -449,6 +449,9 @@
                   <Font name="Lucida Grande" size="15" style="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="razonSocialRSCActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="domicilioRSC">
               <Properties>
@@ -473,6 +476,9 @@
                   <Font name="Lucida Grande" size="15" style="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="estacionRSCActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="regfedCausantesRSC">
               <Properties>
@@ -561,6 +567,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tiposolicitudRSCActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -591,16 +600,8 @@
               <Font name="Lucida Grande" size="15" style="0"/>
             </Property>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="noEstacionRSC">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="15" style="0"/>
-            </Property>
-          </Properties>
           <Events>
-            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="noEstacionRSCKeyPressed"/>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="noEstacionRSCKeyTyped"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="folioSolicitudRSCActionPerformed"/>
           </Events>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="fechaPropuestaRSC">
@@ -667,6 +668,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Personal Apoyo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxPApoyoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="personalApoyo">
           <Properties>
@@ -682,6 +686,24 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Para habilitar el nombre del T&#xe9;cnico o Personal de Apoyo, favor de hacer clic en las casillas de verificaci&#xf3;n e ingrese la informaci&#xf3;n."/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="noEstacionRSC">
+          <Properties>
+            <Property name="editable" type="boolean" value="true"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="noEstacionRSCActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="noEstacionRSCKeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="noEstacionRSCKeyTyped"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
