@@ -36,11 +36,18 @@ import java.util.concurrent.TimeUnit;
 import Modelo.modeloVerificacionVisual;
 import javax.swing.ButtonGroup;
 
+import com.mxrck.autocompleter.TextAutoCompleter;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Jose Luis
  */
 public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
+    
+    public TextAutoCompleter opciones;
+    
     LibreriaBDControlador lbd = new LibreriaBDControlador();
     LibreriaToolsControlador lbtc = new LibreriaToolsControlador();
     modeloTablaUsuario mtu = new modeloTablaUsuario();
@@ -58,10 +65,10 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
     public int incluirF = 0;
     /**
      * Creates new form catalogoInspeccionDeMedicion
-     */
+     */      
     public catalogoInspeccionDeMedicion() {
-        
-        initComponents();
+       
+        initComponents();      
         AutoCompleteDecorator.decorate(jComboBoxJarraA);
         AutoCompleteDecorator.decorate(jComboBoxJarraB);
         AutoCompleteDecorator.decorate(jComboBoxJarraC);
@@ -282,6 +289,28 @@ operacionesdeInspeccionMedicion();
                 JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
                 avisoLabelF.setText("");
             }
+        
+            
+        //Joel Estrella
+        //20-01/2022
+        //Se agregan todos los folios a un ComboCox editable
+        
+        lbd.openConnection();
+        List <String> op1= lbd.obtenerFoliosdeSolicitud();
+        lbd.closeConnection();
+        opciones=new TextAutoCompleter(folioSolicitud);
+        for(int i=0;i<op1.size();i++)
+        {
+            //folio.addItem(op1.get(i));
+            opciones.addItem(op1.get(i));
+        }
+        /*String modeloFolioLista[]= new String[op1.size()];
+        modeloFolioLista= op1.toArray(modeloFolioLista);
+        folio.setModel((new javax.swing.DefaultComboBoxModel<>(modeloFolioLista)));*/
+        //JComboBox folioSolicitud2 = new JComboBox();
+        //JOptionPane.showMessageDialog(null, op1.size());
+        //AutoCompleteDecorator.decorate(folio);
+        
 
     }
     //SAR 12/04/21 INI
@@ -2778,6 +2807,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        jComboBoxDispensarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxDispensariosActionPerformed(evt);
+            }
+        });
+
         jComboBoxTermometro.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxTermometroItemStateChanged(evt);
@@ -2813,36 +2848,36 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
                             .addComponent(jLabel2)
                             .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jComboBoxCronometro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(folioSolicitud, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxDispensarios, javax.swing.GroupLayout.Alignment.LEADING, 0, 156, Short.MAX_VALUE)
-                            .addComponent(jComboBoxTermometro, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooserFechaIM, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(59, 59, 59)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jComboBoxCronometro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(folioSolicitud, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBoxDispensarios, javax.swing.GroupLayout.Alignment.LEADING, 0, 156, Short.MAX_VALUE)
+                    .addComponent(jComboBoxTermometro, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jDateChooserFechaIM, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel7))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoEstacion)
-                                    .addComponent(campoTipoVerificacion)))
-                            .addComponent(campoInformacionEstacion)
-                            .addComponent(datosTermometro, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(datosCronometro, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoEstacion)
+                            .addComponent(campoTipoVerificacion)))
+                    .addComponent(campoInformacionEstacion)
+                    .addComponent(datosTermometro, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(datosCronometro, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCheckBoxImprimir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -4479,7 +4514,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel73)
                             .addComponent(botonIncluirMA))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraALayout = new javax.swing.GroupLayout(mangueraA);
@@ -5584,7 +5619,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel127)
                             .addComponent(botonIncluirMB))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA1Layout = new javax.swing.GroupLayout(mangueraA1);
@@ -6655,7 +6690,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel177)
                             .addComponent(botonIncluirMC))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA2Layout = new javax.swing.GroupLayout(mangueraA2);
@@ -7720,7 +7755,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel227)
                             .addComponent(botonIncluirMD))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA3Layout = new javax.swing.GroupLayout(mangueraA3);
@@ -9853,7 +9888,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel327)
                             .addComponent(botonIncluirMF))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA5Layout = new javax.swing.GroupLayout(mangueraA5);
@@ -11609,9 +11644,15 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
         }
     }//GEN-LAST:event_botonIncluirMFActionPerformed
 
+//<<<<<<< HEAD
     private void datosTermometroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datosTermometroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_datosTermometroActionPerformed
+//=======
+    private void jComboBoxDispensariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDispensariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxDispensariosActionPerformed
+//>>>>>>> f3b6447726602e3714578494c282ea5347226ed7
 
     /**
      * @param args the command line arguments
@@ -12480,4 +12521,5 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JPanel mangueraA5;
     private javax.swing.JPanel verificacionVisual;
     // End of variables declaration//GEN-END:variables
+    //private javax.swing.JComboBox <String> folioSolicitud2;
 }
