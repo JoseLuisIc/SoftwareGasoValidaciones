@@ -3728,7 +3728,43 @@ public String obtenerEstacionDeFolio(String idFolio){
         return validaMagueras;
     }
 
-    
+        public List <String> obtenerFoliosdeSolicitud() 
+                {
+                List <String> listaAux = new ArrayList<String>();
+                try{
+                    String Query = "";
+                    Query="SELECT folio_solicitud FROM tabla_registro_solicitud";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                     
+                    while (res.next())
+                    {
+                        System.out.println(res.getString("folio_solicitud"));
+                        listaAux.add(res.getString("folio_solicitud"));
+                        /*if(tipoConsulta==2)
+                            listaAux.add(res.getString("id_Termo"));
+                        if(tipoConsulta==1 || tipoConsulta == 3){ //Se añade el tipoConsulta 3 07/05/2021 JLCI
+                            listaAux.add("Marca:"+res.getString("marca"));
+                            listaAux.add("Modelo:"+res.getString("modelo"));
+                            listaAux.add("Serie:"+res.getString("serie"));
+                        }*/
+                            
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+        
+        return listaAux;
+        
+    }
     
 }
 //Final de LibreriaBDControlador.
