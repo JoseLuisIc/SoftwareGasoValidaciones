@@ -14,6 +14,8 @@ import java.util.Date;
 import Modelo.modeloTablaUsuario;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.KeyEvent;
+import java.util.Arrays;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -346,6 +348,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
 
         tiposolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         tiposolicitudRSC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
+        tiposolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tiposolicitudRSCActionPerformed(evt);
+            }
+        });
 
         jLabel18.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         jLabel18.setText("Fecha");
@@ -655,7 +662,35 @@ char solonumero=evt.getKeyChar();
 
     private void folioSolicitudRSCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_folioSolicitudRSCKeyPressed
         // TODO add your handling code here:
+          if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
+            String folioSol = folioSolicitudRSC.getText();
+            int validaFSol = 0;
+            int validaEstacion = 0;
+            String noEstacion = "";
+            String tipoVerificacion = "";
+            lbd.openConnection();
+                validaFSol = lbd.validaFolioSolicitud(folioSol);
+                noEstacion = lbd.obtenerEstacionDeFolio(folioSol);
+                validaEstacion = lbd.obtenerEstaciones(noEstacion);
+                tipoVerificacion = lbd.obtenerTipoVerificación(folioSol, noEstacion);
+            lbd.closeConnection();
+            
+            if(validaFSol != 0 && validaEstacion != 0){
+
+                JOptionPane.showMessageDialog(null,"El folio ya esta ocupado");
+            }else{
+           
+                 evt.setSource((char) KeyEvent.VK_CLEAR);
+                tiposolicitudRSC.requestFocus();
+            }
+
+       }
+           
     }//GEN-LAST:event_folioSolicitudRSCKeyPressed
+
+    private void tiposolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiposolicitudRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tiposolicitudRSCActionPerformed
 
     /**
      * @param args the command line arguments
