@@ -13,7 +13,6 @@ import Controlador.informacionCliente;
 import Controlador.informacionDispensarios;
 import Controlador.reporteExcel;
 import Controlador.reportesWord;
-import Modelo.modeloInspeccionMedicion;
 import Modelo.modeloTablaUsuario;
 import java.awt.Component;
 import java.io.IOException;
@@ -37,11 +36,18 @@ import java.util.concurrent.TimeUnit;
 import Modelo.modeloVerificacionVisual;
 import javax.swing.ButtonGroup;
 
+import com.mxrck.autocompleter.TextAutoCompleter;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Jose Luis
  */
 public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
+    
+    public TextAutoCompleter opciones;
+    
     LibreriaBDControlador lbd = new LibreriaBDControlador();
     LibreriaToolsControlador lbtc = new LibreriaToolsControlador();
     modeloTablaUsuario mtu = new modeloTablaUsuario();
@@ -50,12 +56,19 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
     informacionDispensarios infoDispensarios = new informacionDispensarios();
     colorTabla colorT = new colorTabla(0,0);
     public Map<Integer, Integer> mapDispensarios = null;
+    /*Variables para saber si se incluyen o no la información en el excel*/
+    public int incluirA = 0;
+    public int incluirB = 0;
+    public int incluirC = 0;
+    public int incluirD = 0;
+    public int incluirE = 0;
+    public int incluirF = 0;
     /**
      * Creates new form catalogoInspeccionDeMedicion
-     */
+     */      
     public catalogoInspeccionDeMedicion() {
-        
-        initComponents();
+       
+        initComponents();      
         AutoCompleteDecorator.decorate(jComboBoxJarraA);
         AutoCompleteDecorator.decorate(jComboBoxJarraB);
         AutoCompleteDecorator.decorate(jComboBoxJarraC);
@@ -276,6 +289,28 @@ operacionesdeInspeccionMedicion();
                 JOptionPane.showMessageDialog(null, "¡La jarra ya ha caducado!");
                 avisoLabelF.setText("");
             }
+        
+            
+        //Joel Estrella
+        //20-01/2022
+        //Se agregan todos los folios a un ComboCox editable
+        
+        lbd.openConnection();
+        List <String> op1= lbd.obtenerFoliosdeSolicitud();
+        lbd.closeConnection();
+        opciones=new TextAutoCompleter(folioSolicitud);
+        for(int i=0;i<op1.size();i++)
+        {
+            //folio.addItem(op1.get(i));
+            opciones.addItem(op1.get(i));
+        }
+        /*String modeloFolioLista[]= new String[op1.size()];
+        modeloFolioLista= op1.toArray(modeloFolioLista);
+        folio.setModel((new javax.swing.DefaultComboBoxModel<>(modeloFolioLista)));*/
+        //JComboBox folioSolicitud2 = new JComboBox();
+        //JOptionPane.showMessageDialog(null, op1.size());
+        //AutoCompleteDecorator.decorate(folio);
+        
 
     }
     //SAR 12/04/21 INI
@@ -1899,9 +1934,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel8 = new javax.swing.JLabel();
         campoEstacion = new javax.swing.JTextField();
         campoInformacionEstacion = new javax.swing.JTextField();
-        jComboBoxCronometro = new javax.swing.JComboBox<>();
-        jComboBoxDispensarios = new javax.swing.JComboBox<>();
-        jComboBoxTermometro = new javax.swing.JComboBox<>();
+        jComboBoxCronometro = new javax.swing.JComboBox<String>();
+        jComboBoxDispensarios = new javax.swing.JComboBox<String>();
+        jComboBoxTermometro = new javax.swing.JComboBox<String>();
         campoTipoVerificacion = new javax.swing.JTextField();
         datosTermometro = new javax.swing.JTextField();
         datosCronometro = new javax.swing.JTextField();
@@ -2043,7 +2078,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jComboBoxJarraA = new javax.swing.JComboBox<>();
+        jComboBoxJarraA = new javax.swing.JComboBox<String>();
         avisoLabelA = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
@@ -2080,7 +2115,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel73 = new javax.swing.JLabel();
         jTextField65 = new javax.swing.JTextField();
         jTextField66 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        botonIncluirMA = new javax.swing.JButton();
         mangueraA1 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel78 = new javax.swing.JLabel();
@@ -2168,7 +2203,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel110 = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
-        jComboBoxJarraB = new javax.swing.JComboBox<>();
+        jComboBoxJarraB = new javax.swing.JComboBox<String>();
         avisoLabelB = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
@@ -2205,7 +2240,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel127 = new javax.swing.JLabel();
         jTextField132 = new javax.swing.JTextField();
         jTextField133 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        botonIncluirMB = new javax.swing.JButton();
         mangueraA2 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jLabel128 = new javax.swing.JLabel();
@@ -2293,7 +2328,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel160 = new javax.swing.JLabel();
         jLabel161 = new javax.swing.JLabel();
         jLabel162 = new javax.swing.JLabel();
-        jComboBoxJarraC = new javax.swing.JComboBox<>();
+        jComboBoxJarraC = new javax.swing.JComboBox<String>();
         avisoLabelC = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
@@ -2330,7 +2365,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel177 = new javax.swing.JLabel();
         jTextField196 = new javax.swing.JTextField();
         jTextField197 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        botonIncluirMC = new javax.swing.JButton();
         mangueraA3 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
         jLabel178 = new javax.swing.JLabel();
@@ -2418,7 +2453,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel210 = new javax.swing.JLabel();
         jLabel211 = new javax.swing.JLabel();
         jLabel212 = new javax.swing.JLabel();
-        jComboBoxJarraD = new javax.swing.JComboBox<>();
+        jComboBoxJarraD = new javax.swing.JComboBox<String>();
         avisoLabelD = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
@@ -2455,7 +2490,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel227 = new javax.swing.JLabel();
         jTextField260 = new javax.swing.JTextField();
         jTextField261 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        botonIncluirMD = new javax.swing.JButton();
         mangueraA4 = new javax.swing.JPanel();
         jPanel31 = new javax.swing.JPanel();
         jLabel228 = new javax.swing.JLabel();
@@ -2543,7 +2578,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel260 = new javax.swing.JLabel();
         jLabel261 = new javax.swing.JLabel();
         jLabel262 = new javax.swing.JLabel();
-        jComboBoxJarraE = new javax.swing.JComboBox<>();
+        jComboBoxJarraE = new javax.swing.JComboBox<String>();
         avisoLabelE = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
@@ -2580,7 +2615,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel277 = new javax.swing.JLabel();
         jTextField324 = new javax.swing.JTextField();
         jTextField325 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        botonIncluirME = new javax.swing.JButton();
         mangueraA5 = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jLabel278 = new javax.swing.JLabel();
@@ -2668,7 +2703,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel310 = new javax.swing.JLabel();
         jLabel311 = new javax.swing.JLabel();
         jLabel312 = new javax.swing.JLabel();
-        jComboBoxJarraF = new javax.swing.JComboBox<>();
+        jComboBoxJarraF = new javax.swing.JComboBox<String>();
         avisoLabelF = new javax.swing.JLabel();
         jPanel38 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
@@ -2705,7 +2740,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel327 = new javax.swing.JLabel();
         jTextField388 = new javax.swing.JTextField();
         jTextField389 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
+        botonIncluirMF = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Inspeccion de Medición");
@@ -2718,11 +2753,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel1.setText("Verificación Visual:");
 
         folioSolicitud.setToolTipText("Para cargar los datos, ingresa el folio seguido de un enter");
-        folioSolicitud.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                folioSolicitudActionPerformed(evt);
-            }
-        });
         folioSolicitud.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 folioSolicitudKeyPressed(evt);
@@ -2794,6 +2824,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        datosTermometro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                datosTermometroActionPerformed(evt);
+            }
+        });
+
         jDateChooserFechaIM.setEnabled(false);
 
         btnGuardarExcel.setText("Guardar");
@@ -2812,43 +2848,41 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
                             .addComponent(jLabel2)
                             .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jComboBoxCronometro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(folioSolicitud, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxDispensarios, javax.swing.GroupLayout.Alignment.LEADING, 0, 156, Short.MAX_VALUE)
-                            .addComponent(jComboBoxTermometro, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooserFechaIM, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(59, 59, 59)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jComboBoxCronometro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(folioSolicitud, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBoxDispensarios, javax.swing.GroupLayout.Alignment.LEADING, 0, 156, Short.MAX_VALUE)
+                    .addComponent(jComboBoxTermometro, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jDateChooserFechaIM, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel7))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoEstacion)
-                                    .addComponent(campoTipoVerificacion)))
-                            .addComponent(campoInformacionEstacion)
-                            .addComponent(datosTermometro, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(datosCronometro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnGuardarExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoEstacion)
+                            .addComponent(campoTipoVerificacion)))
+                    .addComponent(campoInformacionEstacion)
+                    .addComponent(datosTermometro, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(datosCronometro, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCheckBoxImprimir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonImprimir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGuardarExcel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(81, 81, 81))
         );
@@ -3787,26 +3821,26 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jLabel25))
-                                        .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel24))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel20)
+                                        .addComponent(jLabel24)
+                                        .addComponent(jLabel25))
+                                    .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(AP1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(AP1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel29)
-                                    .addComponent(AP1MAX, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(AP1MAX, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                                        .addComponent(AP1MED))
+                                    .addComponent(jLabel29))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3962,78 +3996,76 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(ATMAXP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ATMEDP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ATMINP3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(ATMAXP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ATMEDP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ATMINP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ATMAXP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ATMEDP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ATMINP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(ATMAXP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ATMEDP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ATMINP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(ATMAXP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ATMEDP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ATMINP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel38)
                             .addComponent(jLabel39)
                             .addComponent(jLabel40)
-                            .addComponent(jLabel41)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(ATMAXP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ATMEDP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ATMINP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel20)
-                                    .addComponent(AP1MAX, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel24)
-                                    .addComponent(AP1MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(15, 15, 15)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel25)
-                                    .addComponent(AP1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(AP2MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AP2MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AP2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(AP3MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AP3MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AP3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(ALCMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ALCMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ALCMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel26))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel28)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabel27)))
-                        .addGap(43, 43, 43)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                            .addComponent(jLabel41))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel20)
+                                        .addComponent(AP1MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel24)
+                                        .addComponent(AP1MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel25)
+                                        .addComponent(AP1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(AP2MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(AP2MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(AP2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(AP3MAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(AP3MED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(AP3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(ALCMAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ALCMED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(ALCMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel26))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel28)))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGap(32, 32, 32)
+                                    .addComponent(jLabel27)))
+                            .addGap(43, 43, 43))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(ATIMAX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4135,7 +4167,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel53.setText("Inf. Calib.");
 
-        jComboBoxJarraA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraA.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraAItemStateChanged(evt);
@@ -4289,7 +4321,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addComponent(jTextField68, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField69, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoPrecintoA, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4378,7 +4410,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton1.setText("Incluir");
+        botonIncluirMA.setText("Incluir");
+        botonIncluirMA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMAActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -4425,7 +4462,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField65, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField66, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -4476,8 +4513,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel73)
-                            .addComponent(jButton1))))
-                .addContainerGap(81, Short.MAX_VALUE))
+                            .addComponent(botonIncluirMA))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraALayout = new javax.swing.GroupLayout(mangueraA);
@@ -5246,7 +5283,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel112.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel112.setText("Inf. Calib.");
 
-        jComboBoxJarraB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraBItemStateChanged(evt);
@@ -5478,7 +5515,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton3.setText("Incluir");
+        botonIncluirMB.setText("Incluir");
+        botonIncluirMB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -5525,7 +5567,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField132, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField133, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel121, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -5576,8 +5618,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel127)
-                            .addComponent(jButton3))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                            .addComponent(botonIncluirMB))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA1Layout = new javax.swing.GroupLayout(mangueraA1);
@@ -6311,7 +6353,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel162.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel162.setText("Inf. Calib.");
 
-        jComboBoxJarraC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraC.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraCItemStateChanged(evt);
@@ -6544,7 +6586,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton4.setText("Incluir");
+        botonIncluirMC.setText("Incluir");
+        botonIncluirMC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -6591,7 +6638,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField196, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField197, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel171, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -6642,8 +6689,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel177)
-                            .addComponent(jButton4))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                            .addComponent(botonIncluirMC))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA2Layout = new javax.swing.GroupLayout(mangueraA2);
@@ -7372,7 +7419,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel212.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel212.setText("Inf. Calib.");
 
-        jComboBoxJarraD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraD.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraDItemStateChanged(evt);
@@ -7604,7 +7651,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton5.setText("Incluir");
+        botonIncluirMD.setText("Incluir");
+        botonIncluirMD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMDActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -7651,7 +7703,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField260, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField261, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMD, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel221, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -7702,8 +7754,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel227)
-                            .addComponent(jButton5))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                            .addComponent(botonIncluirMD))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA3Layout = new javax.swing.GroupLayout(mangueraA3);
@@ -8432,7 +8484,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel262.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel262.setText("Inf. Calib.");
 
-        jComboBoxJarraE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraE.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraE.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraEItemStateChanged(evt);
@@ -8664,7 +8716,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton6.setText("Incluir");
+        botonIncluirME.setText("Incluir");
+        botonIncluirME.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMEActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -8711,7 +8768,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField324, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField325, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirME, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel271, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -8762,7 +8819,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel277)
-                            .addComponent(jButton6))))
+                            .addComponent(botonIncluirME))))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
@@ -9495,7 +9552,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel312.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel312.setText("Inf. Calib.");
 
-        jComboBoxJarraF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraF.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraFItemStateChanged(evt);
@@ -9727,7 +9784,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        jButton7.setText("Incluir");
+        botonIncluirMF.setText("Incluir");
+        botonIncluirMF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIncluirMFActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
@@ -9774,7 +9836,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField388, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField389, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
+                                    .addComponent(botonIncluirMF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)))))
                     .addComponent(jLabel321, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -9825,8 +9887,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel327)
-                            .addComponent(jButton7))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                            .addComponent(botonIncluirMF))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA5Layout = new javax.swing.GroupLayout(mangueraA5);
@@ -10051,7 +10113,7 @@ entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton24ActionPerformed
 
     private void jRadioButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton21ActionPerformed
-entraonoentra();        //lllll TODO add your handling code here:
+entraonoentra();        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton21ActionPerformed
 
     private void jRadioButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton26ActionPerformed
@@ -10189,6 +10251,7 @@ entraonoentra();        // TODO add your handling code here:
               modeloVVisual.setFolio(folioSolicitud.getText());
               modeloVVisual.setN_estacion(folioSolicitud.getText());
               modeloVVisual.setDispensario((String) jComboBoxDispensarios.getSelectedItem());
+              
               if(jRadioButton21.isSelected())
                 modeloVVisual.setLeyendas("C");
               else
@@ -10242,7 +10305,7 @@ entraonoentra();        // TODO add your handling code here:
               //modeloVVisual.setDisp_despacho(folioSolicitud.getText());
               //modeloVVisual.setGolpes(folioSolicitud.getText());
               //modeloVVisual.setTiempo(folioSolicitud.getText());
-              //por qué el modelo ya se inserto pero imprimo para ver el contenido          
+              //por qué el modelo ya se inserto pero imprimo para ver el contenido
               System.out.println(modeloVVisual.toString());
               lbd.openConnection(); //Abro Conexíon
               int operacionExitosa = lbd.insertarModeloVerificacionVisual(modeloVVisual);
@@ -10257,544 +10320,10 @@ entraonoentra();        // TODO add your handling code here:
                           + "visual ya fueron ingresados anteriormente. ");
               }
               
-               /*
-              Victor Chan
-              19/09/2021
-              Inserción de mangueras mediante el modelo inspección medicón 
-              */   
-              //Manguera A
-              modeloInspeccionMedicion modeloIManguerasA = new modeloInspeccionMedicion();
-              modeloIManguerasA.setId(0); //El valor es cero por defecto al insertar
-              modeloIManguerasA.setFolio(folioSolicitud.getText());
-              modeloIManguerasA.setN_estacion(folioSolicitud.getText());
-              modeloIManguerasA.setN_dispensario((String) jComboBoxDispensarios.getSelectedItem());
-              modeloIManguerasA.setTermometro((String) jComboBoxTermometro.getSelectedItem()); 
-              modeloIManguerasA.setCronometro((String) jComboBoxCronometro.getSelectedItem()); 
-              modeloIManguerasA.setLado_manguera(jLabel22.getText());
-              modeloIManguerasA.setCalc_profeco(jTextField68.getText());
-              modeloIManguerasA.setCalc_uva(jTextField69.getText());
-              modeloIManguerasA.setPrecinto(campoPrecintoA.getText());
-              modeloIManguerasA.setV20(AV20.getText());
-              modeloIManguerasA.setKC(AKC.getText());
-              modeloIManguerasA.setGasto_max_p1(AP1MAX.getText());
-              modeloIManguerasA.setGasto_max_p2(AP2MAX.getText());
-              modeloIManguerasA.setGasto_max_p3(AP3MAX.getText());
-              modeloIManguerasA.setGasto_med_p1(AP1MED.getText());
-              modeloIManguerasA.setGasto_med_p2(AP2MED.getText());
-              modeloIManguerasA.setGasto_med_p3(AP2MED.getText());
-              modeloIManguerasA.setGasto_min_p1(AP1MIN.getText());
-              modeloIManguerasA.setGasto_min_p2(AP2MIN.getText());
-              modeloIManguerasA.setGasto_min_p3(AP3MIN.getText());
-              modeloIManguerasA.setGasto_max_lc(ALCMAX.getText());
-              modeloIManguerasA.setGasto_med_lc(ALCMED.getText());
-              modeloIManguerasA.setGasto_min_lc(ALCMIN.getText());
-              modeloIManguerasA.setGasto_max_er(jTextField19.getText());
-              modeloIManguerasA.setGasto_med_er(jTextField20.getText());
-              modeloIManguerasA.setGasto_min_er(jTextField18.getText());
-              modeloIManguerasA.setTemp_max_p1(ATMAXP1.getText());
-              modeloIManguerasA.setTemp_med_p1(ATMEDP1.getText());
-              modeloIManguerasA.setTemp_min_p1(ATMINP1.getText());
-              modeloIManguerasA.setTemp_max_p2(ATMAXP2.getText());
-              modeloIManguerasA.setTemp_med_p2(ATMEDP2.getText());
-              modeloIManguerasA.setTemp_min_p2(ATMINP2.getText());
-              modeloIManguerasA.setTemp_max_p3(ATMAXP3.getText());
-              modeloIManguerasA.setTemp_med_p3(ATMEDP3.getText());
-              modeloIManguerasA.setTemp_min_p3(ATMINP3.getText());
-              modeloIManguerasA.setI_max_p1(AI1MAX.getText());
-              modeloIManguerasA.setI_med_p1(AI1MED.getText());
-              modeloIManguerasA.setI_min_p1(AI1MIN.getText());
-              modeloIManguerasA.setI_max_p2(AI2MAX.getText());
-              modeloIManguerasA.setI_med_p2(AI2MED.getText());
-              modeloIManguerasA.setI_min_p2(AI2MIN.getText());
-              modeloIManguerasA.setI_max_p3(AI3MAX.getText());
-              modeloIManguerasA.setI_med_p3(AI3MED.getText());
-              modeloIManguerasA.setI_min_p3(AI2MIN.getText());
-              modeloIManguerasA.setI_max_lc(AI4MAX.getText());
-              modeloIManguerasA.setI_med_lc(AI4MED.getText());
-              modeloIManguerasA.setI_min_lc(AI4MIN.getText());
-              modeloIManguerasA.setTiempo_max_p1(ATIMAX1.getText());
-              modeloIManguerasA.setTiempo_med_p1(ATIMED1.getText());
-              modeloIManguerasA.setTiempo_min_p1(ATIMIN1.getText());
-              modeloIManguerasA.setTiempo_max_p2(ATIMAX2.getText());
-              modeloIManguerasA.setTiempo_med_p2(ATIMED2.getText());
-              modeloIManguerasA.setTiempo_min_p2(ATIMIN2.getText());
-              modeloIManguerasA.setTiempo_max_p3(ATIMAX3.getText());
-              modeloIManguerasA.setTiempo_med_p3(ATIMED3.getText());
-              modeloIManguerasA.setTiempo_min_p3(ATIMIN3.getText());
-              modeloIManguerasA.setVcmv_gmax(AVCMVMAX.getText());
-              modeloIManguerasA.setVcmv_gmed(AVCMVMED.getText());
-              modeloIManguerasA.setVcmv_gmin(AVCMVMIN.getText());
-              modeloIManguerasA.setE_gmax(AEMAX.getText());
-              modeloIManguerasA.setE_gmed(AEMED.getText());
-              modeloIManguerasA.setE_gmin(AEMIN.getText());
-              modeloIManguerasA.setQv_gmax(AQVMAX.getText());
-              modeloIManguerasA.setQv_gmed(AQVMED.getText());
-              modeloIManguerasA.setQv_gmin(AQVMIN.getText());
-              modeloIManguerasA.setResultados_ml1(jTextField66.getText());
-              modeloIManguerasA.setResultados_ml2(jTextField65.getText());
-              System.out.println(modeloIManguerasA.toString());
-              lbd.openConnection(); //Abro Conexíon
-              int operacionExitosaMangueraA = lbd.insertarModeloInspeccionMedicionMangueras(modeloIManguerasA);
-              lbd.closeConnection(); //Cierro ConexíonmodeloIManguerasA
-              if(operacionExitosaMangueraA == 1){
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera A fueron ingresados correctamente.");
-                  //repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
-              }
-              else{
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera A ya fueron ingresados anteriormente. ");
-              }
-              
-              
-              /*
-              Victor Chan
-              19/09/2021
-              Inserción de mangueras mediante el modelo inspección medicón 
-              */   
-              //Manguera B
-              modeloInspeccionMedicion modeloIManguerasB = new modeloInspeccionMedicion();
-              modeloIManguerasB.setId(0); //El valor es cero por defecto al insertar
-              modeloIManguerasB.setFolio(folioSolicitud.getText());
-              modeloIManguerasB.setN_estacion(folioSolicitud.getText());
-              modeloIManguerasB.setN_dispensario((String) jComboBoxDispensarios.getSelectedItem());
-              modeloIManguerasB.setTermometro((String) jComboBoxTermometro.getSelectedItem()); 
-              modeloIManguerasB.setCronometro((String) jComboBoxCronometro.getSelectedItem()); 
-              modeloIManguerasB.setLado_manguera(jLabel81.getText());
-              modeloIManguerasB.setCalc_profeco(jTextField121.getText());
-              modeloIManguerasB.setCalc_uva(jTextField122.getText());
-              modeloIManguerasB.setPrecinto(campoPrecintoB.getText());
-              modeloIManguerasB.setV20(BV20.getText());
-              modeloIManguerasB.setKC(BKC.getText());
-              modeloIManguerasB.setGasto_max_p1(BP1MAX.getText());
-              modeloIManguerasB.setGasto_max_p2(BP2MAX.getText());
-              modeloIManguerasB.setGasto_max_p3(BP3MAX.getText());
-              modeloIManguerasB.setGasto_med_p1(BP1MED.getText());
-              modeloIManguerasB.setGasto_med_p2(BP2MED.getText());
-              modeloIManguerasB.setGasto_med_p3(BP2MED.getText());
-              modeloIManguerasB.setGasto_min_p1(BP1MIN.getText());
-              modeloIManguerasB.setGasto_min_p2(BP2MIN.getText());
-              modeloIManguerasB.setGasto_min_p3(BP3MIN.getText());
-              modeloIManguerasB.setGasto_max_lc(BLCMAX.getText());
-              modeloIManguerasB.setGasto_med_lc(BLCMED.getText());
-              modeloIManguerasB.setGasto_min_lc(BLCMIN.getText());
-              modeloIManguerasB.setGasto_max_er(jTextField83.getText());
-              modeloIManguerasB.setGasto_med_er(jTextField84.getText());
-              modeloIManguerasB.setGasto_min_er(jTextField82.getText());
-              modeloIManguerasB.setTemp_max_p1(BTMAXP1.getText());
-              modeloIManguerasB.setTemp_med_p1(BTMEDP1.getText());
-              modeloIManguerasB.setTemp_min_p1(BTMINP1.getText());
-              modeloIManguerasB.setTemp_max_p2(BTMAXP2.getText());
-              modeloIManguerasB.setTemp_med_p2(BTMEDP2.getText());
-              modeloIManguerasB.setTemp_min_p2(BTMINP2.getText());
-              modeloIManguerasB.setTemp_max_p3(BTMAXP3.getText());
-              modeloIManguerasB.setTemp_med_p3(BTMEDP3.getText());
-              modeloIManguerasB.setTemp_min_p3(BTMINP3.getText());
-              modeloIManguerasB.setI_max_p1(BI1MAX.getText());
-              modeloIManguerasB.setI_med_p1(BI1MED.getText());
-              modeloIManguerasB.setI_min_p1(BI1MIN.getText());
-              modeloIManguerasB.setI_max_p2(BI2MAX.getText());
-              modeloIManguerasB.setI_med_p2(BI2MED.getText());
-              modeloIManguerasB.setI_min_p2(BI2MIN.getText());
-              modeloIManguerasB.setI_max_p3(BI3MAX.getText());
-              modeloIManguerasB.setI_med_p3(BI3MED.getText());
-              modeloIManguerasB.setI_min_p3(BI2MIN.getText());
-              modeloIManguerasB.setI_max_lc(BI4MAX.getText());
-              modeloIManguerasB.setI_med_lc(BI4MED.getText());
-              modeloIManguerasB.setI_min_lc(BI4MIN.getText());
-              modeloIManguerasB.setTiempo_max_p1(BTIMAX1.getText());
-              modeloIManguerasB.setTiempo_med_p1(BTIMED1.getText());
-              modeloIManguerasB.setTiempo_min_p1(BTIMIN1.getText());
-              modeloIManguerasB.setTiempo_max_p2(BTIMAX2.getText());
-              modeloIManguerasB.setTiempo_med_p2(BTIMED2.getText());
-              modeloIManguerasB.setTiempo_min_p2(BTIMIN2.getText());
-              modeloIManguerasB.setTiempo_max_p3(BTIMAX3.getText());
-              modeloIManguerasB.setTiempo_med_p3(BTIMED3.getText());
-              modeloIManguerasB.setTiempo_min_p3(BTIMIN3.getText());
-              modeloIManguerasB.setVcmv_gmax(BVCMVMAX.getText());
-              modeloIManguerasB.setVcmv_gmed(BVCMVMED.getText());
-              modeloIManguerasB.setVcmv_gmin(BVCMVMIN.getText());
-              modeloIManguerasB.setE_gmax(BEMAX.getText());
-              modeloIManguerasB.setE_gmed(BEMED.getText());
-              modeloIManguerasB.setE_gmin(BEMIN.getText());
-              modeloIManguerasB.setQv_gmax(BQVMAX.getText());
-              modeloIManguerasB.setQv_gmed(BQVMED.getText());
-              modeloIManguerasB.setQv_gmin(BQVMIN.getText());
-              modeloIManguerasB.setResultados_ml1(jTextField133.getText());
-              modeloIManguerasB.setResultados_ml2(jTextField132.getText());
-              System.out.println(modeloIManguerasB.toString());
-              lbd.openConnection(); //Abro Conexíon
-              int operacionExitosaMangueraB = lbd.insertarModeloInspeccionMedicionMangueras(modeloIManguerasB);
-              lbd.closeConnection(); //Cierro ConexíonmodeloIManguerasA
-              if(operacionExitosaMangueraB == 1){
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera B fueron ingresados correctamente.");
-                  //repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
-              }
-              else{
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera B ya fueron ingresados anteriormente. ");
-              }
-              
-              /*
-               Victor Chan
-              19/09/2021
-              Inserción de mangueras mediante el modelo inspección medicón 
-              */   
-              //Manguera C
-              modeloInspeccionMedicion modeloIManguerasC = new modeloInspeccionMedicion();
-              modeloIManguerasC.setId(0); //El valor es cero por defecto al insertar
-              modeloIManguerasC.setFolio(folioSolicitud.getText());
-              modeloIManguerasC.setN_estacion(folioSolicitud.getText());
-              modeloIManguerasC.setN_dispensario((String) jComboBoxDispensarios.getSelectedItem());
-              modeloIManguerasC.setTermometro((String) jComboBoxTermometro.getSelectedItem()); 
-              modeloIManguerasC.setCronometro((String) jComboBoxCronometro.getSelectedItem()); 
-              modeloIManguerasC.setLado_manguera(jLabel131.getText());
-              modeloIManguerasC.setCalc_profeco(jTextField185.getText());
-              modeloIManguerasC.setCalc_uva(jTextField186.getText());
-              modeloIManguerasC.setPrecinto(campoPrecintoC.getText());
-              modeloIManguerasC.setV20(CV20.getText());
-              modeloIManguerasC.setKC(CKC.getText());
-              modeloIManguerasC.setGasto_max_p1(CP1MAX.getText());
-              modeloIManguerasC.setGasto_max_p2(CP2MAX.getText());
-              modeloIManguerasC.setGasto_max_p3(CP3MAX.getText());
-              modeloIManguerasC.setGasto_med_p1(CP1MED.getText());
-              modeloIManguerasC.setGasto_med_p2(CP2MED.getText());
-              modeloIManguerasC.setGasto_med_p3(CP2MED.getText());
-              modeloIManguerasC.setGasto_min_p1(CP1MIN.getText());
-              modeloIManguerasC.setGasto_min_p2(CP2MIN.getText());
-              modeloIManguerasC.setGasto_min_p3(CP3MIN.getText());
-              modeloIManguerasC.setGasto_max_lc(CLCMAX.getText());
-              modeloIManguerasC.setGasto_med_lc(CLCMED.getText());
-              modeloIManguerasC.setGasto_min_lc(CLCMIN.getText());
-              modeloIManguerasC.setGasto_max_er(jTextField147.getText());
-              modeloIManguerasC.setGasto_med_er(jTextField148.getText());
-              modeloIManguerasC.setGasto_min_er(jTextField146.getText());
-              modeloIManguerasC.setTemp_max_p1(CTMAXP1.getText());
-              modeloIManguerasC.setTemp_med_p1(CTMEDP1.getText());
-              modeloIManguerasC.setTemp_min_p1(CTMINP1.getText());
-              modeloIManguerasC.setTemp_max_p2(CTMAXP2.getText());
-              modeloIManguerasC.setTemp_med_p2(CTMEDP2.getText());
-              modeloIManguerasC.setTemp_min_p2(CTMINP2.getText());
-              modeloIManguerasC.setTemp_max_p3(CTMAXP3.getText());
-              modeloIManguerasC.setTemp_med_p3(CTMEDP3.getText());
-              modeloIManguerasC.setTemp_min_p3(CTMINP3.getText());
-              modeloIManguerasC.setI_max_p1(CI1MAX.getText());
-              modeloIManguerasC.setI_med_p1(CI1MED.getText());
-              modeloIManguerasC.setI_min_p1(CI1MIN.getText());
-              modeloIManguerasC.setI_max_p2(CI2MAX.getText());
-              modeloIManguerasC.setI_med_p2(CI2MED.getText());
-              modeloIManguerasC.setI_min_p2(CI2MIN.getText());
-              modeloIManguerasC.setI_max_p3(CI3MAX.getText());
-              modeloIManguerasC.setI_med_p3(CI3MED.getText());
-              modeloIManguerasC.setI_min_p3(CI2MIN.getText());
-              modeloIManguerasC.setI_max_lc(CI4MAX.getText());
-              modeloIManguerasC.setI_med_lc(CI4MED.getText());
-              modeloIManguerasC.setI_min_lc(CI4MIN.getText());
-              modeloIManguerasC.setTiempo_max_p1(CTIMAX1.getText());
-              modeloIManguerasC.setTiempo_med_p1(CTIMED1.getText());
-              modeloIManguerasC.setTiempo_min_p1(CTIMIN1.getText());
-              modeloIManguerasC.setTiempo_max_p2(CTIMAX2.getText());
-              modeloIManguerasC.setTiempo_med_p2(CTIMED2.getText());
-              modeloIManguerasC.setTiempo_min_p2(CTIMIN2.getText());
-              modeloIManguerasC.setTiempo_max_p3(CTIMAX3.getText());
-              modeloIManguerasC.setTiempo_med_p3(CTIMED3.getText());
-              modeloIManguerasC.setTiempo_min_p3(CTIMIN3.getText());
-              modeloIManguerasC.setVcmv_gmax(CVCMVMAX.getText());
-              modeloIManguerasC.setVcmv_gmed(CVCMVMED.getText());
-              modeloIManguerasC.setVcmv_gmin(CVCMVMIN.getText());
-              modeloIManguerasC.setE_gmax(CEMAX.getText());
-              modeloIManguerasC.setE_gmed(CEMED.getText());
-              modeloIManguerasC.setE_gmin(CEMIN.getText());
-              modeloIManguerasC.setQv_gmax(CQVMAX.getText());
-              modeloIManguerasC.setQv_gmed(CQVMED.getText());
-              modeloIManguerasC.setQv_gmin(CQVMIN.getText());
-              modeloIManguerasC.setResultados_ml1(jTextField133.getText());
-              modeloIManguerasC.setResultados_ml2(jTextField132.getText());
-              System.out.println(modeloIManguerasC.toString());
-              lbd.openConnection(); //Abro Conexíon
-              int operacionExitosaMangueraC = lbd.insertarModeloInspeccionMedicionMangueras(modeloIManguerasC);
-              lbd.closeConnection(); //Cierro ConexíonmodeloIManguerasA
-              if(operacionExitosaMangueraC == 1){
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera C  fueron ingresados correctamente.");
-                  //repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
-              }
-              else{
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera C ya fueron ingresados anteriormente. ");
-              }
-              
-                            /*
-               Victor Chan
-              19/09/2021
-              Inserción de mangueras mediante el modelo inspección medicón 
-              */   
-              //Manguera D
-              modeloInspeccionMedicion modeloIManguerasD = new modeloInspeccionMedicion();
-              modeloIManguerasD.setId(0); //El valor es cero por defecto al insertar
-              modeloIManguerasD.setFolio(folioSolicitud.getText());
-              modeloIManguerasD.setN_estacion(folioSolicitud.getText());
-              modeloIManguerasD.setN_dispensario((String) jComboBoxDispensarios.getSelectedItem());
-              modeloIManguerasD.setTermometro((String) jComboBoxTermometro.getSelectedItem()); 
-              modeloIManguerasD.setCronometro((String) jComboBoxCronometro.getSelectedItem()); 
-              modeloIManguerasD.setLado_manguera(jLabel181.getText());
-              modeloIManguerasD.setCalc_profeco(jTextField249.getText());
-              modeloIManguerasD.setCalc_uva(jTextField250.getText());
-              modeloIManguerasD.setPrecinto(campoPrecintoD.getText());
-              modeloIManguerasD.setV20(DV20.getText());
-              modeloIManguerasD.setKC(DKC.getText());
-              modeloIManguerasD.setGasto_max_p1(DP1MAX.getText());
-              modeloIManguerasD.setGasto_max_p2(DP2MAX.getText());
-              modeloIManguerasD.setGasto_max_p3(DP3MAX.getText());
-              modeloIManguerasD.setGasto_med_p1(DP1MED.getText());
-              modeloIManguerasD.setGasto_med_p2(DP2MED.getText());
-              modeloIManguerasD.setGasto_med_p3(DP2MED.getText());
-              modeloIManguerasD.setGasto_min_p1(DP1MIN.getText());
-              modeloIManguerasD.setGasto_min_p2(DP2MIN.getText());
-              modeloIManguerasD.setGasto_min_p3(DP3MIN.getText());
-              modeloIManguerasD.setGasto_max_lc(DLCMAX.getText());
-              modeloIManguerasD.setGasto_med_lc(DLCMED.getText());
-              modeloIManguerasD.setGasto_min_lc(DLCMIN.getText());
-              modeloIManguerasD.setGasto_max_er(jTextField211.getText());
-              modeloIManguerasD.setGasto_med_er(jTextField212.getText());
-              modeloIManguerasD.setGasto_min_er(jTextField210.getText());
-              modeloIManguerasD.setTemp_max_p1(DTMAXP1.getText());
-              modeloIManguerasD.setTemp_med_p1(DTMEDP1.getText());
-              modeloIManguerasD.setTemp_min_p1(DTMINP1.getText());
-              modeloIManguerasD.setTemp_max_p2(DTMAXP2.getText());
-              modeloIManguerasD.setTemp_med_p2(DTMEDP2.getText());
-              modeloIManguerasD.setTemp_min_p2(DTMINP2.getText());
-              modeloIManguerasD.setTemp_max_p3(DTMAXP3.getText());
-              modeloIManguerasD.setTemp_med_p3(DTMEDP3.getText());
-              modeloIManguerasD.setTemp_min_p3(DTMINP3.getText());
-              modeloIManguerasD.setI_max_p1(DI1MAX.getText());
-              modeloIManguerasD.setI_med_p1(DI1MED.getText());
-              modeloIManguerasD.setI_min_p1(DI1MIN.getText());
-              modeloIManguerasD.setI_max_p2(DI2MAX.getText());
-              modeloIManguerasD.setI_med_p2(DI2MED.getText());
-              modeloIManguerasD.setI_min_p2(DI2MIN.getText());
-              modeloIManguerasD.setI_max_p3(DI3MAX.getText());
-              modeloIManguerasD.setI_med_p3(DI3MED.getText());
-              modeloIManguerasD.setI_min_p3(DI2MIN.getText());
-              modeloIManguerasD.setI_max_lc(DI4MAX.getText());
-              modeloIManguerasD.setI_med_lc(DI4MED.getText());
-              modeloIManguerasD.setI_min_lc(DI4MIN.getText());
-              modeloIManguerasD.setTiempo_max_p1(DTIMAX1.getText());
-              modeloIManguerasD.setTiempo_med_p1(DTIMED1.getText());
-              modeloIManguerasD.setTiempo_min_p1(DTIMIN1.getText());
-              modeloIManguerasD.setTiempo_max_p2(DTIMAX2.getText());
-              modeloIManguerasD.setTiempo_med_p2(DTIMED2.getText());
-              modeloIManguerasD.setTiempo_min_p2(DTIMIN2.getText());
-              modeloIManguerasD.setTiempo_max_p3(DTIMAX3.getText());
-              modeloIManguerasD.setTiempo_med_p3(DTIMED3.getText());
-              modeloIManguerasD.setTiempo_min_p3(DTIMIN3.getText());
-              modeloIManguerasD.setVcmv_gmax(DVCMVMAX.getText());
-              modeloIManguerasD.setVcmv_gmed(DVCMVMED.getText());
-              modeloIManguerasD.setVcmv_gmin(DVCMVMIN.getText());
-              modeloIManguerasD.setE_gmax(DEMAX.getText());
-              modeloIManguerasD.setE_gmed(DEMED.getText());
-              modeloIManguerasD.setE_gmin(DEMIN.getText());
-              modeloIManguerasD.setQv_gmax(DQVMAX.getText());
-              modeloIManguerasD.setQv_gmed(DQVMED.getText());
-              modeloIManguerasD.setQv_gmin(DQVMIN.getText());
-              modeloIManguerasD.setResultados_ml1(jTextField261.getText());
-              modeloIManguerasD.setResultados_ml2(jTextField260.getText());
-              System.out.println(modeloIManguerasD.toString());
-              lbd.openConnection(); //Abro Conexíon
-              int operacionExitosaMangueraD = lbd.insertarModeloInspeccionMedicionMangueras(modeloIManguerasD);
-              lbd.closeConnection(); //Cierro ConexíonmodeloIManguerasA
-              if(operacionExitosaMangueraD == 1){
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera D  fueron ingresados correctamente.");
-                  //repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
-              }
-              else{
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera D ya fueron ingresados anteriormente. ");
-              }
-              
-              
-                                          /*
-               Victor Chan
-              19/09/2021
-              Inserción de mangueras mediante el modelo inspección medicón 
-              */   
-              //Manguera E
-              modeloInspeccionMedicion modeloIManguerasE = new modeloInspeccionMedicion();
-              modeloIManguerasE.setId(0); //El valor es cero por defecto al insertar
-              modeloIManguerasE.setFolio(folioSolicitud.getText());
-              modeloIManguerasE.setN_estacion(folioSolicitud.getText());
-              modeloIManguerasE.setN_dispensario((String) jComboBoxDispensarios.getSelectedItem());
-              modeloIManguerasE.setTermometro((String) jComboBoxTermometro.getSelectedItem()); 
-              modeloIManguerasE.setCronometro((String) jComboBoxCronometro.getSelectedItem()); 
-              modeloIManguerasE.setLado_manguera(jLabel231.getText());
-              modeloIManguerasE.setCalc_profeco(jTextField313.getText());
-              modeloIManguerasE.setCalc_uva(jTextField314.getText());
-              modeloIManguerasE.setPrecinto(campoPrecintoE.getText());
-              modeloIManguerasE.setV20(EV20.getText());
-              modeloIManguerasE.setKC(EKC.getText());
-              modeloIManguerasE.setGasto_max_p1(EP1MAX.getText());
-              modeloIManguerasE.setGasto_max_p2(EP2MAX.getText());
-              modeloIManguerasE.setGasto_max_p3(EP3MAX.getText());
-              modeloIManguerasE.setGasto_med_p1(EP1MED.getText());
-              modeloIManguerasE.setGasto_med_p2(EP2MED.getText());
-              modeloIManguerasE.setGasto_med_p3(EP2MED.getText());
-              modeloIManguerasE.setGasto_min_p1(EP1MIN.getText());
-              modeloIManguerasE.setGasto_min_p2(EP2MIN.getText());
-              modeloIManguerasE.setGasto_min_p3(EP3MIN.getText());
-              modeloIManguerasE.setGasto_max_lc(ELCMAX.getText());
-              modeloIManguerasE.setGasto_med_lc(ELCMED.getText());
-              modeloIManguerasE.setGasto_min_lc(ELCMIN.getText());
-              modeloIManguerasE.setGasto_max_er(jTextField275.getText());
-              modeloIManguerasE.setGasto_med_er(jTextField276.getText());
-              modeloIManguerasE.setGasto_min_er(jTextField274.getText());
-              modeloIManguerasE.setTemp_max_p1(ETMAXP1.getText());
-              modeloIManguerasE.setTemp_med_p1(ETMEDP1.getText());
-              modeloIManguerasE.setTemp_min_p1(ETMAXP2.getText());
-              modeloIManguerasE.setTemp_med_p2(ETMEDP2.getText());
-              modeloIManguerasE.setTemp_min_p2(ETMINP2.getText());
-              modeloIManguerasE.setTemp_max_p3(ETMAXP3.getText());
-              modeloIManguerasE.setTemp_med_p3(ETMEDP3.getText());
-              modeloIManguerasE.setTemp_min_p3(ETMINP3.getText());
-              modeloIManguerasE.setI_max_p1(EI1MAX.getText());
-              modeloIManguerasE.setI_med_p1(EI1MED.getText());
-              modeloIManguerasE.setI_min_p1(EI1MIN.getText());
-              modeloIManguerasE.setI_max_p2(EI2MAX.getText());
-              modeloIManguerasE.setI_med_p2(EI2MED.getText());
-              modeloIManguerasE.setI_min_p2(EI2MIN.getText());
-              modeloIManguerasE.setI_max_p3(EI3MAX.getText());
-              modeloIManguerasE.setI_med_p3(EI3MED.getText());
-              modeloIManguerasE.setI_min_p3(EI2MIN.getText());
-              modeloIManguerasE.setI_max_lc(EI4MAX.getText());
-              modeloIManguerasE.setI_med_lc(EI4MED.getText());
-              modeloIManguerasE.setI_min_lc(EI4MIN.getText());
-              modeloIManguerasE.setTiempo_max_p1(ETIMAX1.getText());
-              modeloIManguerasE.setTiempo_med_p1(ETIMED1.getText());
-              modeloIManguerasE.setTiempo_min_p1(ETIMIN1.getText());
-              modeloIManguerasE.setTiempo_med_p2(ETIMED2.getText());
-              modeloIManguerasE.setTiempo_min_p2(ETIMIN2.getText());
-              modeloIManguerasE.setTiempo_max_p3(ETIMAX3.getText());
-              modeloIManguerasE.setTiempo_med_p3(ETIMED3.getText());
-              modeloIManguerasE.setTiempo_min_p3(ETIMIN3.getText());
-              modeloIManguerasE.setVcmv_gmax(EVCMVMAX.getText());
-              modeloIManguerasE.setVcmv_gmed(EVCMVMED.getText());
-              modeloIManguerasE.setVcmv_gmin(EVCMVMIN.getText());
-              modeloIManguerasE.setE_gmax(EEMAX.getText());
-              modeloIManguerasE.setE_gmed(EEMED.getText());
-              modeloIManguerasE.setE_gmin(EEMIN.getText());
-              modeloIManguerasE.setQv_gmax(EQVMAX.getText());
-              modeloIManguerasE.setQv_gmed(EQVMED.getText());
-              modeloIManguerasE.setQv_gmin(EQVMIN.getText());
-              modeloIManguerasE.setResultados_ml1(jTextField325.getText());
-              modeloIManguerasE.setResultados_ml2(jTextField324.getText());
-              System.out.println(modeloIManguerasD.toString());
-              lbd.openConnection(); //Abro Conexíon
-              int operacionExitosaMangueraE = lbd.insertarModeloInspeccionMedicionMangueras(modeloIManguerasE);
-              lbd.closeConnection(); //Cierro ConexíonmodeloIManguerasA
-              if(operacionExitosaMangueraE == 1){
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera E  fueron ingresados correctamente.");
-                  //repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
-              }
-              else{
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera E ya fueron ingresados anteriormente. ");
-              }
-              
-              /*
-                           Victor Chan
-              19/09/2021
-              Inserción de mangueras mediante el modelo inspección medicón 
-              */   
-              //Manguera F
-              modeloInspeccionMedicion modeloIManguerasF = new modeloInspeccionMedicion();
-              modeloIManguerasF.setId(0); //El valor es cero por defecto al insertar
-              modeloIManguerasF.setFolio(folioSolicitud.getText());
-              modeloIManguerasF.setN_estacion(folioSolicitud.getText());
-              modeloIManguerasF.setN_dispensario((String) jComboBoxDispensarios.getSelectedItem());
-              modeloIManguerasF.setTermometro((String) jComboBoxTermometro.getSelectedItem()); 
-              modeloIManguerasF.setCronometro((String) jComboBoxCronometro.getSelectedItem()); 
-              modeloIManguerasF.setLado_manguera(jLabel281.getText());
-              modeloIManguerasF.setCalc_profeco(jTextField377.getText());
-              modeloIManguerasF.setCalc_uva(jTextField378.getText());
-              modeloIManguerasF.setPrecinto(campoPrecintoF.getText());
-              modeloIManguerasF.setV20(FV20.getText());
-              modeloIManguerasF.setKC(FKC.getText());
-              modeloIManguerasF.setGasto_max_p1(FP1MAX.getText());
-              modeloIManguerasF.setGasto_max_p2(FP2MAX.getText());
-              modeloIManguerasF.setGasto_max_p3(FP3MAX.getText());
-              modeloIManguerasF.setGasto_med_p1(FP1MED.getText());
-              modeloIManguerasF.setGasto_med_p2(FP2MED.getText());
-              modeloIManguerasF.setGasto_med_p3(FP2MED.getText());
-              modeloIManguerasF.setGasto_min_p1(FP1MIN.getText());
-              modeloIManguerasF.setGasto_min_p2(FP2MIN.getText());
-              modeloIManguerasF.setGasto_min_p3(FP3MIN.getText());
-              modeloIManguerasF.setGasto_max_lc(FLCMAX.getText());
-              modeloIManguerasF.setGasto_med_lc(FLCMED.getText());
-              modeloIManguerasF.setGasto_min_lc(FLCMIN.getText());
-              modeloIManguerasF.setGasto_max_er(jTextField339.getText());
-              modeloIManguerasF.setGasto_med_er(jTextField340.getText());
-              modeloIManguerasF.setGasto_min_er(jTextField338.getText());
-              modeloIManguerasF.setTemp_max_p1(FTMAXP1.getText());
-              modeloIManguerasF.setTemp_med_p1(FTMEDP1.getText());
-              modeloIManguerasF.setTemp_min_p1(FTMAXP2.getText());
-              modeloIManguerasF.setTemp_med_p2(FTMEDP2.getText());
-              modeloIManguerasF.setTemp_min_p2(FTMINP2.getText());
-              modeloIManguerasF.setTemp_max_p3(FTMAXP3.getText());
-              modeloIManguerasF.setTemp_med_p3(FTMEDP3.getText());
-              modeloIManguerasF.setTemp_min_p3(FTMINP3.getText());
-              modeloIManguerasF.setI_max_p1(FI1MAX.getText());
-              modeloIManguerasF.setI_med_p1(FI1MED.getText());
-              modeloIManguerasF.setI_min_p1(FI1MIN.getText());
-              modeloIManguerasF.setI_max_p2(FI2MAX.getText());
-              modeloIManguerasF.setI_med_p2(FI2MED.getText());
-              modeloIManguerasF.setI_min_p2(FI2MIN.getText());
-              modeloIManguerasF.setI_max_p3(FI3MAX.getText());
-              modeloIManguerasF.setI_med_p3(FI3MED.getText());
-              modeloIManguerasF.setI_min_p3(FI2MIN.getText());
-              modeloIManguerasF.setI_max_lc(FI4MAX.getText());
-              modeloIManguerasF.setI_med_lc(FI4MED.getText());
-              modeloIManguerasF.setI_min_lc(FI4MIN.getText());
-              modeloIManguerasF.setTiempo_max_p1(FTIMAX1.getText());
-              modeloIManguerasF.setTiempo_med_p1(FTIMED1.getText());
-              modeloIManguerasF.setTiempo_min_p1(FTIMIN1.getText());
-              modeloIManguerasF.setTiempo_med_p2(FTIMED2.getText());
-              modeloIManguerasF.setTiempo_min_p2(FTIMIN2.getText());
-              modeloIManguerasF.setTiempo_max_p3(FTIMAX3.getText());
-              modeloIManguerasF.setTiempo_med_p3(FTIMED3.getText());
-              modeloIManguerasF.setTiempo_min_p3(FTIMIN3.getText());
-              modeloIManguerasF.setVcmv_gmax(FVCMVMAX.getText());
-              modeloIManguerasF.setVcmv_gmed(FVCMVMED.getText());
-              modeloIManguerasF.setVcmv_gmin(FVCMVMIN.getText());
-              modeloIManguerasF.setE_gmax(FEMAX.getText());
-              modeloIManguerasF.setE_gmed(FEMED.getText());
-              modeloIManguerasF.setE_gmin(FEMIN.getText());
-              modeloIManguerasF.setQv_gmax(FQVMAX.getText());
-              modeloIManguerasF.setQv_gmed(FQVMED.getText());
-              modeloIManguerasF.setQv_gmin(FQVMIN.getText());
-              modeloIManguerasF.setResultados_ml1(jTextField389.getText());
-              modeloIManguerasF.setResultados_ml2(jTextField388.getText());
-              System.out.println(modeloIManguerasF.toString());
-              lbd.openConnection(); //Abro Conexíon
-              int operacionExitosaMangueraF = lbd.insertarModeloInspeccionMedicionMangueras(modeloIManguerasF);
-              lbd.closeConnection(); //Cierro ConexíonmodeloIManguerasA
-              if(operacionExitosaMangueraF == 1){
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera F  fueron ingresados correctamente.");
-                  //repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
-              }
-              else{
-                  JOptionPane.showMessageDialog(null, "Los datos de la inspección "
-                          + "manguera F ya fueron ingresados anteriormente. ");
-              }  
-              
-              
         }
         else{
             JOptionPane.showMessageDialog(null, "El folio no se ingreso ó no es válido.");
         }
-              
         
     }//GEN-LAST:event_btnGuardarExcelActionPerformed
 
@@ -12042,13 +11571,88 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
 //        JOptionPane.showMessageDialog(null, "El proyecto ya paso");
     }//GEN-LAST:event_etiquetaIncluirMouseClicked
 
-    private void folioSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioSolicitudActionPerformed
+    private void botonIncluirMAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_folioSolicitudActionPerformed
+        if( botonIncluirMA.getText().equals("Incluir")){
+           incluirA = 1;
+           botonIncluirMA.setText("No Incluir");
+        }
+        else{
+           incluirA = 0;
+           botonIncluirMA.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMAActionPerformed
 
+    private void botonIncluirMBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMBActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirMB.getText().equals("Incluir")){
+           incluirB = 1;
+           botonIncluirMB.setText("No Incluir");
+        }
+        else{
+            incluirB = 0;
+           botonIncluirMB.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMBActionPerformed
+
+    private void botonIncluirMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMCActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirMC.getText().equals("Incluir")){
+            incluirC = 1;
+           botonIncluirMC.setText("No Incluir");
+        }
+        else{
+            incluirC = 0;
+           botonIncluirMC.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMCActionPerformed
+
+    private void botonIncluirMDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMDActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirMD.getText().equals("Incluir")){
+            incluirD = 1;
+           botonIncluirMD.setText("No Incluir");
+        }
+        else{
+           incluirD = 0;
+           botonIncluirMD.setText("Incluir");
+        }
+        
+    }//GEN-LAST:event_botonIncluirMDActionPerformed
+
+    private void botonIncluirMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMEActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirME.getText().equals("Incluir")){
+            incluirE = 1;
+           botonIncluirME.setText("No Incluir");
+        }
+        else{
+             incluirE = 0;
+           botonIncluirME.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMEActionPerformed
+
+    private void botonIncluirMFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIncluirMFActionPerformed
+        // TODO add your handling code here:
+        if( botonIncluirMF.getText().equals("Incluir")){
+             incluirF = 1;
+           botonIncluirMF.setText("No Incluir");
+        }
+        else{
+           incluirF = 0;
+           botonIncluirMF.setText("Incluir");
+        }
+    }//GEN-LAST:event_botonIncluirMFActionPerformed
+
+//<<<<<<< HEAD
+    private void datosTermometroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datosTermometroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_datosTermometroActionPerformed
+//=======
     private void jComboBoxDispensariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDispensariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxDispensariosActionPerformed
+//>>>>>>> f3b6447726602e3714578494c282ea5347226ed7
 
     /**
      * @param args the command line arguments
@@ -12431,6 +12035,12 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JLabel avisoLabelD;
     private javax.swing.JLabel avisoLabelE;
     private javax.swing.JLabel avisoLabelF;
+    private javax.swing.JButton botonIncluirMA;
+    private javax.swing.JButton botonIncluirMB;
+    private javax.swing.JButton botonIncluirMC;
+    private javax.swing.JButton botonIncluirMD;
+    private javax.swing.JButton botonIncluirME;
+    private javax.swing.JButton botonIncluirMF;
     private javax.swing.JButton btnGuardarExcel;
     private javax.swing.JTextField campoEstacion;
     private javax.swing.JTextField campoInformacionEstacion;
@@ -12445,12 +12055,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField datosTermometro;
     private javax.swing.JLabel etiquetaIncluir;
     private javax.swing.JTextField folioSolicitud;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButtonImprimir;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBoxImprimir;
@@ -12917,4 +12521,5 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JPanel mangueraA5;
     private javax.swing.JPanel verificacionVisual;
     // End of variables declaration//GEN-END:variables
+    //private javax.swing.JComboBox <String> folioSolicitud2;
 }

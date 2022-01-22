@@ -12,13 +12,18 @@ import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 import java.util.Date;
 import Modelo.modeloTablaUsuario;
+import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
 import java.util.Arrays;
+import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import org.jdesktop.swingx.autocomplete.ObjectToStringConverter;
 
 /**
  *
@@ -27,7 +32,9 @@ import javax.swing.JOptionPane;
 public class registroSolicitudContrato extends javax.swing.JDialog {
     LibreriaBDControlador lbd = new LibreriaBDControlador();
     modeloTablaUsuario mtu = new modeloTablaUsuario();
-    public String Usuario;
+    public String Usuario;    
+    private String noEstacion;
+     public int i=0;
     //personalApoyo.setEnabled(true);
     public registroSolicitudContrato(java.awt.Frame parent, boolean modal,modeloTablaUsuario mtu) {
                 super(parent, modal);
@@ -38,6 +45,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                 personalApoyo.setEnabled(false);
                 tecnicoRSC.setEnabled(false);
                 //Jose Luis Caamal Ic
+                
                 //23/08/2020 Se añade un checkbox para validar si entra o no la información.
                 jCheckBoxTecnico.addItemListener(new ItemListener(){
                 @Override
@@ -71,12 +79,31 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                     repaint();
                 }
                 });
-
+         
+                AutoCompleteDecorator.decorate(noEstacionRSC);
+               
+              
+              lbd.openConnection();
+                List<String> noEstaciones = lbd.obtenerNoEstacion();
+                lbd.closeConnection();
+                    
+                        
+            noEstacionRSC.removeAllItems();
+            
+            
+          for(i=0; i< noEstaciones.size();i++){
+           noEstacionRSC.addItem(noEstaciones.get(i));  
+        }
+                
+           
+                    
+                        
+            
 //            add(jCheckBoxTecnico);
 //            add(tecnicoRSC);
                 
     }
-
+   
 
 
     /**
@@ -129,12 +156,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         premiumRSC = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         diselRSC = new javax.swing.JTextField();
-        tiposolicitudRSC = new javax.swing.JComboBox<>();
+        tiposolicitudRSC = new javax.swing.JComboBox<String>();
         jLabel18 = new javax.swing.JLabel();
         tecnicoRSC = new javax.swing.JTextField();
         fechaRCS = new com.toedter.calendar.JDateChooser();
         folioSolicitudRSC = new javax.swing.JTextField();
-        noEstacionRSC = new javax.swing.JTextField();
         fechaPropuestaRSC = new com.toedter.calendar.JDateChooser();
         referenciaSolicitudRSC = new javax.swing.JTextField();
         observacionesRSC = new javax.swing.JTextField();
@@ -145,6 +171,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         jCheckBoxPApoyo = new javax.swing.JCheckBox();
         personalApoyo = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
+        noEstacionRSC = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Solicitud de Contrato");
@@ -204,6 +231,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
 
         razonSocialRSC.setEditable(false);
         razonSocialRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        razonSocialRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                razonSocialRSCActionPerformed(evt);
+            }
+        });
 
         domicilioRSC.setEditable(false);
         domicilioRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
@@ -213,6 +245,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
 
         estacionRSC.setEditable(false);
         estacionRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        estacionRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estacionRSCActionPerformed(evt);
+            }
+        });
 
         regfedCausantesRSC.setEditable(false);
         regfedCausantesRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
@@ -260,7 +297,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                                     .addComponent(manguerasaVerificarRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(magnaRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel9)
@@ -347,7 +384,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         );
 
         tiposolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        tiposolicitudRSC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
+        tiposolicitudRSC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
         tiposolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tiposolicitudRSCActionPerformed(evt);
@@ -358,6 +395,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         jLabel18.setText("Fecha");
 
         tecnicoRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        tecnicoRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tecnicoRSCActionPerformed(evt);
+            }
+        });
 
         folioSolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         folioSolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
@@ -365,34 +407,17 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                 folioSolicitudRSCActionPerformed(evt);
             }
         });
-        folioSolicitudRSC.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                folioSolicitudRSCKeyPressed(evt);
-            }
-        });
-
-        noEstacionRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        noEstacionRSC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noEstacionRSCActionPerformed(evt);
-            }
-        });
-        noEstacionRSC.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                noEstacionRSCKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                noEstacionRSCKeyTyped(evt);
-            }
-        });
 
         fechaPropuestaRSC.setEnabled(false);
 
         referenciaSolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        referenciaSolicitudRSC.setText("  ");
+        referenciaSolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                referenciaSolicitudRSCActionPerformed(evt);
+            }
+        });
 
         observacionesRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        observacionesRSC.setText("   ");
         observacionesRSC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 observacionesRSCActionPerformed(evt);
@@ -410,13 +435,39 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         jLabel23.setText("de ingresar el No.Estacion");
 
         jCheckBoxTecnico.setText("Técnico");
+        jCheckBoxTecnico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxTecnicoActionPerformed(evt);
+            }
+        });
 
         jCheckBoxPApoyo.setText("Personal Apoyo");
+        jCheckBoxPApoyo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxPApoyoActionPerformed(evt);
+            }
+        });
 
         personalApoyo.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
         jLabel20.setForeground(new java.awt.Color(0, 51, 51));
         jLabel20.setText("Para habilitar el nombre del Técnico o Personal de Apoyo, favor de hacer clic en las casillas de verificación e ingrese la información.");
+
+        noEstacionRSC.setEditable(true);
+        noEstacionRSC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        noEstacionRSC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noEstacionRSCActionPerformed(evt);
+            }
+        });
+        noEstacionRSC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                noEstacionRSCKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                noEstacionRSCKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -442,21 +493,21 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(noEstacionRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                        .addGap(12, 12, 12)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel22)
                                             .addComponent(jLabel23)))
                                     .addComponent(referenciaSolicitudRSC)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(tiposolicitudRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                                         .addComponent(jLabel18)
                                         .addGap(18, 18, 18)
                                         .addComponent(fechaRCS, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(3, 3, 3)))
                                 .addComponent(fechaPropuestaRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(folioSolicitudRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(folioSolicitudRSC, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(noEstacionRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel6)
@@ -493,11 +544,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel18)))
-                        .addGap(18, 18, 18)
+                        .addGap(44, 44, 44)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(noEstacionRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(fechaPropuestaRSC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -541,12 +592,123 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+ 
+    private void guardarRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarRSCActionPerformed
+    String  Foliodesolicitud,Tipodesolicitud,Fecha2, NoEstacion,/*Usuario,*/FechaPropuesta2;
+    String ReferenciadeSolicitud,Observaciones,Tecnico;
+    String   total_mangueras;
+    //Jose Luis Caamal Ic
+    String perApoyo = "";
+
+    Foliodesolicitud=folioSolicitudRSC.getText();
+    Tipodesolicitud=(String)tiposolicitudRSC.getSelectedItem();
+ 
+          
+          NoEstacion=(String) noEstacionRSC.getSelectedItem();
+          //Usuario=solicitanteRSC.getText();
+         //Usuario=mtu.getNombreUsuario();
+
+
+          ReferenciadeSolicitud=referenciaSolicitudRSC.getText();
+          Observaciones=observacionesRSC.getText();
+          Tecnico=tecnicoRSC.getText();
+          perApoyo = personalApoyo.getText();
+          total_mangueras=manguerasaVerificarRSC.getText();
+          Date  fecha=fechaRCS.getDate();
+          
+          if(fecha!=null && !Foliodesolicitud.equals("") && !NoEstacion.equals("") && !ReferenciadeSolicitud.equals("") && !Observaciones.equals("") && !total_mangueras.equals(""))
+          {
+  
+              if( tecnicoRSC.isEnabled() && personalApoyo.isEnabled())
+              {
+                  if(!Tecnico.equals(" ") && !perApoyo.equals(" "))
+                  {
+                    DateFormat f=new SimpleDateFormat("dd-MM-yyyy");
+                    Fecha2=f.format(fecha);
+                    
+                                  
+                    int valida = 0;
+                    lbd.openConnection();
+                      /*Se añade la misma fecha para ambos campos*/
+                      //lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, FechaPropuesta2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones);
+                    valida = lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, Fecha2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones,perApoyo);
+                    if(valida == 1)
+                      {
+                          valida = lbd.guardarMangueras(Foliodesolicitud,total_mangueras,magnaRSC.getText(),premiumRSC.getText(),diselRSC.getText());
+                  //        if(valida ==1)
+                  //            valida = lbd.updateMGasolinas(Foliodesolicitud, Fecha2, perApoyo, Fecha2)
+                      }
+                    else{
+        JOptionPane.showMessageDialog(null,"Hubo un error en el proceso, no se pudo guardar el registro debido "
+                + "\na que el folio ingresado ya existe, por favor ingrese un nuevo folio.");
+        }
+                      lbd.closeConnection();
+                  }
+                  else
+                  {
+                      JOptionPane.showMessageDialog(null,"El nombre del Tecnico y del personal de apoyo son requeridos");
+                  }
+              }
+              else
+              {
+                  JOptionPane.showMessageDialog(null,"Habilite los campos para ingresar el nombre del Técnico y del personal de apoyo");
+              }
+
+    
+          }
+          else
+          {
+              JOptionPane.showMessageDialog(null,"Por favor, Complete todos los campos antes de guardar");
+          }
+
+       
+//       Date FechaPropuesta=fechaPropuestaRSC.getDate();
+//       DateFormat F=new SimpleDateFormat("dd-MM-yyyy");
+//       FechaPropuesta2=F.format(FechaPropuesta);
+       
+    }//GEN-LAST:event_guardarRSCActionPerformed
+
+    private void observacionesRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observacionesRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_observacionesRSCActionPerformed
+
+    private void folioSolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioSolicitudRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_folioSolicitudRSCActionPerformed
+
+    private void tiposolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiposolicitudRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tiposolicitudRSCActionPerformed
+
+    private void referenciaSolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_referenciaSolicitudRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_referenciaSolicitudRSCActionPerformed
+
+    private void tecnicoRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tecnicoRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tecnicoRSCActionPerformed
+
+    private void razonSocialRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_razonSocialRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_razonSocialRSCActionPerformed
+
+    private void estacionRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estacionRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_estacionRSCActionPerformed
+
+    private void jCheckBoxPApoyoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxPApoyoActionPerformed
+        //jCheckBoxTecnicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxPApoyoActionPerformed
+
+    private void noEstacionRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noEstacionRSCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionRSCActionPerformed
 
     private void noEstacionRSCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyPressed
 Object  Datos[]=null;
 if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
-String idestacion=noEstacionRSC.getText();
- 
+ String idestacion=(String) noEstacionRSC.getSelectedItem();
 int validaEstacion = 0;
 
        lbd.openConnection();
@@ -581,84 +743,22 @@ int validaEstacion = 0;
                                                      emailRSC.setText((String)Datos[10]);
                                                        
                                                      
-                                                     
+                                                                                                          
                }
  
 }
         // TODO add your handling code here:
     }//GEN-LAST:event_noEstacionRSCKeyPressed
 
-    private void guardarRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarRSCActionPerformed
-    String  Foliodesolicitud,Tipodesolicitud,Fecha2, NoEstacion,/*Usuario,*/FechaPropuesta2;
-    String ReferenciadeSolicitud,Observaciones,Tecnico;
-    String   total_mangueras;
-    //Jose Luis Caamal Ic
-    String perApoyo = "";
-
-    Foliodesolicitud=folioSolicitudRSC.getText();
-    Tipodesolicitud=(String)tiposolicitudRSC.getSelectedItem();
- 
-          Date  fecha=fechaRCS.getDate();
-          DateFormat f=new SimpleDateFormat("dd-MM-yyyy");
-          Fecha2=f.format(fecha);
-       
-//       Date FechaPropuesta=fechaPropuestaRSC.getDate();
-//       DateFormat F=new SimpleDateFormat("dd-MM-yyyy");
-//       FechaPropuesta2=F.format(FechaPropuesta);
-       
-       
- 
-    NoEstacion=noEstacionRSC.getText();
-    //Usuario=solicitanteRSC.getText();
-   //Usuario=mtu.getNombreUsuario();
- 
- 
-    ReferenciadeSolicitud=referenciaSolicitudRSC.getText();
-    Observaciones=observacionesRSC.getText();
-    Tecnico=tecnicoRSC.getText();
-    perApoyo = personalApoyo.getText();
-    total_mangueras=manguerasaVerificarRSC.getText();
-    
-    int valida = 0;
-    lbd.openConnection();
-    /*Se añade la misma fecha para ambos campos*/
-    //lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, FechaPropuesta2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones);
-    valida = lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, Fecha2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones,perApoyo);
-    if(valida == 1)
-    {
-        valida = lbd.guardarMangueras(Foliodesolicitud,total_mangueras,magnaRSC.getText(),premiumRSC.getText(),diselRSC.getText());
-//        if(valida ==1)
-//            valida = lbd.updateMGasolinas(Foliodesolicitud, Fecha2, perApoyo, Fecha2)
-    }
-    else{
-        JOptionPane.showMessageDialog(null,"Hubo un error en el proceso, no se pudo guardar el registro debido "
-                + "\na que el folio ingresado ya existe, por favor ingrese un nuevo folio.");
-    }
-    lbd.closeConnection();
- 
-
-    }//GEN-LAST:event_guardarRSCActionPerformed
-
     private void noEstacionRSCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyTyped
 char solonumero=evt.getKeyChar();
-
-//if(Character.isLetter(solonumero)){
-//        getToolkit().beep();
-//        evt.consume();
-//        JOptionPane.showMessageDialog(rootPane, "Ingresar solo numeros");}
+// TODO add your handling code here:
     }//GEN-LAST:event_noEstacionRSCKeyTyped
 
-    private void observacionesRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observacionesRSCActionPerformed
+     private void jCheckBoxTecnicoActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        //jCheckBoxTecnicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_observacionesRSCActionPerformed
-
-    private void noEstacionRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noEstacionRSCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_noEstacionRSCActionPerformed
-
-    private void folioSolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioSolicitudRSCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_folioSolicitudRSCActionPerformed
 
     private void folioSolicitudRSCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_folioSolicitudRSCKeyPressed
         // TODO add your handling code here:
@@ -688,9 +788,6 @@ char solonumero=evt.getKeyChar();
            
     }//GEN-LAST:event_folioSolicitudRSCKeyPressed
 
-    private void tiposolicitudRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiposolicitudRSCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tiposolicitudRSCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -736,7 +833,7 @@ char solonumero=evt.getKeyChar();
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField magnaRSC;
     private javax.swing.JTextField manguerasaVerificarRSC;
-    private javax.swing.JTextField noEstacionRSC;
+    private javax.swing.JComboBox noEstacionRSC;
     private javax.swing.JTextField nombreSolicitanteRSC;
     private javax.swing.JTextField observacionesRSC;
     private javax.swing.JTextField personalApoyo;

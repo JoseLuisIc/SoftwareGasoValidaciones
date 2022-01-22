@@ -906,6 +906,39 @@ public void EliminarHolograma(String Holograma){
         return aux;
         
     }      
+        /*obtener numero de estaciones
+        Author: Luis Angel
+        Fecha: 18/01/2021
+      Obtiene numero de estacion*/
+        
+         public List <String> obtenerNoEstacion(){
+            List <String> listaAux = new ArrayList<String>();
+                try{
+                    String Query = "";
+                    Query = "SELECT idestacion FROM tabla_clientes ";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                   
+
+                    while (res.next())
+                    {
+                            listaAux.add(res.getString("idestacion"));
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+       
+            return listaAux;
+        
+        }
     /*obtenerValidacionFolioEstacion
         Author: Jose Luis Caamal Ic
         Fecha: 13/12/2020
@@ -3713,7 +3746,7 @@ public String obtenerEstacionDeFolio(String idFolio){
             ppm.setString(63, modeloIMangueras.getQv_gmax());
             ppm.setString(64, modeloIMangueras.getQv_gmed());
             ppm.setString(65, modeloIMangueras.getQv_gmin());
-            ppm.setString(66, modeloIMangueras.getResultados_ml1());
+            ppm.setString(66, modeloIMangueras.getRestultados_ml1());
             ppm.setString(67, modeloIMangueras.getResultados_ml2());         
             ppm.executeUpdate();
             //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
@@ -3728,7 +3761,43 @@ public String obtenerEstacionDeFolio(String idFolio){
         return validaMagueras;
     }
 
-    
+        public List <String> obtenerFoliosdeSolicitud() 
+                {
+                List <String> listaAux = new ArrayList<String>();
+                try{
+                    String Query = "";
+                    Query="SELECT folio_solicitud FROM tabla_registro_solicitud";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                     
+                    while (res.next())
+                    {
+                        System.out.println(res.getString("folio_solicitud"));
+                        listaAux.add(res.getString("folio_solicitud"));
+                        /*if(tipoConsulta==2)
+                            listaAux.add(res.getString("id_Termo"));
+                        if(tipoConsulta==1 || tipoConsulta == 3){ //Se añade el tipoConsulta 3 07/05/2021 JLCI
+                            listaAux.add("Marca:"+res.getString("marca"));
+                            listaAux.add("Modelo:"+res.getString("modelo"));
+                            listaAux.add("Serie:"+res.getString("serie"));
+                        }*/
+                            
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+        
+        return listaAux;
+        
+    }
     
 }
 //Final de LibreriaBDControlador.

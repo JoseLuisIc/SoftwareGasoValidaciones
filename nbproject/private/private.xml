@@ -5,7 +5,7 @@
             <url>src/Vista/Solicitud/registroSolicitudContrato.java</url>
             <bookmark id="1">
                 <name/>
-                <line>28</line>
+                <line>30</line>
                 <key/>
             </bookmark>
         </file>
@@ -22,7 +22,9 @@
         <group>
             <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Dictamen/catalogoDocumentoDictamen.java</file>
             <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Solicitud/registroSolicitudContrato.java</file>
+            <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Controlador/datosDictamen.java</file>
             <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Controlador/LibreriaBDControlador.java</file>
+            <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Solicitud/catalogoSolicitud.java</file>
             <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/InspeccionDeMedicion/catalogoInspeccionDeMedicion.java</file>
         </group>
     </open-files>

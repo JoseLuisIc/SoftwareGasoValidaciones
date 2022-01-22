@@ -225,45 +225,45 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         campoCumpleD = new javax.swing.JCheckBox();
         campoCumpleE = new javax.swing.JCheckBox();
         campoCumpleF = new javax.swing.JCheckBox();
-        campoMarcaA = new javax.swing.JComboBox<>();
-        campoMarcaB = new javax.swing.JComboBox<>();
-        campoMarcaC = new javax.swing.JComboBox<>();
-        campoMarcaD = new javax.swing.JComboBox<>();
-        campoMarcaE = new javax.swing.JComboBox<>();
-        campoMarcaF = new javax.swing.JComboBox<>();
-        campoSerieA = new javax.swing.JComboBox<>();
-        campoSerieB = new javax.swing.JComboBox<>();
-        campoSerieC = new javax.swing.JComboBox<>();
-        campoSerieD = new javax.swing.JComboBox<>();
-        campoSerieE = new javax.swing.JComboBox<>();
-        campoSerieF = new javax.swing.JComboBox<>();
-        campoProfecoA = new javax.swing.JComboBox<>();
-        campoProfecoB = new javax.swing.JComboBox<>();
-        campoProfecoC = new javax.swing.JComboBox<>();
-        campoProfecoD = new javax.swing.JComboBox<>();
-        campoProfecoE = new javax.swing.JComboBox<>();
-        campoProfecoF = new javax.swing.JComboBox<>();
-        campoUVAE = new javax.swing.JComboBox<>();
-        campoUVAD = new javax.swing.JComboBox<>();
-        campoUVAC = new javax.swing.JComboBox<>();
-        campoUVAA = new javax.swing.JComboBox<>();
-        campoUVAF = new javax.swing.JComboBox<>();
-        campoUVAB = new javax.swing.JComboBox<>();
+        campoMarcaA = new javax.swing.JComboBox<String>();
+        campoMarcaB = new javax.swing.JComboBox<String>();
+        campoMarcaC = new javax.swing.JComboBox<String>();
+        campoMarcaD = new javax.swing.JComboBox<String>();
+        campoMarcaE = new javax.swing.JComboBox<String>();
+        campoMarcaF = new javax.swing.JComboBox<String>();
+        campoSerieA = new javax.swing.JComboBox<String>();
+        campoSerieB = new javax.swing.JComboBox<String>();
+        campoSerieC = new javax.swing.JComboBox<String>();
+        campoSerieD = new javax.swing.JComboBox<String>();
+        campoSerieE = new javax.swing.JComboBox<String>();
+        campoSerieF = new javax.swing.JComboBox<String>();
+        campoProfecoA = new javax.swing.JComboBox<String>();
+        campoProfecoB = new javax.swing.JComboBox<String>();
+        campoProfecoC = new javax.swing.JComboBox<String>();
+        campoProfecoD = new javax.swing.JComboBox<String>();
+        campoProfecoE = new javax.swing.JComboBox<String>();
+        campoProfecoF = new javax.swing.JComboBox<String>();
+        campoUVAE = new javax.swing.JComboBox<String>();
+        campoUVAD = new javax.swing.JComboBox<String>();
+        campoUVAC = new javax.swing.JComboBox<String>();
+        campoUVAA = new javax.swing.JComboBox<String>();
+        campoUVAF = new javax.swing.JComboBox<String>();
+        campoUVAB = new javax.swing.JComboBox<String>();
         jLabel491 = new javax.swing.JLabel();
-        campoModeloA = new javax.swing.JComboBox<>();
-        campoModeloB = new javax.swing.JComboBox<>();
-        campoModeloC = new javax.swing.JComboBox<>();
-        campoModeloD = new javax.swing.JComboBox<>();
-        campoModeloE = new javax.swing.JComboBox<>();
-        campoModeloF = new javax.swing.JComboBox<>();
-        campoDispensario = new javax.swing.JComboBox<>();
+        campoModeloA = new javax.swing.JComboBox<String>();
+        campoModeloB = new javax.swing.JComboBox<String>();
+        campoModeloC = new javax.swing.JComboBox<String>();
+        campoModeloD = new javax.swing.JComboBox<String>();
+        campoModeloE = new javax.swing.JComboBox<String>();
+        campoModeloF = new javax.swing.JComboBox<String>();
+        campoDispensario = new javax.swing.JComboBox<String>();
         jLabel492 = new javax.swing.JLabel();
-        campoPrecintoA = new javax.swing.JComboBox<>();
-        campoPrecintoF = new javax.swing.JComboBox<>();
-        campoPrecintoB = new javax.swing.JComboBox<>();
-        campoPrecintoE = new javax.swing.JComboBox<>();
-        campoPrecintoD = new javax.swing.JComboBox<>();
-        campoPrecintoC = new javax.swing.JComboBox<>();
+        campoPrecintoA = new javax.swing.JComboBox<String>();
+        campoPrecintoF = new javax.swing.JComboBox<String>();
+        campoPrecintoB = new javax.swing.JComboBox<String>();
+        campoPrecintoE = new javax.swing.JComboBox<String>();
+        campoPrecintoD = new javax.swing.JComboBox<String>();
+        campoPrecintoC = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         campoEstacion = new javax.swing.JLabel();
@@ -322,7 +322,7 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         campoCumpleF.setText("Cumple");
 
         campoMarcaA.setEditable(true);
-        campoMarcaA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoMarcaA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         campoMarcaA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoMarcaAActionPerformed(evt);
@@ -338,16 +338,16 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         });
 
         campoMarcaC.setEditable(true);
-        campoMarcaC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoMarcaC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoMarcaD.setEditable(true);
-        campoMarcaD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoMarcaD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoMarcaE.setEditable(true);
-        campoMarcaE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoMarcaE.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoMarcaF.setEditable(true);
-        campoMarcaF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoMarcaF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoSerieA.setEditable(true);
         campoSerieA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -358,22 +358,22 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         });
 
         campoSerieB.setEditable(true);
-        campoSerieB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoSerieB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoSerieC.setEditable(true);
-        campoSerieC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoSerieC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoSerieD.setEditable(true);
-        campoSerieD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoSerieD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoSerieE.setEditable(true);
-        campoSerieE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoSerieE.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoSerieF.setEditable(true);
-        campoSerieF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoSerieF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoProfecoA.setEditable(true);
-        campoProfecoA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoProfecoA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         campoProfecoA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoProfecoAActionPerformed(evt);
@@ -381,31 +381,31 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         });
 
         campoProfecoB.setEditable(true);
-        campoProfecoB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoProfecoB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoProfecoC.setEditable(true);
-        campoProfecoC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoProfecoC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoProfecoD.setEditable(true);
-        campoProfecoD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoProfecoD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoProfecoE.setEditable(true);
-        campoProfecoE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoProfecoE.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoProfecoF.setEditable(true);
-        campoProfecoF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoProfecoF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoUVAE.setEditable(true);
-        campoUVAE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoUVAE.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoUVAD.setEditable(true);
-        campoUVAD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoUVAD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoUVAC.setEditable(true);
-        campoUVAC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoUVAC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoUVAA.setEditable(true);
-        campoUVAA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoUVAA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         campoUVAA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoUVAAActionPerformed(evt);
@@ -413,10 +413,10 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         });
 
         campoUVAF.setEditable(true);
-        campoUVAF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoUVAF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoUVAB.setEditable(true);
-        campoUVAB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoUVAB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel491.setText("Modelo");
 
@@ -429,26 +429,31 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         });
 
         campoModeloB.setEditable(true);
-        campoModeloB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoModeloB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoModeloC.setEditable(true);
-        campoModeloC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoModeloC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoModeloD.setEditable(true);
-        campoModeloD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoModeloD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoModeloE.setEditable(true);
-        campoModeloE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoModeloE.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoModeloF.setEditable(true);
-        campoModeloF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoModeloF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoModeloF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoModeloFActionPerformed(evt);
+            }
+        });
 
-        campoDispensario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoDispensario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel492.setText("Precinto");
 
         campoPrecintoA.setEditable(true);
-        campoPrecintoA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoPrecintoA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         campoPrecintoA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoPrecintoAActionPerformed(evt);
@@ -456,13 +461,13 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         });
 
         campoPrecintoF.setEditable(true);
-        campoPrecintoF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoPrecintoF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoPrecintoB.setEditable(true);
-        campoPrecintoB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoPrecintoB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoPrecintoE.setEditable(true);
-        campoPrecintoE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoPrecintoE.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         campoPrecintoE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoPrecintoEActionPerformed(evt);
@@ -470,10 +475,10 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         });
 
         campoPrecintoD.setEditable(true);
-        campoPrecintoD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoPrecintoD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoPrecintoC.setEditable(true);
-        campoPrecintoC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoPrecintoC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -794,7 +799,7 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         String miDispensarioActual=(String) campoDispensario.getSelectedItem();
         System.out.println("Dispensario " +miDispensarioActual);
         dispensarioActual=Integer.parseInt(miDispensarioActual);
-
+ 
         String campoMarcaADocumento = (String) campoMarcaA.getSelectedItem();
         String campoMarcaBDocumento = (String) campoMarcaB.getSelectedItem();
         String campoMarcaCDocumento = (String) campoMarcaC.getSelectedItem();
@@ -968,6 +973,9 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
     private void campoModeloAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoModeloAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoModeloAActionPerformed
+    private void campoModeloFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoModeloFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoModeloFActionPerformed
 
     /**
      * @param args the command line arguments
