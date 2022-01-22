@@ -1,38 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-<<<<<<< HEAD
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
         <file>
-            <url>src/Controlador/LibreriaBDControlador.java</url>
+            <url>src/Vista/Solicitud/registroSolicitudContrato.java</url>
             <bookmark id="1">
                 <name/>
-                <line>671</line>
+                <line>28</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/Controlador/LibreriaBDControlador.java</url>
+            <bookmark id="2">
+                <name/>
+                <line>3526</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Vista/InspeccionDeMedicion/catalogoInspeccionDeMedicion.java</file>
-            <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Modelo/modeloInspeccionMedicion.java</file>
-=======
-            <file>file:/C:/Users/reyan/OneDrive/Escritorio/git/SoftwareGasoValidaciones/src/Vista/Solicitud/registroSolicitudContrato.java</file>
-            <file>file:/C:/Users/reyan/OneDrive/Escritorio/git/SoftwareGasoValidaciones/src/Controlador/LibreriaBDControlador.java</file>
-            <file>file:/C:/Users/reyan/OneDrive/Escritorio/git/SoftwareGasoValidaciones/src/Vista/Dictamen/catalogoDocumentoDictamen.java</file>
->>>>>>> 5d4446931a80d47f37e49de5cc4eaffbc54148b7
-=======
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/E:/Git/SoftwareGasoValidaciones/src/Vista/Dictamen/catalogoDocumentoDictamen.java</file>
-            <file>file:/E:/Git/SoftwareGasoValidaciones/src/Controlador/LibreriaToolsControlador.java</file>
-            <file>file:/E:/Git/SoftwareGasoValidaciones/src/Vista/Solicitud/catalogoSolicitud.java</file>
-            <file>file:/E:/Git/SoftwareGasoValidaciones/src/Vista/Principal/ventanaPrincipal.java</file>
-            <file>file:/E:/Git/SoftwareGasoValidaciones/src/Controlador/LibreriaBDControlador.java</file>
-            <file>file:/E:/Git/SoftwareGasoValidaciones/src/Vista/InspeccionDeMedicion/catalogoInspeccionDeMedicion.java</file>
-            <file>file:/E:/Git/SoftwareGasoValidaciones/src/Vista/Solicitud/registroSolicitudContrato.java</file>
->>>>>>> f3b6447726602e3714578494c282ea5347226ed7
+            <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Controlador/LibreriaBDControlador.java</file>
+            <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Controlador/propiedades.properties</file>
+            <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Vista/Dictamen/catalogoDocumentoDictamen.java</file>
+            <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Vista/Solicitud/registroSolicitudContrato.java</file>
         </group>
     </open-files>
 </project-private>
