@@ -906,6 +906,39 @@ public void EliminarHolograma(String Holograma){
         return aux;
         
     }      
+        /*obtener numero de estaciones
+        Author: Luis Angel
+        Fecha: 18/01/2021
+      Obtiene numero de estacion*/
+        
+         public List <String> obtenerNoEstacion(){
+            List <String> listaAux = new ArrayList<String>();
+                try{
+                    String Query = "";
+                    Query = "SELECT idestacion FROM tabla_clientes ";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                   
+
+                    while (res.next())
+                    {
+                            listaAux.add(res.getString("idestacion"));
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+       
+            return listaAux;
+        
+        }
     /*obtenerValidacionFolioEstacion
         Author: Jose Luis Caamal Ic
         Fecha: 13/12/2020
