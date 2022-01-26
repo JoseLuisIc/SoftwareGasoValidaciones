@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.modeloInspeccionMedicion;
 import Modelo.modeloTablaUsuario;
 import Modelo.modeloVerificacionVisual;
 import java.io.IOException;
@@ -905,6 +906,39 @@ public void EliminarHolograma(String Holograma){
         return aux;
         
     }      
+        /*obtener numero de estaciones
+        Author: Luis Angel
+        Fecha: 18/01/2021
+      Obtiene numero de estacion*/
+        
+         public List <String> obtenerNoEstacion(){
+            List <String> listaAux = new ArrayList<String>();
+                try{
+                    String Query = "";
+                    Query = "SELECT idestacion FROM tabla_clientes ";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                   
+
+                    while (res.next())
+                    {
+                            listaAux.add(res.getString("idestacion"));
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+       
+            return listaAux;
+        
+        }
     /*obtenerValidacionFolioEstacion
         Author: Jose Luis Caamal Ic
         Fecha: 13/12/2020
@@ -3555,7 +3589,7 @@ public String obtenerEstacionDeFolio(String idFolio){
                 pps.setString(10,modeloVVisual.getDisp_despacho());
                 pps.setString(11,modeloVVisual.getGolpes());
                 pps.setString(12,modeloVVisual.getTiempo());
-                pps.executeUpdate();
+                pps.executeUpdate();             
                 //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
                 System.out.println("Datos almacenados de forma exitosa");
                 valida = 1;
@@ -3566,6 +3600,203 @@ public String obtenerEstacionDeFolio(String idFolio){
                 valida = 0;
         }
         return valida;
+    }
+     
+    /*Magueras
+    Hecho por Victor Chan
+    19/09/2021
+     */
+    public int insertarModeloInspeccionMedicionMangueras(modeloInspeccionMedicion modeloIMangueras) {
+        int validaMagueras = 0;
+        try {
+
+            PreparedStatement ppm = Conexion.prepareStatement("INSERT INTO "
+                    + "tabla_inspeccion_medicion(id_inspeccion_medicioncol,"
+                    + "folio,"
+                    + "n_estacion,"
+                    + "n_dispensario,"
+                    + "termometro,"
+                    + "cronometro,"
+                    + "lado_manguera,"
+                    + "calc_profeco,"
+                    + "calc_uva,"
+                    + "precinto,"
+                    + "V20,"
+                    + "KC,"
+                    + "gasto_max_p1,"
+                    + "gasto_max_p2,"
+                    + "gasto_max_p3,"
+                    + "gasto_med_p1,"
+                    + "gasto_med_p2,"
+                    + "gasto_med_p3,"
+                    + "gasto_min_p1,"
+                    + "gasto_min_p2,"
+                    + "gasto_min_p3,"
+                    + "gasto_max_lc,"
+                    + "gasto_med_lc,"
+                    + "gasto_min_lc,"
+                    + "gasto_max_er,"
+                    + "gasto_med_er,"
+                    + "gasto_min_er,"
+                    + "temp_max_p1,"
+                    + "temp_med_p1,"
+                    + "temp_min_p1,"
+                    + "temp_max_p2,"
+                    + "temp_med_p2,"
+                    + "temp_min_p2,"
+                    + "temp_max_p3,"
+                    + "temp_med_p3,"
+                    + "temp_min_p3,"
+                    + "i_max_p1,"
+                    + "i_med_p1,"
+                    + "i_min_p1,"
+                    + "i_max_p2,"
+                    + "i_med_p2,"
+                    + "i_min_p2,"
+                    + "i_max_p3,"
+                    + "i_med_p3,"
+                    + "i_min_p3,"
+                    + "i_max_lc,"
+                    + "i_med_lc,"
+                    + "i_min_lc,"
+                    + "tiempo_max_p1,"
+                    + "tiempo_med_p1,"
+                    + "tiempo_min_p1,"
+                    + "tiempo_max_p2,"
+                    + "tiempo_med_p2,"
+                    + "tiempo_min_p2,"
+                    + "tiempo_max_p3,"
+                    + "tiempo_med_p3,"
+                    + "tiempo_min_p3,"
+                    + "vcmv_gmax,"
+                    + "vcmv_gmed,"
+                    + "vcmv_gmin,"
+                    + "e_gmax,"
+                    + "e_gmed,"
+                    + "e_gmin,"
+                    + "qv_gmax,"
+                    + "qv_gmed,"
+                    + "qv_gmin,"
+                    + "restultados_ml1,"
+                    + "resultados_ml2)"
+                    + "VALUES (default,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ");
+            //Aquí le envío la información debe coincidir con el total de ? = 67 el default envía el dato por defecto
+            ppm.setString(1, modeloIMangueras.getFolio());
+            ppm.setString(2, modeloIMangueras.getN_estacion());
+            ppm.setString(3, modeloIMangueras.getN_dispensario());
+            ppm.setString(4, modeloIMangueras.getTermometro());
+            ppm.setString(5, modeloIMangueras.getCronometro());
+            ppm.setString(6, modeloIMangueras.getLado_manguera());
+            ppm.setString(7, modeloIMangueras.getCalc_profeco());
+            ppm.setString(8, modeloIMangueras.getCalc_uva());
+            ppm.setString(9, modeloIMangueras.getPrecinto());
+            ppm.setString(10, modeloIMangueras.getV20());
+            ppm.setString(11, modeloIMangueras.getKC());
+            ppm.setString(12, modeloIMangueras.getGasto_max_p1());
+            ppm.setString(13, modeloIMangueras.getGasto_max_p2());
+            ppm.setString(14, modeloIMangueras.getGasto_max_p3());
+            ppm.setString(15, modeloIMangueras.getGasto_med_p1());
+            ppm.setString(16, modeloIMangueras.getGasto_med_p2());
+            ppm.setString(17, modeloIMangueras.getGasto_med_p3());
+            ppm.setString(18, modeloIMangueras.getGasto_min_p1());
+            ppm.setString(19, modeloIMangueras.getGasto_min_p2());
+            ppm.setString(20, modeloIMangueras.getGasto_min_p3());
+            ppm.setString(21, modeloIMangueras.getGasto_max_lc());
+            ppm.setString(22, modeloIMangueras.getGasto_med_lc());
+            ppm.setString(23, modeloIMangueras.getGasto_min_lc());
+            ppm.setString(24, modeloIMangueras.getGasto_max_er());
+            ppm.setString(25, modeloIMangueras.getGasto_med_er());
+            ppm.setString(26, modeloIMangueras.getGasto_min_er());
+            ppm.setString(27, modeloIMangueras.getTemp_max_p1());
+            ppm.setString(28, modeloIMangueras.getTemp_med_p1());
+            ppm.setString(29, modeloIMangueras.getTemp_min_p1());
+            ppm.setString(30, modeloIMangueras.getTemp_max_p2());
+            ppm.setString(31, modeloIMangueras.getTemp_med_p2());
+            ppm.setString(32, modeloIMangueras.getTemp_min_p2());
+            ppm.setString(33, modeloIMangueras.getTemp_max_p3());
+            ppm.setString(34, modeloIMangueras.getTemp_med_p3());
+            ppm.setString(35, modeloIMangueras.getTemp_min_p3());
+            ppm.setString(36, modeloIMangueras.getI_max_p1());
+            ppm.setString(37, modeloIMangueras.getI_med_p1());
+            ppm.setString(38, modeloIMangueras.getI_min_p1());
+            ppm.setString(39, modeloIMangueras.getI_max_p2());
+            ppm.setString(40, modeloIMangueras.getI_med_p2());
+            ppm.setString(41, modeloIMangueras.getI_min_p2());
+            ppm.setString(42, modeloIMangueras.getI_max_p3());
+            ppm.setString(43, modeloIMangueras.getI_med_p3());
+            ppm.setString(44, modeloIMangueras.getI_min_p3());
+            ppm.setString(45, modeloIMangueras.getI_max_lc());
+            ppm.setString(46, modeloIMangueras.getI_med_lc());
+            ppm.setString(47, modeloIMangueras.getI_min_lc());
+            ppm.setString(48, modeloIMangueras.getTiempo_max_p1());
+            ppm.setString(49, modeloIMangueras.getTiempo_med_p1());
+            ppm.setString(50, modeloIMangueras.getTiempo_min_p1());
+            ppm.setString(51, modeloIMangueras.getTiempo_max_p2());
+            ppm.setString(52, modeloIMangueras.getTiempo_med_p2());
+            ppm.setString(53, modeloIMangueras.getTiempo_min_p2());
+            ppm.setString(54, modeloIMangueras.getTiempo_max_p3());
+            ppm.setString(55, modeloIMangueras.getTiempo_med_p3());
+            ppm.setString(56, modeloIMangueras.getTiempo_min_p3());
+            ppm.setString(57, modeloIMangueras.getVcmv_gmax());
+            ppm.setString(58, modeloIMangueras.getVcmv_gmed());
+            ppm.setString(59, modeloIMangueras.getVcmv_gmin());
+            ppm.setString(60, modeloIMangueras.getE_gmax());
+            ppm.setString(61, modeloIMangueras.getE_gmed());
+            ppm.setString(62, modeloIMangueras.getE_gmin());
+            ppm.setString(63, modeloIMangueras.getQv_gmax());
+            ppm.setString(64, modeloIMangueras.getQv_gmed());
+            ppm.setString(65, modeloIMangueras.getQv_gmin());
+            ppm.setString(66, modeloIMangueras.getRestultados_ml1());
+            ppm.setString(67, modeloIMangueras.getResultados_ml2());         
+            ppm.executeUpdate();
+            //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
+            System.out.println("Datos almacenados de forma exitosa");
+            validaMagueras = 1;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            //JOptionPane.showMessageDialog(null, "Error en el almacenamiento de datos"+ex);
+            System.out.println("Error en el almacenamiento de datos" + ex);
+            validaMagueras = 0;
+        }
+        return validaMagueras;
+    }
+
+        public List <String> obtenerFoliosdeSolicitud() 
+                {
+                List <String> listaAux = new ArrayList<String>();
+                try{
+                    String Query = "";
+                    Query="SELECT folio_solicitud FROM tabla_registro_solicitud";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                     
+                    while (res.next())
+                    {
+                        System.out.println(res.getString("folio_solicitud"));
+                        listaAux.add(res.getString("folio_solicitud"));
+                        /*if(tipoConsulta==2)
+                            listaAux.add(res.getString("id_Termo"));
+                        if(tipoConsulta==1 || tipoConsulta == 3){ //Se añade el tipoConsulta 3 07/05/2021 JLCI
+                            listaAux.add("Marca:"+res.getString("marca"));
+                            listaAux.add("Modelo:"+res.getString("modelo"));
+                            listaAux.add("Serie:"+res.getString("serie"));
+                        }*/
+                            
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+        
+        return listaAux;
+        
     }
     
 }

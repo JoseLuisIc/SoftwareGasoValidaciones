@@ -29,7 +29,7 @@ public class modeloVerificacionVisual {
     private int id;
     private String folio;
     private String n_estacion;
-    private String dispensario;
+    private String n_dispensario;
     private String leyendas;
     private String placa;
     private String caratula;
@@ -47,7 +47,7 @@ public class modeloVerificacionVisual {
         this.id = id;
         this.folio = folio;
         this.n_estacion = n_estacion;
-        this.dispensario = dispensario;
+        this.n_dispensario = dispensario;
         this.leyendas = leyendas;
         this.placa = placa;
         this.caratula = caratula;
@@ -86,11 +86,11 @@ public class modeloVerificacionVisual {
     }
 
     public String getDispensario() {
-        return dispensario;
+        return n_dispensario;
     }
 
     public void setDispensario(String dispensario) {
-        this.dispensario = dispensario;
+        this.n_dispensario = dispensario;
     }
 
     public String getLeyendas() {
@@ -167,7 +167,7 @@ public class modeloVerificacionVisual {
 
     @Override
     public String toString() {
-        return "modeloVerificacionVisual{" + "id=" + id + ", folio=" + folio + ", n_estacion=" + n_estacion + ", dispensario=" + dispensario + ", leyendas=" + leyendas + ", placa=" + placa + ", caratula=" + caratula + ", signo=" + signo + ", disp_contador=" + disp_contador + ", mecanismo=" + mecanismo + ", disp_despacho=" + disp_despacho + ", golpes=" + golpes + ", tiempo=" + tiempo + '}';
+        return "modeloVerificacionVisual{" + "id=" + id + ", folio=" + folio + ", n_estacion=" + n_estacion + ", dispensario=" + n_dispensario + ", leyendas=" + leyendas + ", placa=" + placa + ", caratula=" + caratula + ", signo=" + signo + ", disp_contador=" + disp_contador + ", mecanismo=" + mecanismo + ", disp_despacho=" + disp_despacho + ", golpes=" + golpes + ", tiempo=" + tiempo + '}';
     }
 
 
