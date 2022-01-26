@@ -96,7 +96,12 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
          jComboBoxTermometro.setModel((new javax.swing.DefaultComboBoxModel<>(lista)));
          String item_seleccionado = jComboBoxTermometro.getSelectedItem().toString();
          listaAux = lbd.obtenerTermometros(1,item_seleccionado);
-         datosTermometro.setText(listaAux.toString());
+        //Luis Angel Soto Reyes pasa los datos a string para quitar corchetes 
+         String datosArray = "";
+        for (int i=0;i<=2;i++) {
+            datosArray +=listaAux.get(i)+", ";
+        }
+         datosTermometro.setText(limpia(datosArray.toString()));
          //lleno el combo de cronometros
          listaAux = lbd.obtenerCronometros(2,"");
          lista = new String[listaAux.size()];
@@ -104,7 +109,12 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
          jComboBoxCronometro.setModel((new javax.swing.DefaultComboBoxModel<>(lista)));
          item_seleccionado = jComboBoxCronometro.getSelectedItem().toString();
          listaAux = lbd.obtenerCronometros(1,item_seleccionado);
-         datosCronometro.setText(listaAux.toString());
+         //Luis Angel Soto Reyes pasa los datos a string para quitar corchetes 
+         String datosArray2 = "";
+        for (int i=0;i<=2;i++) {
+            datosArray2 +=listaAux.get(i)+", ";
+        }
+         datosCronometro.setText(limpia(datosArray2.toString()));
          //Llenado automático de combobox y espacios de información del área de las jarras.
          // Hecho por Ángel González Ríncón
          listaAux = lbd.obtenerJarrasId(2,"");
@@ -291,7 +301,15 @@ operacionesdeInspeccionMedicion();
          }  else{
              bloquearaMangueras();}
     }
-    
+     //Luis Angel Soto Reyes 
+    //quita la ultima coma del array
+   private static String limpia(String datosArray){
+     datosArray = datosArray.trim();
+     if (datosArray != null && datosArray.length() > 0 && datosArray.charAt(datosArray.length() - 1) == ',') {           
+       datosArray = datosArray.substring(0, datosArray.length() - 1);              
+     }
+     return datosArray;
+}  
     private   void entraraMangueras() {
               //mangueraA
                for(Component aM:jPanel2.getComponents()) {
