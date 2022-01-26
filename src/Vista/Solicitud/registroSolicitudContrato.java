@@ -453,6 +453,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
 
         noEstacionRSC.setEditable(true);
         noEstacionRSC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        noEstacionRSC.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                noEstacionRSCItemStateChanged(evt);
+            }
+        });
         noEstacionRSC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 noEstacionRSCActionPerformed(evt);
@@ -704,9 +709,19 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
     }//GEN-LAST:event_noEstacionRSCActionPerformed
 
     private void noEstacionRSCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyPressed
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionRSCKeyPressed
+
+    private void noEstacionRSCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyTyped
+char solonumero=evt.getKeyChar();
+// TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionRSCKeyTyped
+
+    private void noEstacionRSCItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_noEstacionRSCItemStateChanged
 Object  Datos[]=null;
-if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
- String idestacion=(String) noEstacionRSC.getSelectedItem();
+if(evt.getStateChange()== java.awt.event.ItemEvent.SELECTED){
+ String idestacion=(String) noEstacionRSC.getSelectedItem(); 
 int validaEstacion = 0;
 
        lbd.openConnection();
@@ -744,14 +759,8 @@ int validaEstacion = 0;
                                                                                                           
                }
  
-}
-        // TODO add your handling code here:
-    }//GEN-LAST:event_noEstacionRSCKeyPressed
-
-    private void noEstacionRSCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noEstacionRSCKeyTyped
-char solonumero=evt.getKeyChar();
-// TODO add your handling code here:
-    }//GEN-LAST:event_noEstacionRSCKeyTyped
+}        // TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionRSCItemStateChanged
 
      private void jCheckBoxTecnicoActionPerformed(java.awt.event.ActionEvent evt) {                                                
         //jCheckBoxTecnicoActionPerformed
