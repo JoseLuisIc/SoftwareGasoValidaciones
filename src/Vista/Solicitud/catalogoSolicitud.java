@@ -110,7 +110,7 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         folioSolicitudCS = new javax.swing.JTextField();
-        tiposolicitudCS = new javax.swing.JComboBox<>();
+        tiposolicitudCS = new javax.swing.JComboBox<String>();
         noEstacionCS = new javax.swing.JTextField();
         buscarCS = new javax.swing.JButton();
         refrescarCS = new javax.swing.JButton();
@@ -159,8 +159,13 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
 
         jLabel12.setText("No. Estacion");
 
-        tiposolicitudCS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
+        tiposolicitudCS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
 
+        noEstacionCS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noEstacionCSActionPerformed(evt);
+            }
+        });
         noEstacionCS.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 noEstacionCSKeyTyped(evt);
@@ -214,7 +219,7 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(imprimirDictamen, javax.swing.GroupLayout.PREFERRED_SIZE, 169, Short.MAX_VALUE)
+                    .addComponent(imprimirDictamen, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                     .addComponent(agregarCS, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                     .addComponent(modificarCS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(imprimirCS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -561,6 +566,10 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
     private void refrescarCS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refrescarCS1ActionPerformed
         dispose();
     }//GEN-LAST:event_refrescarCS1ActionPerformed
+
+    private void noEstacionCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noEstacionCSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noEstacionCSActionPerformed
 
     /**
      * @param args the command line arguments
