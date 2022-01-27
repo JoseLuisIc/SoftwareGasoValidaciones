@@ -14,6 +14,7 @@ import java.util.Date;
 import Modelo.modeloTablaUsuario;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -353,6 +354,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         tecnicoRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
 
         folioSolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        folioSolicitudRSC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                folioSolicitudRSCKeyPressed(evt);
+            }
+        });
 
         noEstacionRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
         noEstacionRSC.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -628,6 +634,33 @@ char solonumero=evt.getKeyChar();
     private void observacionesRSCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observacionesRSCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_observacionesRSCActionPerformed
+
+    private void folioSolicitudRSCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_folioSolicitudRSCKeyPressed
+        // TODO add your handling code here:
+          if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
+            String folioSol = folioSolicitudRSC.getText();
+            int validaFSol = 0;
+            int validaEstacion = 0;
+            String noEstacion = "";
+            String tipoVerificacion = "";
+            lbd.openConnection();
+                validaFSol = lbd.validaFolioSolicitud(folioSol);
+                noEstacion = lbd.obtenerEstacionDeFolio(folioSol);
+                validaEstacion = lbd.obtenerEstaciones(noEstacion);
+                tipoVerificacion = lbd.obtenerTipoVerificación(folioSol, noEstacion);
+            lbd.closeConnection();
+            
+            if(validaFSol != 0 && validaEstacion != 0){
+
+                JOptionPane.showMessageDialog(null,"El folio ya esta ocupado");
+            }else{
+           
+                 evt.setSource((char) KeyEvent.VK_CLEAR);
+                tiposolicitudRSC.requestFocus();
+            }
+
+       }
+    }//GEN-LAST:event_folioSolicitudRSCKeyPressed
 
     /**
      * @param args the command line arguments
