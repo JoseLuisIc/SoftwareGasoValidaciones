@@ -295,6 +295,7 @@ operacionesdeInspeccionMedicion();
         //20-01/2022
         //Se agregan todos los folios a un ComboCox editable
         
+        
         lbd.openConnection();
         List <String> op1= lbd.obtenerFoliosdeSolicitud();
         lbd.closeConnection();
@@ -303,7 +304,9 @@ operacionesdeInspeccionMedicion();
         {
             //folio.addItem(op1.get(i));
             opciones.addItem(op1.get(i));
+            
         }
+        //System.out.println(opciones.toString());
         /*String modeloFolioLista[]= new String[op1.size()];
         modeloFolioLista= op1.toArray(modeloFolioLista);
         folio.setModel((new javax.swing.DefaultComboBoxModel<>(modeloFolioLista)));*/
@@ -9982,17 +9985,25 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                    campoTipoVerificacion.setText(tipoVerificacion);
                 }
                 else{
-                
+                    campoEstacion.setText("");
+                    campoInformacionEstacion.setText("");
+                    campoTipoVerificacion.setText("");
                 }
                 }
                 else{
 
                     JOptionPane.showMessageDialog(null,"No existe el cliente que quiere consultar.");
+                    campoEstacion.setText("");
+                    campoInformacionEstacion.setText("");
+                    campoTipoVerificacion.setText("");
                 }
             }
             else{
 
                 JOptionPane.showMessageDialog(null,"No existe el folio ó la estación que quiere imprimir.");
+                campoEstacion.setText("");
+                campoInformacionEstacion.setText("");
+                campoTipoVerificacion.setText("");
             }
        }
            
