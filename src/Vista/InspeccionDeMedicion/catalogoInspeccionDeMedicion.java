@@ -113,6 +113,7 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
          String datosArray2 = "";
         for (int i=0;i<=2;i++) {
             datosArray2 +=listaAux.get(i)+", ";
+            
         }
          datosCronometro.setText(limpia(datosArray2.toString()));
          //Llenado automático de combobox y espacios de información del área de las jarras.
@@ -9948,8 +9949,10 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 int dialogResult = JOptionPane.showConfirmDialog (null, "¿Está de acuerdo?","Warning",dialogButton);
                 if(dialogResult == JOptionPane.YES_OPTION){
                    lbd.openConnection();
-                   Object [] estacion = lbd.obtenerArrEstaciones(noEstacion);
-                   campoInformacionEstacion.setText(Arrays.toString(estacion));
+                   Object [] estacion = lbd.obtenerArrEstaciones(noEstacion);          
+               //Luis Angel Soto Reyes   
+                   String s2 = Arrays.toString(estacion).replaceAll("\\[|\\]|", "");      
+                 campoInformacionEstacion.setText(s2);  
                    mapDispensarios = lbd.obtenerDispensarios(noEstacion);
                    infoCliente = lbd.infoCliente(noEstacion); /*Obtiene la infor del cliente 10/08/2021*/
                    //this.infoCliente = infoCliente;
