@@ -1,32 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
-        <file>
-            <url>src/Vista/Solicitud/registroSolicitudContrato.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>28</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>src/Controlador/LibreriaBDControlador.java</url>
-            <bookmark id="2">
-                <name/>
-                <line>3526</line>
-                <key/>
-            </bookmark>
-        </file>
-    </editor-bookmarks>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Controlador/LibreriaBDControlador.java</file>
             <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Controlador/propiedades.properties</file>
             <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Vista/Solicitud/registroSolicitudContrato.java</file>
-=======
-            <file>file:/C:/Users/reyan/OneDrive/Escritorio/git/SoftwareGasoValidaciones/src/Vista/InspeccionDeMedicion/catalogoInspeccionDeMedicion.java</file>
->>>>>>> 4a29e08715428c525c4297509ba2b08a8cb8c39d
         </group>
     </open-files>
 </project-private>
