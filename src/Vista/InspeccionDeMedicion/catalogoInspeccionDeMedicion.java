@@ -330,6 +330,7 @@ operacionesdeInspeccionMedicion();
     private void entraonoentra(){
          if(jRadioButton21.isSelected()&&jRadioButton24.isSelected()&&jRadioButton26.isSelected()&&jRadioButton28.isSelected()&&jRadioButton30.isSelected()&&jRadioButton32.isSelected()&&jRadioButton34.isSelected()&&jRadioButton36.isSelected()&&jRadioButton38.isSelected()){
          entraraMangueras();
+         cargarOpciones();
          }  else{
              bloquearaMangueras();}
     }
@@ -468,6 +469,71 @@ xB.setEnabled(false);
 }
     }
         //SAR 12/04/21 FIN
+    
+ 
+    /*Joel Estrella
+    26-01-2022*/
+    private void cargarOpciones()
+    {
+        TextAutoCompleter precintoA,precintoB,precintoC,precintoD,precintoE,precintoF;
+        TextAutoCompleter profecoA,profecoB,profecoC,profecoD,profecoE,profecoF;
+        TextAutoCompleter uvA,uvaB,uvaC,uvaD,uvaE,uvaF;
+        lbd.openConnection();
+        List <String> listaPrecintos= lbd.obtenerNoPrecinto();
+        List <String> listaCalProfeco=lbd.obtenerCalcProfeco();
+        List <String> listaCalcUVA=lbd.obtenerCalcUVA();
+        lbd.closeConnection();
+        precintoA=new TextAutoCompleter(campoPrecintoA);
+        precintoB=new TextAutoCompleter(campoPrecintoB);
+        precintoC=new TextAutoCompleter(campoPrecintoC);
+        precintoD=new TextAutoCompleter(campoPrecintoD);
+        precintoE=new TextAutoCompleter(campoPrecintoE);
+        precintoF=new TextAutoCompleter(campoPrecintoF);
+        
+        profecoA=new TextAutoCompleter(calcProfecoA);
+        profecoB=new TextAutoCompleter(calcProfecoB);
+        profecoC=new TextAutoCompleter(calcProfecoC);
+        profecoD=new TextAutoCompleter(calcProfecoD);
+        profecoE=new TextAutoCompleter(calcProfecoE);
+        profecoF=new TextAutoCompleter(calcProfecoF);
+        
+        uvA=new TextAutoCompleter(calcUvA);
+        uvaB=new TextAutoCompleter(calcUvaB);
+        uvaC=new TextAutoCompleter(calcUvaC);
+        uvaD=new TextAutoCompleter(calcUvaD);
+        uvaE=new TextAutoCompleter(calcUvaE);
+        uvaF=new TextAutoCompleter(calcUvaF);
+        
+        for(int i=0;i<listaPrecintos.size();i++)
+        {
+            precintoA.addItem(listaPrecintos.get(i));
+            precintoB.addItem(listaPrecintos.get(i));
+            precintoC.addItem(listaPrecintos.get(i));
+            precintoD.addItem(listaPrecintos.get(i));
+            precintoE.addItem(listaPrecintos.get(i));
+            precintoF.addItem(listaPrecintos.get(i));
+
+        }
+        for(int p=0;p<listaCalProfeco.size();p++)
+        {
+            profecoA.addItem(listaCalProfeco.get(p));
+            profecoB.addItem(listaCalProfeco.get(p));
+            profecoC.addItem(listaCalProfeco.get(p));
+            profecoD.addItem(listaCalProfeco.get(p));
+            profecoE.addItem(listaCalProfeco.get(p));
+            profecoF.addItem(listaCalProfeco.get(p));
+            
+        }
+        for(int u=0;u<listaCalcUVA.size();u++)
+        {
+            uvA.addItem(listaCalcUVA.get(u));
+            uvaB.addItem(listaCalcUVA.get(u));
+            uvaC.addItem(listaCalcUVA.get(u));
+            uvaD.addItem(listaCalcUVA.get(u));
+            uvaE.addItem(listaCalcUVA.get(u));
+            uvaF.addItem(listaCalcUVA.get(u));
+        }
+    }
     
     //SAR 13/04/21 INI
     private void operacionesdeInspeccionMedicion(){
@@ -1955,9 +2021,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel8 = new javax.swing.JLabel();
         campoEstacion = new javax.swing.JTextField();
         campoInformacionEstacion = new javax.swing.JTextField();
-        jComboBoxCronometro = new javax.swing.JComboBox<String>();
-        jComboBoxDispensarios = new javax.swing.JComboBox<String>();
-        jComboBoxTermometro = new javax.swing.JComboBox<String>();
+        jComboBoxCronometro = new javax.swing.JComboBox<>();
+        jComboBoxDispensarios = new javax.swing.JComboBox<>();
+        jComboBoxTermometro = new javax.swing.JComboBox<>();
         campoTipoVerificacion = new javax.swing.JTextField();
         datosTermometro = new javax.swing.JTextField();
         datosCronometro = new javax.swing.JTextField();
@@ -2099,7 +2165,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jComboBoxJarraA = new javax.swing.JComboBox<String>();
+        jComboBoxJarraA = new javax.swing.JComboBox<>();
         avisoLabelA = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
@@ -2110,8 +2176,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel77 = new javax.swing.JLabel();
         jTextField64 = new javax.swing.JTextField();
         jTextField67 = new javax.swing.JTextField();
-        jTextField68 = new javax.swing.JTextField();
-        jTextField69 = new javax.swing.JTextField();
+        calcProfecoA = new javax.swing.JTextField();
+        calcUvA = new javax.swing.JTextField();
         jLabel328 = new javax.swing.JLabel();
         campoPrecintoA = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
@@ -2224,7 +2290,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel110 = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
-        jComboBoxJarraB = new javax.swing.JComboBox<String>();
+        jComboBoxJarraB = new javax.swing.JComboBox<>();
         avisoLabelB = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
@@ -2235,8 +2301,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel117 = new javax.swing.JLabel();
         jTextField119 = new javax.swing.JTextField();
         jTextField120 = new javax.swing.JTextField();
-        jTextField121 = new javax.swing.JTextField();
-        jTextField122 = new javax.swing.JTextField();
+        calcProfecoB = new javax.swing.JTextField();
+        calcUvaB = new javax.swing.JTextField();
         campoPrecintoB = new javax.swing.JTextField();
         jLabel329 = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
@@ -2349,7 +2415,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel160 = new javax.swing.JLabel();
         jLabel161 = new javax.swing.JLabel();
         jLabel162 = new javax.swing.JLabel();
-        jComboBoxJarraC = new javax.swing.JComboBox<String>();
+        jComboBoxJarraC = new javax.swing.JComboBox<>();
         avisoLabelC = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
@@ -2360,8 +2426,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel167 = new javax.swing.JLabel();
         jTextField183 = new javax.swing.JTextField();
         jTextField184 = new javax.swing.JTextField();
-        jTextField185 = new javax.swing.JTextField();
-        jTextField186 = new javax.swing.JTextField();
+        calcProfecoC = new javax.swing.JTextField();
+        calcUvaC = new javax.swing.JTextField();
         campoPrecintoC = new javax.swing.JTextField();
         jLabel330 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
@@ -2474,7 +2540,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel210 = new javax.swing.JLabel();
         jLabel211 = new javax.swing.JLabel();
         jLabel212 = new javax.swing.JLabel();
-        jComboBoxJarraD = new javax.swing.JComboBox<String>();
+        jComboBoxJarraD = new javax.swing.JComboBox<>();
         avisoLabelD = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
@@ -2485,8 +2551,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel217 = new javax.swing.JLabel();
         jTextField247 = new javax.swing.JTextField();
         jTextField248 = new javax.swing.JTextField();
-        jTextField249 = new javax.swing.JTextField();
-        jTextField250 = new javax.swing.JTextField();
+        calcProfecoD = new javax.swing.JTextField();
+        calcUvaD = new javax.swing.JTextField();
         campoPrecintoD = new javax.swing.JTextField();
         jLabel331 = new javax.swing.JLabel();
         jPanel30 = new javax.swing.JPanel();
@@ -2599,7 +2665,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel260 = new javax.swing.JLabel();
         jLabel261 = new javax.swing.JLabel();
         jLabel262 = new javax.swing.JLabel();
-        jComboBoxJarraE = new javax.swing.JComboBox<String>();
+        jComboBoxJarraE = new javax.swing.JComboBox<>();
         avisoLabelE = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
@@ -2610,8 +2676,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel267 = new javax.swing.JLabel();
         jTextField311 = new javax.swing.JTextField();
         jTextField312 = new javax.swing.JTextField();
-        jTextField313 = new javax.swing.JTextField();
-        jTextField314 = new javax.swing.JTextField();
+        calcProfecoE = new javax.swing.JTextField();
+        calcUvaE = new javax.swing.JTextField();
         campoPrecintoE = new javax.swing.JTextField();
         jLabel333 = new javax.swing.JLabel();
         jPanel35 = new javax.swing.JPanel();
@@ -2724,7 +2790,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel310 = new javax.swing.JLabel();
         jLabel311 = new javax.swing.JLabel();
         jLabel312 = new javax.swing.JLabel();
-        jComboBoxJarraF = new javax.swing.JComboBox<String>();
+        jComboBoxJarraF = new javax.swing.JComboBox<>();
         avisoLabelF = new javax.swing.JLabel();
         jPanel38 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
@@ -2735,8 +2801,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel317 = new javax.swing.JLabel();
         jTextField375 = new javax.swing.JTextField();
         jTextField376 = new javax.swing.JTextField();
-        jTextField377 = new javax.swing.JTextField();
-        jTextField378 = new javax.swing.JTextField();
+        calcProfecoF = new javax.swing.JTextField();
+        calcUvaF = new javax.swing.JTextField();
         campoPrecintoF = new javax.swing.JTextField();
         jLabel332 = new javax.swing.JLabel();
         jPanel40 = new javax.swing.JPanel();
@@ -4188,7 +4254,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel53.setText("Inf. Calib.");
 
-        jComboBoxJarraA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraA.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraAItemStateChanged(evt);
@@ -4339,8 +4405,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField64, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField67, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField68, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField69, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calcProfecoA, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calcUvA, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoPrecintoA, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
@@ -4360,11 +4426,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addGap(18, 18, 18)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel76)
-                    .addComponent(jTextField68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcProfecoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel77)
-                    .addComponent(jTextField69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcUvA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(campoPrecintoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5304,7 +5370,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel112.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel112.setText("Inf. Calib.");
 
-        jComboBoxJarraB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraBItemStateChanged(evt);
@@ -5445,8 +5511,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField119, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField120, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField121, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField122, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(calcProfecoB, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(calcUvaB, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
@@ -5465,11 +5531,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addGap(18, 18, 18)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel116)
-                    .addComponent(jTextField121, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcProfecoB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel117)
-                    .addComponent(jTextField122, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcUvaB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel329)
@@ -6374,7 +6440,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel162.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel162.setText("Inf. Calib.");
 
-        jComboBoxJarraC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraC.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraCItemStateChanged(evt);
@@ -6511,8 +6577,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField183, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField184, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField185, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField186, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(calcProfecoC, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(calcUvaC, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel23Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(jLabel330)
@@ -6536,11 +6602,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addGap(18, 18, 18)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel166)
-                    .addComponent(jTextField185, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcProfecoC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel167)
-                    .addComponent(jTextField186, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcUvaC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel330)
@@ -7440,7 +7506,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel212.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel212.setText("Inf. Calib.");
 
-        jComboBoxJarraD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraD.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraDItemStateChanged(evt);
@@ -7581,8 +7647,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField247, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField248, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField249, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField250, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(calcProfecoD, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(calcUvaD, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel28Layout.setVerticalGroup(
@@ -7601,11 +7667,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addGap(18, 18, 18)
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel216)
-                    .addComponent(jTextField249, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcProfecoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel217)
-                    .addComponent(jTextField250, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcUvaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel331)
@@ -8505,7 +8571,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel262.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel262.setText("Inf. Calib.");
 
-        jComboBoxJarraE.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraE.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraEItemStateChanged(evt);
@@ -8646,8 +8712,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField311, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField312, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField313, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField314, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(calcProfecoE, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(calcUvaE, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel33Layout.setVerticalGroup(
@@ -8666,11 +8732,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addGap(18, 18, 18)
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel266)
-                    .addComponent(jTextField313, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcProfecoE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel267)
-                    .addComponent(jTextField314, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcUvaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel333)
@@ -9573,7 +9639,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel312.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel312.setText("Inf. Calib.");
 
-        jComboBoxJarraF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraF.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraFItemStateChanged(evt);
@@ -9714,8 +9780,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField375, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField376, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField377, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField378, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(calcProfecoF, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(calcUvaF, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel38Layout.setVerticalGroup(
@@ -9734,11 +9800,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addGap(18, 18, 18)
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel316)
-                    .addComponent(jTextField377, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcProfecoF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel317)
-                    .addComponent(jTextField378, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(calcUvaF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel332)
@@ -12071,6 +12137,18 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JButton botonIncluirME;
     private javax.swing.JButton botonIncluirMF;
     private javax.swing.JButton btnGuardarExcel;
+    private javax.swing.JTextField calcProfecoA;
+    private javax.swing.JTextField calcProfecoB;
+    private javax.swing.JTextField calcProfecoC;
+    private javax.swing.JTextField calcProfecoD;
+    private javax.swing.JTextField calcProfecoE;
+    private javax.swing.JTextField calcProfecoF;
+    private javax.swing.JTextField calcUvA;
+    private javax.swing.JTextField calcUvaB;
+    private javax.swing.JTextField calcUvaC;
+    private javax.swing.JTextField calcUvaD;
+    private javax.swing.JTextField calcUvaE;
+    private javax.swing.JTextField calcUvaF;
     private javax.swing.JTextField campoEstacion;
     private javax.swing.JTextField campoInformacionEstacion;
     private javax.swing.JTextField campoPrecintoA;
@@ -12490,8 +12568,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField119;
     private javax.swing.JTextField jTextField120;
-    private javax.swing.JTextField jTextField121;
-    private javax.swing.JTextField jTextField122;
     private javax.swing.JTextField jTextField132;
     private javax.swing.JTextField jTextField133;
     private javax.swing.JTextField jTextField146;
@@ -12500,8 +12576,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField183;
     private javax.swing.JTextField jTextField184;
-    private javax.swing.JTextField jTextField185;
-    private javax.swing.JTextField jTextField186;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField196;
     private javax.swing.JTextField jTextField197;
@@ -12511,8 +12585,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField212;
     private javax.swing.JTextField jTextField247;
     private javax.swing.JTextField jTextField248;
-    private javax.swing.JTextField jTextField249;
-    private javax.swing.JTextField jTextField250;
     private javax.swing.JTextField jTextField260;
     private javax.swing.JTextField jTextField261;
     private javax.swing.JTextField jTextField274;
@@ -12520,8 +12592,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField276;
     private javax.swing.JTextField jTextField311;
     private javax.swing.JTextField jTextField312;
-    private javax.swing.JTextField jTextField313;
-    private javax.swing.JTextField jTextField314;
     private javax.swing.JTextField jTextField324;
     private javax.swing.JTextField jTextField325;
     private javax.swing.JTextField jTextField338;
@@ -12529,16 +12599,12 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JTextField jTextField340;
     private javax.swing.JTextField jTextField375;
     private javax.swing.JTextField jTextField376;
-    private javax.swing.JTextField jTextField377;
-    private javax.swing.JTextField jTextField378;
     private javax.swing.JTextField jTextField388;
     private javax.swing.JTextField jTextField389;
     private javax.swing.JTextField jTextField64;
     private javax.swing.JTextField jTextField65;
     private javax.swing.JTextField jTextField66;
     private javax.swing.JTextField jTextField67;
-    private javax.swing.JTextField jTextField68;
-    private javax.swing.JTextField jTextField69;
     private javax.swing.JTextField jTextField82;
     private javax.swing.JTextField jTextField83;
     private javax.swing.JTextField jTextField84;
