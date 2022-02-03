@@ -2018,8 +2018,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         campoEstacion = new javax.swing.JTextField();
         campoInformacionEstacion = new javax.swing.JTextField();
         jComboBoxCronometro = new javax.swing.JComboBox<>();
@@ -2871,10 +2869,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
 
         jLabel6.setText("Cronómetro");
 
-        jLabel7.setText("Estación");
-
-        jLabel8.setText("Tipo Verificacion");
-
+        campoEstacion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Estación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         campoEstacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoEstacionActionPerformed(evt);
@@ -2886,6 +2881,13 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 campoEstacionKeyTyped(evt);
+            }
+        });
+
+        campoInformacionEstacion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Infomación de la estación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        campoInformacionEstacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoInformacionEstacionActionPerformed(evt);
             }
         });
 
@@ -2912,11 +2914,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
+        campoTipoVerificacion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Verificación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+
+        datosTermometro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Infomración del termómetro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         datosTermometro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 datosTermometroActionPerformed(evt);
             }
         });
+
+        datosCronometro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Infomación del conómetro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         jDateChooserFechaIM.setEnabled(false);
 
@@ -2955,17 +2962,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addComponent(jDateChooserFechaIM, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoEstacion)
-                            .addComponent(campoTipoVerificacion)))
                     .addComponent(campoInformacionEstacion)
                     .addComponent(datosTermometro, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(datosCronometro, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(datosCronometro, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(campoTipoVerificacion)
+                    .addComponent(campoEstacion, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCheckBoxImprimir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2983,7 +2984,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(folioSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel7)
                     .addComponent(campoEstacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCheckBoxImprimir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2998,7 +2998,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGap(12, 12, 12)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
-                                    .addComponent(jLabel8)
                                     .addComponent(campoTipoVerificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -4602,7 +4601,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel73)
                             .addComponent(botonIncluirMA))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraALayout = new javax.swing.GroupLayout(mangueraA);
@@ -5707,7 +5706,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel127)
                             .addComponent(botonIncluirMB))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA1Layout = new javax.swing.GroupLayout(mangueraA1);
@@ -6778,7 +6777,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel177)
                             .addComponent(botonIncluirMC))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA2Layout = new javax.swing.GroupLayout(mangueraA2);
@@ -7843,7 +7842,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel227)
                             .addComponent(botonIncluirMD))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA3Layout = new javax.swing.GroupLayout(mangueraA3);
@@ -8908,7 +8907,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel277)
                             .addComponent(botonIncluirME))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA4Layout = new javax.swing.GroupLayout(mangueraA4);
@@ -9976,7 +9975,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel327)
                             .addComponent(botonIncluirMF))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA5Layout = new javax.swing.GroupLayout(mangueraA5);
@@ -11754,6 +11753,10 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private void jComboBoxDispensariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDispensariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxDispensariosActionPerformed
+
+    private void campoInformacionEstacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoInformacionEstacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoInformacionEstacionActionPerformed
 //>>>>>>> f3b6447726602e3714578494c282ea5347226ed7
 
     /**
@@ -12481,7 +12484,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
@@ -12492,7 +12494,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
