@@ -10012,7 +10012,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
     private void jButtonImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImprimirActionPerformed
         // TODO add your handling code here:
         int tipoDocumento = 1;
-        if(jCheckBoxImprimir.isSelected()){
+        if(jCheckBoxImprimir.isSelected() && jCheckBox1.isSelected()){
             //jButtonImprimir.setEnabled(true);
             Object [] arregloDatosDoc;
             String folioSol = folioSolicitud.getText();
@@ -10066,6 +10066,10 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 }
                
             }
+            else if(folioSol.equals("")) {
+                
+                JOptionPane.showMessageDialog(null,"Por favor escriba un folio válido");
+            }
             else{
 
                 JOptionPane.showMessageDialog(null,"No existe el folio que quiere imprimir");
@@ -10074,7 +10078,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
             else{
                 //jButtonImprimir.setEnabled(true);
-                 JOptionPane.showMessageDialog(null,"Habilia el check para imprimir.");
+                 JOptionPane.showMessageDialog(null,"Habilita el check para imprimir.");
             }
         
     }//GEN-LAST:event_jButtonImprimirActionPerformed
