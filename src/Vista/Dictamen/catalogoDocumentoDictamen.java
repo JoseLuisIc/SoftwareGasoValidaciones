@@ -330,7 +330,12 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         });
 
         campoMarcaB.setEditable(true);
-        campoMarcaB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoMarcaB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoMarcaB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoMarcaBActionPerformed(evt);
+            }
+        });
 
         campoMarcaC.setEditable(true);
         campoMarcaC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -345,7 +350,12 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         campoMarcaF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         campoSerieA.setEditable(true);
-        campoSerieA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoSerieA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoSerieA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoSerieAActionPerformed(evt);
+            }
+        });
 
         campoSerieB.setEditable(true);
         campoSerieB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -411,7 +421,12 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         jLabel491.setText("Modelo");
 
         campoModeloA.setEditable(true);
-        campoModeloA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoModeloA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        campoModeloA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoModeloAActionPerformed(evt);
+            }
+        });
 
         campoModeloB.setEditable(true);
         campoModeloB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -947,6 +962,17 @@ public class catalogoDocumentoDictamen extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoPrecintoEActionPerformed
 
+    private void campoMarcaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoMarcaBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoMarcaBActionPerformed
+
+    private void campoSerieAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSerieAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoSerieAActionPerformed
+
+    private void campoModeloAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoModeloAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoModeloAActionPerformed
     private void campoModeloFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoModeloFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoModeloFActionPerformed

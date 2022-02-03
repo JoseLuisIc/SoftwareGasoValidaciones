@@ -15,6 +15,7 @@ import Modelo.modeloTablaUsuario;
 import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
@@ -154,7 +155,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         premiumRSC = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         diselRSC = new javax.swing.JTextField();
-        tiposolicitudRSC = new javax.swing.JComboBox<String>();
+        tiposolicitudRSC = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         tecnicoRSC = new javax.swing.JTextField();
         fechaRCS = new com.toedter.calendar.JDateChooser();
@@ -382,7 +383,7 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         );
 
         tiposolicitudRSC.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
-        tiposolicitudRSC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
+        tiposolicitudRSC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
         tiposolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tiposolicitudRSCActionPerformed(evt);
@@ -403,6 +404,11 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
         folioSolicitudRSC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 folioSolicitudRSCActionPerformed(evt);
+            }
+        });
+        folioSolicitudRSC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                folioSolicitudRSCKeyPressed(evt);
             }
         });
 
@@ -761,6 +767,34 @@ int validaEstacion = 0;
  
 }        // TODO add your handling code here:
     }//GEN-LAST:event_noEstacionRSCItemStateChanged
+
+    private void folioSolicitudRSCKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_folioSolicitudRSCKeyPressed
+        // TODO add your handling code here:
+          if(evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER){
+            String folioSol = folioSolicitudRSC.getText();
+            int validaFSol = 0;
+            int validaEstacion = 0;
+            String noEstacion = "";
+            String tipoVerificacion = "";
+            lbd.openConnection();
+                validaFSol = lbd.validaFolioSolicitud(folioSol);
+                noEstacion = lbd.obtenerEstacionDeFolio(folioSol);
+                validaEstacion = lbd.obtenerEstaciones(noEstacion);
+                tipoVerificacion = lbd.obtenerTipoVerificación(folioSol, noEstacion);
+            lbd.closeConnection();
+            
+            if(validaFSol != 0 && validaEstacion != 0){
+
+                JOptionPane.showMessageDialog(null,"El folio ya esta ocupado");
+            }else{
+           
+                 evt.setSource((char) KeyEvent.VK_CLEAR);
+                tiposolicitudRSC.requestFocus();
+            }
+
+       }    // TODO add your handling code here:
+        
+    }//GEN-LAST:event_folioSolicitudRSCKeyPressed
 
      private void jCheckBoxTecnicoActionPerformed(java.awt.event.ActionEvent evt) {                                                
         //jCheckBoxTecnicoActionPerformed
