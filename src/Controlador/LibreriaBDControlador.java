@@ -3761,6 +3761,9 @@ public String obtenerEstacionDeFolio(String idFolio){
         return validaMagueras;
     }
 
+    
+    //Joel Estrella
+    
         public List <String> obtenerFoliosdeSolicitud() 
                 {
                 List <String> listaAux = new ArrayList<String>();
@@ -3798,6 +3801,95 @@ public String obtenerEstacionDeFolio(String idFolio){
         return listaAux;
         
     }
-    
+        
+        /*Joel Estrella
+        25-01-2022*/
+        public List <String> obtenerNoPrecinto() 
+                {
+                List <String> listaAux = new ArrayList<String>();
+                try{
+                    String Query = "";
+                    Query="SELECT nprecinto FROM tabla_precinto WHERE holograma is null";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                     
+                    while (res.next())
+                    {
+                        //System.out.println(res.getString("nprecinto"));
+                        listaAux.add(res.getString("nprecinto"));       
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+        
+        return listaAux;
+        
+    }
+        public List <String> obtenerCalcProfeco() 
+                {
+                List <String> listaAux = new ArrayList<String>();
+                try{
+                    String Query = "";
+                    Query="SELECT Holograma FROM tablagasvalid WHERE Estatus='"+"No asignada"+"' and tipoHolograma='"+"PROFECO"+"'";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                     
+                    while (res.next())
+                    {
+                        //System.out.println(res.getString("Holograma"));
+                        listaAux.add(res.getString("Holograma"));       
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+        
+        return listaAux;
+        
+    }
+    public List <String> obtenerCalcUVA() 
+                {
+                List <String> listaAux = new ArrayList<String>();
+                try{
+                    String Query = "";
+                    Query="SELECT Holograma FROM tablagasvalid WHERE Estatus='"+"No asignada"+"' and tipoHolograma='"+"UVA"+"'";
+                    System.out.println(Query);
+                    PreparedStatement stmt;
+                    stmt = Conexion.prepareStatement(Query);
+                    java.sql.ResultSet res;
+                    res = stmt.executeQuery();
+                     
+                    while (res.next())
+                    {
+                        //System.out.println(res.getString("Holograma"));
+                        listaAux.add(res.getString("Holograma"));       
+                    }
+                    
+                    
+                } catch(SQLException a){
+                    
+                    Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, a);
+                    JOptionPane.showMessageDialog(null, a);
+                    listaAux = null;
+                }
+        
+        return listaAux;
+        
+    }
 }
 //Final de LibreriaBDControlador.
