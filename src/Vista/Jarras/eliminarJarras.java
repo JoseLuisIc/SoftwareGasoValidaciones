@@ -45,6 +45,7 @@ public class eliminarJarras extends javax.swing.JDialog {
         labelValidaCampos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Eliminar Jarra");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

@@ -46,7 +46,7 @@ public class modificarHolograma extends javax.swing.JDialog {
         modificarMH = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(600, 400));
+        setTitle("Modificar Holograma");
         setMinimumSize(new java.awt.Dimension(600, 400));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

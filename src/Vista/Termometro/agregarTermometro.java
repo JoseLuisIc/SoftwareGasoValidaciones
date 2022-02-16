@@ -56,6 +56,7 @@ public class agregarTermometro extends javax.swing.JDialog {
         resultadoAT = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Agregar Termómetro");
         setMaximumSize(new java.awt.Dimension(491, 544));
         setMinimumSize(new java.awt.Dimension(491, 544));
 

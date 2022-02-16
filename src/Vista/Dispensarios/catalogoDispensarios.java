@@ -116,6 +116,7 @@ public class catalogoDispensarios extends javax.swing.JFrame {
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Catálogo Movimientos Dispensarios");
         setMinimumSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
 

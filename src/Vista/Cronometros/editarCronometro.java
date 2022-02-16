@@ -55,6 +55,7 @@ public class editarCronometro extends javax.swing.JDialog {
         resultadoEC = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Editar Cronómetro");
         setMaximumSize(new java.awt.Dimension(487, 560));
         setMinimumSize(new java.awt.Dimension(487, 560));
 

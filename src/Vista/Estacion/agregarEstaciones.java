@@ -78,6 +78,7 @@ public class agregarEstaciones extends javax.swing.JDialog {
         campoRegFedCausante = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Agregar Estación");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

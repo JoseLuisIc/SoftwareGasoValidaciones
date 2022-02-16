@@ -55,6 +55,7 @@ public class agregarCronometro extends javax.swing.JDialog {
         resultadoAC = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Agregar Cronómetro");
         setMaximumSize(new java.awt.Dimension(512, 598));
         setMinimumSize(new java.awt.Dimension(512, 598));
 

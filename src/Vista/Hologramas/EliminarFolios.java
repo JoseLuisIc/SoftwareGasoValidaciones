@@ -53,7 +53,7 @@ public class EliminarFolios extends javax.swing.JDialog {
         TipodeverificacionEF = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(400, 509));
+        setTitle("Eliminar Folio");
         setMinimumSize(new java.awt.Dimension(400, 509));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

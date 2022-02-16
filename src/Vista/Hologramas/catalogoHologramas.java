@@ -98,7 +98,6 @@ public class catalogoHologramas extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
         jPanel2 = new javax.swing.JPanel();
-        AgregarCH = new javax.swing.JButton();
         ModificarEstatusCH = new javax.swing.JButton();
         eliminarFolio = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -112,8 +111,11 @@ public class catalogoHologramas extends javax.swing.JFrame {
         RefrescarCH = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        AgregarCH1 = new javax.swing.JButton();
+        GenerarCH = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Catálogo Hologramas");
         setMinimumSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
 
@@ -129,7 +131,7 @@ public class catalogoHologramas extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(0, 86, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,16 +144,6 @@ public class catalogoHologramas extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        AgregarCH.setText("Agregar");
-        AgregarCH.setFocusable(false);
-        AgregarCH.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        AgregarCH.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        AgregarCH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarCHActionPerformed(evt);
-            }
-        });
 
         ModificarEstatusCH.setText("Modificar ");
         ModificarEstatusCH.setFocusable(false);
@@ -258,6 +250,26 @@ public class catalogoHologramas extends javax.swing.JFrame {
         jTextArea1.setWrapStyleWord(true);
         jScrollPane2.setViewportView(jTextArea1);
 
+        AgregarCH1.setText("Agregar");
+        AgregarCH1.setFocusable(false);
+        AgregarCH1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AgregarCH1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        AgregarCH1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarCH1ActionPerformed(evt);
+            }
+        });
+
+        GenerarCH.setText("Generador Calcomanía");
+        GenerarCH.setFocusable(false);
+        GenerarCH.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        GenerarCH.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        GenerarCH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenerarCHActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -265,11 +277,12 @@ public class catalogoHologramas extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AgregarCH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ModificarEstatusCH, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                    .addComponent(eliminarFolio, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
+                    .addComponent(eliminarFolio, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                    .addComponent(GenerarCH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AgregarCH1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(59, 59, 59)
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -278,16 +291,20 @@ public class catalogoHologramas extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(AgregarCH)
-                        .addGap(18, 18, 18)
+                        .addGap(7, 7, 7)
+                        .addComponent(AgregarCH1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(ModificarEstatusCH)
-                        .addGap(18, 18, 18)
-                        .addComponent(eliminarFolio))
-                    .addComponent(jScrollPane2))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(eliminarFolio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(GenerarCH)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -297,7 +314,9 @@ public class catalogoHologramas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -332,10 +351,11 @@ public class catalogoHologramas extends javax.swing.JFrame {
         modeloHologramas.fireTableDataChanged();
     }//GEN-LAST:event_MostrarTodasCHActionPerformed
 
-    private void AgregarCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCHActionPerformed
+    private void GenerarCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerarCHActionPerformed
                 GeneradorDeCalcomonia dialog = new GeneradorDeCalcomonia(new javax.swing.JFrame(), true);
                 dialog.setVisible(true);
-    }//GEN-LAST:event_AgregarCHActionPerformed
+                //Victor Chan 16/02/2021
+    }//GEN-LAST:event_GenerarCHActionPerformed
 
     private void RefrescarCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefrescarCHActionPerformed
         // TODO add your handling code here:
@@ -366,6 +386,18 @@ public class catalogoHologramas extends javax.swing.JFrame {
       jTable1.setModel(modeloHologramas);
       modeloHologramas.fireTableDataChanged();
     }//GEN-LAST:event_eliminarFolioActionPerformed
+
+    private void AgregarCH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCH1ActionPerformed
+        // TODO add your handling code here:
+      agregarHologramas dialog = new agregarHologramas(new javax.swing.JFrame(),true);
+      dialog.setVisible(true);
+      lbd.openConnection();
+      modeloHologramas = lbd.modeloGasValid(columna, "", "", "");
+      lbd.closeConnection();
+      jTable1.setModel(modeloHologramas);
+      modeloHologramas.fireTableDataChanged();
+      //Victor Chan 16/02/2021
+    }//GEN-LAST:event_AgregarCH1ActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -403,7 +435,8 @@ public class catalogoHologramas extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AgregarCH;
+    private javax.swing.JButton AgregarCH1;
+    private javax.swing.JButton GenerarCH;
     private javax.swing.JButton ModificarEstatusCH;
     private javax.swing.JButton MostrarTodasCH;
     private javax.swing.JButton RefrescarCH;

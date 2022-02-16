@@ -41,6 +41,7 @@ public class eliminarTermometro extends javax.swing.JDialog {
         reingresarIdELT = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Eliminar Termómetro");
         setMinimumSize(new java.awt.Dimension(315, 370));
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));

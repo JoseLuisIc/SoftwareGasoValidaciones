@@ -56,6 +56,7 @@ public class editarTermometro extends javax.swing.JDialog {
         resultadoET = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Editar Termómetro");
         setMaximumSize(new java.awt.Dimension(493, 560));
         setMinimumSize(new java.awt.Dimension(493, 560));
         setSize(new java.awt.Dimension(493, 560));

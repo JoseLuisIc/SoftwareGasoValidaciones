@@ -97,6 +97,7 @@ public class catalogoEstaciones extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Catálogo Estaciones");
         setMinimumSize(new java.awt.Dimension(1098, 591));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
