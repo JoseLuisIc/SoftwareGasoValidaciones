@@ -65,6 +65,7 @@ public class GeneradorDeCalcomonia extends javax.swing.JDialog {
         CEROSADICIONALESGDC = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Generador Calcomanía");
         setMinimumSize(new java.awt.Dimension(388, 447));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

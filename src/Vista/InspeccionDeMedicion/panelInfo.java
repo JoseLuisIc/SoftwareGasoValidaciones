@@ -19,6 +19,7 @@ public class panelInfo extends javax.swing.JFrame {
     public panelInfo() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -35,6 +36,7 @@ public class panelInfo extends javax.swing.JFrame {
         jTextArea5 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Mecanismo de ajuste");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

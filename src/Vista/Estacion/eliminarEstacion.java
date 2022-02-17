@@ -42,6 +42,7 @@ public class eliminarEstacion extends javax.swing.JDialog {
         eliminarEE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Eliminar Estación");
         setLocationByPlatform(true);
         setMaximumSize(new java.awt.Dimension(492, 313));
         setMinimumSize(new java.awt.Dimension(492, 313));

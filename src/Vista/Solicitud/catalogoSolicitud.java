@@ -110,7 +110,7 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         folioSolicitudCS = new javax.swing.JTextField();
-        tiposolicitudCS = new javax.swing.JComboBox<String>();
+        tiposolicitudCS = new javax.swing.JComboBox<>();
         noEstacionCS = new javax.swing.JTextField();
         buscarCS = new javax.swing.JButton();
         refrescarCS = new javax.swing.JButton();
@@ -121,6 +121,7 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
         tablaCatalogoSolicitud = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Registro Solicitud");
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -159,7 +160,7 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
 
         jLabel12.setText("No. Estacion");
 
-        tiposolicitudCS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
+        tiposolicitudCS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inicial", "Periodica", "Extraordinaria" }));
 
         noEstacionCS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -41,6 +41,7 @@ public class eliminarCronometro extends javax.swing.JDialog {
         reingresarIdELC = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Eliminar Cronómetro");
         setMaximumSize(new java.awt.Dimension(400, 370));
         setMinimumSize(new java.awt.Dimension(400, 370));
 

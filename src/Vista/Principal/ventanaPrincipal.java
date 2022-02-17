@@ -40,18 +40,18 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
         this.mtu = mtu;
-        catalogoCronometros.setToolTipText("Cátologo Cronometros");
-        catalogoJarras.setToolTipText("Cátologo Jarras");
-        catalogoTermometros.setToolTipText("Cátologo Termometros");
+        catalogoCronometros.setToolTipText("Catálogo Cronómetros");
+        catalogoJarras.setToolTipText("Catálogo Jarras");
+        catalogoTermometros.setToolTipText("Catálogo Termómetros");
         //registroContrato.setToolTipText("Registro Contrato");
         inspeccionMedicion.setToolTipText("Inspección de Medición");
         registroSolicitud.setToolTipText("Registro Solicitud");
-        catalogoEstaciones.setToolTipText("Cátologo Estaciones");
-        catalogoDispensarios.setToolTipText("Cátologo Movimientos Dispensarios");
+        catalogoEstaciones.setToolTipText("Catálogo Estaciones");
+        catalogoDispensarios.setToolTipText("Catálogo Movimientos Dispensarios");
         cambiarImagen.setToolTipText("Cambiar Imagen");
-        catalogoUsuarios.setToolTipText("Cátologo Usuarios");
-        catalogoHologramas.setToolTipText("Cátologo Hologramas");
-        catalogoPrecinto.setToolTipText("Cátologo Precinto");
+        catalogoUsuarios.setToolTipText("Catálogo Usuarios");
+        catalogoHologramas.setToolTipText("Catálogo Hologramas");
+        catalogoPrecinto.setToolTipText("Catálogo Precinto");
     }
         
     

@@ -79,6 +79,7 @@ public class modificarEstacion extends javax.swing.JDialog {
         campoEstatusManguera = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Modificar Estación");
         setMinimumSize(new java.awt.Dimension(719, 783));
         setResizable(false);
 

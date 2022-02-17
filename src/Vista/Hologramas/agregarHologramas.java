@@ -11,12 +11,12 @@ import javax.swing.ImageIcon;
  *
  * @author admin
  */
-public class agregarHologramas extends javax.swing.JFrame {
+public class agregarHologramas extends javax.swing.JDialog {
 
     /**
      * Creates new form agregarHologramas
      */
-    public agregarHologramas() {
+    public agregarHologramas(java.awt.Frame parent, boolean modal) {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
@@ -41,7 +41,8 @@ public class agregarHologramas extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Agregar Holograma");
 
         jButton1.setText("Guardar");
 

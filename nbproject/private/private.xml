@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+<<<<<<< HEAD
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/macbook/Documents/KaabCode/gasValid2022/SoftwareGasoValidaciones/src/Controlador/propiedades.properties</file>
+=======
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/Controlador/LibreriaBDControlador.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>671</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Hologramas/GeneradorDeCalcomonia.java</file>
+            <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Hologramas/modificarHolograma.java</file>
+            <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Hologramas/agregarHologramas.java</file>
+            <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Hologramas/catalogoHologramas.java</file>
+            <file>file:/C:/Users/Victor/SoftwareGasoValidaciones/src/Vista/Hologramas/EliminarFolios.java</file>
+>>>>>>> a8f1a4a73305b674e03ae5b72696272a349ccebe
         </group>
     </open-files>
 </project-private>
