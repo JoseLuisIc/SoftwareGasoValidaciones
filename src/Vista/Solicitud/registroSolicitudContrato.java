@@ -637,14 +637,25 @@ public class registroSolicitudContrato extends javax.swing.JDialog {
                     
                                   
                     int valida = 0;
+                    int validaManguera=0;
                     lbd.openConnection();
                       /*Se añade la misma fecha para ambos campos*/
                       //lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, FechaPropuesta2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones);
                     valida = lbd.subirDatosSolicitud(Foliodesolicitud, Usuario, Tecnico, Fecha2, Fecha2, Tipodesolicitud,NoEstacion,total_mangueras,ReferenciadeSolicitud,Observaciones,perApoyo);
                     if(valida == 1)
                       {
-                          valida = lbd.guardarMangueras(Foliodesolicitud,total_mangueras,magnaRSC.getText(),premiumRSC.getText(),diselRSC.getText());
-                  //        if(valida ==1)
+                          //Joel Estrella 15/02/2022
+                          validaManguera = lbd.guardarMangueras(Foliodesolicitud,total_mangueras,magnaRSC.getText(),premiumRSC.getText(),diselRSC.getText());
+                          if(validaManguera ==1)
+                          {
+                              JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
+                               int confirmacion = JOptionPane.showConfirmDialog (null, "¿Desea registrar otra solicitud de contrato?","Registro de solicitud",JOptionPane.YES_NO_OPTION);
+                               
+                               if(confirmacion == JOptionPane.NO_OPTION || confirmacion == JOptionPane.CLOSED_OPTION)
+                               {
+                                   dispose();
+                               }
+                          }
                   //            valida = lbd.updateMGasolinas(Foliodesolicitud, Fecha2, perApoyo, Fecha2)
                       }
                     else{

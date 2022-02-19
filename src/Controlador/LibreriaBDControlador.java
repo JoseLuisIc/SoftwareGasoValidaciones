@@ -1638,7 +1638,8 @@ public void EliminarHolograma(String Holograma){
                 //Inica el statement de la conexión
                 //Statement st = Conexion.createStatement();
                 //     st.executeUpdate(Query);
-                JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
+                //Joel Estrella 15/02/2022
+                //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
                 valida = 1;
         } catch (SQLException ex) {
                 //Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, ex);
@@ -2381,7 +2382,8 @@ public String obtenerEstacionDeFolio(String idFolio){
                 //Inica el statement de la conexión
                 //Statement st = Conexion.createStatement();
                 //     st.executeUpdate(Query);
-                JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
+                //Joel Estrella 15/02/2022
+                //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
                 valida = 1;
         } catch (SQLException ex) {
                 //Logger.getLogger(LibreriaBDControlador.class.getName()).log(Level.SEVERE, null, ex);
