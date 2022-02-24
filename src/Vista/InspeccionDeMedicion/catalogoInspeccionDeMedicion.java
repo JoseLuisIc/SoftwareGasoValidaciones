@@ -2896,6 +2896,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 jComboBoxCronometroItemStateChanged(evt);
             }
         });
+        jComboBoxCronometro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxCronometroActionPerformed(evt);
+            }
+        });
 
         jComboBoxDispensarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2924,6 +2929,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         });
 
         datosCronometro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Infomación del conómetro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        datosCronometro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                datosCronometroActionPerformed(evt);
+            }
+        });
 
         jDateChooserFechaIM.setEnabled(false);
 
@@ -10318,7 +10328,12 @@ entraonoentra();        // TODO add your handling code here:
          //lista = listaAux.toArray(lista);        
          //jComboBoxTermometro.setModel((new javax.swing.DefaultComboBoxModel<>(lista)));
          //String item_seleccionado = jComboBoxTermometro.getSelectedItem().toString();
-         datosTermometro.setText(listaAux.toString());
+        String datosArray = "";
+        for (int i=0;i<=2;i++) {
+            datosArray +=listaAux.get(i)+", ";
+        }
+         datosTermometro.setText(limpia(datosArray.toString()));
+  
          //lleno el combo de cronometros
          //lleno los combos jarra
          lbd.closeConnection();
@@ -11757,6 +11772,14 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private void campoInformacionEstacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoInformacionEstacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoInformacionEstacionActionPerformed
+
+    private void jComboBoxCronometroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCronometroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxCronometroActionPerformed
+
+    private void datosCronometroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datosCronometroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_datosCronometroActionPerformed
 //>>>>>>> f3b6447726602e3714578494c282ea5347226ed7
 
     /**
