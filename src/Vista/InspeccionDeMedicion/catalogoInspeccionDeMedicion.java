@@ -10344,8 +10344,11 @@ entraonoentra();        // TODO add your handling code here:
          //lista = listaAux.toArray(lista);        
          //jComboBoxTermometro.setModel((new javax.swing.DefaultComboBoxModel<>(lista)));
          //String item_seleccionado = jComboBoxTermometro.getSelectedItem().toString();
-         datosCronometro.setText(listaAux.toString());
-         //lleno el combo de cronometros
+         String datosArray2 = "";
+        for (int i=0;i<=2;i++) {
+            datosArray2 +=listaAux.get(i)+", ";
+        }
+          datosCronometro.setText(limpia(datosArray2.toString()));         //lleno el combo de cronometros
          //lleno los combos jarra
          lbd.closeConnection();
     }//GEN-LAST:event_jComboBoxCronometroItemStateChanged
