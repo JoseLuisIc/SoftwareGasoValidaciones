@@ -7,8 +7,6 @@ package Vista.Hologramas;
 
 import Controlador.LibreriaBDControlador;
 import Modelo.modeloTablaUsuario;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -133,7 +131,7 @@ public class catalogoHologramas extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 86, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -354,22 +352,9 @@ public class catalogoHologramas extends javax.swing.JFrame {
     }//GEN-LAST:event_MostrarTodasCHActionPerformed
 
     private void GenerarCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerarCHActionPerformed
-        GeneradorDeCalcomonia dialog = new GeneradorDeCalcomonia(new javax.swing.JFrame(), true);
-        dialog.setVisible(true);
-        //Victor Chan 16/02/2021
-        //Metodo que detecta que la ventana se ha cerrado y procede a actualizar la tabla
-        dialog.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosed(WindowEvent e) {
-                System.out.println("Estoy cerrando Generador de Calcomania");
-                //Hacer lo que yo quiero          
-                lbd.openConnection();
-                modeloHologramas = lbd.modeloGasValid(columna, "", "", "");
-                lbd.closeConnection();
-                jTable1.setModel(modeloHologramas);
-                modeloHologramas.fireTableDataChanged();
-            }
-        });
+                GeneradorDeCalcomonia dialog = new GeneradorDeCalcomonia(new javax.swing.JFrame(), true);
+                dialog.setVisible(true);
+                //Victor Chan 16/02/2021
     }//GEN-LAST:event_GenerarCHActionPerformed
 
     private void RefrescarCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefrescarCHActionPerformed
@@ -403,28 +388,15 @@ public class catalogoHologramas extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarFolioActionPerformed
 
     private void AgregarCH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCH1ActionPerformed
-        //Victor Chan 24/02/2021
-        agregarHologramas dialog = new agregarHologramas(new javax.swing.JFrame(), true);
-        dialog.setVisible(true);
-        lbd.openConnection();
-        modeloHologramas = lbd.modeloGasValid(columna, "", "", "");
-        lbd.closeConnection();
-        jTable1.setModel(modeloHologramas);
-        modeloHologramas.fireTableDataChanged();
-        //Victor Chan 24/02/2021
-        //Metodo que detecta que la ventana se ha cerrado y procede a actualizar la tabla
-        dialog.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosed(WindowEvent e) {
-                System.out.println("Estoy cerrando Generador de AgregarHologramas");
-                //Hacer lo que yo quiero          
-                lbd.openConnection();
-                modeloHologramas = lbd.modeloGasValid(columna, "", "", "");
-                lbd.closeConnection();
-                jTable1.setModel(modeloHologramas);
-                modeloHologramas.fireTableDataChanged();
-            }
-        });
+        // TODO add your handling code here:
+      agregarHologramas dialog = new agregarHologramas(new javax.swing.JFrame(),true);
+      dialog.setVisible(true);
+      lbd.openConnection();
+      modeloHologramas = lbd.modeloGasValid(columna, "", "", "");
+      lbd.closeConnection();
+      jTable1.setModel(modeloHologramas);
+      modeloHologramas.fireTableDataChanged();
+      //Victor Chan 16/02/2021
     }//GEN-LAST:event_AgregarCH1ActionPerformed
 
 //    /**

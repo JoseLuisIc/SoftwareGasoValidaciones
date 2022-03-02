@@ -318,39 +318,41 @@ JOptionPane.showMessageDialog(rootPane, "Guardado exitosamente");
 
     private void LetraGDCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LetraGDCKeyTyped
 //Saul Arenas Ramirez 07/8/2020
-        int sololetra = evt.getKeyChar();
-        boolean mayusculas = sololetra >= 65 && sololetra <= 90;
-        boolean minusculas = sololetra >= 97 && sololetra <= 122;
-        boolean espacio = sololetra == 32;
-        if (!(minusculas || mayusculas || espacio)) {
-            evt.consume();
-        }
+        char sololetra=evt.getKeyChar();
+if (Character.isDigit(sololetra)){
+getToolkit().beep();
+evt.consume();
+    JOptionPane.showMessageDialog(rootPane, "Ingresar solo letras");}
+
+
     }//GEN-LAST:event_LetraGDCKeyTyped
 
     private void CEROSADICIONALESGDCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CEROSADICIONALESGDCKeyTyped
-        int soloceros = evt.getKeyChar();
-        boolean numeros = soloceros >= 48 && soloceros <= 57;
-        if (!numeros) {
-            evt.consume();
-        }
+char soloceros=evt.getKeyChar();
+
+if(Character.isLetter(soloceros)){
+getToolkit().beep();
+evt.consume();
+JOptionPane.showMessageDialog(rootPane, "Ingresar solo numeros");}
     }//GEN-LAST:event_CEROSADICIONALESGDCKeyTyped
 
     private void FolioInicialGDCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FolioInicialGDCKeyTyped
-        int solofolioinicial = evt.getKeyChar();
-        boolean numeros = solofolioinicial >= 48 && solofolioinicial <= 57;
-        if (!numeros) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_FolioInicialGDCKeyTyped
+char solofolioinicial=evt.getKeyChar();
+
+if(Character.isLetter(solofolioinicial)){
+getToolkit().beep();
+evt.consume();
+JOptionPane.showMessageDialog(rootPane, "Ingresar solo numeros");}    }//GEN-LAST:event_FolioInicialGDCKeyTyped
 
     private void FoloFinalGDCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FoloFinalGDCKeyTyped
-        int solofoliofinal = evt.getKeyChar();
-        boolean numeros = solofoliofinal >= 48 && solofoliofinal <= 57;
-        if (!numeros) {
-            evt.consume();
-        }
-  }//GEN-LAST:event_FoloFinalGDCKeyTyped
+char solofoliofinal=evt.getKeyChar();
 
+if(Character.isLetter(solofoliofinal)){
+getToolkit().beep();
+evt.consume();
+JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");}}/*
+JOptionPane.showMessageDialog(rootPane, "Ingresar solo numeros");}JOptionPane.showMessageDialog(rootPane, "Ingresar solo numeros");}JOptionPane.showMessageDialog(rootPane, "Ingresar solo numeros");}    }//GEN-LAST:event_FoloFinalGDCKeyTyped
+*/
     /**
      * @param args the command line arguments
      */

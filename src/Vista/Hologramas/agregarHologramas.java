@@ -5,9 +5,7 @@
  */
 package Vista.Hologramas;
 
-import Controlador.LibreriaBDControlador;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,8 +20,7 @@ public class agregarHologramas extends javax.swing.JDialog {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Multimedia/icono_GasValid.jpg")).getImage());
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,51 +31,30 @@ public class agregarHologramas extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        GuardarAH = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        PROFECOUVAAH = new javax.swing.JComboBox();
-        FolioAH = new javax.swing.JTextField();
-        PrefijoAH = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agregar Holograma");
 
-        GuardarAH.setText("Guardar");
-        GuardarAH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarAHActionPerformed(evt);
-            }
-        });
+        jButton1.setText("Guardar");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel1.setText("Prefijo:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel2.setText("Folio:");
+        jLabel2.setText("Folio Inicial:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel3.setText("Folio Final:");
+
         jLabel4.setText("Tipo Calcomanía:");
 
-        PROFECOUVAAH.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PROFECO", "UVA" }));
-
-        FolioAH.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                FolioAHKeyTyped(evt);
-            }
-        });
-
-        PrefijoAH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PrefijoAHActionPerformed(evt);
-            }
-        });
-        PrefijoAH.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                PrefijoAHKeyTyped(evt);
-            }
-        });
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PROFECO", "UVA" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,14 +65,18 @@ public class agregarHologramas extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(GuardarAH)
-                    .addComponent(PROFECOUVAAH, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PrefijoAH)
-                    .addComponent(FolioAH, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField1)
+                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField2)
+                                .addComponent(jTextField3)))))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,18 +84,22 @@ public class agregarHologramas extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(PrefijoAH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(FolioAH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(PROFECOUVAAH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(GuardarAH)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,7 +109,7 @@ public class agregarHologramas extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,50 +122,6 @@ public class agregarHologramas extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void GuardarAHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarAHActionPerformed
-        // Victor Chan 24/02/2022
-        //Metodo que guarda un solo holograma
-        LibreriaBDControlador lbc= new LibreriaBDControlador();
-        lbc.openConnection();
-        String  prefijo,folio,profOuva,HOLOGRAMA;
-        prefijo= PrefijoAH.getText();
-        folio=FolioAH.getText();
-        profOuva=(String) PROFECOUVAAH.getSelectedItem();
-        HOLOGRAMA=(prefijo+folio);
-        lbc.insertarHologramas(HOLOGRAMA, profOuva);
-        System.out.println(HOLOGRAMA);
-        //CIERRA LA CONEXION
-        lbc.closeConnection();
-        JOptionPane.showMessageDialog(rootPane, "Guardado exitosamente");
-    }//GEN-LAST:event_GuardarAHActionPerformed
-
-    private void PrefijoAHKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PrefijoAHKeyTyped
-         // Victor Chan 24/02/2022
-         //Metodo que solo permite ingresar numeros y letras, otros simbolos no los deja escribir
-        int prefijo = evt.getKeyChar();
-        boolean mayusculas = prefijo >= 65 && prefijo <= 90;
-        boolean minusculas = prefijo >= 97 && prefijo <= 122;
-        boolean espacio = prefijo == 32;
-        boolean numeros = prefijo  >= 48 && prefijo <= 57;
-        if (!(minusculas || mayusculas || espacio || numeros)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_PrefijoAHKeyTyped
-
-    private void FolioAHKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FolioAHKeyTyped
-        // Victor Chan 24/02/2022
-        //Metodo que solo permite ingresar numeros otros simbolos no los deja escribir
-        int solofolio = evt.getKeyChar();
-        boolean numeros = solofolio >= 48 && solofolio <= 57;
-        if (!numeros) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_FolioAHKeyTyped
-
-    private void PrefijoAHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrefijoAHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PrefijoAHActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -219,13 +159,15 @@ public class agregarHologramas extends javax.swing.JDialog {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField FolioAH;
-    private javax.swing.JButton GuardarAH;
-    private javax.swing.JComboBox PROFECOUVAAH;
-    private javax.swing.JTextField PrefijoAH;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
