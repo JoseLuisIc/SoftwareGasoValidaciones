@@ -2898,6 +2898,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 jComboBoxCronometroItemStateChanged(evt);
             }
         });
+        jComboBoxCronometro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxCronometroActionPerformed(evt);
+            }
+        });
 
         jComboBoxDispensarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2930,7 +2935,12 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             }
         });
 
-        datosCronometro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información del conómetro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        datosCronometro.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Infomación del conómetro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        datosCronometro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                datosCronometroActionPerformed(evt);
+            }
+        });
 
         jDateChooserFechaIM.setEnabled(false);
 
@@ -11765,7 +11775,6 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private void datosTermometroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datosTermometroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_datosTermometroActionPerformed
-//=======
     private void jComboBoxDispensariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDispensariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxDispensariosActionPerformed
@@ -11777,6 +11786,13 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private void jComboBoxTermometroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jComboBoxTermometroKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxTermometroKeyPressed
+    private void jComboBoxCronometroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCronometroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxCronometroActionPerformed
+
+    private void datosCronometroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datosCronometroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_datosCronometroActionPerformed
 //>>>>>>> f3b6447726602e3714578494c282ea5347226ed7
 
     /**
