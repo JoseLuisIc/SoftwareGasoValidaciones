@@ -3680,9 +3680,8 @@ public String obtenerEstacionDeFolio(String idFolio){
                     + "qv_gmed,"
                     + "qv_gmin,"
                     + "restultados_ml1,"
-                    + "resultados_ml2,"
-                    + "ID_jarra)"
-                    + "VALUES (default,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ");
+                    + "resultados_ml2)"
+                    + "VALUES (default,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ");
             //Aquí le envío la información debe coincidir con el total de ? = 67 el default envía el dato por defecto
             ppm.setString(1, modeloIMangueras.getFolio());
             ppm.setString(2, modeloIMangueras.getN_estacion());
@@ -3750,10 +3749,7 @@ public String obtenerEstacionDeFolio(String idFolio){
             ppm.setString(64, modeloIMangueras.getQv_gmed());
             ppm.setString(65, modeloIMangueras.getQv_gmin());
             ppm.setString(66, modeloIMangueras.getRestultados_ml1());
-            ppm.setString(67, modeloIMangueras.getResultados_ml2());
-            
-            //Joel Estrella 23/02/2022
-            ppm.setString(68, modeloIMangueras.getID_jarra());
+            ppm.setString(67, modeloIMangueras.getResultados_ml2());         
             ppm.executeUpdate();
             //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
             System.out.println("Datos almacenados de forma exitosa");

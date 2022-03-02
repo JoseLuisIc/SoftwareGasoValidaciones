@@ -99,14 +99,14 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
          lbd.openConnection();
          List <String> listaAux = lbd.obtenerTermometros(2,"");
          String [] lista = new String[listaAux.size()];
-         lista = listaAux.toArray(lista);  
+         lista = listaAux.toArray(lista);        
          jComboBoxTermometro.setModel((new javax.swing.DefaultComboBoxModel<>(lista)));
          String item_seleccionado = jComboBoxTermometro.getSelectedItem().toString();
          listaAux = lbd.obtenerTermometros(1,item_seleccionado);
-//        Luis Angel Soto Reyes pasa los datos a string para quitar corchetes 
+        //Luis Angel Soto Reyes pasa los datos a string para quitar corchetes 
          String datosArray = "";
         for (int i=0;i<=2;i++) {
-            datosArray +=listaAux.get(i)+", ";      
+            datosArray +=listaAux.get(i)+", ";
         }
          datosTermometro.setText(limpia(datosArray.toString()));
          //lleno el combo de cronometros
@@ -117,7 +117,6 @@ public class catalogoInspeccionDeMedicion extends javax.swing.JFrame {
          item_seleccionado = jComboBoxCronometro.getSelectedItem().toString();
          listaAux = lbd.obtenerCronometros(1,item_seleccionado);
          //Luis Angel Soto Reyes pasa los datos a string para quitar corchetes 
-       
          String datosArray2 = "";
         for (int i=0;i<=2;i++) {
             datosArray2 +=listaAux.get(i)+", ";
@@ -2021,9 +2020,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel6 = new javax.swing.JLabel();
         campoEstacion = new javax.swing.JTextField();
         campoInformacionEstacion = new javax.swing.JTextField();
-        jComboBoxCronometro = new javax.swing.JComboBox<String>();
-        jComboBoxDispensarios = new javax.swing.JComboBox<String>();
-        jComboBoxTermometro = new javax.swing.JComboBox<String>();
+        jComboBoxCronometro = new javax.swing.JComboBox<>();
+        jComboBoxDispensarios = new javax.swing.JComboBox<>();
+        jComboBoxTermometro = new javax.swing.JComboBox<>();
         campoTipoVerificacion = new javax.swing.JTextField();
         datosTermometro = new javax.swing.JTextField();
         datosCronometro = new javax.swing.JTextField();
@@ -2165,7 +2164,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jComboBoxJarraA = new javax.swing.JComboBox<String>();
+        jComboBoxJarraA = new javax.swing.JComboBox<>();
         avisoLabelA = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
@@ -2290,7 +2289,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel110 = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
-        jComboBoxJarraB = new javax.swing.JComboBox<String>();
+        jComboBoxJarraB = new javax.swing.JComboBox<>();
         avisoLabelB = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
@@ -2415,7 +2414,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel160 = new javax.swing.JLabel();
         jLabel161 = new javax.swing.JLabel();
         jLabel162 = new javax.swing.JLabel();
-        jComboBoxJarraC = new javax.swing.JComboBox<String>();
+        jComboBoxJarraC = new javax.swing.JComboBox<>();
         avisoLabelC = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
@@ -2540,7 +2539,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel210 = new javax.swing.JLabel();
         jLabel211 = new javax.swing.JLabel();
         jLabel212 = new javax.swing.JLabel();
-        jComboBoxJarraD = new javax.swing.JComboBox<String>();
+        jComboBoxJarraD = new javax.swing.JComboBox<>();
         avisoLabelD = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
@@ -2665,7 +2664,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel260 = new javax.swing.JLabel();
         jLabel261 = new javax.swing.JLabel();
         jLabel262 = new javax.swing.JLabel();
-        jComboBoxJarraE = new javax.swing.JComboBox<String>();
+        jComboBoxJarraE = new javax.swing.JComboBox<>();
         avisoLabelE = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
@@ -2790,7 +2789,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel310 = new javax.swing.JLabel();
         jLabel311 = new javax.swing.JLabel();
         jLabel312 = new javax.swing.JLabel();
-        jComboBoxJarraF = new javax.swing.JComboBox<String>();
+        jComboBoxJarraF = new javax.swing.JComboBox<>();
         avisoLabelF = new javax.swing.JLabel();
         jPanel38 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
@@ -2898,11 +2897,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 jComboBoxCronometroItemStateChanged(evt);
             }
         });
-        jComboBoxCronometro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxCronometroActionPerformed(evt);
-            }
-        });
 
         jComboBoxDispensarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2918,11 +2912,6 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jComboBoxTermometro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxTermometroActionPerformed(evt);
-            }
-        });
-        jComboBoxTermometro.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jComboBoxTermometroKeyPressed(evt);
             }
         });
 
@@ -4271,7 +4260,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel53.setText("Inf. Calib.");
 
-        jComboBoxJarraA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraA.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraAItemStateChanged(evt);
@@ -5387,7 +5376,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel112.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel112.setText("Inf. Calib.");
 
-        jComboBoxJarraB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraBItemStateChanged(evt);
@@ -6457,7 +6446,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel162.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel162.setText("Inf. Calib.");
 
-        jComboBoxJarraC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraC.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraCItemStateChanged(evt);
@@ -7523,7 +7512,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel212.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel212.setText("Inf. Calib.");
 
-        jComboBoxJarraD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraD.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraDItemStateChanged(evt);
@@ -8588,7 +8577,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel262.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel262.setText("Inf. Calib.");
 
-        jComboBoxJarraE.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraE.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraEItemStateChanged(evt);
@@ -9656,7 +9645,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel312.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel312.setText("Inf. Calib.");
 
-        jComboBoxJarraF.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxJarraF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxJarraF.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxJarraFItemStateChanged(evt);
@@ -10333,12 +10322,14 @@ entraonoentra();        // TODO add your handling code here:
         List <String> listaAux = lbd.obtenerTermometros(1, (String) evt.getItem());
         //String [] lista = new String[listaAux.size()];
          //lista = listaAux.toArray(lista);        
-         String datosArray = "";
-        for (int i=0;i<=2;i++) {
-            datosArray +=listaAux.get(i)+", ";      
-        }
          //jComboBoxTermometro.setModel((new javax.swing.DefaultComboBoxModel<>(lista)));
          //String item_seleccionado = jComboBoxTermometro.getSelectedItem().toString();
+         String datosArray = "";
+        for (int i=0;i<=2;i++) {
+            datosArray +=listaAux.get(i)+", ";
+        }
+         //datosTermometro.setText(limpia(datosArray.toString()));
+         datosTermometro.setText(listaAux.toString());
         datosTermometro.setText(limpia(datosArray.toString()));
          //lleno el combo de cronometros
          //lleno los combos jarra
@@ -10350,15 +10341,10 @@ entraonoentra();        // TODO add your handling code here:
         lbd.openConnection();
         List <String> listaAux = lbd.obtenerCronometros(1, (String) evt.getItem());
         //String [] lista = new String[listaAux.size()];
-         //lista = listaAux.toArray(lista); 
-         String datosArray2 = "";
-        for (int i=0;i<=2;i++) {
-            datosArray2 +=listaAux.get(i)+", ";
-            
-        }
+         //lista = listaAux.toArray(lista);        
          //jComboBoxTermometro.setModel((new javax.swing.DefaultComboBoxModel<>(lista)));
          //String item_seleccionado = jComboBoxTermometro.getSelectedItem().toString();
-         datosCronometro.setText(limpia(datosArray2.toString()));
+         datosCronometro.setText(listaAux.toString());
          //lleno el combo de cronometros
          //lleno los combos jarra
          lbd.closeConnection();
