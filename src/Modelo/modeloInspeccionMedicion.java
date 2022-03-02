@@ -148,12 +148,13 @@ public class modeloInspeccionMedicion {
     private String qv_gmin;
     private String restultados_ml1;
     private String resultados_ml2;
+    private String ID_jarra;
     private int incluido;
 
     public modeloInspeccionMedicion() {
     }
 
-    public modeloInspeccionMedicion(int id, String folio, String n_estacion, String n_dispensario, String termometro, String cronometro, String lado_manguera, String calc_profeco, String calc_uva, String precinto, String V20, String KC, String gasto_max_p1, String gasto_max_p2, String gasto_max_p3, String gasto_med_p1, String gasto_med_p2, String gasto_med_p3, String gasto_min_p1, String gasto_min_p2, String gasto_min_p3, String gasto_max_lc, String gasto_med_lc, String gasto_min_lc, String gasto_max_er, String gasto_med_er, String gasto_min_er, String temp_max_p1, String temp_med_p1, String temp_min_p1, String temp_max_p2, String temp_med_p2, String temp_min_p2, String temp_max_p3, String temp_med_p3, String temp_min_p3, String i_max_p1, String i_med_p1, String i_min_p1, String i_max_p2, String i_med_p2, String i_min_p2, String i_max_p3, String i_med_p3, String i_min_p3, String i_max_lc, String i_med_lc, String i_min_lc, String tiempo_max_p1, String tiempo_med_p1, String tiempo_min_p1, String tiempo_max_p2, String tiempo_med_p2, String tiempo_min_p2, String tiempo_max_p3, String tiempo_med_p3, String tiempo_min_p3, String vcmv_gmax, String vcmv_gmed, String vcmv_gmin, String e_gmax, String e_gmed, String e_gmin, String qv_gmax, String qv_gmed, String qv_gmin, String restultados_ml1, String resultados_ml2, int incluido) {
+    public modeloInspeccionMedicion(int id, String folio, String n_estacion, String n_dispensario, String termometro, String cronometro, String lado_manguera, String calc_profeco, String calc_uva, String precinto, String V20, String KC, String gasto_max_p1, String gasto_max_p2, String gasto_max_p3, String gasto_med_p1, String gasto_med_p2, String gasto_med_p3, String gasto_min_p1, String gasto_min_p2, String gasto_min_p3, String gasto_max_lc, String gasto_med_lc, String gasto_min_lc, String gasto_max_er, String gasto_med_er, String gasto_min_er, String temp_max_p1, String temp_med_p1, String temp_min_p1, String temp_max_p2, String temp_med_p2, String temp_min_p2, String temp_max_p3, String temp_med_p3, String temp_min_p3, String i_max_p1, String i_med_p1, String i_min_p1, String i_max_p2, String i_med_p2, String i_min_p2, String i_max_p3, String i_med_p3, String i_min_p3, String i_max_lc, String i_med_lc, String i_min_lc, String tiempo_max_p1, String tiempo_med_p1, String tiempo_min_p1, String tiempo_max_p2, String tiempo_med_p2, String tiempo_min_p2, String tiempo_max_p3, String tiempo_med_p3, String tiempo_min_p3, String vcmv_gmax, String vcmv_gmed, String vcmv_gmin, String e_gmax, String e_gmed, String e_gmin, String qv_gmax, String qv_gmed, String qv_gmin, String restultados_ml1, String resultados_ml2,String ID_jarra, int incluido) {
         this.id = id;
         this.folio = folio;
         this.n_estacion = n_estacion;
@@ -222,6 +223,7 @@ public class modeloInspeccionMedicion {
         this.qv_gmin = qv_gmin;
         this.restultados_ml1 = restultados_ml1;
         this.resultados_ml2 = resultados_ml2;
+        this.ID_jarra= ID_jarra;
         this.incluido = incluido;
     }
     
@@ -778,7 +780,17 @@ public class modeloInspeccionMedicion {
     public void setIncluido(int incluido) {
         this.incluido = incluido;
     }
+    //Joel Estrella 23/02/2022
 
+    public String getID_jarra() {
+        return ID_jarra;
+    }
+
+    public void setID_jarra(String ID_jarra) {
+        this.ID_jarra = ID_jarra;
+    }
+
+    
     @Override
     public String toString() {
         return "modeloInspeccionMedicion{" + "id=" + id + ", folio=" + folio + ", n_estacion=" + n_estacion + ", n_dispensario=" + n_dispensario + ", termometro=" + termometro + ", cronometro=" + cronometro + ", lado_manguera=" + lado_manguera + ", calc_profeco=" + calc_profeco + ", calc_uva=" + calc_uva + ", precinto=" + precinto + ", V20=" + V20 + ", KC=" + KC + ", gasto_max_p1=" + gasto_max_p1 + ", gasto_max_p2=" + gasto_max_p2 + ", gasto_max_p3=" + gasto_max_p3 + ", gasto_med_p1=" + gasto_med_p1 + ", gasto_med_p2=" + gasto_med_p2 + ", gasto_med_p3=" + gasto_med_p3 + ", gasto_min_p1=" + gasto_min_p1 + ", gasto_min_p2=" + gasto_min_p2 + ", gasto_min_p3=" + gasto_min_p3 + ", gasto_max_lc=" + gasto_max_lc + ", gasto_med_lc=" + gasto_med_lc + ", gasto_min_lc=" + gasto_min_lc + ", gasto_max_er=" + gasto_max_er + ", gasto_med_er=" + gasto_med_er + ", gasto_min_er=" + gasto_min_er + ", temp_max_p1=" + temp_max_p1 + ", temp_med_p1=" + temp_med_p1 + ", temp_min_p1=" + temp_min_p1 + ", temp_max_p2=" + temp_max_p2 + ", temp_med_p2=" + temp_med_p2 + ", temp_min_p2=" + temp_min_p2 + ", temp_max_p3=" + temp_max_p3 + ", temp_med_p3=" + temp_med_p3 + ", temp_min_p3=" + temp_min_p3 + ", i_max_p1=" + i_max_p1 + ", i_med_p1=" + i_med_p1 + ", i_min_p1=" + i_min_p1 + ", i_max_p2=" + i_max_p2 + ", i_med_p2=" + i_med_p2 + ", i_min_p2=" + i_min_p2 + ", i_max_p3=" + i_max_p3 + ", i_med_p3=" + i_med_p3 + ", i_min_p3=" + i_min_p3 + ", i_max_lc=" + i_max_lc + ", i_med_lc=" + i_med_lc + ", i_min_lc=" + i_min_lc + ", tiempo_max_p1=" + tiempo_max_p1 + ", tiempo_med_p1=" + tiempo_med_p1 + ", tiempo_min_p1=" + tiempo_min_p1 + ", tiempo_max_p2=" + tiempo_max_p2 + ", tiempo_med_p2=" + tiempo_med_p2 + ", tiempo_min_p2=" + tiempo_min_p2 + ", tiempo_max_p3=" + tiempo_max_p3 + ", tiempo_med_p3=" + tiempo_med_p3 + ", tiempo_min_p3=" + tiempo_min_p3 + ", vcmv_gmax=" + vcmv_gmax + ", vcmv_gmed=" + vcmv_gmed + ", vcmv_gmin=" + vcmv_gmin + ", e_gmax=" + e_gmax + ", e_gmed=" + e_gmed + ", e_gmin=" + e_gmin + ", qv_gmax=" + qv_gmax + ", qv_gmed=" + qv_gmed + ", qv_gmin=" + qv_gmin + ", restultados_ml1=" + restultados_ml1 + ", resultados_ml2=" + resultados_ml2 + ", incluido=" + incluido + '}';
