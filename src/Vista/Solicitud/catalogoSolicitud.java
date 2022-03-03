@@ -35,7 +35,7 @@ public class catalogoSolicitud extends javax.swing.JDialog {
     public String  Usuario;
     
     public catalogoSolicitud(modeloTablaUsuario mtu){
-
+    
        this.mtu=mtu;
         Usuario=mtu.getNombreCompleto();
      getColumnas();
@@ -61,8 +61,10 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
                 }
 
             }
-        });
-
+        }); 
+//Luis Angel Soto Reyes   bloquea boton dictamen
+           imprimirDictamen.setEnabled(false);           
+        
     }
     /*Obtengo los titulos de mi tabla*/
     String[] getColumnas(){ //Columnas
@@ -384,6 +386,7 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
         Realizo la consulta de la información que se necesita.
         Se adecua el codigo para la solcitud para no reeplicar codigo
         */
+        
             int operacionExitosa = 1;
             int tipoDoc = 2;
             Object [] arregloDatosDoc;
@@ -393,6 +396,10 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
             lbd.openConnection();
             validaFSol = lbd.validaFolioSolicitud(folioSol);
             lbd.closeConnection();
+            //Luis Angel Soto Reyes activa el boton al imprimir
+            if(validaFSol != 0){
+            imprimirDictamen.setEnabled(true);    
+            }
        
             if(validaFSol != 0){
             /*Creo un arreglo con las etiquetas que se necesitan modificar/reemplazar*/
@@ -448,7 +455,7 @@ tablaCatalogoSolicitud.addMouseListener(new java.awt.event.MouseAdapter() {
 
     private void imprimirDictamenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirDictamenActionPerformed
         // TODO add your handling code here:
-            
+     
             int operacionExitosa = 1;
             int tipoDoc = 4;
             int tipoDocDic = 3;

@@ -1125,7 +1125,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel2" min="-2" pref="667" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel13" max="32767" attributes="0"/>
                   </Group>
@@ -1192,7 +1192,7 @@
                                               </Group>
                                               <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1239,7 +1239,7 @@
                                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                                                   <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
@@ -1285,6 +1285,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
+                                      <Component id="jLabel334" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -1383,7 +1384,9 @@
                               <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          <Component id="jLabel334" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -2101,6 +2104,14 @@
                       <Font name="Tahoma" size="13" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Minimo(ml)"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel334">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="caratula indicadora"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -2927,6 +2938,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
+                                      <Component id="jLabel335" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -3025,7 +3037,9 @@
                               <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel82" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel335" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel78" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -3746,6 +3760,14 @@
                       <Font name="Tahoma" size="13" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Minimo(ml)"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel335">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="caratula indicadora"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -4571,6 +4593,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
+                                      <Component id="jLabel336" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -4669,7 +4692,9 @@
                               <Component id="jLabel131" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel132" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel336" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel128" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -5383,6 +5408,14 @@
                       <Font name="Tahoma" size="13" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Minimo(ml)"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel336">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="caratula indicadora"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -6209,6 +6242,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
+                                      <Component id="jLabel337" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -6307,7 +6341,9 @@
                               <Component id="jLabel181" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel182" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          <Component id="jLabel337" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel178" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -7020,6 +7056,14 @@
                       <Font name="Tahoma" size="13" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Minimo(ml)"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel337">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="caratula indicadora"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -7845,6 +7889,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
+                                      <Component id="jLabel338" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -7943,7 +7988,9 @@
                               <Component id="jLabel231" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel232" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          <Component id="jLabel338" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel228" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -8656,6 +8703,14 @@
                       <Font name="Tahoma" size="13" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Minimo(ml)"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel338">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="caratula indicadora"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -9486,6 +9541,7 @@
                                               <Component id="FI4MED" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <Component id="jLabel339" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -9584,7 +9640,9 @@
                               <Component id="jLabel281" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel282" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel339" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel278" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -10297,6 +10355,14 @@
                       <Font name="Tahoma" size="13" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Minimo(ml)"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel339">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="caratula indicadora"/>
                   </Properties>
                 </Component>
               </SubComponents>
