@@ -13,6 +13,7 @@ import Controlador.informacionCliente;
 import Controlador.informacionDispensarios;
 import Controlador.reporteExcel;
 import Controlador.reportesWord;
+import Modelo.modeloInspeccionMedicion;
 import Modelo.modeloTablaUsuario;
 import java.awt.Component;
 import java.io.IOException;
@@ -2844,6 +2845,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 folioSolicitudKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                folioSolicitudKeyReleased(evt);
+            }
         });
 
         jLabel2.setText("Folio:");
@@ -2929,6 +2933,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jDateChooserFechaIM.setEnabled(false);
 
         btnGuardarExcel.setText("Guardar");
+        btnGuardarExcel.setEnabled(false);
         btnGuardarExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarExcelActionPerformed(evt);
@@ -10416,6 +10421,16 @@ entraonoentra();        // TODO add your handling code here:
                   JOptionPane.showMessageDialog(null, "Los datos de la verificiación "
                           + "visual fueron ingresados correctamente.");
                   //repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
+                  
+                  //Joel Estrella 07/03/2022
+                  modeloInspeccionMedicion modeloInspeccion = new modeloInspeccionMedicion();
+                  modeloInspeccion.setFolio(folioSolicitud.getText());
+                  modeloInspeccion.setN_estacion(campoEstacion.getText());
+                  modeloInspeccion.setN_dispensario((String)jComboBoxDispensarios.getSelectedItem());
+                  modeloInspeccion.setTermometro((String)jComboBoxTermometro.getSelectedItem());
+                  modeloInspeccion.setCronometro((String)jComboBoxCronometro.getSelectedItem());
+                  modeloInspeccion.setLado_manguera(jTabbedPane1.getSelectedComponent().toString());
+                  
               }
               else{
                   JOptionPane.showMessageDialog(null, "Los datos de la verificiación "
@@ -11758,6 +11773,33 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private void campoInformacionEstacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoInformacionEstacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoInformacionEstacionActionPerformed
+
+    private void folioSolicitudKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_folioSolicitudKeyReleased
+        // TODO add your handling code here:
+                                              
+                   //Joel Estrella 07/03/2022
+                   String texto=folioSolicitud.getText();
+                   if (texto!=null && texto.length()>=0 && !texto.equals(" ") && !texto.equals(""))
+                   {
+                        btnGuardarExcel.setEnabled(true);
+                        lbd.openConnection();
+                        int estadoFolio= lbd.estadofolioModeloVerificacionVisual(texto);
+                        lbd.closeConnection();
+                         if (estadoFolio==1)
+                        {
+                            btnGuardarExcel.setText("Actualizar");
+                        }
+                        else
+                        {
+                            btnGuardarExcel.setText("Guardar");
+                        }
+                   }
+                   else
+                   {
+                       btnGuardarExcel.setEnabled(false);
+                   }
+                   
+    }//GEN-LAST:event_folioSolicitudKeyReleased
 //>>>>>>> f3b6447726602e3714578494c282ea5347226ed7
 
     /**

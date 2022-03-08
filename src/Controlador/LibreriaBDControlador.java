@@ -3897,5 +3897,83 @@ public String obtenerEstacionDeFolio(String idFolio){
         return listaAux;
         
     }
+    // Joel Estrella 05/07/2022
+  public int actualizarModeloVerificacionVisual(modeloVerificacionVisual modeloVVisual) {
+        int valida = 0;
+        try {
+                String idDispAux = "default";
+                PreparedStatement pps=Conexion.prepareStatement("UPDATE tabla_verificacion_visual"
+                        + "SET "
+                        + "dispensario = ?,"
+                        + "leyendas = ?,"
+                        + "placa = ?,"
+                        + "caratula = ?,"
+                        + "signo = ?,"
+                        + "disp_contador = ?,"
+                        + "mecanismo = ?,"
+                        + "disp_despacho = ?,"
+                        + "golpes = ?,"
+                        + "tiempo = ? "
+                        + "WHERE folio = ?");
+                //Aquí le envío la información debe coincidir con el total de ? = 12 el default envía el dato por defecto
+                
+                pps.setString(1,modeloVVisual.getDispensario());
+                pps.setString(2,modeloVVisual.getLeyendas());
+                pps.setString(3,modeloVVisual.getPlaca());
+                pps.setString(4,modeloVVisual.getCaratula());
+                pps.setString(5,modeloVVisual.getSigno());
+                pps.setString(6,modeloVVisual.getDisp_contador());
+                pps.setString(7,modeloVVisual.getMecanismo());
+                pps.setString(8,modeloVVisual.getDisp_despacho());
+                pps.setString(9,modeloVVisual.getGolpes());
+                pps.setString(10,modeloVVisual.getTiempo());
+                pps.setString(11,modeloVVisual.getFolio());
+                pps.executeUpdate();             
+                //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
+                System.out.println("Datos actualizados de forma exitosa");
+                valida = 1;
+        } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+                //JOptionPane.showMessageDialog(null, "Error en el almacenamiento de datos"+ex);
+                System.out.println("Error en el almacenamiento de datos"+ex);
+                valida = 0;
+        }
+        return valida;
+    }
+            
+  public int estadofolioModeloVerificacionVisual(String folio) {
+        int validacion = 0;
+        try {
+                String query= "SELECT count(folio) as registro from tabla_verificacion_visual where folio = '"+folio+"'";
+                            Statement st = Conexion.createStatement();
+            java.sql.ResultSet resultSet;
+            resultSet = st.executeQuery(query);
+
+                //PreparedStatement pps=Conexion.prepareStatement("SELECT COUNT(*) AS registro FROM tabla_verificacion_visual WHERE folio = '"+folio+"'");
+                //java.sql.ResultSet res;
+                //Aquí le envío la información debe coincidir con el total de ? = 12 el default envía el dato por defecto
+                //res=pps.executeQuery(); 
+                while (resultSet.next()) {
+                
+                System.out.println("Folio Encontrado" + resultSet.getInt("registro"));
+                if (resultSet.getInt("registro")==1)
+                {
+                    validacion = 1;
+                }
+                else
+                {
+                     validacion = 0;
+                }
+            }
+                
+                
+        } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+                //JOptionPane.showMessageDialog(null, "Error en el almacenamiento de datos"+ex);
+                System.out.println("Error en el almacenamiento de datos"+ex);
+                validacion = 0;
+        }
+        return validacion;
+    }
 }
 //Final de LibreriaBDControlador.
