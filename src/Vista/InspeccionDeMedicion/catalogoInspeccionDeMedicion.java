@@ -333,8 +333,20 @@ operacionesdeInspeccionMedicion();
          if(jRadioButton21.isSelected()&&jRadioButton24.isSelected()&&jRadioButton26.isSelected()&&jRadioButton28.isSelected()&&jRadioButton30.isSelected()&&jRadioButton32.isSelected()&&jRadioButton34.isSelected()&&jRadioButton36.isSelected()&&jRadioButton38.isSelected()){
          entraraMangueras();
          cargarOpciones();
+         //Joel Estrella 08/03/2022
+         String texto=folioSolicitud.getText();
+            if (texto.matches("[0-9]*") && texto!=null && !texto.equals(""))
+            {
+                btnGuardarExcel.setEnabled(true);
+            }
+            else
+            {
+                btnGuardarExcel.setEnabled(false);
+            }
          }  else{
-             bloquearaMangueras();}
+             bloquearaMangueras();
+             btnGuardarExcel.setEnabled(false);
+         }
     }
      //Luis Angel Soto Reyes 
     //quita la ultima coma del array
@@ -10421,22 +10433,462 @@ entraonoentra();        // TODO add your handling code here:
                   JOptionPane.showMessageDialog(null, "Los datos de la verificiación "
                           + "visual fueron ingresados correctamente.");
                   //repExcel.crearDocumentoExcel(6, folioSolicitud.getText(),infoCliente, infoDispensarios);
-                  
-                  //Joel Estrella 07/03/2022
-                  modeloInspeccionMedicion modeloInspeccion = new modeloInspeccionMedicion();
-                  modeloInspeccion.setFolio(folioSolicitud.getText());
-                  modeloInspeccion.setN_estacion(campoEstacion.getText());
-                  modeloInspeccion.setN_dispensario((String)jComboBoxDispensarios.getSelectedItem());
-                  modeloInspeccion.setTermometro((String)jComboBoxTermometro.getSelectedItem());
-                  modeloInspeccion.setCronometro((String)jComboBoxCronometro.getSelectedItem());
-                  modeloInspeccion.setLado_manguera(jTabbedPane1.getSelectedComponent().toString());
-                  
+                   
               }
               else{
                   JOptionPane.showMessageDialog(null, "Los datos de la verificiación "
                           + "visual ya fueron ingresados anteriormente. ");
               }
               
+              //Joel Estrella 07/03/2022
+              //creamos el modelo y le añadimos valores
+                  modeloInspeccionMedicion modeloInspeccion = new modeloInspeccionMedicion();
+                  modeloInspeccion.setFolio(folioSolicitud.getText());
+                  modeloInspeccion.setN_estacion(campoEstacion.getText());
+                  modeloInspeccion.setN_dispensario((String)jComboBoxDispensarios.getSelectedItem());
+                  modeloInspeccion.setTermometro((String)jComboBoxTermometro.getSelectedItem());
+                  modeloInspeccion.setCronometro((String)jComboBoxCronometro.getSelectedItem());
+                  for(int i=0; i<6; i++)
+                  {
+                      // de acuerdo a cada panel de manguera se hace un case para poder guardar sus datos
+                      switch(i)
+                      {
+                          case 0:
+                              modeloInspeccion.setLado_manguera("A");
+                              modeloInspeccion.setCalc_profeco(calcProfecoA.getText());
+                              modeloInspeccion.setCalc_uva(calcUvA.getText());
+                              modeloInspeccion.setPrecinto(campoPrecintoA.getText());
+                              modeloInspeccion.setV20(AV20.getText());
+                              modeloInspeccion.setKC(AKC.getText());
+                              modeloInspeccion.setGasto_max_p1(AP1MAX.getText());
+                              modeloInspeccion.setGasto_max_p2(AP2MAX.getText());
+                              modeloInspeccion.setGasto_max_p3(AP3MAX.getText());
+                              modeloInspeccion.setGasto_med_p1(AP1MED.getText());
+                              modeloInspeccion.setGasto_med_p2(AP2MED.getText());
+                              modeloInspeccion.setGasto_med_p3(AP3MED.getText());
+                              modeloInspeccion.setGasto_min_p1(AP1MIN.getText());
+                              modeloInspeccion.setGasto_min_p2(AP2MIN.getText());
+                              modeloInspeccion.setGasto_min_p3(AP3MIN.getText());
+                              modeloInspeccion.setGasto_max_lc(ALCMAX.getText());
+                              modeloInspeccion.setGasto_med_lc(ALCMED.getText());
+                              modeloInspeccion.setGasto_min_lc(ALCMIN.getText());
+                              modeloInspeccion.setGasto_max_er(jTextField19.getText());
+                              modeloInspeccion.setGasto_med_er(jTextField20.getText());
+                              modeloInspeccion.setGasto_min_er(jTextField18.getText());
+                              modeloInspeccion.setTemp_max_p1(ATMAXP1.getText());
+                              modeloInspeccion.setTemp_max_p2(ATMAXP2.getText());
+                              modeloInspeccion.setTemp_max_p3(ATMAXP3.getText());
+                              modeloInspeccion.setTemp_med_p1(ATMEDP1.getText());
+                              modeloInspeccion.setTemp_med_p2(ATMEDP2.getText());
+                              modeloInspeccion.setTemp_med_p3(ATMEDP3.getText());
+                              modeloInspeccion.setTemp_min_p1(ATMINP1.getText());
+                              modeloInspeccion.setTemp_min_p2(ATMINP2.getText());
+                              modeloInspeccion.setTemp_min_p3(ATMINP3.getText());
+                              modeloInspeccion.setI_max_p1(AI1MAX.getText());
+                              modeloInspeccion.setI_max_p2(AI2MAX.getText());
+                              modeloInspeccion.setI_max_p3(AI3MAX.getText());
+                              modeloInspeccion.setI_med_p1(AI1MED.getText());
+                              modeloInspeccion.setI_med_p2(AI2MED.getText());
+                              modeloInspeccion.setI_med_p3(AI3MED.getText());
+                              modeloInspeccion.setI_min_p1(AI1MIN.getText());
+                              modeloInspeccion.setI_min_p2(AI2MIN.getText());
+                              modeloInspeccion.setI_min_p3(AI3MIN.getText());
+                              modeloInspeccion.setI_max_lc(AI4MAX.getText());
+                              modeloInspeccion.setI_med_lc(AI4MED.getText());
+                              modeloInspeccion.setI_min_lc(AI4MIN.getText());
+                              modeloInspeccion.setTiempo_max_p1(ATIMAX1.getText());
+                              modeloInspeccion.setTiempo_max_p2(ATIMAX2.getText());
+                              modeloInspeccion.setTiempo_max_p3(ATIMAX3.getText());
+                              modeloInspeccion.setTiempo_med_p1(ATIMED1.getText());
+                              modeloInspeccion.setTiempo_med_p2(ATIMED2.getText());
+                              modeloInspeccion.setTiempo_med_p3(ATIMED3.getText());
+                              modeloInspeccion.setTiempo_min_p1(ATIMIN1.getText());
+                              modeloInspeccion.setTiempo_min_p2(ATIMIN2.getText());
+                              modeloInspeccion.setTiempo_min_p3(ATIMIN3.getText());
+                              modeloInspeccion.setVcmv_gmax(AVCMVMAX.getText());
+                              modeloInspeccion.setVcmv_gmed(AVCMVMED.getText());
+                              modeloInspeccion.setVcmv_gmin(AVCMVMIN.getText());
+                              modeloInspeccion.setE_gmax(AEMAX.getText());
+                              modeloInspeccion.setE_gmed(AEMED.getText());
+                              modeloInspeccion.setE_gmin(AEMIN.getText());
+                              modeloInspeccion.setQv_gmax(AQVMAX.getText());
+                              modeloInspeccion.setQv_gmed(AQVMED.getText());
+                              modeloInspeccion.setQv_gmin(AQVMIN.getText());
+                              modeloInspeccion.setRestultados_ml1(jTextField66.getText());
+                              modeloInspeccion.setResultados_ml2(jTextField65.getText());
+                              modeloInspeccion.setID_jarra((String)jComboBoxJarraA.getSelectedItem());
+                              /*if(btnGuardarExcel.getText().equals("Guardar"))
+                              {
+                                lbd.openConnection();
+                                lbd.insertarModeloInspeccionMedicionMangueras(modeloInspeccion);
+                                lbd.closeConnection();
+                              }
+                              else if(btnGuardarExcel.getText().equals("Actualizar"))
+                              {
+                                lbd.openConnection();
+                                lbd.actualizarModeloInspeccionMedicion(modeloInspeccion);
+                                lbd.closeConnection();
+                              }*/
+                              break;
+                              
+                          case 1:
+                              modeloInspeccion.setLado_manguera("B");
+                              modeloInspeccion.setCalc_profeco(calcProfecoB.getText());
+                              modeloInspeccion.setCalc_uva(calcUvaB.getText());
+                              modeloInspeccion.setPrecinto(campoPrecintoB.getText());
+                              modeloInspeccion.setV20(BV20.getText());
+                              modeloInspeccion.setKC(BKC.getText());
+                              modeloInspeccion.setGasto_max_p1(BP1MAX.getText());
+                              modeloInspeccion.setGasto_max_p2(BP2MAX.getText());
+                              modeloInspeccion.setGasto_max_p3(BP3MAX.getText());
+                              modeloInspeccion.setGasto_med_p1(BP1MED.getText());
+                              modeloInspeccion.setGasto_med_p2(BP2MED.getText());
+                              modeloInspeccion.setGasto_med_p3(BP3MED.getText());
+                              modeloInspeccion.setGasto_min_p1(BP1MIN.getText());
+                              modeloInspeccion.setGasto_min_p2(BP2MIN.getText());
+                              modeloInspeccion.setGasto_min_p3(BP3MIN.getText());
+                              modeloInspeccion.setGasto_max_lc(BLCMAX.getText());
+                              modeloInspeccion.setGasto_med_lc(BLCMED.getText());
+                              modeloInspeccion.setGasto_min_lc(BLCMIN.getText());
+                              modeloInspeccion.setGasto_max_er(jTextField83.getText());
+                              modeloInspeccion.setGasto_med_er(jTextField84.getText());
+                              modeloInspeccion.setGasto_min_er(jTextField82.getText());
+                              modeloInspeccion.setTemp_max_p1(BTMAXP1.getText());
+                              modeloInspeccion.setTemp_max_p2(BTMAXP2.getText());
+                              modeloInspeccion.setTemp_max_p3(BTMAXP3.getText());
+                              modeloInspeccion.setTemp_med_p1(BTMEDP1.getText());
+                              modeloInspeccion.setTemp_med_p2(BTMEDP2.getText());
+                              modeloInspeccion.setTemp_med_p3(BTMEDP3.getText());
+                              modeloInspeccion.setTemp_min_p1(BTMINP1.getText());
+                              modeloInspeccion.setTemp_min_p2(BTMINP2.getText());
+                              modeloInspeccion.setTemp_min_p3(BTMINP3.getText());
+                              modeloInspeccion.setI_max_p1(BI1MAX.getText());
+                              modeloInspeccion.setI_max_p2(BI2MAX.getText());
+                              modeloInspeccion.setI_max_p3(BI3MAX.getText());
+                              modeloInspeccion.setI_med_p1(BI1MED.getText());
+                              modeloInspeccion.setI_med_p2(BI2MED.getText());
+                              modeloInspeccion.setI_med_p3(BI3MED.getText());
+                              modeloInspeccion.setI_min_p1(BI1MIN.getText());
+                              modeloInspeccion.setI_min_p2(BI2MIN.getText());
+                              modeloInspeccion.setI_min_p3(BI3MIN.getText());
+                              modeloInspeccion.setI_max_lc(BI4MAX.getText());
+                              modeloInspeccion.setI_med_lc(BI4MED.getText());
+                              modeloInspeccion.setI_min_lc(BI4MIN.getText());
+                              modeloInspeccion.setTiempo_max_p1(BTIMAX1.getText());
+                              modeloInspeccion.setTiempo_max_p2(BTIMAX2.getText());
+                              modeloInspeccion.setTiempo_max_p3(BTIMAX3.getText());
+                              modeloInspeccion.setTiempo_med_p1(BTIMED1.getText());
+                              modeloInspeccion.setTiempo_med_p2(BTIMED2.getText());
+                              modeloInspeccion.setTiempo_med_p3(BTIMED3.getText());
+                              modeloInspeccion.setTiempo_min_p1(BTIMIN1.getText());
+                              modeloInspeccion.setTiempo_min_p2(BTIMIN2.getText());
+                              modeloInspeccion.setTiempo_min_p3(BTIMIN3.getText());
+                              modeloInspeccion.setVcmv_gmax(BVCMVMAX.getText());
+                              modeloInspeccion.setVcmv_gmed(BVCMVMED.getText());
+                              modeloInspeccion.setVcmv_gmin(BVCMVMIN.getText());
+                              modeloInspeccion.setE_gmax(BEMAX.getText());
+                              modeloInspeccion.setE_gmed(BEMED.getText());
+                              modeloInspeccion.setE_gmin(BEMIN.getText());
+                              modeloInspeccion.setQv_gmax(BQVMAX.getText());
+                              modeloInspeccion.setQv_gmed(BQVMED.getText());
+                              modeloInspeccion.setQv_gmin(BQVMIN.getText());
+                              modeloInspeccion.setRestultados_ml1(jTextField133.getText());
+                              modeloInspeccion.setResultados_ml2(jTextField132.getText());
+                              modeloInspeccion.setID_jarra((String)jComboBoxJarraB.getSelectedItem());
+                              /*lbd.openConnection();
+                              lbd.insertarModeloInspeccionMedicionMangueras(modeloInspeccion);
+                              lbd.closeConnection();*/
+                              break;
+                              
+                          case 2:
+                              modeloInspeccion.setLado_manguera("C");
+                              modeloInspeccion.setCalc_profeco(calcProfecoC.getText());
+                              modeloInspeccion.setCalc_uva(calcUvaC.getText());
+                              modeloInspeccion.setPrecinto(campoPrecintoC.getText());
+                              modeloInspeccion.setV20(CV20.getText());
+                              modeloInspeccion.setKC(CKC.getText());
+                              modeloInspeccion.setGasto_max_p1(CP1MAX.getText());
+                              modeloInspeccion.setGasto_max_p2(CP2MAX.getText());
+                              modeloInspeccion.setGasto_max_p3(CP3MAX.getText());
+                              modeloInspeccion.setGasto_med_p1(CP1MED.getText());
+                              modeloInspeccion.setGasto_med_p2(CP2MED.getText());
+                              modeloInspeccion.setGasto_med_p3(CP3MED.getText());
+                              modeloInspeccion.setGasto_min_p1(CP1MIN.getText());
+                              modeloInspeccion.setGasto_min_p2(CP2MIN.getText());
+                              modeloInspeccion.setGasto_min_p3(CP3MIN.getText());
+                              modeloInspeccion.setGasto_max_lc(CLCMAX.getText());
+                              modeloInspeccion.setGasto_med_lc(CLCMED.getText());
+                              modeloInspeccion.setGasto_min_lc(CLCMIN.getText());
+                              modeloInspeccion.setGasto_max_er(jTextField147.getText());
+                              modeloInspeccion.setGasto_med_er(jTextField148.getText());
+                              modeloInspeccion.setGasto_min_er(jTextField146.getText());
+                              modeloInspeccion.setTemp_max_p1(CTMAXP1.getText());
+                              modeloInspeccion.setTemp_max_p2(CTMAXP2.getText());
+                              modeloInspeccion.setTemp_max_p3(CTMAXP3.getText());
+                              modeloInspeccion.setTemp_med_p1(CTMEDP1.getText());
+                              modeloInspeccion.setTemp_med_p2(CTMEDP2.getText());
+                              modeloInspeccion.setTemp_med_p3(CTMEDP3.getText());
+                              modeloInspeccion.setTemp_min_p1(CTMINP1.getText());
+                              modeloInspeccion.setTemp_min_p2(CTMINP2.getText());
+                              modeloInspeccion.setTemp_min_p3(CTMINP3.getText());
+                              modeloInspeccion.setI_max_p1(CI1MAX.getText());
+                              modeloInspeccion.setI_max_p2(CI2MAX.getText());
+                              modeloInspeccion.setI_max_p3(CI3MAX.getText());
+                              modeloInspeccion.setI_med_p1(CI1MED.getText());
+                              modeloInspeccion.setI_med_p2(CI2MED.getText());
+                              modeloInspeccion.setI_med_p3(CI3MED.getText());
+                              modeloInspeccion.setI_min_p1(CI1MIN.getText());
+                              modeloInspeccion.setI_min_p2(CI2MIN.getText());
+                              modeloInspeccion.setI_min_p3(CI3MIN.getText());
+                              modeloInspeccion.setI_max_lc(CI4MAX.getText());
+                              modeloInspeccion.setI_med_lc(CI4MED.getText());
+                              modeloInspeccion.setI_min_lc(CI4MIN.getText());
+                              modeloInspeccion.setTiempo_max_p1(CTIMAX1.getText());
+                              modeloInspeccion.setTiempo_max_p2(CTIMAX2.getText());
+                              modeloInspeccion.setTiempo_max_p3(CTIMAX3.getText());
+                              modeloInspeccion.setTiempo_med_p1(CTIMED1.getText());
+                              modeloInspeccion.setTiempo_med_p2(CTIMED2.getText());
+                              modeloInspeccion.setTiempo_med_p3(CTIMED3.getText());
+                              modeloInspeccion.setTiempo_min_p1(CTIMIN1.getText());
+                              modeloInspeccion.setTiempo_min_p2(CTIMIN2.getText());
+                              modeloInspeccion.setTiempo_min_p3(CTIMIN3.getText());
+                              modeloInspeccion.setVcmv_gmax(CVCMVMAX.getText());
+                              modeloInspeccion.setVcmv_gmed(CVCMVMED.getText());
+                              modeloInspeccion.setVcmv_gmin(CVCMVMIN.getText());
+                              modeloInspeccion.setE_gmax(CEMAX.getText());
+                              modeloInspeccion.setE_gmed(CEMED.getText());
+                              modeloInspeccion.setE_gmin(CEMIN.getText());
+                              modeloInspeccion.setQv_gmax(CQVMAX.getText());
+                              modeloInspeccion.setQv_gmed(CQVMED.getText());
+                              modeloInspeccion.setQv_gmin(CQVMIN.getText());
+                              modeloInspeccion.setRestultados_ml1(jTextField197.getText());
+                              modeloInspeccion.setResultados_ml2(jTextField196.getText());
+                              modeloInspeccion.setID_jarra((String)jComboBoxJarraC.getSelectedItem());
+                             /* lbd.openConnection();
+                              lbd.insertarModeloInspeccionMedicionMangueras(modeloInspeccion);
+                              lbd.closeConnection();*/
+                              break;
+                              
+                          case 3:
+                              modeloInspeccion.setLado_manguera("D");
+                              modeloInspeccion.setCalc_profeco(calcProfecoD.getText());
+                              modeloInspeccion.setCalc_uva(calcUvaD.getText());
+                              modeloInspeccion.setPrecinto(campoPrecintoD.getText());
+                              modeloInspeccion.setV20(DV20.getText());
+                              modeloInspeccion.setKC(DKC.getText());
+                              modeloInspeccion.setGasto_max_p1(DP1MAX.getText());
+                              modeloInspeccion.setGasto_max_p2(DP2MAX.getText());
+                              modeloInspeccion.setGasto_max_p3(DP3MAX.getText());
+                              modeloInspeccion.setGasto_med_p1(DP1MED.getText());
+                              modeloInspeccion.setGasto_med_p2(DP2MED.getText());
+                              modeloInspeccion.setGasto_med_p3(DP3MED.getText());
+                              modeloInspeccion.setGasto_min_p1(DP1MIN.getText());
+                              modeloInspeccion.setGasto_min_p2(DP2MIN.getText());
+                              modeloInspeccion.setGasto_min_p3(DP3MIN.getText());
+                              modeloInspeccion.setGasto_max_lc(DLCMAX.getText());
+                              modeloInspeccion.setGasto_med_lc(DLCMED.getText());
+                              modeloInspeccion.setGasto_min_lc(DLCMIN.getText());
+                              modeloInspeccion.setGasto_max_er(jTextField211.getText());
+                              modeloInspeccion.setGasto_med_er(jTextField212.getText());
+                              modeloInspeccion.setGasto_min_er(jTextField210.getText());
+                              modeloInspeccion.setTemp_max_p1(DTMAXP1.getText());
+                              modeloInspeccion.setTemp_max_p2(DTMAXP2.getText());
+                              modeloInspeccion.setTemp_max_p3(DTMAXP3.getText());
+                              modeloInspeccion.setTemp_med_p1(DTMEDP1.getText());
+                              modeloInspeccion.setTemp_med_p2(DTMEDP2.getText());
+                              modeloInspeccion.setTemp_med_p3(DTMEDP3.getText());
+                              modeloInspeccion.setTemp_min_p1(DTMINP1.getText());
+                              modeloInspeccion.setTemp_min_p2(DTMINP2.getText());
+                              modeloInspeccion.setTemp_min_p3(DTMINP3.getText());
+                              modeloInspeccion.setI_max_p1(DI1MAX.getText());
+                              modeloInspeccion.setI_max_p2(DI2MAX.getText());
+                              modeloInspeccion.setI_max_p3(DI3MAX.getText());
+                              modeloInspeccion.setI_med_p1(DI1MED.getText());
+                              modeloInspeccion.setI_med_p2(DI2MED.getText());
+                              modeloInspeccion.setI_med_p3(DI3MED.getText());
+                              modeloInspeccion.setI_min_p1(DI1MIN.getText());
+                              modeloInspeccion.setI_min_p2(DI2MIN.getText());
+                              modeloInspeccion.setI_min_p3(DI3MIN.getText());
+                              modeloInspeccion.setI_max_lc(DI4MAX.getText());
+                              modeloInspeccion.setI_med_lc(DI4MED.getText());
+                              modeloInspeccion.setI_min_lc(DI4MIN.getText());
+                              modeloInspeccion.setTiempo_max_p1(DTIMAX1.getText());
+                              modeloInspeccion.setTiempo_max_p2(DTIMAX2.getText());
+                              modeloInspeccion.setTiempo_max_p3(DTIMAX3.getText());
+                              modeloInspeccion.setTiempo_med_p1(DTIMED1.getText());
+                              modeloInspeccion.setTiempo_med_p2(DTIMED2.getText());
+                              modeloInspeccion.setTiempo_med_p3(DTIMED3.getText());
+                              modeloInspeccion.setTiempo_min_p1(DTIMIN1.getText());
+                              modeloInspeccion.setTiempo_min_p2(DTIMIN2.getText());
+                              modeloInspeccion.setTiempo_min_p3(DTIMIN3.getText());
+                              modeloInspeccion.setVcmv_gmax(DVCMVMAX.getText());
+                              modeloInspeccion.setVcmv_gmed(DVCMVMED.getText());
+                              modeloInspeccion.setVcmv_gmin(DVCMVMIN.getText());
+                              modeloInspeccion.setE_gmax(DEMAX.getText());
+                              modeloInspeccion.setE_gmed(DEMED.getText());
+                              modeloInspeccion.setE_gmin(DEMIN.getText());
+                              modeloInspeccion.setQv_gmax(DQVMAX.getText());
+                              modeloInspeccion.setQv_gmed(DQVMED.getText());
+                              modeloInspeccion.setQv_gmin(DQVMIN.getText());
+                              modeloInspeccion.setRestultados_ml1(jTextField261.getText());
+                              modeloInspeccion.setResultados_ml2(jTextField260.getText());
+                              modeloInspeccion.setID_jarra((String)jComboBoxJarraD.getSelectedItem());
+                              /*lbd.openConnection();
+                              lbd.insertarModeloInspeccionMedicionMangueras(modeloInspeccion);
+                              lbd.closeConnection();*/
+                              break;
+                              
+                          case 4:
+                              modeloInspeccion.setLado_manguera("E");
+                              modeloInspeccion.setCalc_profeco(calcProfecoE.getText());
+                              modeloInspeccion.setCalc_uva(calcUvaE.getText());
+                              modeloInspeccion.setPrecinto(campoPrecintoE.getText());
+                              modeloInspeccion.setV20(EV20.getText());
+                              modeloInspeccion.setKC(EKC.getText());
+                              modeloInspeccion.setGasto_max_p1(EP1MAX.getText());
+                              modeloInspeccion.setGasto_max_p2(EP2MAX.getText());
+                              modeloInspeccion.setGasto_max_p3(EP3MAX.getText());
+                              modeloInspeccion.setGasto_med_p1(EP1MED.getText());
+                              modeloInspeccion.setGasto_med_p2(EP2MED.getText());
+                              modeloInspeccion.setGasto_med_p3(EP3MED.getText());
+                              modeloInspeccion.setGasto_min_p1(EP1MIN.getText());
+                              modeloInspeccion.setGasto_min_p2(EP2MIN.getText());
+                              modeloInspeccion.setGasto_min_p3(EP3MIN.getText());
+                              modeloInspeccion.setGasto_max_lc(ELCMAX.getText());
+                              modeloInspeccion.setGasto_med_lc(ELCMED.getText());
+                              modeloInspeccion.setGasto_min_lc(ELCMIN.getText());
+                              modeloInspeccion.setGasto_max_er(jTextField275.getText());
+                              modeloInspeccion.setGasto_med_er(jTextField276.getText());
+                              modeloInspeccion.setGasto_min_er(jTextField274.getText());
+                              modeloInspeccion.setTemp_max_p1(ETMAXP1.getText());
+                              modeloInspeccion.setTemp_max_p2(ETMAXP2.getText());
+                              modeloInspeccion.setTemp_max_p3(ETMAXP3.getText());
+                              modeloInspeccion.setTemp_med_p1(ETMEDP1.getText());
+                              modeloInspeccion.setTemp_med_p2(ETMEDP2.getText());
+                              modeloInspeccion.setTemp_med_p3(ETMEDP3.getText());
+                              modeloInspeccion.setTemp_min_p1(ETMINP1.getText());
+                              modeloInspeccion.setTemp_min_p2(ETMINP2.getText());
+                              modeloInspeccion.setTemp_min_p3(ETMINP3.getText());
+                              modeloInspeccion.setI_max_p1(EI1MAX.getText());
+                              modeloInspeccion.setI_max_p2(EI2MAX.getText());
+                              modeloInspeccion.setI_max_p3(EI3MAX.getText());
+                              modeloInspeccion.setI_med_p1(EI1MED.getText());
+                              modeloInspeccion.setI_med_p2(EI2MED.getText());
+                              modeloInspeccion.setI_med_p3(EI3MED.getText());
+                              modeloInspeccion.setI_min_p1(EI1MIN.getText());
+                              modeloInspeccion.setI_min_p2(EI2MIN.getText());
+                              modeloInspeccion.setI_min_p3(EI3MIN.getText());
+                              modeloInspeccion.setI_max_lc(EI4MAX.getText());
+                              modeloInspeccion.setI_med_lc(EI4MED.getText());
+                              modeloInspeccion.setI_min_lc(EI4MIN.getText());
+                              modeloInspeccion.setTiempo_max_p1(ETIMAX1.getText());
+                              modeloInspeccion.setTiempo_max_p2(ETIMAX2.getText());
+                              modeloInspeccion.setTiempo_max_p3(ETIMAX3.getText());
+                              modeloInspeccion.setTiempo_med_p1(ETIMED1.getText());
+                              modeloInspeccion.setTiempo_med_p2(ETIMED2.getText());
+                              modeloInspeccion.setTiempo_med_p3(ETIMED3.getText());
+                              modeloInspeccion.setTiempo_min_p1(ETIMIN1.getText());
+                              modeloInspeccion.setTiempo_min_p2(ETIMIN2.getText());
+                              modeloInspeccion.setTiempo_min_p3(ETIMIN3.getText());
+                              modeloInspeccion.setVcmv_gmax(EVCMVMAX.getText());
+                              modeloInspeccion.setVcmv_gmed(EVCMVMED.getText());
+                              modeloInspeccion.setVcmv_gmin(EVCMVMIN.getText());
+                              modeloInspeccion.setE_gmax(EEMAX.getText());
+                              modeloInspeccion.setE_gmed(EEMED.getText());
+                              modeloInspeccion.setE_gmin(EEMIN.getText());
+                              modeloInspeccion.setQv_gmax(EQVMAX.getText());
+                              modeloInspeccion.setQv_gmed(EQVMED.getText());
+                              modeloInspeccion.setQv_gmin(EQVMIN.getText());
+                              modeloInspeccion.setRestultados_ml1(jTextField325.getText());
+                              modeloInspeccion.setResultados_ml2(jTextField324.getText());
+                              modeloInspeccion.setID_jarra((String)jComboBoxJarraE.getSelectedItem());
+                              /*lbd.openConnection();
+                              lbd.insertarModeloInspeccionMedicionMangueras(modeloInspeccion);
+                              lbd.closeConnection();*/
+                              break;
+                              
+                          case 5:
+                              modeloInspeccion.setLado_manguera("F");
+                              modeloInspeccion.setCalc_profeco(calcProfecoF.getText());
+                              modeloInspeccion.setCalc_uva(calcUvaF.getText());
+                              modeloInspeccion.setPrecinto(campoPrecintoF.getText());
+                              modeloInspeccion.setV20(FV20.getText());
+                              modeloInspeccion.setKC(FKC.getText());
+                              modeloInspeccion.setGasto_max_p1(FP1MAX.getText());
+                              modeloInspeccion.setGasto_max_p2(FP2MAX.getText());
+                              modeloInspeccion.setGasto_max_p3(FP3MAX.getText());
+                              modeloInspeccion.setGasto_med_p1(FP1MED.getText());
+                              modeloInspeccion.setGasto_med_p2(FP2MED.getText());
+                              modeloInspeccion.setGasto_med_p3(FP3MED.getText());
+                              modeloInspeccion.setGasto_min_p1(FP1MIN.getText());
+                              modeloInspeccion.setGasto_min_p2(FP2MIN.getText());
+                              modeloInspeccion.setGasto_min_p3(FP3MIN.getText());
+                              modeloInspeccion.setGasto_max_lc(FLCMAX.getText());
+                              modeloInspeccion.setGasto_med_lc(FLCMED.getText());
+                              modeloInspeccion.setGasto_min_lc(FLCMIN.getText());
+                              modeloInspeccion.setGasto_max_er(jTextField339.getText());
+                              modeloInspeccion.setGasto_med_er(jTextField340.getText());
+                              modeloInspeccion.setGasto_min_er(jTextField338.getText());
+                              modeloInspeccion.setTemp_max_p1(FTMAXP1.getText());
+                              modeloInspeccion.setTemp_max_p2(FTMAXP2.getText());
+                              modeloInspeccion.setTemp_max_p3(FTMAXP3.getText());
+                              modeloInspeccion.setTemp_med_p1(FTMEDP1.getText());
+                              modeloInspeccion.setTemp_med_p2(FTMEDP2.getText());
+                              modeloInspeccion.setTemp_med_p3(FTMEDP3.getText());
+                              modeloInspeccion.setTemp_min_p1(FTMINP1.getText());
+                              modeloInspeccion.setTemp_min_p2(FTMINP2.getText());
+                              modeloInspeccion.setTemp_min_p3(FTMINP3.getText());
+                              modeloInspeccion.setI_max_p1(FI1MAX.getText());
+                              modeloInspeccion.setI_max_p2(FI2MAX.getText());
+                              modeloInspeccion.setI_max_p3(FI3MAX.getText());
+                              modeloInspeccion.setI_med_p1(FI1MED.getText());
+                              modeloInspeccion.setI_med_p2(FI2MED.getText());
+                              modeloInspeccion.setI_med_p3(FI3MED.getText());
+                              modeloInspeccion.setI_min_p1(FI1MIN.getText());
+                              modeloInspeccion.setI_min_p2(FI2MIN.getText());
+                              modeloInspeccion.setI_min_p3(FI3MIN.getText());
+                              modeloInspeccion.setI_max_lc(FI4MAX.getText());
+                              modeloInspeccion.setI_med_lc(FI4MED.getText());
+                              modeloInspeccion.setI_min_lc(FI4MIN.getText());
+                              modeloInspeccion.setTiempo_max_p1(FTIMAX1.getText());
+                              modeloInspeccion.setTiempo_max_p2(FTIMAX2.getText());
+                              modeloInspeccion.setTiempo_max_p3(FTIMAX3.getText());
+                              modeloInspeccion.setTiempo_med_p1(FTIMED1.getText());
+                              modeloInspeccion.setTiempo_med_p2(FTIMED2.getText());
+                              modeloInspeccion.setTiempo_med_p3(FTIMED3.getText());
+                              modeloInspeccion.setTiempo_min_p1(FTIMIN1.getText());
+                              modeloInspeccion.setTiempo_min_p2(FTIMIN2.getText());
+                              modeloInspeccion.setTiempo_min_p3(FTIMIN3.getText());
+                              modeloInspeccion.setVcmv_gmax(FVCMVMAX.getText());
+                              modeloInspeccion.setVcmv_gmed(FVCMVMED.getText());
+                              modeloInspeccion.setVcmv_gmin(FVCMVMIN.getText());
+                              modeloInspeccion.setE_gmax(FEMAX.getText());
+                              modeloInspeccion.setE_gmed(FEMED.getText());
+                              modeloInspeccion.setE_gmin(FEMIN.getText());
+                              modeloInspeccion.setQv_gmax(FQVMAX.getText());
+                              modeloInspeccion.setQv_gmed(FQVMED.getText());
+                              modeloInspeccion.setQv_gmin(FQVMIN.getText());
+                              modeloInspeccion.setRestultados_ml1(jTextField389.getText());
+                              modeloInspeccion.setResultados_ml2(jTextField388.getText());
+                              modeloInspeccion.setID_jarra((String)jComboBoxJarraF.getSelectedItem());
+                              /*lbd.openConnection();
+                              lbd.insertarModeloInspeccionMedicionMangueras(modeloInspeccion);
+                              lbd.closeConnection();*/
+                              break;
+                      }
+                      if(btnGuardarExcel.getText().equals("Guardar"))
+                              {
+                                lbd.openConnection();
+                                lbd.insertarModeloInspeccionMedicionMangueras(modeloInspeccion);
+                                lbd.closeConnection();
+                              }
+                              else if(btnGuardarExcel.getText().equals("Actualizar"))
+                              {
+                                lbd.openConnection();
+                                lbd.actualizarModeloInspeccionMedicion(modeloInspeccion);
+                                lbd.closeConnection();
+                              }
+                  }
         }
         else{
             JOptionPane.showMessageDialog(null, "El folio no se ingreso ó no es válido.");
@@ -11779,9 +12231,9 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
                                               
                    //Joel Estrella 07/03/2022
                    String texto=folioSolicitud.getText();
-                   if (texto!=null && texto.length()>=0 && !texto.equals(" ") && !texto.equals(""))
+                   if (texto!=null && texto.length()>=0 && !texto.equals(" ") && !texto.equals("") && texto.matches("[0-9]*"))
                    {
-                        btnGuardarExcel.setEnabled(true);
+                        //btnGuardarExcel.setEnabled(true);
                         lbd.openConnection();
                         int estadoFolio= lbd.estadofolioModeloVerificacionVisual(texto);
                         lbd.closeConnection();

@@ -3898,36 +3898,147 @@ public String obtenerEstacionDeFolio(String idFolio){
         
     }
     // Joel Estrella 05/07/2022
-  public int actualizarModeloVerificacionVisual(modeloVerificacionVisual modeloVVisual) {
+    //acyualizamos la tabla mediante el modelo recibido
+  public int actualizarModeloInspeccionMedicion(modeloInspeccionMedicion modeloIMangueras) {
         int valida = 0;
         try {
                 String idDispAux = "default";
-                PreparedStatement pps=Conexion.prepareStatement("UPDATE tabla_verificacion_visual"
+                PreparedStatement pps=Conexion.prepareStatement("UPDATE tabla_inspeccion_medicion "
                         + "SET "
-                        + "dispensario = ?,"
-                        + "leyendas = ?,"
-                        + "placa = ?,"
-                        + "caratula = ?,"
-                        + "signo = ?,"
-                        + "disp_contador = ?,"
-                        + "mecanismo = ?,"
-                        + "disp_despacho = ?,"
-                        + "golpes = ?,"
-                        + "tiempo = ? "
-                        + "WHERE folio = ?");
+                        + "n_dispensario =?,"
+                        + "termometro =?,"
+                        + "cronometro =?,"
+                        /*+ "calc_profeco,"
+                        + "calc_uva,"
+                        + "precinto,"*/
+                        + "V20 =?,"
+                        + "KC =?,"
+                        + "gasto_max_p1 =?,"
+                        + "gasto_max_p2 =?,"
+                        + "gasto_max_p3 =?,"
+                        + "gasto_med_p1 =?,"
+                        + "gasto_med_p2 =?,"
+                        + "gasto_med_p3 =?,"
+                        + "gasto_min_p1 =?,"
+                        + "gasto_min_p2 =?,"
+                        + "gasto_min_p3 =?,"
+                        + "gasto_max_lc =?,"
+                        + "gasto_med_lc =?,"
+                        + "gasto_min_lc =?,"
+                        + "gasto_max_er =?,"
+                        + "gasto_med_er =?,"
+                        + "gasto_min_er =?,"
+                        + "temp_max_p1 =?,"
+                        + "temp_med_p1 =?,"
+                        + "temp_min_p1 =?,"
+                        + "temp_max_p2 =?,"
+                        + "temp_med_p2 =?,"
+                        + "temp_min_p2 =?,"
+                        + "temp_max_p3 =?,"
+                        + "temp_med_p3 =?,"
+                        + "temp_min_p3 =?,"
+                        + "i_max_p1 =?,"
+                        + "i_med_p1 =?,"
+                        + "i_min_p1 =?,"
+                        + "i_max_p2 =?,"
+                        + "i_med_p2 =?,"
+                        + "i_min_p2 =?,"
+                        + "i_max_p3 =?,"
+                        + "i_med_p3 =?,"
+                        + "i_min_p3 =?,"
+                        + "i_max_lc =?,"
+                        + "i_med_lc =?,"
+                        + "i_min_lc =?,"
+                        + "tiempo_max_p1 =?,"
+                        + "tiempo_med_p1 =?,"
+                        + "tiempo_min_p1 =?,"
+                        + "tiempo_max_p2 =?,"
+                        + "tiempo_med_p2 =?,"
+                        + "tiempo_min_p2 =?,"
+                        + "tiempo_max_p3 =?,"
+                        + "tiempo_med_p3 =?,"
+                        + "tiempo_min_p3 =?,"
+                        + "vcmv_gmax =?,"
+                        + "vcmv_gmed =?,"
+                        + "vcmv_gmin =?,"
+                        + "e_gmax =?,"
+                        + "e_gmed =?,"
+                        + "e_gmin =?,"
+                        + "qv_gmax =?,"
+                        + "qv_gmed =?,"
+                        + "qv_gmin =?,"
+                        + "restultados_ml1 =?,"
+                        + "resultados_ml2 =?,"
+                        + "ID_jarra =? "
+                        + "WHERE folio =? "
+                        + "AND lado_manguera =?");
                 //Aquí le envío la información debe coincidir con el total de ? = 12 el default envía el dato por defecto
                 
-                pps.setString(1,modeloVVisual.getDispensario());
-                pps.setString(2,modeloVVisual.getLeyendas());
-                pps.setString(3,modeloVVisual.getPlaca());
-                pps.setString(4,modeloVVisual.getCaratula());
-                pps.setString(5,modeloVVisual.getSigno());
-                pps.setString(6,modeloVVisual.getDisp_contador());
-                pps.setString(7,modeloVVisual.getMecanismo());
-                pps.setString(8,modeloVVisual.getDisp_despacho());
-                pps.setString(9,modeloVVisual.getGolpes());
-                pps.setString(10,modeloVVisual.getTiempo());
-                pps.setString(11,modeloVVisual.getFolio());
+                pps.setString(1,modeloIMangueras.getN_dispensario());
+                pps.setString(2,modeloIMangueras.getTermometro());
+                pps.setString(3,modeloIMangueras.getCronometro());
+                pps.setString(4,modeloIMangueras.getV20());
+                pps.setString(5,modeloIMangueras.getKC());
+                pps.setString(6,modeloIMangueras.getGasto_max_p1());
+                pps.setString(7,modeloIMangueras.getGasto_max_p2());
+                pps.setString(8,modeloIMangueras.getGasto_max_p3());
+                pps.setString(9,modeloIMangueras.getGasto_med_p1());
+                pps.setString(10,modeloIMangueras.getGasto_med_p2());
+                pps.setString(11,modeloIMangueras.getGasto_med_p3());
+                pps.setString(12,modeloIMangueras.getGasto_min_p1());
+                pps.setString(13,modeloIMangueras.getGasto_min_p2());
+                pps.setString(14,modeloIMangueras.getGasto_min_p3());
+                pps.setString(15,modeloIMangueras.getGasto_max_lc());
+                pps.setString(16,modeloIMangueras.getGasto_med_lc());
+                pps.setString(17,modeloIMangueras.getGasto_min_lc());
+                pps.setString(18,modeloIMangueras.getGasto_max_er());
+                pps.setString(19,modeloIMangueras.getGasto_med_er());
+                pps.setString(20,modeloIMangueras.getGasto_min_er());
+                pps.setString(21,modeloIMangueras.getTemp_max_p1());
+                pps.setString(22,modeloIMangueras.getTemp_med_p1());
+                pps.setString(23,modeloIMangueras.getTemp_min_p1());
+                pps.setString(24,modeloIMangueras.getTemp_max_p2());
+                pps.setString(25,modeloIMangueras.getTemp_med_p2());
+                pps.setString(26,modeloIMangueras.getTemp_min_p2());
+                pps.setString(27,modeloIMangueras.getTemp_max_p3());
+                pps.setString(28,modeloIMangueras.getTemp_med_p3());
+                pps.setString(29,modeloIMangueras.getTemp_min_p3());
+                pps.setString(30,modeloIMangueras.getI_max_p1());
+                pps.setString(31,modeloIMangueras.getI_med_p1());
+                pps.setString(32,modeloIMangueras.getI_min_p1());
+                pps.setString(33,modeloIMangueras.getI_max_p2());
+                pps.setString(34,modeloIMangueras.getI_med_p2());
+                pps.setString(35,modeloIMangueras.getI_min_p2());
+                pps.setString(36,modeloIMangueras.getI_max_p3());
+                pps.setString(37,modeloIMangueras.getI_med_p3());
+                pps.setString(38,modeloIMangueras.getI_min_p3());
+                pps.setString(39,modeloIMangueras.getI_max_lc());
+                pps.setString(40,modeloIMangueras.getI_med_lc());
+                pps.setString(41,modeloIMangueras.getI_min_lc());
+                pps.setString(42,modeloIMangueras.getTiempo_max_p1());
+                pps.setString(43,modeloIMangueras.getTiempo_med_p1());
+                pps.setString(44,modeloIMangueras.getTiempo_min_p1());
+                pps.setString(45,modeloIMangueras.getTiempo_max_p2());
+                pps.setString(46,modeloIMangueras.getTiempo_med_p2());
+                pps.setString(47,modeloIMangueras.getTiempo_min_p2());
+                pps.setString(48,modeloIMangueras.getTiempo_max_p3());
+                pps.setString(49,modeloIMangueras.getTiempo_med_p3());
+                pps.setString(50,modeloIMangueras.getTiempo_min_p3());
+                pps.setString(51,modeloIMangueras.getVcmv_gmax());
+                pps.setString(52,modeloIMangueras.getVcmv_gmed());
+                pps.setString(53,modeloIMangueras.getVcmv_gmin());
+                pps.setString(54,modeloIMangueras.getE_gmax());
+                pps.setString(55,modeloIMangueras.getE_gmed());
+                pps.setString(56,modeloIMangueras.getE_gmin());
+                pps.setString(57,modeloIMangueras.getQv_gmax());
+                pps.setString(58,modeloIMangueras.getQv_gmed());
+                pps.setString(59,modeloIMangueras.getQv_gmin());
+                pps.setString(60,modeloIMangueras.getRestultados_ml1());
+                pps.setString(61,modeloIMangueras.getResultados_ml2());
+                pps.setString(62,modeloIMangueras.getID_jarra());
+                pps.setString(63,modeloIMangueras.getFolio());
+                pps.setString(64,modeloIMangueras.getLado_manguera());
+
                 pps.executeUpdate();             
                 //JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
                 System.out.println("Datos actualizados de forma exitosa");
@@ -3940,7 +4051,8 @@ public String obtenerEstacionDeFolio(String idFolio){
         }
         return valida;
     }
-            
+        
+  //verificamos si el folio ya ha sido registrado en la tabla de verificacion visual
   public int estadofolioModeloVerificacionVisual(String folio) {
         int validacion = 0;
         try {
