@@ -330,7 +330,7 @@ operacionesdeInspeccionMedicion();
     }
     //SAR 12/04/21 INI
     private void entraonoentra(){
-         if(jRadioButton21.isSelected()&&jRadioButton24.isSelected()&&jRadioButton26.isSelected()&&jRadioButton28.isSelected()&&jRadioButton30.isSelected()&&jRadioButton32.isSelected()&&jRadioButton34.isSelected()&&jRadioButton36.isSelected()&&jRadioButton38.isSelected()){
+        if(jRadioButton21.isSelected()&&jRadioButton24.isSelected()&&jRadioButton26.isSelected()&&jRadioButton28.isSelected()&&jRadioButton30.isSelected()&&jRadioButton32.isSelected()&&jRadioButton34.isSelected()&&jRadioButton36.isSelected()&&jRadioButton38.isSelected()){
          entraraMangueras();
          cargarOpciones();
          }  else{
@@ -628,7 +628,121 @@ avcmv1=Math.round((av20+alcprommax*akc*actsmaxp1)*100.0)/100.0;
     avcmv9=Math.round((av20+alcprommin*akc*actsminp3)*100.0)/100.0;
    System.out.println("VCMV minimo P3 MA "+avcmv9);  
    
-   
+   //promedio 
+   //manguera a
+   double AI4PROMAX,AIMAX1,AIMAX2,AIMAX3,AI4PROMED,AIMAX4,AIMAX5,AIMAX6,AI4PROMIN,AIMAX7,AIMAX8,AIMAX9;
+   AIMAX1= Double.parseDouble(this.AI1MAX.getText());
+      AIMAX2= Double.parseDouble(this.AI2MAX.getText());
+       AIMAX3= Double.parseDouble(this.AI3MAX.getText());
+    AI4PROMAX= Math.round((AIMAX1+AIMAX2+AIMAX3)/3);
+    AI4MAX.setText(String.valueOf(AI4PROMAX));
+    
+    AIMAX4= Double.parseDouble(this.AI1MED.getText());
+      AIMAX5= Double.parseDouble(this.AI2MED.getText());
+       AIMAX6= Double.parseDouble(this.AI3MED.getText());
+    AI4PROMED= Math.round((AIMAX4+AIMAX5+AIMAX6)/3);
+    AI4MED.setText(String.valueOf(AI4PROMED));
+    
+    AIMAX7= Double.parseDouble(this.AI1MIN.getText());
+      AIMAX8= Double.parseDouble(this.AI2MIN.getText());
+       AIMAX9= Double.parseDouble(this.AI3MIN.getText());
+    AI4PROMIN= Math.round((AIMAX7+AIMAX8+AIMAX9)/3);
+    AI4MIN.setText(String.valueOf(AI4PROMIN));
+    //manguera b
+   double AB4PROMAX,ABMAX1,ABMAX2,ABMAX3,AB4PROMED,ABMAX4,ABMAX5,ABMAX6,AB4PROMIN,ABMAX7,ABMAX8,ABMAX9;
+   ABMAX1= Double.parseDouble(this.BI1MAX.getText());
+      ABMAX2= Double.parseDouble(this.BI2MAX.getText());
+       ABMAX3= Double.parseDouble(this.BI3MAX.getText());
+    AB4PROMAX= Math.round((ABMAX1+ABMAX2+ABMAX3)/3);
+    BI4MAX.setText(String.valueOf(AB4PROMAX));
+    
+    ABMAX4= Double.parseDouble(this.BI1MED.getText());
+      ABMAX5= Double.parseDouble(this.BI2MED.getText());
+       ABMAX6= Double.parseDouble(this.BI3MED.getText());
+    AB4PROMED= Math.round((ABMAX4+ABMAX5+ABMAX6)/3);
+    BI4MED.setText(String.valueOf(AB4PROMED));
+    
+    ABMAX7= Double.parseDouble(this.BI1MIN.getText());
+      ABMAX8= Double.parseDouble(this.BI2MIN.getText());
+       ABMAX9= Double.parseDouble(this.BI3MIN.getText());
+    AB4PROMIN= Math.round((ABMAX7+ABMAX8+ABMAX9)/3);
+    BI4MIN.setText(String.valueOf(AB4PROMIN));
+    //manguera c
+   double CI4PROMAX,CIMAX1,CIMAX2,CIMAX3,CI4PROMED,CIMAX4,CIMAX5,CIMAX6,CI4PROMIN,CIMAX7,CIMAX8,CIMAX9;
+   CIMAX1= Double.parseDouble(this.CI1MAX.getText());
+      CIMAX2= Double.parseDouble(this.CI2MAX.getText());
+       CIMAX3= Double.parseDouble(this.CI3MAX.getText());
+    CI4PROMAX= Math.round((CIMAX1+CIMAX2+CIMAX3)/3);
+    CI4MAX.setText(String.valueOf(CI4PROMAX));
+    
+    CIMAX4= Double.parseDouble(this.CI1MED.getText());
+      CIMAX5= Double.parseDouble(this.CI2MED.getText());
+       CIMAX6= Double.parseDouble(this.CI3MED.getText());
+    CI4PROMED= Math.round((CIMAX4+CIMAX5+CIMAX6)/3);
+    CI4MED.setText(String.valueOf(CI4PROMED));
+    
+    CIMAX7= Double.parseDouble(this.CI1MIN.getText());
+      CIMAX8= Double.parseDouble(this.CI2MIN.getText());
+       CIMAX9= Double.parseDouble(this.CI3MIN.getText());
+    CI4PROMIN= Math.round((CIMAX7+CIMAX8+CIMAX9)/3);
+    CI4MIN.setText(String.valueOf(CI4PROMIN));
+    //manguera d
+   double DB4PROMAX,DBMAX1,DBMAX2,DBMAX3,DB4PROMED,DBMAX4,DBMAX5,DBMAX6,DB4PROMIN,DBMAX7,DBMAX8,DBMAX9;
+   DBMAX1= Double.parseDouble(this.DI1MAX.getText());
+      DBMAX2= Double.parseDouble(this.DI2MAX.getText());
+       DBMAX3= Double.parseDouble(this.DI3MAX.getText());
+    DB4PROMAX= Math.round((DBMAX1+DBMAX2+DBMAX3)/3);
+    DI4MAX.setText(String.valueOf(DB4PROMAX));
+    
+    DBMAX4= Double.parseDouble(this.DI1MED.getText());
+      DBMAX5= Double.parseDouble(this.DI2MED.getText());
+       DBMAX6= Double.parseDouble(this.DI3MED.getText());
+    DB4PROMED= Math.round((DBMAX4+DBMAX5+DBMAX6)/3);
+    DI4MED.setText(String.valueOf(DB4PROMED));
+    
+    DBMAX7= Double.parseDouble(this.DI1MIN.getText());
+      DBMAX8= Double.parseDouble(this.DI2MIN.getText());
+       DBMAX9= Double.parseDouble(this.DI3MIN.getText());
+    DB4PROMIN= Math.round((DBMAX7+DBMAX8+DBMAX9)/3);
+    DI4MIN.setText(String.valueOf(DB4PROMIN));
+    //manguera e
+   double EI4PROMAX,EIMAX1,EIMAX2,EIMAX3,EI4PROMED,EIMAX4,EIMAX5,EIMAX6,EI4PROMIN,EIMAX7,EIMAX8,EIMAX9;
+   EIMAX1= Double.parseDouble(this.EI1MAX.getText());
+      EIMAX2= Double.parseDouble(this.EI2MAX.getText());
+       EIMAX3= Double.parseDouble(this.EI3MAX.getText());
+    EI4PROMAX= Math.round((EIMAX1+EIMAX2+EIMAX3)/3);
+    EI4MAX.setText(String.valueOf(EI4PROMAX));
+    
+    EIMAX4= Double.parseDouble(this.EI1MED.getText());
+      EIMAX5= Double.parseDouble(this.EI2MED.getText());
+       EIMAX6= Double.parseDouble(this.EI3MED.getText());
+    EI4PROMED= Math.round((EIMAX4+EIMAX5+EIMAX6)/3);
+    EI4MED.setText(String.valueOf(EI4PROMED));
+    
+    EIMAX7= Double.parseDouble(this.EI1MIN.getText());
+      EIMAX8= Double.parseDouble(this.EI2MIN.getText());
+       EIMAX9= Double.parseDouble(this.EI3MIN.getText());
+    EI4PROMIN= Math.round((EIMAX7+EIMAX8+EIMAX9)/3);
+    EI4MIN.setText(String.valueOf(EI4PROMIN));
+    //manguera f
+   double FB4PROMAX,FBMAX1,FBMAX2,FBMAX3,FB4PROMED,FBMAX4,FBMAX5,FBMAX6,FB4PROMIN,FBMAX7,FBMAX8,FBMAX9;
+   FBMAX1= Double.parseDouble(this.FI1MAX.getText());
+      FBMAX2= Double.parseDouble(this.FI2MAX.getText());
+       FBMAX3= Double.parseDouble(this.FI3MAX.getText());
+    FB4PROMAX= Math.round((FBMAX1+FBMAX2+FBMAX3)/3);
+    FI4MAX.setText(String.valueOf(FB4PROMAX));
+    
+    FBMAX4= Double.parseDouble(this.FI1MED.getText());
+      FBMAX5= Double.parseDouble(this.FI2MED.getText());
+       FBMAX6= Double.parseDouble(this.FI3MED.getText());
+    FB4PROMED= Math.round((FBMAX4+FBMAX5+FBMAX6)/3);
+    FI4MED.setText(String.valueOf(FB4PROMED));
+    
+    FBMAX7= Double.parseDouble(this.FI1MIN.getText());
+      FBMAX8= Double.parseDouble(this.FI2MIN.getText());
+       FBMAX9= Double.parseDouble(this.FI3MIN.getText());
+    FB4PROMIN= Math.round((FBMAX7+FBMAX8+FBMAX9)/3);
+    FI4MIN.setText(String.valueOf(FB4PROMIN));
 //promedio max med y min
         avcmvmax=Math.round((av20+alcprommax*akc*actsmaxprom)*100.0)/100.0;
         System.out.println("VCMV maximo promedio MA "+avcmvmax);
@@ -2154,7 +2268,10 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
+        jLabel340 = new javax.swing.JLabel();
         jLabel334 = new javax.swing.JLabel();
+        jLabel341 = new javax.swing.JLabel();
+        jLabel342 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
         FechaCal_A = new javax.swing.JTextField();
@@ -2281,6 +2398,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel105 = new javax.swing.JLabel();
         jLabel106 = new javax.swing.JLabel();
         jLabel335 = new javax.swing.JLabel();
+        jLabel343 = new javax.swing.JLabel();
+        jLabel344 = new javax.swing.JLabel();
+        jLabel345 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jLabel107 = new javax.swing.JLabel();
         FechaCal_B = new javax.swing.JTextField();
@@ -2407,6 +2527,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel155 = new javax.swing.JLabel();
         jLabel156 = new javax.swing.JLabel();
         jLabel336 = new javax.swing.JLabel();
+        jLabel346 = new javax.swing.JLabel();
+        jLabel347 = new javax.swing.JLabel();
+        jLabel357 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jLabel157 = new javax.swing.JLabel();
         FechaCal_C = new javax.swing.JTextField();
@@ -2533,6 +2656,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel205 = new javax.swing.JLabel();
         jLabel206 = new javax.swing.JLabel();
         jLabel337 = new javax.swing.JLabel();
+        jLabel348 = new javax.swing.JLabel();
+        jLabel349 = new javax.swing.JLabel();
+        jLabel350 = new javax.swing.JLabel();
         jPanel27 = new javax.swing.JPanel();
         jLabel207 = new javax.swing.JLabel();
         FechaCal_D = new javax.swing.JTextField();
@@ -2659,6 +2785,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel255 = new javax.swing.JLabel();
         jLabel256 = new javax.swing.JLabel();
         jLabel338 = new javax.swing.JLabel();
+        jLabel351 = new javax.swing.JLabel();
+        jLabel352 = new javax.swing.JLabel();
+        jLabel353 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
         jLabel257 = new javax.swing.JLabel();
         FechaCal_E = new javax.swing.JTextField();
@@ -2785,6 +2914,9 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel305 = new javax.swing.JLabel();
         jLabel306 = new javax.swing.JLabel();
         jLabel339 = new javax.swing.JLabel();
+        jLabel354 = new javax.swing.JLabel();
+        jLabel355 = new javax.swing.JLabel();
+        jLabel356 = new javax.swing.JLabel();
         jPanel37 = new javax.swing.JPanel();
         jLabel307 = new javax.swing.JLabel();
         FechaCal_F = new javax.swing.JTextField();
@@ -3324,7 +3456,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 .addComponent(jLabel68)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel69)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 583, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 611, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton32)
@@ -3751,11 +3883,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ATIMED1FocusLost(evt);
             }
         });
+        ATIMED1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ATIMED1KeyTyped(evt);
+            }
+        });
 
         ATIMAX1.setText("1");
         ATIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ATIMAX1FocusLost(evt);
+            }
+        });
+        ATIMAX1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ATIMAX1KeyTyped(evt);
             }
         });
 
@@ -3765,11 +3907,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ATIMIN1FocusLost(evt);
             }
         });
+        ATIMIN1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ATIMIN1KeyTyped(evt);
+            }
+        });
 
         ATIMAX2.setText("1");
         ATIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ATIMAX2FocusLost(evt);
+            }
+        });
+        ATIMAX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ATIMAX2KeyTyped(evt);
             }
         });
 
@@ -3784,11 +3936,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ATIMED2ActionPerformed(evt);
             }
         });
+        ATIMED2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ATIMED2KeyTyped(evt);
+            }
+        });
 
         ATIMIN2.setText("1");
         ATIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ATIMIN2FocusLost(evt);
+            }
+        });
+        ATIMIN2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ATIMIN2KeyTyped(evt);
             }
         });
 
@@ -3798,6 +3960,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ATIMIN3FocusLost(evt);
             }
         });
+        ATIMIN3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ATIMIN3KeyTyped(evt);
+            }
+        });
 
         ATIMED3.setText("1");
         ATIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -3805,11 +3972,29 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ATIMED3FocusLost(evt);
             }
         });
+        ATIMED3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ATIMED3KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ATIMED3KeyTyped(evt);
+            }
+        });
 
         ATIMAX3.setText("1");
         ATIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ATIMAX3FocusLost(evt);
+            }
+        });
+        ATIMAX3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ATIMAX3ActionPerformed(evt);
+            }
+        });
+        ATIMAX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ATIMAX3KeyTyped(evt);
             }
         });
 
@@ -3912,8 +4097,15 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel47.setText("Minimo(ml)");
 
-        jLabel334.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel334.setText("caratula indicadora");
+        jLabel340.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel340.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel340.setText("Carátula indicadora");
+
+        jLabel334.setText("Prueba1");
+
+        jLabel341.setText("Prueba3");
+
+        jLabel342.setText("Prueba2");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -3941,7 +4133,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(AP1MAX, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                                         .addComponent(AP1MED))
-                                    .addComponent(jLabel29))
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel334))
                                 .addGap(8, 8, 8)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -3991,29 +4184,34 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                         .addComponent(jLabel34))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(AI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(AI1MAX)
-                                        .addComponent(AI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(AI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(AI2MAX)
-                                        .addComponent(AI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(AI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(AI1MAX)
+                                                .addComponent(AI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(AI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(AI2MAX)
+                                                .addComponent(AI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(58, 58, 58)
+                                        .addComponent(jLabel342)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(AI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(AI3MAX)
-                                        .addComponent(AI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(AI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel341))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(AI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(AI4MAX)
-                                        .addComponent(AI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel334, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(AI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4063,7 +4261,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                         .addComponent(jLabel39)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel38)))))
-                        .addGap(30, 30, 30))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -4072,7 +4270,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addComponent(jLabel22)
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel23))
-                            .addComponent(jLabel18))
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel340, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -4083,9 +4282,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addComponent(jLabel21)
                     .addComponent(jLabel22)
                     .addComponent(jLabel23))
-                .addGap(9, 9, 9)
-                .addComponent(jLabel334)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel18)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4169,7 +4366,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel27)))
-                            .addGap(43, 43, 43))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel340)
+                                    .addGap(5, 5, 5)
+                                    .addComponent(jLabel334))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel341)
+                                    .addComponent(jLabel342)))
+                            .addGap(3, 3, 3))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -4426,7 +4632,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addComponent(calcProfecoA, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(calcUvA, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoPrecintoA, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4619,7 +4825,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel73)
                             .addComponent(botonIncluirMA))))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraALayout = new javax.swing.GroupLayout(mangueraA);
@@ -4627,7 +4833,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         mangueraALayout.setHorizontalGroup(
             mangueraALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mangueraALayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(mangueraALayout.createSequentialGroup()
@@ -4874,6 +5080,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 BTIMED1FocusLost(evt);
             }
         });
+        BTIMED1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BTIMED1KeyTyped(evt);
+            }
+        });
 
         BTIMAX1.setText("1");
         BTIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -4886,11 +5097,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 BTIMAX1ActionPerformed(evt);
             }
         });
+        BTIMAX1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BTIMAX1KeyTyped(evt);
+            }
+        });
 
         BTIMIN1.setText("1");
         BTIMIN1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 BTIMIN1FocusLost(evt);
+            }
+        });
+        BTIMIN1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BTIMIN1KeyTyped(evt);
             }
         });
 
@@ -4900,11 +5121,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 BTIMAX2FocusLost(evt);
             }
         });
+        BTIMAX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BTIMAX2KeyTyped(evt);
+            }
+        });
 
         BTIMED2.setText("1");
         BTIMED2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 BTIMED2FocusLost(evt);
+            }
+        });
+        BTIMED2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BTIMED2KeyTyped(evt);
             }
         });
 
@@ -4914,11 +5145,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 BTIMIN2FocusLost(evt);
             }
         });
+        BTIMIN2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BTIMIN2KeyTyped(evt);
+            }
+        });
 
         BTIMIN3.setText("1");
         BTIMIN3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 BTIMIN3FocusLost(evt);
+            }
+        });
+        BTIMIN3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BTIMIN3KeyTyped(evt);
             }
         });
 
@@ -4928,11 +5169,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 BTIMED3FocusLost(evt);
             }
         });
+        BTIMED3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BTIMED3KeyTyped(evt);
+            }
+        });
 
         BTIMAX3.setText("1");
         BTIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 BTIMAX3FocusLost(evt);
+            }
+        });
+        BTIMAX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BTIMAX3KeyTyped(evt);
             }
         });
 
@@ -5041,7 +5292,14 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel106.setText("Minimo(ml)");
 
         jLabel335.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel335.setText("caratula indicadora");
+        jLabel335.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel335.setText("Carátula indicadora");
+
+        jLabel343.setText("Prueba1");
+
+        jLabel344.setText("Prueba3");
+
+        jLabel345.setText("Prueba2");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -5069,7 +5327,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(BP1MAX, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                                         .addComponent(BP1MED))
-                                    .addComponent(jLabel88))
+                                    .addComponent(jLabel88)
+                                    .addComponent(jLabel343))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel16Layout.createSequentialGroup()
@@ -5128,20 +5387,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                     .addComponent(BI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(BI2MAX)
-                                        .addComponent(BI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(BI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel345))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(BI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(BI3MAX)
-                                        .addComponent(BI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(BI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel344))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(BI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(BI4MAX)
-                                        .addComponent(BI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel335, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(BI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5200,7 +5460,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addComponent(jLabel81)
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel82))
-                            .addComponent(jLabel78))
+                            .addComponent(jLabel78)
+                            .addComponent(jLabel335, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel16Layout.setVerticalGroup(
@@ -5211,9 +5472,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addComponent(jLabel80)
                     .addComponent(jLabel81)
                     .addComponent(jLabel82))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel335)
-                .addGap(9, 9, 9)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel78)
                     .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -5297,7 +5556,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel16Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel86)))
-                            .addGap(43, 43, 43))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel16Layout.createSequentialGroup()
+                                    .addComponent(jLabel335)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel343))
+                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel344)
+                                    .addComponent(jLabel345)))
+                            .addGap(3, 3, 3))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
@@ -5439,7 +5707,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_B)
                                     .addComponent(InfCal_B, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(138, Short.MAX_VALUE))))
+                        .addContainerGap(166, Short.MAX_VALUE))))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5730,7 +5998,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel127)
                             .addComponent(botonIncluirMB))))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA1Layout = new javax.swing.GroupLayout(mangueraA1);
@@ -5960,11 +6228,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 CTIMED1ActionPerformed(evt);
             }
         });
+        CTIMED1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CTIMED1KeyTyped(evt);
+            }
+        });
 
         CTIMAX1.setText("1");
         CTIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 CTIMAX1FocusLost(evt);
+            }
+        });
+        CTIMAX1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CTIMAX1KeyTyped(evt);
             }
         });
 
@@ -5974,11 +6252,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 CTIMIN1FocusLost(evt);
             }
         });
+        CTIMIN1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CTIMIN1KeyTyped(evt);
+            }
+        });
 
         CTIMAX2.setText("1");
         CTIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 CTIMAX2FocusLost(evt);
+            }
+        });
+        CTIMAX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CTIMAX2KeyTyped(evt);
             }
         });
 
@@ -5988,11 +6276,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 CTIMED2FocusLost(evt);
             }
         });
+        CTIMED2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CTIMED2KeyTyped(evt);
+            }
+        });
 
         CTIMIN2.setText("1");
         CTIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 CTIMIN2FocusLost(evt);
+            }
+        });
+        CTIMIN2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CTIMIN2KeyTyped(evt);
             }
         });
 
@@ -6002,6 +6300,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 CTIMIN3FocusLost(evt);
             }
         });
+        CTIMIN3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CTIMIN3KeyTyped(evt);
+            }
+        });
 
         CTIMED3.setText("1");
         CTIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -6009,11 +6312,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 CTIMED3FocusLost(evt);
             }
         });
+        CTIMED3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CTIMED3KeyTyped(evt);
+            }
+        });
 
         CTIMAX3.setText("1");
         CTIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 CTIMAX3FocusLost(evt);
+            }
+        });
+        CTIMAX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CTIMAX3KeyTyped(evt);
             }
         });
 
@@ -6117,7 +6430,14 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel156.setText("Minimo(ml)");
 
         jLabel336.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel336.setText("caratula indicadora");
+        jLabel336.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel336.setText("Carátula indicadora");
+
+        jLabel346.setText("Prueba3");
+
+        jLabel347.setText("Prueba2");
+
+        jLabel357.setText("Prueba1");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -6141,12 +6461,17 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel21Layout.createSequentialGroup()
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CP1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(CP1MAX, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                                        .addComponent(CP1MED))
-                                    .addComponent(jLabel138))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                                        .addComponent(jLabel138)
+                                        .addGap(6, 6, 6))
+                                    .addGroup(jPanel21Layout.createSequentialGroup()
+                                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(CP1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(CP1MAX, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                                                .addComponent(CP1MED))
+                                            .addComponent(jLabel357))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel21Layout.createSequentialGroup()
                                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6195,29 +6520,34 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                         .addComponent(jLabel143))))
                             .addGroup(jPanel21Layout.createSequentialGroup()
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(CI1MAX)
-                                        .addComponent(CI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(CI2MAX)
-                                        .addComponent(CI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel21Layout.createSequentialGroup()
+                                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(CI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(CI1MAX)
+                                                .addComponent(CI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(CI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(CI2MAX)
+                                                .addComponent(CI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel21Layout.createSequentialGroup()
+                                        .addGap(63, 63, 63)
+                                        .addComponent(jLabel347)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(CI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(CI3MAX)
-                                        .addComponent(CI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(CI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel346))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(CI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(CI4MAX)
-                                        .addComponent(CI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel336, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(CI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel21Layout.createSequentialGroup()
                                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6276,7 +6606,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addComponent(jLabel131)
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel132))
-                            .addComponent(jLabel128))
+                            .addComponent(jLabel128)
+                            .addComponent(jLabel336, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel21Layout.setVerticalGroup(
@@ -6287,13 +6618,10 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addComponent(jLabel130)
                     .addComponent(jLabel131)
                     .addComponent(jLabel132))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel336, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel128)
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel138)
                         .addComponent(jLabel139)
                         .addComponent(jLabel140)
                         .addComponent(jLabel141)
@@ -6301,7 +6629,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addComponent(jLabel144)
                         .addComponent(jLabel145)
                         .addComponent(jLabel146)
-                        .addComponent(jLabel143)))
+                        .addComponent(jLabel143)
+                        .addComponent(jLabel357)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
@@ -6373,8 +6702,19 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel21Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel136)))
-                            .addGap(43, 43, 43))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel21Layout.createSequentialGroup()
+                                    .addComponent(jLabel336, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel138)
+                                    .addGap(3, 3, 3))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel346)
+                                        .addComponent(jLabel347))
+                                    .addGap(9, 9, 9))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
                         .addComponent(CTIMAX2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6515,7 +6855,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_C)
                                     .addComponent(InfCal_C, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(138, Short.MAX_VALUE))))
+                        .addContainerGap(166, Short.MAX_VALUE))))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6807,7 +7147,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel177)
                             .addComponent(botonIncluirMC))))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA2Layout = new javax.swing.GroupLayout(mangueraA2);
@@ -7032,11 +7372,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 DTIMED1FocusLost(evt);
             }
         });
+        DTIMED1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DTIMED1KeyTyped(evt);
+            }
+        });
 
         DTIMAX1.setText("1");
         DTIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 DTIMAX1FocusLost(evt);
+            }
+        });
+        DTIMAX1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DTIMAX1KeyTyped(evt);
             }
         });
 
@@ -7046,11 +7396,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 DTIMIN1FocusLost(evt);
             }
         });
+        DTIMIN1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DTIMIN1KeyTyped(evt);
+            }
+        });
 
         DTIMAX2.setText("1");
         DTIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 DTIMAX2FocusLost(evt);
+            }
+        });
+        DTIMAX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DTIMAX2KeyTyped(evt);
             }
         });
 
@@ -7060,11 +7420,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 DTIMED2FocusLost(evt);
             }
         });
+        DTIMED2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DTIMED2KeyTyped(evt);
+            }
+        });
 
         DTIMIN2.setText("1");
         DTIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 DTIMIN2FocusLost(evt);
+            }
+        });
+        DTIMIN2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DTIMIN2KeyTyped(evt);
             }
         });
 
@@ -7074,6 +7444,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 DTIMIN3FocusLost(evt);
             }
         });
+        DTIMIN3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DTIMIN3KeyTyped(evt);
+            }
+        });
 
         DTIMED3.setText("1");
         DTIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -7081,11 +7456,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 DTIMED3FocusLost(evt);
             }
         });
+        DTIMED3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DTIMED3KeyTyped(evt);
+            }
+        });
 
         DTIMAX3.setText("1");
         DTIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 DTIMAX3FocusLost(evt);
+            }
+        });
+        DTIMAX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DTIMAX3KeyTyped(evt);
             }
         });
 
@@ -7189,7 +7574,14 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel206.setText("Minimo(ml)");
 
         jLabel337.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel337.setText("caratula indicadora");
+        jLabel337.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel337.setText("Carátula indicadora");
+
+        jLabel348.setText("Prueba1");
+
+        jLabel349.setText("Prueba3");
+
+        jLabel350.setText("Prueba2");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -7213,12 +7605,17 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel26Layout.createSequentialGroup()
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(DP1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(DP1MAX, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                                        .addComponent(DP1MED))
-                                    .addComponent(jLabel188))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel26Layout.createSequentialGroup()
+                                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(DP1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(DP1MAX, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                                                .addComponent(DP1MED))
+                                            .addComponent(jLabel188))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
+                                        .addComponent(jLabel348)
+                                        .addGap(6, 6, 6)))
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel26Layout.createSequentialGroup()
                                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7267,29 +7664,34 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                         .addComponent(jLabel193))))
                             .addGroup(jPanel26Layout.createSequentialGroup()
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(DI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(DI1MAX)
-                                        .addComponent(DI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(DI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(DI2MAX)
-                                        .addComponent(DI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel26Layout.createSequentialGroup()
+                                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(DI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(DI1MAX)
+                                                .addComponent(DI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(DI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(DI2MAX)
+                                                .addComponent(DI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel26Layout.createSequentialGroup()
+                                        .addGap(63, 63, 63)
+                                        .addComponent(jLabel350)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(DI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(DI3MAX)
-                                        .addComponent(DI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(DI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel349))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(DI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(DI4MAX)
-                                        .addComponent(DI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel337, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel26Layout.createSequentialGroup()
                                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7348,7 +7750,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addComponent(jLabel181)
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel182))
-                            .addComponent(jLabel178))
+                            .addComponent(jLabel178)
+                            .addComponent(jLabel337, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel26Layout.setVerticalGroup(
@@ -7359,9 +7762,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addComponent(jLabel180)
                     .addComponent(jLabel181)
                     .addComponent(jLabel182))
-                .addGap(9, 9, 9)
-                .addComponent(jLabel337)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel178)
                     .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -7445,7 +7846,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel26Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel186)))
-                            .addGap(43, 43, 43))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel26Layout.createSequentialGroup()
+                                    .addComponent(jLabel337)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel348))
+                                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel349)
+                                    .addComponent(jLabel350)))
+                            .addGap(3, 3, 3))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel26Layout.createSequentialGroup()
@@ -7587,7 +7997,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_D)
                                     .addComponent(InfCal_D, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(138, Short.MAX_VALUE))))
+                        .addContainerGap(166, Short.MAX_VALUE))))
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8103,11 +8513,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ETIMED1FocusLost(evt);
             }
         });
+        ETIMED1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ETIMED1KeyTyped(evt);
+            }
+        });
 
         ETIMAX1.setText("1");
         ETIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ETIMAX1FocusLost(evt);
+            }
+        });
+        ETIMAX1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ETIMAX1KeyTyped(evt);
             }
         });
 
@@ -8117,11 +8537,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ETIMIN1FocusLost(evt);
             }
         });
+        ETIMIN1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ETIMIN1KeyTyped(evt);
+            }
+        });
 
         ETIMAX2.setText("1");
         ETIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ETIMAX2FocusLost(evt);
+            }
+        });
+        ETIMAX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ETIMAX2KeyTyped(evt);
             }
         });
 
@@ -8131,11 +8561,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ETIMED2FocusLost(evt);
             }
         });
+        ETIMED2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ETIMED2KeyTyped(evt);
+            }
+        });
 
         ETIMIN2.setText("1");
         ETIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ETIMIN2FocusLost(evt);
+            }
+        });
+        ETIMIN2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ETIMIN2KeyTyped(evt);
             }
         });
 
@@ -8145,6 +8585,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ETIMIN3FocusLost(evt);
             }
         });
+        ETIMIN3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ETIMIN3KeyTyped(evt);
+            }
+        });
 
         ETIMED3.setText("1");
         ETIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -8152,11 +8597,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 ETIMED3FocusLost(evt);
             }
         });
+        ETIMED3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ETIMED3KeyTyped(evt);
+            }
+        });
 
         ETIMAX3.setText("1");
         ETIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ETIMAX3FocusLost(evt);
+            }
+        });
+        ETIMAX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ETIMAX3KeyTyped(evt);
             }
         });
 
@@ -8260,7 +8715,14 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel256.setText("Minimo(ml)");
 
         jLabel338.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel338.setText("caratula indicadora");
+        jLabel338.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel338.setText("Carátula indicadora");
+
+        jLabel351.setText("Prueba1");
+
+        jLabel352.setText("Prueba3");
+
+        jLabel353.setText("Prueba2");
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -8288,7 +8750,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(EP1MAX, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                                         .addComponent(EP1MED))
-                                    .addComponent(jLabel238))
+                                    .addComponent(jLabel238)
+                                    .addComponent(jLabel351))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel31Layout.createSequentialGroup()
@@ -8337,30 +8800,33 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel243))))
                             .addGroup(jPanel31Layout.createSequentialGroup()
-                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(EI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(EI1MAX)
-                                        .addComponent(EI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(EI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(EI2MAX)
-                                        .addComponent(EI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel31Layout.createSequentialGroup()
+                                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(EI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(EI1MAX)
+                                                .addComponent(EI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(EI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(EI2MAX)
+                                                .addComponent(EI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabel353))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(EI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(EI3MAX)
-                                        .addComponent(EI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(EI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel352, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(EI4MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(EI4MAX)
-                                        .addComponent(EI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel338, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(EI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel31Layout.createSequentialGroup()
                                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8419,7 +8885,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addComponent(jLabel231)
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel232))
-                            .addComponent(jLabel228))
+                            .addComponent(jLabel228)
+                            .addComponent(jLabel338, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel31Layout.setVerticalGroup(
@@ -8430,9 +8897,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addComponent(jLabel230)
                     .addComponent(jLabel231)
                     .addComponent(jLabel232))
-                .addGap(9, 9, 9)
-                .addComponent(jLabel338)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel228)
                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -8516,7 +8981,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel31Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel236)))
-                            .addGap(43, 43, 43))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel31Layout.createSequentialGroup()
+                                    .addComponent(jLabel338)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel351))
+                                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel352)
+                                    .addComponent(jLabel353)))
+                            .addGap(2, 2, 2))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
@@ -8658,7 +9132,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_E)
                                     .addComponent(InfCal_E, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(138, Short.MAX_VALUE))))
+                        .addContainerGap(166, Short.MAX_VALUE))))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8949,7 +9423,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel277)
                             .addComponent(botonIncluirME))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA4Layout = new javax.swing.GroupLayout(mangueraA4);
@@ -9174,11 +9648,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 FTIMED1FocusLost(evt);
             }
         });
+        FTIMED1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FTIMED1KeyTyped(evt);
+            }
+        });
 
         FTIMAX1.setText("1");
         FTIMAX1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 FTIMAX1FocusLost(evt);
+            }
+        });
+        FTIMAX1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FTIMAX1KeyTyped(evt);
             }
         });
 
@@ -9188,11 +9672,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 FTIMIN1FocusLost(evt);
             }
         });
+        FTIMIN1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FTIMIN1KeyTyped(evt);
+            }
+        });
 
         FTIMAX2.setText("1");
         FTIMAX2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 FTIMAX2FocusLost(evt);
+            }
+        });
+        FTIMAX2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FTIMAX2KeyTyped(evt);
             }
         });
 
@@ -9202,11 +9696,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 FTIMED2FocusLost(evt);
             }
         });
+        FTIMED2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FTIMED2KeyTyped(evt);
+            }
+        });
 
         FTIMIN2.setText("1");
         FTIMIN2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 FTIMIN2FocusLost(evt);
+            }
+        });
+        FTIMIN2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FTIMIN2KeyTyped(evt);
             }
         });
 
@@ -9216,6 +9720,11 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 FTIMIN3FocusLost(evt);
             }
         });
+        FTIMIN3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FTIMIN3KeyTyped(evt);
+            }
+        });
 
         FTIMED3.setText("1");
         FTIMED3.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -9223,11 +9732,21 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                 FTIMED3FocusLost(evt);
             }
         });
+        FTIMED3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FTIMED3KeyTyped(evt);
+            }
+        });
 
         FTIMAX3.setText("1");
         FTIMAX3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 FTIMAX3FocusLost(evt);
+            }
+        });
+        FTIMAX3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FTIMAX3KeyTyped(evt);
             }
         });
 
@@ -9331,7 +9850,14 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
         jLabel306.setText("Minimo(ml)");
 
         jLabel339.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel339.setText("caratula indicadora");
+        jLabel339.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel339.setText("Carátula indicadora");
+
+        jLabel354.setText("Prueba1");
+
+        jLabel355.setText("Prueba3");
+
+        jLabel356.setText("Prueba2");
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
@@ -9359,7 +9885,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(FP1MAX, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                                         .addComponent(FP1MED))
-                                    .addComponent(jLabel288))
+                                    .addComponent(jLabel288)
+                                    .addComponent(jLabel354))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel36Layout.createSequentialGroup()
@@ -9413,28 +9940,31 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel293))))
                             .addGroup(jPanel36Layout.createSequentialGroup()
-                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(FI1MAX)
-                                        .addComponent(FI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(FI2MAX)
-                                        .addComponent(FI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel36Layout.createSequentialGroup()
+                                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(FI1MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(FI1MAX)
+                                                .addComponent(FI1MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(FI2MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(FI2MAX)
+                                                .addComponent(FI2MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabel356))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(FI3MIN, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(FI3MAX)
-                                        .addComponent(FI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(FI3MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel355, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FI4MAX)
-                                    .addComponent(FI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel339, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(FI4MED, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel36Layout.createSequentialGroup()
                                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9493,7 +10023,8 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addComponent(jLabel281)
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel282))
-                            .addComponent(jLabel278))
+                            .addComponent(jLabel278)
+                            .addComponent(jLabel339, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel36Layout.setVerticalGroup(
@@ -9504,9 +10035,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                     .addComponent(jLabel280)
                     .addComponent(jLabel281)
                     .addComponent(jLabel282))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel339)
-                .addGap(4, 4, 4)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel278)
                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -9590,7 +10119,16 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel36Layout.createSequentialGroup()
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel286)))
-                            .addGap(43, 43, 43))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel36Layout.createSequentialGroup()
+                                    .addComponent(jLabel339)
+                                    .addGap(5, 5, 5)
+                                    .addComponent(jLabel354))
+                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel355)
+                                    .addComponent(jLabel356)))
+                            .addGap(3, 3, 3))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel36Layout.createSequentialGroup()
@@ -9732,7 +10270,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                                 .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(FechaCal_F)
                                     .addComponent(InfCal_F, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(138, Short.MAX_VALUE))))
+                        .addContainerGap(166, Short.MAX_VALUE))))
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -10023,7 +10561,7 @@ fqvmin=Math.round(((fqv7+fqv8+fqv9)/3)*100.0)/100.0;
                         .addGroup(jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel327)
                             .addComponent(botonIncluirMF))))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mangueraA5Layout = new javax.swing.GroupLayout(mangueraA5);
@@ -11818,6 +12356,446 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private void jComboBoxTermometroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jComboBoxTermometroKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxTermometroKeyPressed
+
+    private void ATIMAX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMAX1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }// TODO add your handling code here:
+    }//GEN-LAST:event_ATIMAX1KeyTyped
+
+    private void ATIMAX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMAX2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }// TODO add your handling code here:
+    }//GEN-LAST:event_ATIMAX2KeyTyped
+
+    private void ATIMAX3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ATIMAX3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMAX3ActionPerformed
+
+    private void ATIMAX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMAX3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMAX3KeyTyped
+
+    private void ATIMED1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMED1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMED1KeyTyped
+
+    private void ATIMED2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMED2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMED2KeyTyped
+
+    private void ATIMED3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMED3KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMED3KeyReleased
+
+    private void ATIMED3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMED3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMED3KeyTyped
+
+    private void ATIMIN1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMIN1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMIN1KeyTyped
+
+    private void ATIMIN2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMIN2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMIN2KeyTyped
+
+    private void ATIMIN3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATIMIN3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ATIMIN3KeyTyped
+
+    private void BTIMAX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BTIMAX1KeyTyped
+      double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }  // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMAX1KeyTyped
+
+    private void BTIMAX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BTIMAX2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMAX2KeyTyped
+
+    private void BTIMAX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BTIMAX3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMAX3KeyTyped
+
+    private void BTIMED1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BTIMED1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMED1KeyTyped
+
+    private void BTIMED2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BTIMED2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMED2KeyTyped
+
+    private void BTIMED3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BTIMED3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMED3KeyTyped
+
+    private void BTIMIN1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BTIMIN1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMIN1KeyTyped
+
+    private void BTIMIN2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BTIMIN2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMIN2KeyTyped
+
+    private void BTIMIN3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BTIMIN3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_BTIMIN3KeyTyped
+
+    private void CTIMAX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTIMAX1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMAX1KeyTyped
+
+    private void CTIMAX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTIMAX2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMAX2KeyTyped
+
+    private void CTIMAX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTIMAX3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMAX3KeyTyped
+
+    private void CTIMED1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTIMED1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMED1KeyTyped
+
+    private void CTIMED2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTIMED2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMED2KeyTyped
+
+    private void CTIMED3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTIMED3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMED3KeyTyped
+
+    private void CTIMIN1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTIMIN1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMIN1KeyTyped
+
+    private void CTIMIN2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTIMIN2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMIN2KeyTyped
+
+    private void CTIMIN3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTIMIN3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_CTIMIN3KeyTyped
+
+    private void DTIMAX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTIMAX1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMAX1KeyTyped
+
+    private void DTIMAX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTIMAX2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMAX2KeyTyped
+
+    private void DTIMAX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTIMAX3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMAX3KeyTyped
+
+    private void DTIMED1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTIMED1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMED1KeyTyped
+
+    private void DTIMED2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTIMED2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMED2KeyTyped
+
+    private void DTIMED3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTIMED3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMED3KeyTyped
+
+    private void DTIMIN1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTIMIN1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMIN1KeyTyped
+
+    private void DTIMIN2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTIMIN2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMIN2KeyTyped
+
+    private void DTIMIN3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DTIMIN3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_DTIMIN3KeyTyped
+
+    private void ETIMAX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ETIMAX1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMAX1KeyTyped
+
+    private void ETIMAX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ETIMAX2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMAX2KeyTyped
+
+    private void ETIMAX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ETIMAX3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMAX3KeyTyped
+
+    private void ETIMED1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ETIMED1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMED1KeyTyped
+
+    private void ETIMED2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ETIMED2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMED2KeyTyped
+
+    private void ETIMED3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ETIMED3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMED3KeyTyped
+
+    private void ETIMIN1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ETIMIN1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMIN1KeyTyped
+
+    private void ETIMIN2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ETIMIN2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMIN2KeyTyped
+
+    private void ETIMIN3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ETIMIN3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_ETIMIN3KeyTyped
+
+    private void FTIMAX1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FTIMAX1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMAX1KeyTyped
+
+    private void FTIMAX2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FTIMAX2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMAX2KeyTyped
+
+    private void FTIMAX3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FTIMAX3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMAX3KeyTyped
+
+    private void FTIMED1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FTIMED1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMED1KeyTyped
+
+    private void FTIMED2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FTIMED2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMED2KeyTyped
+
+    private void FTIMED3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FTIMED3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMED3KeyTyped
+
+    private void FTIMIN1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FTIMIN1KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMIN1KeyTyped
+
+    private void FTIMIN2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FTIMIN2KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMIN2KeyTyped
+
+    private void FTIMIN3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FTIMIN3KeyTyped
+double soloceros = evt.getKeyChar();
+        boolean numeros = soloceros >= 48 && soloceros <= 57;
+        if (!numeros) {
+            evt.consume();
+            }        // TODO add your handling code here:
+    }//GEN-LAST:event_FTIMIN3KeyTyped
 //>>>>>>> f3b6447726602e3714578494c282ea5347226ed7
 
     /**
@@ -12513,7 +13491,25 @@ operacionesdeInspeccionMedicion();        // TODO add your handling code here:
     private javax.swing.JLabel jLabel338;
     private javax.swing.JLabel jLabel339;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel340;
+    private javax.swing.JLabel jLabel341;
+    private javax.swing.JLabel jLabel342;
+    private javax.swing.JLabel jLabel343;
+    private javax.swing.JLabel jLabel344;
+    private javax.swing.JLabel jLabel345;
+    private javax.swing.JLabel jLabel346;
+    private javax.swing.JLabel jLabel347;
+    private javax.swing.JLabel jLabel348;
+    private javax.swing.JLabel jLabel349;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel350;
+    private javax.swing.JLabel jLabel351;
+    private javax.swing.JLabel jLabel352;
+    private javax.swing.JLabel jLabel353;
+    private javax.swing.JLabel jLabel354;
+    private javax.swing.JLabel jLabel355;
+    private javax.swing.JLabel jLabel356;
+    private javax.swing.JLabel jLabel357;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
